@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #02060D;
+    color: #E2E8F0;
+    font-family: 'Manrope', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(6, 16, 30, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 168, 255, 0.14);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(8, 22, 42, 0.75);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 168, 255, 0.2);
+}
+
+/* Traveling Energy Pulse along wire */
+@keyframes energy-pulse {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-energy-pulse {
+  stroke-dasharray: 80 520;
+  animation: energy-pulse 3.5s linear infinite;
+}
+
+/* Electric glow pulse */
+@keyframes electric-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.3), inset 0 0 15px rgba(0, 240, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.55), inset 0 0 25px rgba(0, 168, 255, 0.25);
+  }
+}
+
+.glow-active {
+  animation: electric-glow 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02060D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0E223D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00A8FF;
+}
