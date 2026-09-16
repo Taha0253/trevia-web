@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   LayoutDashboard, Users, Truck, Radio, Zap, 
   CreditCard, Tag, Sparkles, HelpCircle, Bell, 
-  ShieldAlert, MapPin, IndianRupee, Wifi, Activity, Terminal, Check
+  ShieldAlert, MapPin, IndianRupee, Wifi, Activity, Terminal
 } from 'lucide-react';
 import { fetchDashboardStats } from '../services/api';
 import type { DashboardStats } from '../types';

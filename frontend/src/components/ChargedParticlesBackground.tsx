@@ -36,7 +36,7 @@ export const ChargedParticlesBackground: React.FC = () => {
     const mouse = {
       x: -1000,
       y: -1000,
-      radius: 140,
+      radius: 180,
       active: false
     };
 
@@ -55,25 +55,29 @@ export const ChargedParticlesBackground: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    // Create particles
-    const particleCount = Math.min(Math.floor((width * height) / 16000), 95);
+    // Create particles with higher density and hero concentration
+    const particleCount = Math.min(Math.floor((width * height) / 8500), 140);
     const particles: Particle[] = [];
-    const colors = ['#00A8FF', '#00F0FF', '#38BDF8', '#E0F2FE', '#00D2C4'];
+    const colors = ['#00A8FF', '#00F0FF', '#38BDF8', '#7DD3FC', '#00D2C4', '#FFFFFF'];
 
     for (let i = 0; i < particleCount; i++) {
-      const vx = (Math.random() - 0.5) * 0.45;
-      const vy = (Math.random() - 0.5) * 0.45;
+      const vx = (Math.random() - 0.5) * 0.5;
+      const vy = (Math.random() - 0.5) * 0.5;
+      
+      // 40% of particles spawn initially in upper half (Hero zone)
+      const initialY = Math.random() < 0.4 ? Math.random() * (height * 0.6) : Math.random() * height;
+      
       particles.push({
         x: Math.random() * width,
-        y: Math.random() * height,
+        y: initialY,
         vx,
         vy,
         baseVx: vx,
         baseVy: vy,
-        size: Math.random() * 1.8 + 1.0,
+        size: Math.random() * 2.0 + 0.8,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: Math.random() * 0.55 + 0.25,
-        charge: Math.random() * Math.PI
+        alpha: Math.random() * 0.6 + 0.25,
+        charge: Math.random() * Math.PI * 2
       });
     }
 
@@ -89,10 +93,10 @@ export const ChargedParticlesBackground: React.FC = () => {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 90) {
-            const lineAlpha = (1 - dist / 90) * 0.12;
+          if (dist < 110) {
+            const lineAlpha = (1 - dist / 110) * 0.16;
             ctx.strokeStyle = `rgba(0, 168, 255, ${lineAlpha})`;
-            ctx.lineWidth = 0.75;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -103,10 +107,10 @@ export const ChargedParticlesBackground: React.FC = () => {
 
       // Update & render particles
       particles.forEach((p) => {
-        p.charge += 0.03;
-        const currentAlpha = p.alpha + Math.sin(p.charge) * 0.15;
+        p.charge += 0.035;
+        const currentAlpha = p.alpha + Math.sin(p.charge) * 0.2;
 
-        // Mouse interaction: repulsion and energy reaction
+        // Mouse interaction: repulsion and energy filament reaction
         if (mouse.active) {
           const dx = p.x - mouse.x;
           const dy = p.y - mouse.y;
@@ -114,25 +118,35 @@ export const ChargedParticlesBackground: React.FC = () => {
 
           if (dist < mouse.radius && dist > 0) {
             // Repulsion force
-            const force = (1 - dist / mouse.radius) * 1.8;
+            const force = (1 - dist / mouse.radius) * 2.4;
             const angle = Math.atan2(dy, dx);
-            p.vx += Math.cos(angle) * force * 0.2;
-            p.vy += Math.sin(angle) * force * 0.2;
+            p.vx += Math.cos(angle) * force * 0.28;
+            p.vy += Math.sin(angle) * force * 0.28;
 
             // Draw interactive luminous energy filament from cursor to particle
-            const lineAlpha = (1 - dist / mouse.radius) * 0.35;
+            const lineAlpha = (1 - dist / mouse.radius) * 0.55;
             ctx.strokeStyle = `rgba(0, 240, 255, ${lineAlpha})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 1.2;
             ctx.beginPath();
             ctx.moveTo(mouse.x, mouse.y);
             ctx.lineTo(p.x, p.y);
             ctx.stroke();
+
+            // Glow burst around reacting particles
+            ctx.save();
+            ctx.shadowColor = '#00F0FF';
+            ctx.shadowBlur = 12;
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size * 1.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
           }
         }
 
         // Return smoothly towards base velocity
-        p.vx = p.vx * 0.95 + p.baseVx * 0.05;
-        p.vy = p.vy * 0.95 + p.baseVy * 0.05;
+        p.vx = p.vx * 0.94 + p.baseVx * 0.06;
+        p.vy = p.vy * 0.94 + p.baseVy * 0.06;
 
         p.x += p.vx;
         p.y += p.vy;
@@ -146,9 +160,9 @@ export const ChargedParticlesBackground: React.FC = () => {
         // Draw particle with electric glow
         ctx.save();
         ctx.shadowColor = p.color;
-        ctx.shadowBlur = p.size * 4;
+        ctx.shadowBlur = p.size * 5;
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = Math.max(0.1, Math.min(0.9, currentAlpha));
+        ctx.globalAlpha = Math.max(0.15, Math.min(0.95, currentAlpha));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -172,7 +186,7 @@ export const ChargedParticlesBackground: React.FC = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.85 }}
+      style={{ opacity: 0.95 }}
     />
   );
 };

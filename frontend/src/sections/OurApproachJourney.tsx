@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   Compass, Navigation, Zap, CreditCard, Network, 
-  ArrowRight, Play, Pause, ChevronRight, CheckCircle2, 
-  Sparkles, Radio, Shield, BatteryCharging
+  ArrowRight, Play, Pause, ChevronRight, CheckCircle2
 } from 'lucide-react';
 
 export const OurApproachJourney: React.FC = () => {
