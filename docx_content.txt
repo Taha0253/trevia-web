@@ -1,0 +1,195 @@
+Trevia Website ModernizationTechnical Stack Specification
+React.js + FastAPI architecture • Production-ready recommendation
+1. Recommended Architecture
+Use a decoupled frontend/backend architecture. The public Trevia website should be fast, SEO-friendly, animation-rich, and independently deployable from the API layer.
+Frontend: React.js + Vite + TypeScript
+API: FastAPI + Python
+Database: PostgreSQL
+ORM / migrations: SQLAlchemy 2.x + Alembic
+Frontend hosting: Vercel
+Backend hosting: Render, Railway, Fly.io, or AWS depending on scale
+Reverse proxy / CDN / DNS: Cloudflare (optional) + Vercel Edge/CDN
+Source control / CI: GitHub + GitHub Actions (or equivalent Git provider)
+2. Frontend Stack
+Layer
+Technology
+Purpose
+Framework
+React.js
+Component-based UI and page composition
+Build tool
+Vite
+Fast local development and production bundling
+Language
+TypeScript
+Type safety and maintainability
+Routing
+React Router
+Public page routing and navigation
+Styling
+Tailwind CSS
+Responsive design system and utility styling
+UI primitives
+shadcn/ui + Radix UI
+Accessible, customizable components
+Animation
+Motion for React (Framer Motion)
+Scroll, hover, page and layout animation
+Complex illustration
+Lottie / dotLottie
+Selected hero/approach illustrations only
+Icons
+Lucide React
+Consistent lightweight icon system
+Forms
+React Hook Form + Zod
+Validation and structured form state
+API client
+Fetch or Axios
+Communication with FastAPI
+Server state
+TanStack Query
+Caching, loading states and API synchronization
+Maps
+Mapbox GL JS or Google Maps
+Only if charger/map functionality is exposed
+3. Backend Stack
+FastAPI: REST API layer, validation, OpenAPI documentation and async request handling.
+Pydantic v2: request/response schemas and validation.
+SQLAlchemy 2.x: database access and ORM.
+Alembic: version-controlled database migrations.
+PostgreSQL: primary relational database.
+Redis/Valkey: optional caching, rate limiting, background-job coordination and session-related workloads.
+Celery/RQ/Arq: optional background processing if email, notifications, reports or scheduled jobs become substantial.
+HTTPX: outbound API calls to third-party services.
+Pytest: backend unit and integration testing.
+4. API Modules
+Module
+Example endpoints
+Purpose
+Contact
+POST /api/contact
+Website contact enquiries
+Leads
+POST /api/leads
+Demo/beta/partner interest capture
+Blog
+GET /api/blog, GET /api/blog/{slug}
+Dynamic blog content if not static
+Careers
+GET /api/jobs, POST /api/applications
+Job listings and applications
+CMS/content
+GET /api/pages/{slug}
+Optional structured content management
+Auth
+POST /api/auth/login
+Only if the website exposes authenticated areas
+Chargers
+GET /api/chargers
+Optional product/demo data
+Analytics
+GET /api/analytics/*
+Only for authenticated CPO/admin dashboards
+5. Animation Stack & Rules
+Primary animation engine: Motion for React. Use it for scroll reveals, staggered cards, page transitions, hover states and the Our Approach choreography.
+CSS transitions/keyframes: use for simple hover, focus, gradient and decorative effects to avoid unnecessary JavaScript.
+Lottie/dotLottie: reserve for a small number of designer-created illustrations where code-based animation is inefficient.
+Avoid scroll-jacking. Native page scrolling should remain intact.
+Prefer transform and opacity animations; avoid repeatedly animating layout-heavy properties.
+Respect prefers-reduced-motion and provide a reduced-motion path for all non-essential motion.
+Lazy-load below-the-fold animation assets and keep the first viewport lightweight.
+6. Design System
+Preserve Trevia's existing visual identity/mood while modernizing spacing, typography, component depth and interaction design.
+Use a 12-column desktop grid, 8-column tablet grid and 4-column mobile grid.
+Recommended max content width: approximately 1200–1280px.
+Use a consistent spacing scale based on 4px/8px increments.
+Use responsive typography with clamp() for major headings.
+Create reusable components: Navbar, Hero, SectionHeader, FeatureCard, StatCard, ApproachStep, LogoCloud, CTA, FAQ, ContactForm, Footer.
+Use semantic HTML and WCAG 2.2 AA-oriented accessibility practices.
+7. Content / CMS Strategy
+For the first release, keep core marketing pages code-driven and use a lightweight CMS only where frequent non-developer editing is expected. Blog and careers are the strongest candidates for CMS-backed content.
+Option A — Minimal: React static content + FastAPI for forms. Lowest complexity.
+Option B — Recommended: Headless CMS for Blog/Careers + FastAPI for lead/contact APIs.
+Option C — Full custom CMS: PostgreSQL-backed admin interface through FastAPI. Use only if Trevia needs internal control over all marketing content.
+8. Security
+HTTPS everywhere.
+Strict CORS: allow only approved Trevia frontend origins.
+Server-side validation for every form/API input.
+Rate-limit public form and unauthenticated endpoints.
+Store secrets only in environment variables / managed secret stores.
+Do not expose database credentials or private API keys to the React bundle.
+Use secure, HttpOnly cookies for browser sessions where authentication is required.
+Add spam protection to public forms (honeypot and/or Turnstile where appropriate).
+Log security-relevant events without storing unnecessary personal data.
+9. SEO & Performance
+Use semantic HTML, unique title/meta description per page, canonical URLs, Open Graph metadata and sitemap.xml.
+Use optimized WebP/AVIF imagery with responsive srcsets.
+Lazy-load non-critical images and animation assets.
+Preload only critical fonts/assets.
+Target excellent Core Web Vitals and avoid large JavaScript bundles.
+Use structured data where relevant (Organization, Article, JobPosting, BreadcrumbList).
+Create 301 redirects for changed legacy URLs.
+10. Testing & Quality
+ESLint + TypeScript checks on every build.
+Vitest + React Testing Library for frontend unit/component tests.
+Pytest + HTTPX for FastAPI tests.
+Playwright for critical end-to-end journeys.
+Lighthouse/PageSpeed checks before production.
+Responsive verification at mobile, tablet, laptop and large desktop widths.
+Keyboard-only navigation and screen-reader spot checks.
+Reduced-motion verification.
+11. Deployment
+Area
+Recommendation
+Role
+Frontend
+Vercel
+React/Vite build, CDN delivery, preview deployments
+Backend
+Render / Railway / AWS
+FastAPI application
+Database
+Managed PostgreSQL
+Production relational data
+Cache
+Managed Redis/Valkey
+Optional caching/rate limiting
+Monitoring
+Sentry + provider logs
+Frontend/backend error monitoring
+Analytics
+GA4 or privacy-oriented analytics
+Traffic and conversion measurement
+12. Suggested Project Structure
+trevia-web/├── frontend/│   ├── src/│   │   ├── components/│   │   ├── sections/│   │   ├── pages/│   │   ├── layouts/│   │   ├── hooks/│   │   ├── lib/│   │   ├── assets/│   │   └── styles/│   └── public/│├── backend/│   ├── app/│   │   ├── api/│   │   ├── models/│   │   ├── schemas/│   │   ├── services/│   │   ├── db/│   │   └── core/│   ├── tests/│   └── alembic/│└── docs/
+13. Recommended Initial Dependency Set
+react, react-dom, react-router-dom
+typescript, vite
+tailwindcss
+motion
+lucide-react
+react-hook-form, zod, @hookform/resolvers
+@tanstack/react-query
+axios (optional if Fetch is not preferred)
+lottie-web / @dotlottie/player-component (only if needed)
+fastapi, uvicorn
+pydantic
+sqlalchemy, alembic, psycopg
+httpx
+python-multipart (if multipart/form-data/file uploads are used)
+pytest, pytest-asyncio
+14. Important Scope Decision
+The marketing website should not be over-engineered. React + FastAPI is appropriate if Trevia needs forms, lead capture, blog/careers APIs, integrations, or future product functionality. If the website is purely static, FastAPI is not technically required for every page. Keep the backend focused on actual business/API responsibilities and let Vercel serve the public frontend.
+15. Recommended Build Order
+1. Design tokens and reusable component system
+2. Responsive navbar/footer and global layout
+3. Home page and hero
+4. Our Approach with the main motion choreography
+5. Feature/product pages
+6. Partners / CPO sections
+7. Blog and Careers
+8. Contact + lead APIs
+9. SEO, analytics and accessibility
+10. Performance optimization and E2E QA
+11. Production deployment and monitoring

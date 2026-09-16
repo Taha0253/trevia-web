@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Building2, CheckCircle, ArrowRight, ShieldCheck, Zap, Gauge, CreditCard } from 'lucide-react';
+import { User, Building2, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface DualAudienceSectionProps {
   onRequestDemo: () => void;
