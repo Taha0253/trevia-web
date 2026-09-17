@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeroSection } from '../sections/HeroSection';
-import { OurApproachJourney } from '../sections/OurApproachJourney';
+import { OurApproachDialSection } from '../sections/OurApproachDialSection';
 import { EnterpriseDashboard } from '../sections/EnterpriseDashboard';
 import { DualAudienceSection } from '../sections/DualAudienceSection';
 import { EcosystemSection } from '../sections/EcosystemSection';
@@ -26,8 +26,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
         onPartner={onRequestDemo} 
       />
 
-      {/* 2. THE SIGNATURE JOURNEY - Our Approach (01 Discover → 02 Navigate → 03 Charge → 04 Pay → 05 Connect) */}
-      <OurApproachJourney />
+      {/* 2. THE SIGNATURE JOURNEY - Our Approach Rotary Dial Architecture */}
+      <OurApproachDialSection />
 
       {/* 3. All-Black Enterprise CPO Dashboard */}
       <EnterpriseDashboard />

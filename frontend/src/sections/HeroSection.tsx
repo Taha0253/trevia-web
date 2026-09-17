@@ -85,22 +85,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
           {/* Right Column: Clean hero visual flush against the right edge */}
           <div className="lg:col-span-7 flex justify-end items-center relative w-full pr-0 overflow-visible">
             
-            {/* Ambient Volumetric Backglows */}
-            <div className="absolute top-1/4 right-[25%] w-64 h-80 bg-[#00F0FF]/15 blur-[100px] rounded-full pointer-events-none" />
-            <div className="absolute top-1/3 right-0 w-96 h-72 bg-[#00A8FF]/18 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-8 right-[30%] w-72 h-36 bg-[#00F0FF]/10 blur-[80px] rounded-full pointer-events-none" />
+            {/* Ambient Volumetric Backglows matching latest.png charging aura */}
+            <div className="absolute top-1/4 right-[45%] w-64 h-80 bg-[#00A8FF]/20 blur-[110px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/3 right-4 w-96 h-72 bg-[#00F0FF]/18 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-6 right-[20%] w-[480px] h-32 bg-[#00F0FF]/25 blur-[80px] rounded-full pointer-events-none" />
 
-            {/* Main Visual Frame: 0 Right Padding, Flush to Screen Right */}
-            <div className="relative flex justify-end items-center w-full">
+            {/* Main Visual Frame with Smooth Feathered Edges */}
+            <div className="relative flex justify-end items-center w-full overflow-hidden">
               <img
-                src="/landed.png"
-                alt="TreviaEV High-Speed Charging Station and Electric Vehicle"
-                className="w-full max-w-[760px] lg:max-w-[840px] xl:max-w-[920px] h-auto object-contain object-right select-none pointer-events-none drop-shadow-[0_20px_70px_rgba(0,168,255,0.25)]"
+                src="/latest.png"
+                alt="TreviaEV High-Speed Charging Station and Connected Vehicle"
+                className="w-full max-w-[760px] lg:max-w-[840px] xl:max-w-[920px] h-auto object-contain object-right select-none pointer-events-none drop-shadow-[0_25px_80px_rgba(0,168,255,0.35)]"
+                style={{
+                  maskImage: 'radial-gradient(ellipse 92% 88% at 52% 48%, black 72%, transparent 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 92% 88% at 52% 48%, black 72%, transparent 100%)'
+                }}
                 draggable={false}
               />
               
-              {/* Ground fade gradient */}
-              <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#02060D] via-[#02060D]/30 to-transparent pointer-events-none" />
+              {/* Feathered Edge Blends: Soft transition into #02060D background */}
+              <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#02060D] via-[#02060D]/60 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#02060D] via-[#02060D]/70 to-transparent pointer-events-none" />
+              <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-[#02060D] to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#02060D] to-transparent pointer-events-none" />
             </div>
 
           </div>

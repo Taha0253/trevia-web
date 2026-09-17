@@ -6,8 +6,6 @@ import {
   Search, 
   CheckCircle2, 
   HelpCircle, 
-  Layers, 
-  ArrowRight,
   AlertCircle
 } from 'lucide-react';
 
