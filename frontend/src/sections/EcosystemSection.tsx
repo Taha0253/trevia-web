@@ -6,37 +6,37 @@ export const EcosystemSection: React.FC = () => {
     {
       name: 'T-Hub',
       category: 'Innovation Incubator',
-      icon: <img src="/thub.png" alt="T-Hub" className="w-10 h-10 object-contain" />,
+      icon: <img src="/thub.png" alt="T-Hub" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
       description: 'Incubated at India\'s premier tech incubator'
     },
     {
       name: 'GCP',
       category: 'Cloud Infrastructure',
-      icon: <img src="/GCP.png" alt="Google Cloud Platform" className="w-10 h-10 object-contain" />,
+      icon: <img src="/GCP.png" alt="Google Cloud Platform" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
       description: 'Google Cloud high-availability clusters'
     },
     {
       name: 'Firebase',
       category: 'Realtime Telemetry',
-      icon: <img src="/firebase.webp" alt="Firebase" className="w-10 h-10 object-contain" />,
+      icon: <img src="/firebase.webp" alt="Firebase" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
       description: 'Sub-second real-time event distribution'
     },
     {
       name: 'Docker',
       category: 'Edge Containers',
-      icon: <img src="/Docker.webp" alt="Docker" className="w-10 h-10 object-contain" />,
+      icon: <img src="/Docker.webp" alt="Docker" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
       description: 'Isolated microservices & depot runtime'
     },
     {
       name: 'GitHub',
       category: 'DevOps & CI/CD',
-      icon: <img src="/git-hub.png" alt="GitHub" className="w-10 h-10 object-contain" />,
+      icon: <img src="/git-hub.png" alt="GitHub" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
       description: 'Enterprise code integrity & OTA versions'
     },
     {
       name: 'OCPP 2.0.1',
       category: 'Open Protocol',
-      icon: <img src="/OCPP.png" alt="OCPP 2.0.1" className="w-10 h-10 object-contain" />,
+      icon: <img src="/OCPP.png" alt="OCPP 2.0.1" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
       description: 'Open Charge Point Protocol certification'
     }
   ];

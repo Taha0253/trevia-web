@@ -49,7 +49,7 @@ export const EnterpriseDashboard: React.FC = () => {
             Next-Gen <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF]">CPO Command Center.</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400 mt-3 font-normal">
-            Real-time telemetry, automated fault diagnostics, and dynamic multi-tenant tariff management engineered in pure obsidian glass.
+            Monitor every charging station in real time, resolve glitches remotely, and automate driver billing from one intuitive, unified command center.
           </p>
         </div>
 

@@ -52,7 +52,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
               </div>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                The operational software layer between chargers and everything that runs on top of them. Connects chargers over OCPP 1.6J and gives operators one place to monitor, run, and scale their charging infrastructure across hardware vendors and sites.
+                The central nervous system for your EV charging business. Monitor every station in real time, automate driver billing, and resolve faults with a click — across any hardware brand and location.
               </p>
             </div>
 
@@ -83,10 +83,10 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
               <AlertCircle className="w-4 h-4" /> The Problem
             </div>
             <h3 className="text-lg font-bold text-white">
-              Fragmented Multi-Vendor Dashboards
+              The Headache of Multi-Vendor Portals
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Operators running chargers from multiple hardware vendors, across multiple sites, typically manage each in a separate vendor dashboard — with no single place to see the network as a whole, and no consistent way to act when something goes wrong.
+              Managing chargers from three or four different manufacturers usually means juggling separate dashboards, clunky spreadsheets, and inconsistent reports. When a charger goes down, identifying the problem takes hours.
             </p>
           </div>
 
@@ -95,10 +95,10 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
               <CheckCircle2 className="w-4 h-4" /> The Solution
             </div>
             <h3 className="text-lg font-bold text-white">
-              One Unified Operating Layer
+              One Clean, Unified Command Center
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Trevia CMS connects to chargers over OCPP and becomes the single operational layer for your network — monitoring, control, transactions, tariffs, and data, regardless of which vendor's hardware is installed at a given site.
+              Trevia CMS connects all your chargers into one intuitive dashboard. See live station status, automate driver billing, manage tariffs, and fix glitches remotely in seconds.
             </p>
           </div>
         </div>

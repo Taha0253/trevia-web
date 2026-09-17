@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
             </div>
 
             <p className="text-base sm:text-lg text-slate-300/85 font-normal leading-relaxed">
-              Find, access and pay at charging stations across multiple CPO networks with one seamless platform and one wallet.
+              Say goodbye to range anxiety and juggling 10 different charging apps. Trevia connects India's EV chargers into one effortless map and wallet — so you can plug in, power up, and drive with confidence.
             </p>
 
             {/* CTAs */}
@@ -66,18 +66,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
             {/* Quick Metrics */}
             <div className="pt-8 border-t border-[#0E223D]/70 flex items-center gap-8 text-xs text-slate-400">
               <div>
-                <div className="text-base font-bold text-white">100%</div>
-                <div className="mt-0.5 text-slate-400">OCPP 2.0.1 Ready</div>
+                <div className="text-base font-bold text-white">99.8%</div>
+                <div className="mt-0.5 text-slate-400">Session Reliability</div>
               </div>
               <div className="w-px h-8 bg-[#0E223D]" />
               <div>
-                <div className="text-base font-bold text-[#00F0FF]">Single Wallet</div>
-                <div className="mt-0.5 text-slate-400">Multi-CPO Roaming</div>
+                <div className="text-base font-bold text-[#00F0FF]">1 App &amp; Wallet</div>
+                <div className="mt-0.5 text-slate-400">All EV Networks</div>
               </div>
               <div className="w-px h-8 bg-[#0E223D]" />
               <div>
-                <div className="text-base font-bold text-white">&lt; 14ms</div>
-                <div className="mt-0.5 text-slate-400">Telemetry Latency</div>
+                <div className="text-base font-bold text-white">0 Wait Time</div>
+                <div className="mt-0.5 text-slate-400">Live Slot Booking</div>
               </div>
             </div>
           </div>
@@ -95,6 +95,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
               <img
                 src="/latest.png"
                 alt="TreviaEV High-Speed Charging Station and Connected Vehicle"
+                loading="lazy"
+                decoding="async"
                 className="w-full max-w-[720px] lg:max-w-[800px] xl:max-w-[875px] h-auto object-contain object-right select-none pointer-events-none drop-shadow-[0_25px_80px_rgba(0,168,255,0.35)]"
                 style={{
                   maskImage: 'radial-gradient(ellipse 92% 88% at 52% 48%, black 72%, transparent 100%)',

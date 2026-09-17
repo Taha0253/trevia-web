@@ -71,6 +71,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <img 
             src="/Trevia.png" 
             alt="Trevia EV - Return to Home" 
+            loading="lazy"
+            decoding="async"
             className="h-7 sm:h-8 w-auto object-contain transition-opacity duration-200 hover:opacity-90"
           />
         </Link>

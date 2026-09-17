@@ -13,11 +13,14 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-[#00F0FF] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-3">
-            <span>TAILORED INFRASTRUCTURE</span>
+            <span>BUILT FOR REAL PEOPLE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-white tracking-tight">
-            Designed for <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF]">Drivers and Operators.</span>
+            Designed for <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF]">Drivers &amp; Operators Alike.</span>
           </h2>
+          <p className="text-sm sm:text-base text-slate-400 mt-3 font-normal">
+            Whether you're behind the wheel or managing a nationwide charging network, Trevia removes the friction.
+          </p>
         </div>
 
         {/* Dual Column Cards */}
@@ -30,21 +33,21 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
                 <User className="w-6 h-6" />
               </div>
               <div className="text-xs font-mono uppercase text-[#00F0FF] tracking-wider mb-1 font-semibold">
-                DRIVER EXPERIENCE
+                FOR EVERYDAY EV DRIVERS
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-                One App. One Wallet. Any Charger.
+                One App. One Wallet. Total Freedom.
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6 font-normal">
-                End the chaos of maintaining 10 different CPO apps. Trevia gives EV drivers unified map discovery, live connector status, and seamless auto-debit across India.
+              <p className="text-sm text-slate-300/90 leading-relaxed mb-6 font-normal">
+                No more downloading 10 different apps or creating multiple prepaid wallets. Trevia gives you a live charging map, guaranteed stall reservations, and seamless UPI auto-pay anywhere you drive in India.
               </p>
 
               <div className="space-y-3 pt-2">
                 {[
-                  'Unified roaming across 45+ national & highway CPOs',
-                  'Predictive arrival battery % and port hold reservation',
-                  'ISO 15118 Plug & Charge auto-handshake',
-                  'Instant UPI wallet and automated GST tax invoices'
+                  'Roam across 45+ charging networks with a single account',
+                  'Live socket availability & 15-minute stall hold reservation',
+                  'Plug & Charge support — start charging automatically',
+                  'Instant UPI wallet and automated GST invoices'
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
                     <CheckCircle className="w-4 h-4 text-[#00F0FF] shrink-0" />
@@ -59,7 +62,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
                 onClick={onRequestDemo}
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00F0FF] group-hover:text-white transition"
               >
-                <span>Download Driver App Waitlist</span>
+                <span>Join Driver App Waitlist</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
@@ -72,21 +75,21 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
                 <Building2 className="w-6 h-6" />
               </div>
               <div className="text-xs font-mono uppercase text-[#00A8FF] tracking-wider mb-1 font-semibold">
-                CPO & ENTERPRISE FLEETS
+                FOR CHARGING OPERATORS &amp; FLEETS
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-                Hardware-Agnostic CMS & Roaming Engine.
+                Run Your Entire Network Without the Chaos.
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6 font-normal">
-                Manage any charger brand over OCPP 2.0.1. Streamline billing, tariff scheduling, automated ground-fault recovery, and multi-tenant fleet operations.
+              <p className="text-sm text-slate-300/90 leading-relaxed mb-6 font-normal">
+                Manage any charger brand over standard OCPP. Automate driver billing, set time-of-day tariffs, resolve faults remotely, and maximize station uptime without adding field staff.
               </p>
 
               <div className="space-y-3 pt-2">
                 {[
-                  'Zero hardware vendor lock-in (ABB, Delta, Exicom, Schneider)',
-                  'Sub-second telemetry and remote firmware OTA dispatch',
-                  'Dynamic OpenADR 2.0b smart grid load balancing',
-                  'Automated monthly CPO cross-network settlement payouts'
+                  'Zero hardware lock-in — connect ABB, Delta, Exicom, Schneider & more',
+                  'Live station pulse, error diagnostics, and remote soft-reboot',
+                  'Smart load management to prevent electrical overload',
+                  'Automated monthly driver settlements and payout reconciliations'
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
                     <CheckCircle className="w-4 h-4 text-[#00A8FF] shrink-0" />
@@ -101,7 +104,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
                 onClick={onRequestDemo}
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A8FF] group-hover:text-white transition"
               >
-                <span>Schedule CPO Platform Walkthrough</span>
+                <span>Schedule a Platform Walkthrough</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

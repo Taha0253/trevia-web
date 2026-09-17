@@ -40,186 +40,186 @@ export const OurApproachDialSection: React.FC = () => {
     {
       stepNum: '01',
       id: 'unified-layer',
-      title: 'Unified integration layer',
-      subtitle: 'The Digital Operating Layer for EV Networks',
+      title: 'Unified Network Layer',
+      subtitle: 'Bringing Every Charger Under One Roof',
       icon: GitFork,
       angle: 270, // 12 o'clock (top)
-      shortDesc: 'Connects chargers over OCPP 1.6J and gives operators one centralized place to monitor, run, and grow their charging infrastructure.',
-      longDesc: 'Trevia operates as the critical digital infrastructure layer sitting between physical charging hardware and the operators, fleets, enterprises, and drivers who depend on it. By establishing persistent WebSocket connections directly to chargers, Trevia CMS replaces fragmented vendor dashboards with a single interoperable operating layer.',
+      shortDesc: 'Connects all chargers over OCPP into one seamless control center. No more juggling fragmented portals or messy spreadsheets.',
+      longDesc: 'Running an EV network shouldn\'t mean logging into five different dashboards. Trevia acts as the intelligent digital bridge between physical charging hardware and the people who rely on it every day — operators, fleet dispatchers, and drivers.',
       pdfHighlights: [
-        'Persistent WebSocket tunnel over OCPP 1.6J / 2.0.1 for instant real-time telemetry',
-        'Eliminates multi-vendor portal sprawl by consolidating all sites into one operating view',
-        'Standardized bi-directional APIs expose charging, session, and operational data directly to ERP and fleet systems'
+        'Instant, persistent live connection over OCPP 1.6J / 2.0.1 for real-time station health',
+        'Replaces vendor portal sprawl with one clean, unified command center',
+        'Standardized open APIs that plug directly into your existing ERP and fleet software'
       ],
       specs: {
-        protocol: 'OCPP 1.6J / 2.0.1 JSON',
-        throughput: '< 14ms WebSocket Latency',
-        compatibility: 'Multi-Network Aggregation',
-        operationalGain: 'Zero Vendor Dashboard Sprawl'
+        protocol: 'OCPP 1.6J / 2.0.1 Open JSON',
+        throughput: '< 14ms Live Response',
+        compatibility: 'Universal Multi-CPO Roaming',
+        operationalGain: 'Zero Portal Chaos'
       },
       deepDive: {
         systemRole: 'Core Ingestion & Communication Gateway',
-        architectureOverview: 'Chargers establish secure, persistent WebSocket connections (WSS) to the Trevia Edge Ingestion cluster. Each connected charger authenticates with credentials and exchanges periodic heartbeat signals, allowing Trevia CMS to instantly detect dropped connections or line anomalies.',
+        architectureOverview: 'Chargers establish secure, persistent WebSocket connections (WSS) directly with Trevia. Each station is verified in milliseconds, with automatic heartbeat monitoring to spot offline units or line drops before drivers even arrive.',
         dataFlow: [
-          'Charger initiates WebSocket handshake over OCPP 1.6J / 2.0.1',
-          'Trevia Authentication Gatekeeper verifies charger identity and station UUID',
-          'Bi-directional event loop streams heartbeats, meter values, and status notifications',
-          'Enterprise REST & WebSocket APIs broadcast synchronized state to operator consoles'
+          'Charger initiates instant secure handshake over OCPP',
+          'Trevia Gatekeeper verifies station identity and security certificates',
+          'Live event stream relays heartbeats, meter values, and socket availability',
+          'Operator consoles and driver apps receive real-time, synchronized updates'
         ],
         technicalCapabilities: [
-          { label: 'Transport Layer', detail: 'Encrypted WSS / TLS 1.3 with automated certificate rotation' },
-          { label: 'Event Streaming', detail: 'Distributed message broker pipeline processing >1,500 msgs/sec' },
-          { label: 'State Sync', detail: 'Sub-second reconciliation between physical charger hardware and cloud state' }
+          { label: 'Secure Transport', detail: 'Encrypted TLS 1.3 with automatic certificate renewal' },
+          { label: 'High Throughput', detail: 'Processes over 1,500 charging events every second with zero lag' },
+          { label: 'State Sync', detail: 'Sub-second sync between physical charger guns and live mobile apps' }
         ],
-        governanceNote: 'Complies with 2026 Trevia Digital Infrastructure Architecture specifications.'
+        governanceNote: 'Engineered to open national standards for reliable Indian EV infrastructure.'
       }
     },
     {
       stepNum: '02',
       id: 'hardware-agnostic',
-      title: 'Hardware agnostic',
-      subtitle: 'Open Protocols Across Every Manufacturer',
+      title: 'Hardware Freedom',
+      subtitle: 'Works With Any Charger, Any Brand',
       icon: PlugZap,
       angle: 342, // ~2 o'clock
-      shortDesc: 'Works across diverse charger brands, power classes, and connector types rather than locking operators into a single vendor ecosystem.',
-      longDesc: 'Trevia CMS communicates using open, standardized protocols so charge point operators are never hostage to proprietary hardware vendors. Whether managing 3.3kW AC destination chargers or 360kW DC ultra-fast highway dispensers, Trevia normalizes hardware telemetry and commands into one unified interface.',
+      shortDesc: 'Never get locked into a single charger manufacturer. Trevia works seamlessly with all major AC & DC charger brands and plug types.',
+      longDesc: 'You should have the freedom to buy whatever charging hardware fits your budget and timeline best. Whether managing 3.3kW slow AC destination chargers or 360kW ultra-fast DC highway dispensers, Trevia unifies them all into one consistent, friendly experience.',
       pdfHighlights: [
-        'Vendor-neutral connectivity compatible with ABB, Delta, Exicom, Schneider, StarCharge, and Tritium',
-        'Universal connector support: CCS2, Type 2, GB/T, CHAdeMO, and dual-gun AC/DC configurations',
-        'ISO 15118 Plug & Charge ready for seamless automated vehicle authentication without RFIDs'
+        'Works out of the box with ABB, Delta, Exicom, Schneider, StarCharge, Tritium, and more',
+        'Universal connector support: CCS2, Type 2, GB/T, CHAdeMO, and dual-gun setups',
+        'Plug & Charge ready (ISO 15118) — drivers simply plug in and energy flows automatically'
       ],
       specs: {
-        protocol: 'Open Standard OCPP 1.6J / ISO 15118',
-        throughput: '0.38s Protocol Handshake',
-        compatibility: '100% Vendor Independent',
+        protocol: 'Open Standard OCPP & ISO 15118',
+        throughput: '0.38s Hardware Handshake',
+        compatibility: '100% Brand Agnostic',
         operationalGain: 'Zero Hardware Lock-In'
       },
       deepDive: {
         systemRole: 'Hardware Normalization & Interoperability Engine',
-        architectureOverview: 'By implementing strict protocol compliance at the boundary, Trevia decouples hardware vendor firmware quirks from operator workflows. Operators can freely procure and deploy whatever hardware offers the best price and availability.',
+        architectureOverview: 'Trevia standardizes different manufacturer quirks and firmware behaviors at the software layer, giving operators complete freedom to mix and match charger brands across their network without friction.',
         dataFlow: [
-          'OEM-specific message payloads are parsed through Trevia protocol normalizers',
-          'Connector states (Available, Preparing, Charging, SuspendedEVSE, Faulted) mapped to standard schema',
-          'Dynamic power profiles negotiated across variable AC/DC gun allocations',
-          'Diagnostic logs normalized for consistent multi-vendor troubleshooting'
+          'Hardware-specific message formats are normalized into clean, unified events',
+          'Connector states (Available, Charging, Preparing, Faulted) mapped in real time',
+          'Dynamic power sharing managed smoothly across multi-gun dispensers',
+          'Diagnostic logs translated into plain, actionable troubleshooting tips'
         ],
         technicalCapabilities: [
-          { label: 'Supported OEMs', detail: 'ABB, Delta, Exicom, Schneider Electric, StarCharge, Tritium, etc.' },
-          { label: 'Connector Support', detail: 'CCS2 (Combined Charging System 2), Type 2 Mennekes, GB/T, CHAdeMO' },
-          { label: 'Plug & Charge', detail: 'ISO 15118 V2G and TLS contract certificate handling ready' }
+          { label: 'Supported Brands', detail: 'ABB, Delta, Exicom, Schneider Electric, StarCharge, Tritium, and any OCPP-compliant unit' },
+          { label: 'Connector Types', detail: 'CCS2, Type 2 Mennekes, GB/T, CHAdeMO, and AC slow-charge sockets' },
+          { label: 'Seamless Charging', detail: 'ISO 15118 Plug & Charge auto-handshake and secure contract certificates' }
         ],
-        governanceNote: 'Hardware agnostic by design; zero proprietary hardware lock-in.'
+        governanceNote: 'True hardware independence — invest in the equipment that suits your business.'
       }
     },
     {
       stepNum: '03',
       id: 'live-data',
-      title: 'Live data & intelligence',
-      subtitle: 'Real-Time Monitoring & Telemetry Visibility',
+      title: 'Live Station Pulse',
+      subtitle: 'Real-Time Health & Zero Ghost Chargers',
       icon: Gauge,
       angle: 54, // ~4 o'clock
-      shortDesc: 'Charger status, connectivity, and health are visible in real time so operators see problems as they happen rather than after a failed charge.',
-      longDesc: 'Trevia transforms raw charging equipment into an actionable real-time operational picture. The platform ingests telemetry (voltage, current, temperature, energy delivered, and error codes) and tracks every charging session from initiation to completion, ensuring zero untracked sessions or revenue leakage.',
+      shortDesc: 'Know the exact power, voltage, and socket availability at every station so drivers never show up to a dead or broken charger.',
+      longDesc: 'EV drivers and operators deserve complete transparency. Trevia transforms raw electrical telemetry into clear, visual station health. Track every session live, see real delivered kWh, and eliminate revenue loss and driver frustration forever.',
       pdfHighlights: [
-        'Sub-second electrical telemetry: Volts, Amperes, SoC, Temperature, and Power Factor',
-        'Direct fault and error visibility surfaced instantly to operators, eliminating physical site checks',
-        'Complete end-to-end session reconciliation with transaction-level energy metering'
+        'Live electrical monitoring: Voltage, Current, Battery SoC, and Temperature',
+        'Automatic fault detection alerts you to issues before a driver reports them',
+        'Flawless session billing with transaction-level energy metering'
       ],
       specs: {
-        protocol: 'Sub-Second Real-Time Telemetry',
-        throughput: '100ms Sampling Granularity',
-        compatibility: 'Direct OCPP Fault Codes',
-        operationalGain: 'Immediate Failure Detection'
+        protocol: 'Sub-Second Live Telemetry',
+        throughput: '100ms Sensor Precision',
+        compatibility: 'Instant Smart Fault Alerts',
+        operationalGain: 'Zero Ghost Chargers'
       },
       deepDive: {
         systemRole: 'Telemetry Processing & Session Ledger',
-        architectureOverview: 'Every connected charger continuously reports energy meter values and operational parameters. Trevia ingests this stream, performs real-time anomaly detection, and compiles an immutable ledger for audit, revenue reconciliation, and preventive maintenance.',
+        architectureOverview: 'Connected chargers continuously broadcast energy usage and operating stats. Trevia turns this data stream into instant operational insights, fraud protection, and transparent driver billing.',
         dataFlow: [
-          'MeterValues.req ingested at configurable intervals (1s to 60s)',
-          'Voltage sag, thermal escalation, and ground resistance evaluated against safety thresholds',
-          'Session duration, energy delivered (kWh), and instantaneous kW mapped to active driver transaction',
-          'Faulted state triggers instant notification webhooks and operator triage queues'
+          'High-frequency power and energy meter readings ingested securely',
+          'Voltage fluctuations, overheating, or ground faults evaluated automatically',
+          'Charging speed (kW), energy added (kWh), and cost calculated live for the driver',
+          'Smart alerts instantly notify site managers if a charger trips'
         ],
         technicalCapabilities: [
-          { label: 'Telemetry Metrics', detail: 'Active Power (kW), Voltage (V), Current (A), Energy (kWh), SoC (%), Temp (°C)' },
-          { label: 'Fault Codes', detail: 'Native OCPP ErrorCodes (GroundFailure, OverVoltage, HighTemperature, EVCommunicationError)' },
-          { label: 'Audit Trail', detail: 'Transaction-level billing reconciliation with zero untracked kilowatt-hours' }
+          { label: 'Live Metrics', detail: 'Power (kW), Voltage (V), Amperage (A), Energy (kWh), Battery SoC (%), and Temp (°C)' },
+          { label: 'Smart Error Codes', detail: 'Instant diagnostics for ground faults, over-voltage, temperature surges, and EV communication drops' },
+          { label: 'Audit Precision', detail: 'Tamper-proof transaction records ensuring every kilowatt-hour is accurately billed' }
         ],
-        governanceNote: 'Operational visibility grounded in protocol-level accuracy.'
+        governanceNote: 'Built on transparent, verifiable energy metering for complete trust.'
       }
     },
     {
       stepNum: '04',
       id: 'automation-control',
-      title: 'Automation & remote control',
-      subtitle: 'Centralized Commanding & Automated Self-Healing',
+      title: 'Smart Self-Healing',
+      subtitle: 'Instant Remote Fixes Without Site Trips',
       icon: RotateCw,
       angle: 126, // ~8 o'clock
-      shortDesc: 'Where supported by hardware, operators issue remote commands—resetting chargers or querying live status—without costly site visits.',
-      longDesc: 'Operational fragmentation makes charging networks expensive to run when technicians must be dispatched for minor glitches. Trevia CMS empowers operators to issue remote commands (Soft/Hard Reset, Remote Start/Stop, Unlock Connector, OTA Firmware updates) and leverages automated self-healing routines to restore uptime autonomously.',
+      shortDesc: 'Reboot frozen chargers, unlock stubborn connectors, and fix common glitches in seconds right from your screen — saving costly field visits.',
+      longDesc: 'Sending technicians into the field for minor software hiccups is expensive and slow. Trevia gives operators one-click remote controls and automated self-healing routines that resolve temporary charger glitches in seconds, keeping uptime above 99.8%.',
       pdfHighlights: [
-        'Issue remote commands: Soft Reset, Hard Reset, Unlock Connector, and Diagnostic Queries without site visits',
-        'Automated self-healing heuristics resolve transient ground and network faults autonomously',
-        'Reduces manual technician field trips and operational dispatch costs by over 75%'
+        'One-click remote reboot, connector unlock, and instant diagnostics from anywhere',
+        'Automated self-healing algorithms fix temporary network and ground drops autonomously',
+        'Cuts emergency technician visits and field maintenance costs by more than 75%'
       ],
       specs: {
-        protocol: 'Bi-Directional Command RPC',
-        throughput: '< 250ms Command ACK',
-        compatibility: 'Soft/Hard Reset & Connector Unlock',
-        operationalGain: '> 75% Fewer Truck Rolls'
+        protocol: 'Instant Cloud-to-Charger Commands',
+        throughput: '< 250ms Command Execution',
+        compatibility: 'Remote Reboot & Unlocking',
+        operationalGain: '> 75% Fewer Site Visits'
       },
       deepDive: {
-        systemRole: 'Remote Operations & Autonomous Heuristics Dispatcher',
-        architectureOverview: 'When chargers enter an anomalous or unresponsive state, Trevia can either execute automated healing policies or allow operations personnel to dispatch remote commands directly from the dashboard, restoring stations without vehicle travel.',
+        systemRole: 'Remote Operations & Self-Healing Engine',
+        architectureOverview: 'When a charger runs into an anomaly or temporary lockup, Trevia\'s self-healing layer can automatically attempt soft recoveries, or allow support teams to trigger fixes remotely with zero travel time.',
         dataFlow: [
-          'Operator dispatches command (e.g. Reset.req or UnlockConnector.req) from CMS console',
-          'Trevia command router sends signed JSON-RPC payload across persistent WebSocket',
-          'Charger returns Confirmation (Accepted / Rejected / Scheduled)',
-          'Automated fallback loop initiates staged soft-reboot if communication timeouts occur'
+          'Operator triggers a command (e.g., Soft Reboot or Unlock Gun) from the web dashboard',
+          'Trevia sends a cryptographically signed command payload to the charger',
+          'Charger executes the instruction and confirms success in under a second',
+          'Automated fallback kicks in if the hardware is unresponsive to restore connection'
         ],
         technicalCapabilities: [
-          { label: 'Remote Commands', detail: 'RemoteStartTransaction, RemoteStopTransaction, Reset (Soft/Hard), UnlockConnector, ChangeConfiguration' },
-          { label: 'Self-Healing', detail: 'Automated heartbeat timeout recovery and connector lock watchdog' },
-          { label: 'Firmware Management', detail: 'Centralized OTA firmware push with verification checksums and rollback safeguards' }
+          { label: 'Remote Actions', detail: 'Start/Stop Charging, Soft/Hard Reboot, Connector Unlock, and Remote Config Tuning' },
+          { label: 'Self-Healing Routines', detail: 'Automated reconnect watchdogs and stuck connector safeties' },
+          { label: 'Over-the-Air Updates', detail: 'Safe, scheduled firmware deployment with instant rollback protection' }
         ],
-        governanceNote: 'Minimizes physical intervention; maximizes charger availability.'
+        governanceNote: 'Maximizes station uptime while keeping maintenance overhead minimal.'
       }
     },
     {
       stepNum: '05',
       id: 'scales-network',
-      title: 'Scales with your network',
-      subtitle: 'Multi-Site & Multi-Tenant Infrastructure',
+      title: 'Grows With Your Ambition',
+      subtitle: 'From 1 Station to 50,000+ Nationwide',
       icon: MapPin,
       angle: 198, // ~10 o'clock
-      shortDesc: 'Adding chargers, sites, or hardware vendors does not add operational complexity—new connections extend the same operating layer.',
-      longDesc: 'Trevia CMS is built around the day-to-day reality of running an enterprise charging business: multi-city deployments, multiple hardware vendors, and the imperative for one operational view rather than one per vendor. Its multi-tenant, cloud-native architecture expands effortlessly from 5 to 50,000+ chargers.',
+      shortDesc: 'Expanding to new cities, fleet depots, or highway hubs is effortless. Add chargers in minutes without adding administrative complexity.',
+      longDesc: 'Whether you\'re a local business installing your first two customer chargers or a national energy enterprise rolling out thousands of highway hubs, Trevia\'s high-speed cloud architecture scales with you without slowdowns or surprises.',
       pdfHighlights: [
-        'Single pane of glass across distributed geographic sites, fleets, and regional hub depots',
-        'Multi-tenant enterprise access control with granular site-level and role-based permissions',
-        'Centralized tariff configuration, session settlements, and multi-network fleet routing'
+        'Clear visibility across multi-city charging hubs, highway stations, and private fleet depots',
+        'Granular role-based permissions for site managers, accountants, and field techs',
+        'Flexible tariff rules: time-of-day pricing, peak surge rates, and fleet discounts'
       ],
       specs: {
-        protocol: 'Distributed Multi-Tenant Cloud',
-        throughput: '50,000+ Concurrent Charge Points',
-        compatibility: 'Multi-Region & Depot Ready',
-        operationalGain: 'Linear Effortless Scaling'
+        protocol: 'High-Availability Multi-Tenant Cloud',
+        throughput: '50,000+ Concurrent Chargers',
+        compatibility: 'Multi-City & Hub Ready',
+        operationalGain: 'Effortless Scaling'
       },
       deepDive: {
-        systemRole: 'Enterprise Multi-Site Cloud Hierarchy',
-        architectureOverview: 'The platform architecture is fully decoupled, utilizing elastic microservices and distributed database partitioning so scaling across geographies or adding hundreds of chargers never degrades dashboard responsiveness or command latency.',
+        systemRole: 'Enterprise Multi-Site Cloud Architecture',
+        architectureOverview: 'Designed from day one for massive scale, Trevia uses distributed cloud microservices so expanding across India never slows down your dashboard or delays driver transactions.',
         dataFlow: [
-          'Hierarchical grouping by Organization -> Region -> Charging Hub -> Charger Bay -> Connector',
-          'Role-based access control (CPO SuperAdmin, Site Manager, Fleet Dispatcher, Billing Officer)',
-          'Centralized tariff engine applies time-of-use (ToU), per-kWh, or peak penalty rates dynamically',
-          'Aggregated analytics pipeline compiles enterprise reports across all vendors and locations'
+          'Organized hierarchy: Organization → City / Hub → Charging Station → Individual Plug',
+          'Role-based access controls for admins, site managers, fleet coordinators, and billing',
+          'Dynamic tariff manager applies time-of-use rates and parking penalty fees automatically',
+          'Consolidated financial and energy analytics across all locations and charger brands'
         ],
         technicalCapabilities: [
-          { label: 'Cluster Capacity', detail: 'Tested for 50,000+ concurrent active OCPP connections with zero packet loss' },
-          { label: 'Multi-Tenancy', detail: 'Secure logical isolation of operator data, custom branding, and billing accounts' },
-          { label: 'High Availability', detail: '99.99% cloud uptime SLA with multi-zone redundancy and automatic failover' }
+          { label: 'Network Capacity', detail: 'Tested for 50,000+ active charging points with continuous zero-downtime reliability' },
+          { label: 'Multi-Tenancy', detail: 'Secure isolation for private operator data, custom branding, and payouts' },
+          { label: 'High Availability', detail: '99.99% cloud uptime SLA with redundant multi-zone Indian cloud hosting' }
         ],
-        governanceNote: 'Engineered for India’s expanding EV charging landscape.'
+        governanceNote: 'Built to power India\'s rapidly accelerating clean electric mobility future.'
       }
     }
   ];

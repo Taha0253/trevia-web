@@ -37,12 +37,12 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
                   <Smartphone className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-                  Trevia Drive — Consumer Charging Discovery
+                  Trevia Drive — Effortless EV Charging Discovery
                 </h1>
               </div>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Extends Trevia's connected infrastructure layer to EV drivers. Brings charging discovery from multiple networks into a single, unified experience — eliminating the need to toggle between disconnected operator apps.
+                One friendly app to find, reserve, and pay at any EV charger across India. No more juggling ten different operator apps or showing up to a broken charging plug.
               </p>
             </div>
 
@@ -66,10 +66,10 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               <AlertCircle className="w-4 h-4" /> The Problem
             </div>
             <h3 className="text-lg font-bold text-white">
-              App Fatigue & Disconnected Maps
+              App Fatigue &amp; Ghost Chargers
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              EV drivers often need to check multiple apps, one per charging network or operator, to find a working charger nearby. This results in wasted time and fragmented availability.
+              EV drivers currently have to juggle 8 to 10 different apps just to plan a simple drive. Worse, chargers marked as 'available' often turn out to be occupied, offline, or broken when you arrive.
             </p>
           </div>
 
@@ -78,10 +78,10 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               <CheckCircle2 className="w-4 h-4" /> The Solution
             </div>
             <h3 className="text-lg font-bold text-white">
-              Aggregated Cross-Network Discovery
+              One App, Every Network, Total Peace of Mind
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Trevia Drive aggregates charging infrastructure from multiple networks and operators into one discovery experience with verified real-time availability.
+              Trevia Drive brings all charging networks into a single, reliable experience with verified live socket status, upfront pricing, guaranteed stall holds, and one-tap UPI payment.
             </p>
           </div>
         </div>
