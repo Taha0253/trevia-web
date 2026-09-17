@@ -23,6 +23,7 @@ import { TractionPage } from './pages/company/TractionPage';
 import { ResourcesPage } from './pages/ResourcesPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { DemoPage } from './pages/DemoPage';
 
 const AppContent: React.FC = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
@@ -64,6 +65,11 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={<AboutPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
           <Route path="/traction" element={<TractionPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
           
+          {/* Demo Page */}
+          <Route path="/demo" element={<DemoPage onRequestModal={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/request-demo" element={<DemoPage onRequestModal={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/book-demo" element={<DemoPage onRequestModal={() => setIsDemoModalOpen(true)} />} />
+
           {/* Resources & Legal */}
           <Route path="/resources" element={<ResourcesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
           <Route path="/privacy" element={<PrivacyPage />} />

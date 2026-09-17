@@ -66,21 +66,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
     <header className="sticky top-0 z-50 bg-[#02060D]/90 backdrop-blur-xl border-b border-[#0E223D]/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         
-        {/* Trevia Logo */}
-        <Link to="/" onClick={closeAllMenus} className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#00A8FF] via-[#00F0FF] to-[#00D2C4] p-[1.5px] shadow-[0_0_20px_rgba(0,168,255,0.3)] group-hover:shadow-[0_0_28px_rgba(0,240,255,0.6)] transition-all">
-            <div className="w-full h-full bg-[#030A12] rounded-[10px] flex items-center justify-center">
-              <Zap className="w-5 h-5 text-[#00F0FF] fill-[#00F0FF]/20" />
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tight text-white flex items-center gap-0.5">
-              Trevia<span className="text-[#00F0FF]">EV</span>
-            </span>
-            <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400 font-medium -mt-1">
-              Operating Layer
-            </span>
-          </div>
+        {/* Trevia Logo Button to Home */}
+        <Link to="/" onClick={closeAllMenus} className="flex items-center gap-3 group">
+          <img 
+            src="/TREVIA-EV.jpeg" 
+            alt="Trevia EV - Return to Home" 
+            className="h-10 sm:h-12 w-auto object-contain rounded-xl shadow-[0_0_20px_rgba(0,168,255,0.3)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] group-hover:scale-105 transition-all duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -317,6 +309,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           </div>
 
           {/* Resources */}
+          {/* Resources */}
           <Link
             to="/resources"
             onClick={closeAllMenus}
@@ -326,27 +319,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           >
             Resources
           </Link>
+
+          {/* Live Demo */}
+          <Link
+            to="/demo"
+            onClick={closeAllMenus}
+            className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
+              isActive('/demo') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+            }`}
+          >
+            <span>Live Demo</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
+          </Link>
         </nav>
 
         {/* Right CTA Button */}
         <div className="hidden lg:flex items-center gap-3">
-          <button
-            onClick={onRequestDemo}
+          <Link
+            to="/demo"
+            onClick={closeAllMenus}
             className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(0,168,255,0.35)] hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
           >
             <span>Request a Demo</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
         <div className="lg:hidden flex items-center gap-2">
-          <button
-            onClick={onRequestDemo}
+          <Link
+            to="/demo"
+            onClick={() => setMobileOpen(false)}
             className="px-3 py-1.5 rounded-full bg-[#00A8FF] text-black text-[11px] font-bold uppercase"
           >
             Demo
-          </button>
+          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 text-slate-300 hover:text-white rounded-lg bg-[#061426] border border-[#0E2C52]"
@@ -361,6 +368,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       {/* Mobile Drawer */}
       {mobileOpen && (
         <div className="lg:hidden bg-[#030A14] border-b border-[#0E2C52] px-6 py-6 space-y-4 text-xs font-semibold uppercase tracking-wider max-h-[85vh] overflow-y-auto">
+          <Link to="/demo" onClick={closeAllMenus} className="block py-2 text-[#00F0FF] hover:text-white border-b border-[#0E2C52]/40 flex items-center justify-between">
+            <span>Interactive Demo & Sandbox</span>
+            <span className="text-[9px] px-2 py-0.5 rounded bg-[#00F0FF]/20 text-[#00F0FF]">Live</span>
+          </Link>
           <Link to="/platform" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00F0FF] border-b border-[#0E2C52]/40">
             Platform
           </Link>

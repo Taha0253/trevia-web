@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }) => {
   return (
-    <section className="relative pt-16 pb-20 md:pt-28 md:pb-36 overflow-hidden">
+    <section className="relative pt-6 pb-10 md:pt-8 md:pb-12 overflow-hidden">
       
       {/* Background radial energy gradient */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1300px] h-[750px] bg-gradient-to-b from-[#00A8FF]/12 via-[#00F0FF]/6 to-transparent rounded-full blur-[240px] pointer-events-none" />
@@ -17,15 +17,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
       <div className="w-full pl-6 sm:pl-10 md:pl-14 lg:pl-16 xl:pl-24 pr-0 relative z-10">
         
         {/* Eyebrow / Brand positioning */}
-        <div className="mb-8 flex items-center gap-3">
+        <div className="mb-6 flex items-center gap-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00F0FF] text-xs font-mono font-medium tracking-wider uppercase shadow-[0_0_20px_rgba(0,240,255,0.18)]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
             <span>India's Unified EV Charging Platform</span>
           </div>
         </div>
 
-        {/* Two-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center">
+        {/* Two-Column Grid - elevated higher by 30px */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center -translate-y-[30px]">
           
           {/* Left Column: Editorial Typography & Actions */}
           <div className="lg:col-span-5 space-y-8 z-10 lg:pr-8 max-w-xl">
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
               <img
                 src="/latest.png"
                 alt="TreviaEV High-Speed Charging Station and Connected Vehicle"
-                className="w-full max-w-[760px] lg:max-w-[840px] xl:max-w-[920px] h-auto object-contain object-right select-none pointer-events-none drop-shadow-[0_25px_80px_rgba(0,168,255,0.35)]"
+                className="w-full max-w-[720px] lg:max-w-[800px] xl:max-w-[875px] h-auto object-contain object-right select-none pointer-events-none drop-shadow-[0_25px_80px_rgba(0,168,255,0.35)]"
                 style={{
                   maskImage: 'radial-gradient(ellipse 92% 88% at 52% 48%, black 72%, transparent 100%)',
                   WebkitMaskImage: 'radial-gradient(ellipse 92% 88% at 52% 48%, black 72%, transparent 100%)'

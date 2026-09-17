@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   GitFork, PlugZap, Gauge, RotateCw, MapPin, 
-  Plus, X, ArrowRight, ArrowLeft, Play, Pause, 
-  CheckCircle2, Radio, Cpu, Sparkles, ExternalLink
+  CheckCircle2, Radio, Cpu, Sparkles, ArrowRight, ArrowLeft, Play, Pause,
+  Layers, FileText
 } from 'lucide-react';
 
 interface ComponentData {
@@ -11,7 +11,7 @@ interface ComponentData {
   title: string;
   subtitle: string;
   icon: React.ElementType;
-  angle: number; // degrees on the dial (0-360)
+  angle: number; // degrees on the dial
   shortDesc: string;
   longDesc: string;
   pdfHighlights: string[];
@@ -21,7 +21,7 @@ interface ComponentData {
     compatibility: string;
     operationalGain: string;
   };
-  deepDiveModal: {
+  deepDive: {
     systemRole: string;
     architectureOverview: string;
     dataFlow: string[];
@@ -32,15 +32,10 @@ interface ComponentData {
 
 export const OurApproachDialSection: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(1);
-  const [isDialHovered, setIsDialHovered] = useState<boolean>(false);
-  const [isLockedOpen, setIsLockedOpen] = useState<boolean>(true); // Keeps slide-in visible and interactive once engaged
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(false);
-  const [expandedModalStep, setExpandedModalStep] = useState<number | null>(null);
+  const [cardView, setCardView] = useState<'overview' | 'specs'>('overview');
   const [hoveredDialNode, setHoveredDialNode] = useState<number | null>(null);
 
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  // 5 Components directly derived from the user screenshot and 2026 PDF
   const components: ComponentData[] = [
     {
       stepNum: '01',
@@ -62,11 +57,11 @@ export const OurApproachDialSection: React.FC = () => {
         compatibility: 'Multi-Network Aggregation',
         operationalGain: 'Zero Vendor Dashboard Sprawl'
       },
-      deepDiveModal: {
+      deepDive: {
         systemRole: 'Core Ingestion & Communication Gateway',
         architectureOverview: 'Chargers establish secure, persistent WebSocket connections (WSS) to the Trevia Edge Ingestion cluster. Each connected charger authenticates with credentials and exchanges periodic heartbeat signals, allowing Trevia CMS to instantly detect dropped connections or line anomalies.',
         dataFlow: [
-          'Charger initiates WebSocket handshake over OCPP 1.6J',
+          'Charger initiates WebSocket handshake over OCPP 1.6J / 2.0.1',
           'Trevia Authentication Gatekeeper verifies charger identity and station UUID',
           'Bi-directional event loop streams heartbeats, meter values, and status notifications',
           'Enterprise REST & WebSocket APIs broadcast synchronized state to operator consoles'
@@ -99,9 +94,9 @@ export const OurApproachDialSection: React.FC = () => {
         compatibility: '100% Vendor Independent',
         operationalGain: 'Zero Hardware Lock-In'
       },
-      deepDiveModal: {
+      deepDive: {
         systemRole: 'Hardware Normalization & Interoperability Engine',
-        architectureOverview: 'By implementing strict protocol compliance at the protocol boundary, Trevia decouples hardware vendor firmware quirks from operator workflows. Operators can freely procure and deploy whatever hardware offers the best price and availability.',
+        architectureOverview: 'By implementing strict protocol compliance at the boundary, Trevia decouples hardware vendor firmware quirks from operator workflows. Operators can freely procure and deploy whatever hardware offers the best price and availability.',
         dataFlow: [
           'OEM-specific message payloads are parsed through Trevia protocol normalizers',
           'Connector states (Available, Preparing, Charging, SuspendedEVSE, Faulted) mapped to standard schema',
@@ -136,7 +131,7 @@ export const OurApproachDialSection: React.FC = () => {
         compatibility: 'Direct OCPP Fault Codes',
         operationalGain: 'Immediate Failure Detection'
       },
-      deepDiveModal: {
+      deepDive: {
         systemRole: 'Telemetry Processing & Session Ledger',
         architectureOverview: 'Every connected charger continuously reports energy meter values and operational parameters. Trevia ingests this stream, performs real-time anomaly detection, and compiles an immutable ledger for audit, revenue reconciliation, and preventive maintenance.',
         dataFlow: [
@@ -173,7 +168,7 @@ export const OurApproachDialSection: React.FC = () => {
         compatibility: 'Soft/Hard Reset & Connector Unlock',
         operationalGain: '> 75% Fewer Truck Rolls'
       },
-      deepDiveModal: {
+      deepDive: {
         systemRole: 'Remote Operations & Autonomous Heuristics Dispatcher',
         architectureOverview: 'When chargers enter an anomalous or unresponsive state, Trevia can either execute automated healing policies or allow operations personnel to dispatch remote commands directly from the dashboard, restoring stations without vehicle travel.',
         dataFlow: [
@@ -210,7 +205,7 @@ export const OurApproachDialSection: React.FC = () => {
         compatibility: 'Multi-Region & Depot Ready',
         operationalGain: 'Linear Effortless Scaling'
       },
-      deepDiveModal: {
+      deepDive: {
         systemRole: 'Enterprise Multi-Site Cloud Hierarchy',
         architectureOverview: 'The platform architecture is fully decoupled, utilizing elastic microservices and distributed database partitioning so scaling across geographies or adding hundreds of chargers never degrades dashboard responsiveness or command latency.',
         dataFlow: [
@@ -229,7 +224,7 @@ export const OurApproachDialSection: React.FC = () => {
     }
   ];
 
-  // Auto-play cycle if enabled
+  // Auto-cycle if enabled
   useEffect(() => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
@@ -244,32 +239,30 @@ export const OurApproachDialSection: React.FC = () => {
   return (
     <section 
       id="approach" 
-      ref={containerRef}
-      className="py-24 md:py-32 bg-[#02060D] relative overflow-hidden select-none"
+      className="py-14 sm:py-18 md:py-20 bg-[#02060D] relative overflow-hidden select-none"
     >
       {/* Ambient background volumetric glow */}
-      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[750px] bg-gradient-to-b from-[#00A8FF]/8 via-[#00F0FF]/4 to-transparent rounded-full blur-[240px] pointer-events-none" />
-      <div className="absolute -bottom-20 right-10 w-96 h-96 bg-[#00D2C4]/8 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[650px] bg-gradient-to-b from-[#00A8FF]/8 via-[#00F0FF]/4 to-transparent rounded-full blur-[200px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header with exact style from user screenshot */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 relative">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00F0FF] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-4">
+            <div className="inline-flex items-center gap-2 text-[#00F0FF] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
               <span>THE SIGNATURE JOURNEY</span>
             </div>
-            <h2 className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-tight">
-              Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white drop-shadow-[0_0_35px_rgba(0,168,255,0.5)]">Approach.</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
+              Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white drop-shadow-[0_0_35px_rgba(0,168,255,0.4)]">Approach.</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-400 max-w-xl mt-3 font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-400 max-w-xl mt-2 font-normal leading-relaxed">
               An uninterrupted energy operating layer that harmonizes charger connectivity, real-time intelligence, remote control, and network scalability.
             </p>
           </div>
 
           {/* Controls Bar: Cycle mode & Active Stage Indicator */}
-          <div className="flex items-center gap-3 self-start md:self-auto bg-[#040C18] border border-[#0E2C52] px-4 py-2 rounded-full shadow-lg shrink-0">
+          <div className="flex items-center gap-3 bg-[#040C18] border border-[#0E2C52] px-4 py-2 rounded-full shadow-lg shrink-0 self-start md:self-auto">
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
               className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition"
@@ -289,58 +282,40 @@ export const OurApproachDialSection: React.FC = () => {
             </button>
             <div className="w-px h-4 bg-[#0E2C52]" />
             <span className="text-[11px] font-mono text-[#00F0FF] font-bold">
-              {activeComponent.stepNum} / 05
+              STAGE {activeComponent.stepNum} / 05
             </span>
           </div>
         </div>
 
-        {/* MAIN INTERACTIVE STAGE: Rotary Dial + Slide-In Component Showcase */}
-        <div 
-          onMouseEnter={() => {
-            setIsDialHovered(true);
-            setIsLockedOpen(true);
-          }}
-          onMouseLeave={() => {
-            setIsDialHovered(false);
-          }}
-          className={`relative rounded-3xl border border-[#0E2C52] bg-[#030914]/90 backdrop-blur-2xl p-6 sm:p-10 shadow-2xl overflow-hidden transition-all duration-500 min-h-[580px] flex flex-col justify-center ${
-            isDialHovered || isLockedOpen
-              ? 'shadow-[0_0_60px_rgba(0,168,255,0.18)] border-[#0E3A68]'
-              : 'border-[#0E223D]'
-          }`}
-        >
-          {/* Subtle circuit background grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#00A8FF_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
+        {/* MAIN INTERACTIVE CONTAINER: Rotary Dial on Left, Card Showcase with Embedded Specs on Right */}
+        <div className="rounded-3xl border border-[#0E3460] bg-[#030914]/95 backdrop-blur-2xl p-6 sm:p-8 shadow-[0_0_50px_rgba(0,168,255,0.16)] relative overflow-hidden">
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(#00A8FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
-          {/* Interactive Workspace: Dial on Left (minimizes), Sliding Component on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
-            {/* THE ROTARY COMMAND DIAL CONTAINER (Desktop: 5 cols or centered; Mobile: Full width) */}
-            <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col items-center justify-center relative ${
-              isDialHovered || isLockedOpen 
-                ? 'lg:col-span-5 scale-95 lg:scale-100' 
-                : 'lg:col-span-12 scale-100'
-            }`}>
+            {/* THE ROTARY COMMAND DIAL (Desktop: 5 cols) */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
               
-              {/* Dial Title / Helper when expanded */}
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-[#00F0FF] mb-1">
-                  <Sparkles className="w-3 h-3 animate-spin text-[#00F0FF]" />
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-[#00F0FF] mb-0.5">
+                  <Sparkles className="w-3 h-3 text-[#00F0FF]" />
                   <span>ROTARY COMMAND DIAL</span>
                 </div>
                 <p className="text-xs text-slate-400">
-                  Hover or click any icon on the dial to explore specifications
+                  Click or hover any stage node to command the dial
                 </p>
               </div>
 
               {/* ROTARY DIAL INTERACTIVE SVG CONTROLLER */}
-              <div className="relative w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] flex items-center justify-center">
+              <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
                 
-                {/* Dial Base Glow & Outer Rings */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#00A8FF]/10 via-[#00F0FF]/5 to-transparent blur-2xl pointer-events-none" />
+                {/* Ambient glow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#00A8FF]/15 via-[#00F0FF]/8 to-transparent blur-2xl pointer-events-none" />
                 
                 {/* SVG Degree Track & Pointer Needle */}
-                <svg className="w-full h-full absolute inset-0 pointer-events-none select-none" viewBox="0 0 340 340">
+                <svg className="w-full h-full absolute inset-0 pointer-events-none select-none" viewBox="0 0 320 320">
                   <defs>
                     <linearGradient id="dialTrackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#00A8FF" stopOpacity="0.4" />
@@ -352,17 +327,13 @@ export const OurApproachDialSection: React.FC = () => {
                       <stop offset="80%" stopColor="#030A14" />
                       <stop offset="100%" stopColor="#02060D" />
                     </radialGradient>
-                    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="3" result="blur" />
-                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
                   </defs>
 
-                  {/* Outer Dashed Orbit Track */}
+                  {/* Outer Orbit Track */}
                   <circle
-                    cx="170"
-                    cy="170"
-                    r="140"
+                    cx="160"
+                    cy="160"
+                    r="132"
                     fill="none"
                     stroke="#0E2C52"
                     strokeWidth="1.5"
@@ -371,9 +342,9 @@ export const OurApproachDialSection: React.FC = () => {
 
                   {/* Inner Solid Track */}
                   <circle
-                    cx="170"
-                    cy="170"
-                    r="115"
+                    cx="160"
+                    cy="160"
+                    r="108"
                     fill="none"
                     stroke="url(#dialTrackGradient)"
                     strokeWidth="2"
@@ -384,12 +355,12 @@ export const OurApproachDialSection: React.FC = () => {
                   {Array.from({ length: 36 }).map((_, i) => {
                     const angleDeg = i * 10;
                     const rad = (angleDeg * Math.PI) / 180;
-                    const r1 = i % 3 === 0 ? 128 : 133;
-                    const r2 = 138;
-                    const x1 = 170 + r1 * Math.cos(rad);
-                    const y1 = 170 + r1 * Math.sin(rad);
-                    const x2 = 170 + r2 * Math.cos(rad);
-                    const y2 = 170 + r2 * Math.sin(rad);
+                    const r1 = i % 3 === 0 ? 120 : 124;
+                    const r2 = 130;
+                    const x1 = 160 + r1 * Math.cos(rad);
+                    const y1 = 160 + r1 * Math.sin(rad);
+                    const x2 = 160 + r2 * Math.cos(rad);
+                    const y2 = 160 + r2 * Math.sin(rad);
                     const isMajor = i % 3 === 0;
 
                     return (
@@ -406,47 +377,42 @@ export const OurApproachDialSection: React.FC = () => {
                     );
                   })}
 
-                  {/* Dynamic Pointer Needle rotating to active angle */}
+                  {/* Dynamic Pointer Needle */}
                   <g 
                     style={{
-                      transformOrigin: '170px 170px',
+                      transformOrigin: '160px 160px',
                       transform: `rotate(${activeAngle + 90}deg)`,
                       transition: 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)'
                     }}
                   >
-                    {/* Glowing Laser Pointer Beam */}
                     <line
-                      x1="170"
-                      y1="170"
-                      x2="170"
-                      y2="58"
+                      x1="160"
+                      y1="160"
+                      x2="160"
+                      y2="54"
                       stroke="#00F0FF"
                       strokeWidth="2.5"
                       strokeLinecap="round"
-                      filter="url(#laserGlow)"
                     />
-                    {/* Beam Tip Indicator Arrow */}
                     <polygon
-                      points="170,50 166,60 174,60"
+                      points="160,46 156,56 164,56"
                       fill="#00F0FF"
-                      filter="url(#laserGlow)"
                     />
                   </g>
 
-                  {/* Central Rotary Hub */}
+                  {/* Central Hub */}
                   <circle
-                    cx="170"
-                    cy="170"
-                    r="52"
+                    cx="160"
+                    cy="160"
+                    r="48"
                     fill="url(#hubGradient)"
                     stroke="#00F0FF"
                     strokeWidth="1.5"
-                    className="shadow-2xl"
                   />
                   <circle
-                    cx="170"
-                    cy="170"
-                    r="45"
+                    cx="160"
+                    cy="160"
+                    r="42"
                     fill="none"
                     stroke="#0E2C52"
                     strokeWidth="1"
@@ -457,32 +423,31 @@ export const OurApproachDialSection: React.FC = () => {
                 {/* Central Hub Interactive Content */}
                 <div 
                   onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                  className="absolute z-20 w-24 h-24 rounded-full flex flex-col items-center justify-center cursor-pointer group"
-                  title="Click to toggle auto-cycle"
+                  className="absolute z-20 w-20 h-20 rounded-full flex flex-col items-center justify-center cursor-pointer group"
+                  title="Click to toggle auto-rotation"
                 >
-                  <span className="text-[10px] font-mono text-slate-400 group-hover:text-white transition uppercase tracking-wider">
+                  <span className="text-[9px] font-mono text-slate-400 group-hover:text-white uppercase tracking-wider">
                     STAGE
                   </span>
-                  <span className="text-2xl font-mono font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF] drop-shadow-[0_0_10px_rgba(0,240,255,0.7)]">
+                  <span className="text-xl font-mono font-black text-[#00F0FF] drop-shadow-[0_0_10px_rgba(0,240,255,0.7)]">
                     {activeComponent.stepNum}
                   </span>
-                  <span className="text-[9px] font-mono text-[#00F0FF] uppercase tracking-tighter mt-0.5">
+                  <span className="text-[8px] font-mono text-slate-400 uppercase tracking-tighter">
                     {isAutoPlaying ? 'ROTATING' : 'LOCKED'}
                   </span>
                 </div>
 
-                {/* 5 ROTARY DIAL INTERACTIVE NODES (Positioned along circumference) */}
+                {/* 5 ROTARY DIAL INTERACTIVE NODES */}
                 {components.map((comp, idx) => {
                   const stepIndex = idx + 1;
                   const isActive = activeStep === stepIndex;
                   const isHovered = hoveredDialNode === stepIndex;
                   const Icon = comp.icon;
 
-                  // Node center coordinates on circle with radius 115px
                   const rad = (comp.angle * Math.PI) / 180;
-                  const nodeRadius = 115;
-                  const leftPct = 50 + ((nodeRadius * Math.cos(rad)) / 170) * 50;
-                  const topPct = 50 + ((nodeRadius * Math.sin(rad)) / 170) * 50;
+                  const nodeRadius = 108;
+                  const leftPct = 50 + ((nodeRadius * Math.cos(rad)) / 160) * 50;
+                  const topPct = 50 + ((nodeRadius * Math.sin(rad)) / 160) * 50;
 
                   return (
                     <button
@@ -490,12 +455,10 @@ export const OurApproachDialSection: React.FC = () => {
                       onClick={() => {
                         setIsAutoPlaying(false);
                         setActiveStep(stepIndex);
-                        setIsLockedOpen(true);
                       }}
                       onMouseEnter={() => {
                         setHoveredDialNode(stepIndex);
                         setActiveStep(stepIndex);
-                        setIsLockedOpen(true);
                       }}
                       onMouseLeave={() => setHoveredDialNode(null)}
                       style={{
@@ -508,16 +471,15 @@ export const OurApproachDialSection: React.FC = () => {
                       }`}
                       title={`${comp.stepNum}: ${comp.title}`}
                     >
-                      {/* Node Squircle Button (Styled like the screenshot's dark icon square!) */}
-                      <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 relative ${
+                      <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-300 relative ${
                         isActive
-                          ? 'bg-[#07172C] border-2 border-[#00F0FF] shadow-[0_0_25px_rgba(0,240,255,0.7)]'
+                          ? 'bg-[#07172C] border-2 border-[#00F0FF] shadow-[0_0_20px_rgba(0,240,255,0.7)]'
                           : isHovered
-                          ? 'bg-[#091E38] border border-[#00A8FF] shadow-[0_0_15px_rgba(0,168,255,0.4)]'
+                          ? 'bg-[#091E38] border border-[#00A8FF] shadow-[0_0_12px_rgba(0,168,255,0.4)]'
                           : 'bg-[#050E1A] border border-[#0E2C52] hover:border-slate-400'
                       }`}>
                         {/* Number Badge Tag */}
-                        <div className={`absolute -top-2 -right-2 w-5 h-5 rounded-full font-mono text-[10px] font-black flex items-center justify-center transition-all ${
+                        <div className={`absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full font-mono text-[9px] font-black flex items-center justify-center ${
                           isActive
                             ? 'bg-[#00F0FF] text-black shadow-md'
                             : 'bg-[#0A1A2E] text-slate-400 border border-[#0E2C52]'
@@ -525,19 +487,11 @@ export const OurApproachDialSection: React.FC = () => {
                           {comp.stepNum}
                         </div>
 
-                        {/* Centered Glowing Icon */}
-                        <Icon className={`w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300 ${
+                        <Icon className={`w-5 h-5 transition-all duration-300 ${
                           isActive 
-                            ? 'text-[#00F0FF] drop-shadow-[0_0_10px_#00F0FF]' 
+                            ? 'text-[#00F0FF] drop-shadow-[0_0_8px_#00F0FF]' 
                             : 'text-slate-400 group-hover:text-slate-100'
                         }`} />
-                      </div>
-
-                      {/* Tooltip Label on Hover/Active */}
-                      <div className={`absolute left-1/2 -translate-x-1/2 top-full mt-1 px-2 py-0.5 rounded-md bg-[#040C18] border border-[#0E2C52] text-[10px] font-bold text-white whitespace-nowrap pointer-events-none transition-all duration-200 ${
-                        isActive ? 'opacity-100 translate-y-0 text-[#00F0FF]' : 'opacity-0 -translate-y-1'
-                      }`}>
-                        {comp.title}
                       </div>
                     </button>
                   );
@@ -545,23 +499,23 @@ export const OurApproachDialSection: React.FC = () => {
 
               </div>
 
-              {/* Bottom Quick Jump Dial Selector */}
-              <div className="flex items-center gap-2 mt-6">
+              {/* Bottom Quick Jump Selector */}
+              <div className="flex items-center gap-2 mt-4">
                 <button
                   onClick={() => setActiveStep(activeStep === 1 ? 5 : activeStep - 1)}
-                  className="p-2 rounded-xl bg-[#061426] border border-[#0E2C52] hover:border-[#00A8FF] text-slate-400 hover:text-white transition"
+                  className="p-1.5 rounded-lg bg-[#061426] border border-[#0E2C52] hover:border-[#00A8FF] text-slate-400 hover:text-white transition"
                   title="Previous Step"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                 </button>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#040C18] border border-[#0E2C52] text-xs font-mono text-slate-300">
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#040C18] border border-[#0E2C52] text-xs font-mono text-slate-300">
                   <span className="text-[#00F0FF] font-bold">STAGE {activeComponent.stepNum}</span>
                   <span className="text-slate-600">/</span>
                   <span>05</span>
                 </div>
                 <button
                   onClick={() => setActiveStep((activeStep % 5) + 1)}
-                  className="p-2 rounded-xl bg-[#061426] border border-[#0E2C52] hover:border-[#00A8FF] text-slate-400 hover:text-white transition"
+                  className="p-1.5 rounded-lg bg-[#061426] border border-[#0E2C52] hover:border-[#00A8FF] text-slate-400 hover:text-white transition"
                   title="Next Step"
                 >
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -570,119 +524,187 @@ export const OurApproachDialSection: React.FC = () => {
 
             </div>
 
-            {/* THE SLIDING SIDE COMPONENT SHOWCASE (Slides into screen with smooth ease and glow!) */}
-            <div className={`transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              isDialHovered || isLockedOpen
-                ? 'lg:col-span-7 opacity-100 translate-x-0'
-                : 'lg:col-span-7 opacity-90 lg:opacity-100 translate-x-0'
-            }`}>
-              
-              {/* Card Container (Clean, smooth edges, matching the screenshot's structural elegance) */}
-              <div className="bg-[#050F1E]/95 border border-[#0E3460] rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(0,168,255,0.22)] relative overflow-hidden backdrop-blur-xl">
+            {/* THE CARD SHOWCASE (Desktop: 7 cols) - CONTAINS THE MORE PAGE DIRECTLY WITHIN THE CARD */}
+            <div className="lg:col-span-7">
+              <div className="bg-[#050F1E] border border-[#0E3460] rounded-2xl p-5 sm:p-7 shadow-xl relative overflow-hidden backdrop-blur-xl">
                 
-                {/* Electric Cyan Edge Glow Header */}
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00F0FF] to-transparent opacity-80" />
+                {/* Top Accent Line */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-[#00D2C4]" />
 
-                {/* Top Row: 01 number + Expand deep-dive '+' button (Exactly matching screenshot!) */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl sm:text-3xl font-mono font-black text-[#00F0FF] tracking-tight">
+                {/* Top Navigation Row: Stage tag + View Switcher (Overview vs Full Specs) */}
+                <div className="flex items-center justify-between gap-2 mb-5 pb-3 border-b border-[#0E2C52]">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-2xl font-mono font-black text-[#00F0FF]">
                       {activeComponent.stepNum}
                     </span>
-                    <span className="px-3 py-1 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-mono font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-[11px] font-mono font-semibold">
                       TREVIA ARCHITECTURE
                     </span>
                   </div>
 
-                  {/* '+' Button: Opens Architectural Deep Dive Specification Modal */}
-                  <button
-                    onClick={() => setExpandedModalStep(activeStep)}
-                    className="group w-10 h-10 rounded-2xl bg-[#061426] hover:bg-[#00F0FF] border border-[#0E2C52] hover:border-[#00F0FF] text-slate-300 hover:text-black flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_0_20px_#00F0FF] hover:rotate-90"
-                    title="Click for full technical specification from 2026 PDF"
-                  >
-                    <Plus className="w-5 h-5 transition-transform" />
-                  </button>
-                </div>
-
-                {/* Center Hero Row: Dark Squircle with Cyan Icon (from screenshot) + Heading */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-6 pb-6 border-b border-[#0E2C52]/70">
-                  {/* Rounded Dark Square with Glowing Cyan Icon */}
-                  <div className="w-20 h-20 rounded-2xl bg-[#030A14] border border-[#0E3A68] flex items-center justify-center shrink-0 shadow-[0_0_25px_rgba(0,240,255,0.25)] relative group">
-                    <div className="absolute inset-0 rounded-2xl bg-[#00F0FF]/10 blur-sm pointer-events-none" />
-                    {React.createElement(activeComponent.icon, {
-                      className: "w-9 h-9 text-[#00F0FF] relative z-10 drop-shadow-[0_0_12px_#00F0FF]"
-                    })}
-                  </div>
-
-                  <div className="space-y-1.5 flex-1">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                      {activeComponent.title}
-                    </h3>
-                    {/* Teal / Cyan Accent Line (Matching screenshot) */}
-                    <div className="w-12 h-1 bg-gradient-to-r from-[#00F0FF] to-[#00A8FF] rounded-full" />
-                    <p className="text-xs sm:text-sm font-medium text-[#00A8FF] pt-1">
-                      {activeComponent.subtitle}
-                    </p>
+                  {/* Inline Toggle: Overview vs Technical Specs */}
+                  <div className="flex items-center gap-1 bg-[#02060D] p-1 rounded-xl border border-[#0E2C52]">
+                    <button
+                      onClick={() => setCardView('overview')}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold transition ${
+                        cardView === 'overview'
+                          ? 'bg-[#00F0FF] text-black shadow-md'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>Overview</span>
+                    </button>
+                    <button
+                      onClick={() => setCardView('specs')}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold transition ${
+                        cardView === 'specs'
+                          ? 'bg-[#00F0FF] text-black shadow-md'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Full Specs</span>
+                    </button>
                   </div>
                 </div>
 
-                {/* Authoritative Narrative from 2026 PDF */}
-                <div className="space-y-4 mb-6">
-                  <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-                    {activeComponent.longDesc}
-                  </p>
-
-                  {/* Bullet Highlights from 2026 PDF */}
-                  <div className="space-y-2.5 pt-1">
-                    {activeComponent.pdfHighlights.map((highlight, i) => (
-                      <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                        <div className="w-4 h-4 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] flex items-center justify-center shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                        </div>
-                        <span className="leading-snug">{highlight}</span>
+                {/* VIEW 1: OVERVIEW CARD */}
+                {cardView === 'overview' && (
+                  <div className="space-y-4 animate-fadeIn">
+                    {/* Header Row */}
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-[#030A14] border border-[#0E3A68] flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                        {React.createElement(activeComponent.icon, {
+                          className: "w-7 h-7 text-[#00F0FF] drop-shadow-[0_0_8px_#00F0FF]"
+                        })}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <div className="space-y-0.5 flex-1">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                          {activeComponent.title}
+                        </h3>
+                        <p className="text-xs font-medium text-[#00A8FF]">
+                          {activeComponent.subtitle}
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Technical Telemetry Matrix Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-[#0E2C52]/70">
-                  <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D]">
-                    <span className="text-[10px] font-mono text-slate-400 block uppercase">Protocol</span>
-                    <span className="text-xs font-bold text-white block mt-0.5 truncate">{activeComponent.specs.protocol}</span>
-                  </div>
-                  <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D]">
-                    <span className="text-[10px] font-mono text-slate-400 block uppercase">Throughput</span>
-                    <span className="text-xs font-bold text-[#00F0FF] block mt-0.5 truncate">{activeComponent.specs.throughput}</span>
-                  </div>
-                  <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D]">
-                    <span className="text-[10px] font-mono text-slate-400 block uppercase">Compatibility</span>
-                    <span className="text-xs font-bold text-white block mt-0.5 truncate">{activeComponent.specs.compatibility}</span>
-                  </div>
-                  <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D]">
-                    <span className="text-[10px] font-mono text-slate-400 block uppercase">Benefit</span>
-                    <span className="text-xs font-bold text-[#00D2C4] block mt-0.5 truncate">{activeComponent.specs.operationalGain}</span>
-                  </div>
-                </div>
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                      {activeComponent.longDesc}
+                    </p>
 
-                {/* Bottom CTA Row: Open Technical Deep Dive */}
-                <div className="mt-6 pt-4 border-t border-[#0E2C52]/60 flex items-center justify-between">
-                  <span className="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-ping" />
-                    <span>State Active • Live Synchronized</span>
-                  </span>
+                    {/* PDF Highlights */}
+                    <div className="space-y-2 pt-1">
+                      {activeComponent.pdfHighlights.map((hl, i) => (
+                        <div key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                          <div className="w-3.5 h-3.5 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] flex items-center justify-center shrink-0 mt-0.5">
+                            <CheckCircle2 className="w-3 h-3" />
+                          </div>
+                          <span className="leading-snug">{hl}</span>
+                        </div>
+                      ))}
+                    </div>
 
-                  <button
-                    onClick={() => setExpandedModalStep(activeStep)}
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black font-bold text-xs flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] active:scale-95"
-                  >
-                    <span>Inspect Full Specs</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+                    {/* Telemetry Matrix Grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 border-t border-[#0E2C52]">
+                      <div className="bg-[#030914] p-2.5 rounded-lg border border-[#0E223D]">
+                        <span className="text-[9px] font-mono text-slate-400 block uppercase">Protocol</span>
+                        <span className="text-xs font-bold text-white block truncate">{activeComponent.specs.protocol}</span>
+                      </div>
+                      <div className="bg-[#030914] p-2.5 rounded-lg border border-[#0E223D]">
+                        <span className="text-[9px] font-mono text-slate-400 block uppercase">Latency</span>
+                        <span className="text-xs font-bold text-[#00F0FF] block truncate">{activeComponent.specs.throughput}</span>
+                      </div>
+                      <div className="bg-[#030914] p-2.5 rounded-lg border border-[#0E223D]">
+                        <span className="text-[9px] font-mono text-slate-400 block uppercase">Scope</span>
+                        <span className="text-xs font-bold text-white block truncate">{activeComponent.specs.compatibility}</span>
+                      </div>
+                      <div className="bg-[#030914] p-2.5 rounded-lg border border-[#0E223D]">
+                        <span className="text-[9px] font-mono text-slate-400 block uppercase">Benefit</span>
+                        <span className="text-xs font-bold text-[#00D2C4] block truncate">{activeComponent.specs.operationalGain}</span>
+                      </div>
+                    </div>
+
+                    {/* Bottom CTA to View Specs directly inside card */}
+                    <div className="pt-2 flex items-center justify-between">
+                      <span className="text-[11px] text-slate-400 font-mono flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
+                        <span>Live Synchronized Layer</span>
+                      </span>
+                      <button
+                        onClick={() => setCardView('specs')}
+                        className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black font-bold text-xs flex items-center gap-1.5 transition-all shadow-md active:scale-95"
+                      >
+                        <span>Inspect Specs</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* VIEW 2: FULL ARCHITECTURAL SPECIFICATION EMBEDDED INSIDE THE CARD */}
+                {cardView === 'specs' && (
+                  <div className="space-y-4 animate-fadeIn max-h-[440px] overflow-y-auto pr-1">
+                    
+                    <div>
+                      <span className="text-xs font-mono text-[#00A8FF] font-bold block mb-1">
+                        {activeComponent.deepDive.systemRole}
+                      </span>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        {activeComponent.deepDive.architectureOverview}
+                      </p>
+                    </div>
+
+                    {/* Sequence */}
+                    <div>
+                      <h4 className="text-[11px] font-mono font-bold text-[#00F0FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <Radio className="w-3 h-3 text-[#00F0FF]" />
+                        <span>Protocol Data Flow & Sequence</span>
+                      </h4>
+                      <div className="space-y-1.5 bg-[#02060D] p-3 rounded-xl border border-[#0E223D]">
+                        {activeComponent.deepDive.dataFlow.map((step, idx) => (
+                          <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                            <span className="font-mono text-[#00F0FF] font-bold shrink-0">0{idx + 1}.</span>
+                            <span className="leading-snug">{step}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Enterprise Capabilities */}
+                    <div>
+                      <h4 className="text-[11px] font-mono font-bold text-[#00F0FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <Cpu className="w-3 h-3 text-[#00F0FF]" />
+                        <span>Enterprise Technical Capabilities</span>
+                      </h4>
+                      <div className="grid grid-cols-1 gap-1.5">
+                        {activeComponent.deepDive.technicalCapabilities.map((item, idx) => (
+                          <div key={idx} className="bg-[#02060D] p-2.5 rounded-lg border border-[#0E223D] flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
+                            <span className="font-mono font-bold text-white shrink-0">{item.label}</span>
+                            <span className="text-slate-300 sm:text-right">{item.detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Footer inside Specs */}
+                    <div className="pt-2 border-t border-[#0E223D] flex items-center justify-between">
+                      <span className="text-[10px] text-slate-500 font-mono">
+                        {activeComponent.deepDive.governanceNote}
+                      </span>
+                      <button
+                        onClick={() => setCardView('overview')}
+                        className="px-3 py-1 rounded-lg bg-[#061426] border border-[#0E2C52] text-xs font-mono text-slate-300 hover:text-white transition"
+                      >
+                        ← Return to Overview
+                      </button>
+                    </div>
+
+                  </div>
+                )}
 
               </div>
-
             </div>
 
           </div>
@@ -690,102 +712,6 @@ export const OurApproachDialSection: React.FC = () => {
         </div>
 
       </div>
-
-      {/* TECHNICAL SPECIFICATION MODAL (Triggered by the '+' button from screenshot) */}
-      {expandedModalStep !== null && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md transition-all animate-fadeIn"
-          onClick={() => setExpandedModalStep(null)}
-        >
-          <div 
-            className="bg-[#040C18] border border-[#0E3460] rounded-3xl p-6 sm:p-8 max-w-2xl w-full text-white shadow-[0_0_80px_rgba(0,168,255,0.35)] relative overflow-hidden max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Top Accent Line */}
-            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-[#00D2C4]" />
-
-            {/* Close Button */}
-            <button
-              onClick={() => setExpandedModalStep(null)}
-              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-slate-400 hover:text-white flex items-center justify-center transition"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            {/* Modal Header */}
-            <div className="flex items-center gap-3 mb-2">
-              <span className="px-3 py-1 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-mono font-bold">
-                STAGE {components[expandedModalStep - 1].stepNum} • 2026 ARCHITECTURAL SPECIFICATION
-              </span>
-            </div>
-
-            <div className="flex items-center gap-4 my-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#061426] border border-[#00F0FF]/40 text-[#00F0FF] flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(0,240,255,0.3)]">
-                {React.createElement(components[expandedModalStep - 1].icon, { className: "w-7 h-7" })}
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white tracking-tight">
-                  {components[expandedModalStep - 1].title}
-                </h3>
-                <p className="text-xs font-mono text-[#00A8FF]">
-                  {components[expandedModalStep - 1].deepDiveModal.systemRole}
-                </p>
-              </div>
-            </div>
-
-            <p className="text-sm text-slate-300 leading-relaxed mb-6">
-              {components[expandedModalStep - 1].deepDiveModal.architectureOverview}
-            </p>
-
-            {/* Execution Sequence from PDF */}
-            <div className="mb-6">
-              <h4 className="text-xs font-mono font-bold text-[#00F0FF] uppercase tracking-wider mb-3 flex items-center gap-2">
-                <Radio className="w-3.5 h-3.5 text-[#00F0FF]" />
-                <span>Protocol Data Flow & Sequence</span>
-              </h4>
-              <div className="space-y-2 bg-[#02060D] p-4 rounded-2xl border border-[#0E223D]">
-                {components[expandedModalStep - 1].deepDiveModal.dataFlow.map((step, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-xs text-slate-300">
-                    <span className="font-mono text-[#00F0FF] font-bold">0{idx + 1}.</span>
-                    <span>{step}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Technical Capabilities Matrix */}
-            <div className="mb-6">
-              <h4 className="text-xs font-mono font-bold text-[#00F0FF] uppercase tracking-wider mb-3 flex items-center gap-2">
-                <Cpu className="w-3.5 h-3.5 text-[#00F0FF]" />
-                <span>Enterprise Technical Capabilities</span>
-              </h4>
-              <div className="grid grid-cols-1 gap-2.5">
-                {components[expandedModalStep - 1].deepDiveModal.technicalCapabilities.map((item, idx) => (
-                  <div key={idx} className="bg-[#06101E] p-3 rounded-xl border border-[#0E223D] flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <span className="text-xs font-mono font-bold text-white">{item.label}</span>
-                    <span className="text-xs text-slate-300">{item.detail}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="pt-4 border-t border-[#0E223D] flex items-center justify-between">
-              <span className="text-[11px] text-slate-500 font-mono">
-                {components[expandedModalStep - 1].deepDiveModal.governanceNote}
-              </span>
-              <button
-                onClick={() => setExpandedModalStep(null)}
-                className="px-5 py-2 rounded-xl bg-[#00F0FF] text-black font-bold text-xs hover:bg-[#36B7FF] transition"
-              >
-                Close Specification
-              </button>
-            </div>
-
-          </div>
-        </div>
-      )}
-
     </section>
   );
 };

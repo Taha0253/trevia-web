@@ -1,12 +1,12 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, Shield, ArrowUpRight, Globe, Mail } from 'lucide-react';
 
 interface FooterProps {
-  onRequestDemo: () => void;
+  onRequestDemo?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
+export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-6">
@@ -74,9 +74,10 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
                 <Link to="/platform" className="hover:text-[#00F0FF] transition-colors">Platform Architecture</Link>
               </li>
               <li>
-                <button onClick={onRequestDemo} className="hover:text-[#00F0FF] text-left transition-colors font-medium text-slate-300">
-                  Request a Demo →
-                </button>
+                <Link to="/demo" className="hover:text-[#00F0FF] text-left transition-colors font-medium text-[#00F0FF] flex items-center gap-1">
+                  <span>Interactive Live Demo</span>
+                  <span className="text-[9px] px-1 py-0.2 bg-[#00F0FF]/15 text-[#00F0FF] rounded font-mono">Live</span>
+                </Link>
               </li>
             </ul>
           </div>
