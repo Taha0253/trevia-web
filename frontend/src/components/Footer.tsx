@@ -1,104 +1,175 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Zap } from 'lucide-react';
+﻿import React from 'react';
+import { Link } from 'react-router-dom';
+import { Zap, Shield, ArrowUpRight, Globe, Mail } from 'lucide-react';
 
 interface FooterProps {
   onRequestDemo: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
-  const [apiStatus, setApiStatus] = useState<string>('checking');
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/health')
-      .then((res) => (res.ok ? setApiStatus('online') : setApiStatus('degraded')))
-      .catch(() => setApiStatus('offline'));
-  }, []);
-
   return (
-    <footer className="bg-[#010408] border-t border-[#09182D] text-slate-400 text-sm">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
+    <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-6">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#0A1D36]">
+        {/* Top Banner / Trust Badges Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pb-12 border-b border-[#0E223D]/80">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00F0FF]">
+              <Shield className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-white text-xs font-bold">DPIIT-Recognised</div>
+              <div className="text-[11px] text-slate-400">Government of India Startup</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A8FF]">
+              <Zap className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-white text-xs font-bold">T-Hub Blitz Cohort 3</div>
+              <div className="text-[11px] text-slate-400">Incubated & Accelerated</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
+              <Globe className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-white text-xs font-bold">OCPP 1.6J Open Protocol</div>
+              <div className="text-[11px] text-slate-400">Hardware-Agnostic Core</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-amber-400">
+              <Mail className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-white text-xs font-bold">Hyderabad, India</div>
+              <div className="text-[11px] text-slate-400">contact@treviaev.in</div>
+            </div>
+          </div>
+        </div>
+
+        {/* 5-Column Sitemap Link Matrix (Section B.3) */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-12">
           
-          {/* Company Brand Column */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold tracking-tight text-white">
-                Trevia<span className="text-[#00F0FF]">EV</span>
-              </span>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed font-normal">
-              India’s unified EV charging platform. Discover, access, and pay across multiple EV charging networks with one seamless platform and one wallet.
-            </p>
-
-            <div className="pt-2 flex items-center gap-2 flex-wrap">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#040F1E] border border-[#0E284A] text-[#00F0FF] text-xs font-semibold">
-                <Zap className="w-3.5 h-3.5" />
-                <span>Incubated at T-Hub</span>
-              </span>
-              
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#040F1E] border border-[#0E284A] text-xs font-semibold text-slate-300">
-                <span className={`w-2 h-2 rounded-full ${apiStatus === 'online' ? 'bg-[#00F0FF] animate-pulse' : 'bg-amber-400'}`} />
-                <span>FastAPI Mesh: {apiStatus}</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Navigation Columns */}
-          <div className="lg:col-span-2 space-y-3">
-            <h5 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Platform</h5>
+          {/* Col 1: Product */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Product</h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#platform" className="hover:text-[#00F0FF] transition">Enterprise Console</a></li>
-              <li><a href="#approach" className="hover:text-[#00F0FF] transition">Signature Journey</a></li>
-              <li><a href="#drivers" className="hover:text-[#00F0FF] transition">For EV Drivers</a></li>
-              <li><a href="#cpos" className="hover:text-[#00F0FF] transition">For Network CPOs</a></li>
+              <li>
+                <Link to="/cms" className="hover:text-[#00F0FF] transition-colors flex items-center gap-1">
+                  <span>Trevia CMS</span>
+                  <span className="text-[9px] px-1 py-0.2 bg-[#00F0FF]/15 text-[#00F0FF] rounded font-mono">Core</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/drive" className="hover:text-[#00F0FF] transition-colors">Trevia Drive</Link>
+              </li>
+              <li>
+                <Link to="/platform" className="hover:text-[#00F0FF] transition-colors">Platform Architecture</Link>
+              </li>
+              <li>
+                <button onClick={onRequestDemo} className="hover:text-[#00F0FF] text-left transition-colors font-medium text-slate-300">
+                  Request a Demo →
+                </button>
+              </li>
             </ul>
           </div>
 
-          <div className="lg:col-span-2 space-y-3">
-            <h5 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Protocol</h5>
+          {/* Col 2: Solutions */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Solutions</h4>
             <ul className="space-y-2 text-xs">
-              <li><span className="text-slate-400">OCPP 2.0.1 Certified</span></li>
-              <li><span className="text-slate-400">OCPI 2.2 Roaming</span></li>
-              <li><span className="text-slate-400">ISO 15118 Ready</span></li>
-              <li><span className="text-slate-400">OpenADR 2.0b</span></li>
+              <li>
+                <Link to="/solutions/cpos" className="hover:text-[#00F0FF] transition-colors">CPOs & Operators</Link>
+              </li>
+              <li>
+                <Link to="/solutions/fleets" className="hover:text-[#00F0FF] transition-colors">Commercial Fleets</Link>
+              </li>
+              <li>
+                <Link to="/solutions/enterprises" className="hover:text-[#00F0FF] transition-colors">Workplace & Real Estate</Link>
+              </li>
+              <li>
+                <Link to="/solutions/energy-utilities" className="hover:text-[#00F0FF] transition-colors">Energy & Utilities</Link>
+              </li>
+              <li>
+                <Link to="/solutions/government" className="hover:text-[#00F0FF] transition-colors">Government & Public Bodies</Link>
+              </li>
             </ul>
           </div>
 
-          <div className="lg:col-span-2 space-y-3">
-            <h5 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Ecosystem</h5>
+          {/* Col 3: Technology */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Technology</h4>
             <ul className="space-y-2 text-xs">
-              <li><span className="text-slate-400">T-Hub Hyderabad</span></li>
-              <li><span className="text-slate-400">DPIIT Recognized</span></li>
-              <li><span className="text-slate-400">Google Cloud Infra</span></li>
-              <li><span className="text-slate-400">Pan-India Depots</span></li>
+              <li>
+                <Link to="/technology" className="hover:text-[#00F0FF] transition-colors">OCPP & Interoperability</Link>
+              </li>
+              <li>
+                <Link to="/technology/apis" className="hover:text-[#00F0FF] transition-colors">APIs & Integrations</Link>
+              </li>
+              <li>
+                <Link to="/technology#websockets" className="hover:text-[#00F0FF] transition-colors">WebSocket Engine</Link>
+              </li>
+              <li>
+                <Link to="/technology#telemetry" className="hover:text-[#00F0FF] transition-colors">Telemetry & Sessions</Link>
+              </li>
             </ul>
           </div>
 
-          <div className="lg:col-span-2 space-y-3">
-            <h5 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Get In Touch</h5>
-            <p className="text-xs text-slate-400 font-normal">
-              Join India's unified charging network.
-            </p>
-            <button
-              onClick={onRequestDemo}
-              className="mt-2 inline-flex items-center gap-1.5 bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black text-xs font-bold px-4 py-2 rounded-full transition shadow-md shadow-[#00A8FF]/20 hover:shadow-[0_0_20px_#00F0FF]"
-            >
-              <span>Connect with us</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
+          {/* Col 4: Company */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Company</h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <Link to="/about" className="hover:text-[#00F0FF] transition-colors">About Trevia</Link>
+              </li>
+              <li>
+                <Link to="/traction" className="hover:text-[#00F0FF] transition-colors">Traction & Journey</Link>
+              </li>
+              <li>
+                <Link to="/resources" className="hover:text-[#00F0FF] transition-colors">Resources & Insights</Link>
+              </li>
+              <li>
+                <a href="mailto:contact@treviaev.in" className="hover:text-[#00F0FF] transition-colors">Contact Founder</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 5: Legal */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Legal</h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <Link to="/privacy" className="hover:text-[#00F0FF] transition-colors">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-[#00F0FF] transition-colors">Terms of Use</Link>
+              </li>
+              <li>
+                <a href="https://treviaev.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#00F0FF] transition-colors flex items-center gap-1">
+                  <span>treviaev.in</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </li>
+            </ul>
           </div>
 
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
-          <div>
-            © {new Date().getFullYear()} TreviaEV Platforms Inc. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-[#0E223D]/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="text-white font-bold">Trevia EV Technologies</span>
+            <span>— The operating layer for your charging network.</span>
           </div>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white transition">Privacy Notice</a>
-            <a href="#" className="hover:text-white transition">Security Architecture</a>
-            <a href="#" className="hover:text-white transition">Terms of Service</a>
+          <div className="text-slate-500 font-mono text-[11px]">
+            © 2026 Trevia EV Technologies. Incorporated Sept 2025. All rights reserved.
           </div>
         </div>
 

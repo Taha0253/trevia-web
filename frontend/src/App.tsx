@@ -1,69 +1,97 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ChargedParticlesBackground } from './components/ChargedParticlesBackground';
 import { Navbar } from './components/Navbar';
-import { HeroSection } from './sections/HeroSection';
-import { OurApproachJourney } from './sections/OurApproachJourney';
-import { EnterpriseDashboard } from './sections/EnterpriseDashboard';
-import { DualAudienceSection } from './sections/DualAudienceSection';
-import { EcosystemSection } from './sections/EcosystemSection';
 import { Footer } from './components/Footer';
 import { RequestDemoModal } from './components/RequestDemoModal';
+import { ScrollToTop } from './components/ScrollToTop';
 
-export const App: React.FC = () => {
+// Pages
+import { HomePage } from './pages/HomePage';
+import { PlatformPage } from './pages/PlatformPage';
+import { TreviaCmsPage } from './pages/TreviaCmsPage';
+import { TreviaDrivePage } from './pages/TreviaDrivePage';
+import { CposPage } from './pages/solutions/CposPage';
+import { FleetsPage } from './pages/solutions/FleetsPage';
+import { EnterprisesPage } from './pages/solutions/EnterprisesPage';
+import { UtilitiesPage } from './pages/solutions/UtilitiesPage';
+import { GovernmentPage } from './pages/solutions/GovernmentPage';
+import { TechnologyPage } from './pages/technology/TechnologyPage';
+import { ApisPage } from './pages/technology/ApisPage';
+import { AboutPage } from './pages/company/AboutPage';
+import { TractionPage } from './pages/company/TractionPage';
+import { ResourcesPage } from './pages/ResourcesPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { TermsPage } from './pages/TermsPage';
+
+const AppContent: React.FC = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-
-  const scrollToApproach = () => {
-    const el = document.getElementById('approach');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   return (
     <div className="min-h-screen bg-[#02060D] text-slate-100 flex flex-col font-sans selection:bg-[#00A8FF] selection:text-white relative">
       
-      {/* Charged Particles Ambient Canvas with Mouse Interaction */}
-      <ChargedParticlesBackground />
+      {/* Scroll restoration */}
+      <ScrollToTop />
 
-      {/* Top Navbar */}
-      <Navbar 
-        onRequestDemo={() => setIsDemoModalOpen(true)} 
-        onExplore={scrollToApproach} 
-      />
+      {/* Charged Particles ONLY on Landing/Home Page */}
+      {isHomePage && <ChargedParticlesBackground />}
 
-      {/* Main Sections */}
+      {/* Global Navbar */}
+      <Navbar onRequestDemo={() => setIsDemoModalOpen(true)} />
+
+      {/* Dynamic Route Pages */}
       <main className="flex-1 relative z-10">
-        
-        {/* Section 1: Editorial Hero Section */}
-        <HeroSection 
-          onExplore={scrollToApproach} 
-          onPartner={() => setIsDemoModalOpen(true)} 
-        />
+        <Routes>
+          <Route path="/" element={<HomePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/platform" element={<PlatformPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/cms" element={<TreviaCmsPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/drive" element={<TreviaDrivePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          
+          {/* Buyer-Specific Solutions */}
+          <Route path="/solutions/cpos" element={<CposPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/solutions/fleets" element={<FleetsPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/solutions/enterprises" element={<EnterprisesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/solutions/energy-utilities" element={<UtilitiesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/solutions/government" element={<GovernmentPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          
+          {/* Technology */}
+          <Route path="/technology" element={<TechnologyPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/technology/apis" element={<ApisPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          
+          {/* Company */}
+          <Route path="/about" element={<AboutPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/traction" element={<TractionPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          
+          {/* Resources & Legal */}
+          <Route path="/resources" element={<ResourcesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
 
-        {/* Section 2: THE SIGNATURE JOURNEY - Our Approach (01 Discover → 02 Navigate → 03 Charge → 04 Pay → 05 Connect) */}
-        <OurApproachJourney />
-
-        {/* Section 3: All-Black Enterprise CPO Dashboard */}
-        <EnterpriseDashboard />
-
-        {/* Section 4: Dual Audience Architecture (For Drivers vs For CPOs) */}
-        <DualAudienceSection onRequestDemo={() => setIsDemoModalOpen(true)} />
-
-        {/* Section 5: Connected Ecosystem (T-Hub, GCP, Docker, Firebase, GitHub) */}
-        <EcosystemSection />
-
+          {/* Fallback */}
+          <Route path="*" element={<HomePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+        </Routes>
       </main>
 
-      {/* Footer */}
+      {/* Global 5-Column Sitemap Footer */}
       <Footer onRequestDemo={() => setIsDemoModalOpen(true)} />
 
-      {/* Interactive Onboarding / Demo Modal */}
+      {/* Global Request Demo / Interactive Modal */}
       <RequestDemoModal 
         isOpen={isDemoModalOpen} 
         onClose={() => setIsDemoModalOpen(false)} 
       />
 
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 };
 

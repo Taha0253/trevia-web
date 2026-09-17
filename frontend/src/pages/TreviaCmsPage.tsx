@@ -1,0 +1,355 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  Radio, 
+  ArrowRight, 
+  Layers, 
+  Activity, 
+  RefreshCw, 
+  ShieldCheck, 
+  Sliders, 
+  Database, 
+  Code2, 
+  BarChart3, 
+  Lock, 
+  CheckCircle2, 
+  HelpCircle, 
+  Zap, 
+  AlertCircle 
+} from 'lucide-react';
+import { EnterpriseDashboard } from '../sections/EnterpriseDashboard';
+import { ArchitectureFlow } from '../components/ArchitectureFlow';
+
+interface TreviaCmsPageProps {
+  onRequestDemo: () => void;
+}
+
+export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) => {
+  return (
+    <div className="space-y-16 pb-24">
+      
+      {/* 1. Sleek Enterprise Header */}
+      <section className="border-b border-[#0E2C52]/80 bg-[#030A14] py-10 sm:py-14">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="space-y-3 max-w-3xl">
+              {/* Breadcrumb / Category */}
+              <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
+                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+                <span>/</span>
+                <span className="text-[#00F0FF]">Product</span>
+                <span>/</span>
+                <span className="text-white font-semibold">Trevia CMS</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A8FF]/40 flex items-center justify-center text-[#00F0FF]">
+                  <Radio className="w-4 h-4" />
+                </div>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+                  Trevia CMS — Charging Management Software
+                </h1>
+              </div>
+
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                The operational software layer between chargers and everything that runs on top of them. Connects chargers over OCPP 1.6J and gives operators one place to monitor, run, and scale their charging infrastructure across hardware vendors and sites.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <button
+                onClick={onRequestDemo}
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)] flex items-center gap-2"
+              >
+                <span>Request a Demo</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+              <a
+                href="#capabilities"
+                className="px-5 py-3 rounded-xl bg-[#061426] hover:bg-[#0A2240] border border-[#0E2C52] text-slate-200 text-xs font-semibold uppercase tracking-wider transition-all"
+              >
+                Capabilities
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Problem & Solution Contrast */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-rose-400 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4" /> The Problem
+            </div>
+            <h3 className="text-lg font-bold text-white">
+              Fragmented Multi-Vendor Dashboards
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Operators running chargers from multiple hardware vendors, across multiple sites, typically manage each in a separate vendor dashboard — with no single place to see the network as a whole, and no consistent way to act when something goes wrong.
+            </p>
+          </div>
+
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#061426] border border-[#00A8FF]/40 space-y-3 shadow-[0_0_20px_rgba(0,168,255,0.1)]">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF] flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4" /> The Solution
+            </div>
+            <h3 className="text-lg font-bold text-white">
+              One Unified Operating Layer
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Trevia CMS connects to chargers over OCPP and becomes the single operational layer for your network — monitoring, control, transactions, tariffs, and data, regardless of which vendor's hardware is installed at a given site.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Live Dashboard Interactive View */}
+      <section className="max-w-7xl mx-auto px-6 space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF]">
+              Live Interface Preview
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">
+              CPO Network Command Console
+            </h2>
+          </div>
+          <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/30">
+            Real-Time Telemetry Active
+          </span>
+        </div>
+
+        <EnterpriseDashboard />
+      </section>
+
+      {/* 4. Core Capabilities Grid */}
+      <section id="capabilities" className="max-w-7xl mx-auto px-6 space-y-8">
+        <div>
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+            Product Specifications
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold text-white">
+            Core Operational Capabilities
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00F0FF]">
+              <Layers className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Charger Connectivity & OCPP 1.6J</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Chargers connect to Trevia CMS using OCPP 1.6J, the open protocol supported across most charger hardware manufacturers — allowing Trevia CMS to operate hardware from multiple vendors on one platform.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A8FF]">
+              <Activity className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Real-Time Monitoring</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Charger status, connectivity, and health are visible in real time across every connected site, so operators see problems as they happen rather than after a driver reports a failed charge.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
+              <RefreshCw className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Remote Operations</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Where supported by the connected hardware, operators can issue remote commands — for example, resetting an unresponsive charger or querying its live status — without a site visit.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-amber-400">
+              <Database className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Sessions & Transactions</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Every charging session is tracked from start to finish, with transaction-level data — energy delivered, duration, and status — available for reporting and reconciliation.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-rose-400">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Fault & Error Visibility</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Faults and errors reported by connected chargers are surfaced to the operator directly, rather than requiring a physical site check to discover a charger has gone down.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-indigo-400">
+              <Sliders className="w-5 h-5" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Multi-Location Management</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Operators running chargers across multiple sites manage them from one platform — the number of sites or vendors does not multiply the number of tools required to run the network.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-cyan-400">
+              <Zap className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Tariff Management</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Trevia CMS supports configuring and managing charging tariffs across sites and charger types, so pricing can be set and adjusted centrally rather than per-site.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-blue-400">
+              <Code2 className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">APIs & Integrations</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Trevia CMS is designed to expose charging, session, and operational data via APIs, so operators can integrate that data into their own reporting, billing, or fleet-management systems.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-purple-400">
+              <BarChart3 className="w-4 h-4" />
+            </div>
+            <h4 className="text-sm font-bold text-white">Analytics & Reporting</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Operational and energy data collected across the network is available in aggregate for reporting and planning — turning day-to-day charging activity into data operators can act on.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. End-to-End Pipeline */}
+      <section className="max-w-7xl mx-auto px-6 space-y-4">
+        <div>
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+            Architecture
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold text-white">
+            End-to-End Operating Pipeline
+          </h2>
+        </div>
+
+        <ArchitectureFlow />
+      </section>
+
+      {/* 6. Built for CPO Ops & Scalability */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF]">
+              Operations First
+            </div>
+            <h3 className="text-lg font-bold text-white">Built for CPO Operations</h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Trevia CMS is built around the day-to-day reality of running a charge point business: multiple sites, multiple hardware vendors, and the need for one operational view rather than one per vendor.
+            </p>
+          </div>
+
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">
+              Linear Overhead Elimination
+            </div>
+            <h3 className="text-lg font-bold text-white">Scalability</h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              The platform is designed so that adding chargers, sites, or hardware vendors does not add operational complexity — new connections extend the same operating layer rather than requiring a separate system.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Security Note */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="p-6 rounded-2xl bg-[#061426]/50 border border-[#0E2C52] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#00F0FF]">
+              <Lock className="w-3.5 h-3.5" />
+              <span>Security & Reliability</span>
+            </div>
+            <p className="text-xs text-slate-300">
+              Enterprise WSS authentication, persistent heartbeat monitoring, and TLS encryption across all connected chargers.
+            </p>
+          </div>
+          <span className="text-[11px] font-mono text-slate-400 px-3 py-1 bg-[#030A14] rounded-lg border border-[#0E2C52]">
+            OCPP 1.6J JSON/WSS
+          </span>
+        </div>
+      </section>
+
+      {/* 8. FAQ */}
+      <section className="max-w-4xl mx-auto px-6 space-y-6">
+        <div>
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+            FAQ
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold text-white">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div className="space-y-3">
+          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+            <h4 className="text-sm font-bold text-white flex items-center gap-2">
+              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              Does Trevia CMS work with our existing charger hardware?
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed pl-6">
+              Trevia CMS connects to chargers over OCPP 1.6J, the open protocol supported by most major charger hardware manufacturers, so it is designed to work across vendors rather than requiring specific hardware.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+            <h4 className="text-sm font-bold text-white flex items-center gap-2">
+              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              Can Trevia CMS manage chargers across multiple sites?
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed pl-6">
+              Yes — multi-site, multi-vendor management is a core design goal of the platform.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+            <h4 className="text-sm font-bold text-white flex items-center gap-2">
+              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              Is there an API available for enterprise integration?
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed pl-6">
+              Trevia CMS is designed to expose data via APIs for integration into operators' own billing, ERP, and fleet management systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Final CTA */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="rounded-2xl bg-[#061426] border border-[#00A8FF]/40 p-8 text-center space-y-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-white">
+            Request a Demo of Trevia CMS
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto">
+            Experience the operating layer built for multi-vendor, multi-site EV charging networks.
+          </p>
+          <div className="pt-2">
+            <button
+              onClick={onRequestDemo}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+            >
+              Request a Demo
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
