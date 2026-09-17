@@ -18,13 +18,13 @@ export const EcosystemSection: React.FC = () => {
     {
       name: 'Firebase',
       category: 'Realtime Telemetry',
-      icon: <img src="/firebase.webp" alt="Firebase" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
+      icon: <img src="/firebase.jpeg" alt="Firebase" loading="lazy" decoding="async" className="w-10 h-10 object-contain rounded-lg" />,
       description: 'Sub-second real-time event distribution'
     },
     {
       name: 'Docker',
       category: 'Edge Containers',
-      icon: <img src="/Docker.webp" alt="Docker" loading="lazy" decoding="async" className="w-10 h-10 object-contain" />,
+      icon: <img src="/Docker.jpeg" alt="Docker" loading="lazy" decoding="async" className="w-10 h-10 object-contain rounded-lg" />,
       description: 'Isolated microservices & depot runtime'
     },
     {

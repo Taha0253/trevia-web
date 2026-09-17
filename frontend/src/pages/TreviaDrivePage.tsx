@@ -138,47 +138,69 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl bg-[#061426] border border-[#00F0FF]/40 space-y-2">
+            <div className="p-4 rounded-xl bg-[#061426] border border-[#00F0FF]/40 space-y-3 shadow-lg">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   AVAILABLE NOW
                 </span>
                 <span className="text-[11px] font-mono text-slate-400">1.2 km away</span>
               </div>
-              <h4 className="text-sm font-bold text-white">Trevia Hub — Cyber Towers</h4>
-              <p className="text-xs text-slate-400">60 kW Dual Gun CCS2 DC Fast Charger</p>
+              <div>
+                <h4 className="text-sm font-bold text-white">Trevia Hub — Cyber Towers</h4>
+                <p className="text-xs text-slate-400">60 kW Dual Gun CCS2 DC Fast Charger</p>
+              </div>
+              <div className="flex flex-wrap gap-1.5 text-[10px] text-slate-300">
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">☕ Blue Tokai (60m)</span>
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">🍽️ Food Court</span>
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">⭐ 4.9 (142)</span>
+              </div>
               <div className="pt-2 border-t border-[#0E2C52] flex items-center justify-between text-xs font-mono">
-                <span className="text-[#00F0FF]">2 / 2 Free</span>
+                <span className="text-[#00F0FF] font-semibold">2 of 2 Free</span>
                 <span className="text-white font-bold">₹18.50 / kWh</span>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#061426] border border-[#0E2C52] space-y-2">
+            <div className="p-4 rounded-xl bg-[#061426] border border-[#0E2C52] space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">
                   1 IN USE • 1 FREE
                 </span>
                 <span className="text-[11px] font-mono text-slate-400">3.4 km away</span>
               </div>
-              <h4 className="text-sm font-bold text-white">Knowledge City Hub — DC02</h4>
-              <p className="text-xs text-slate-400">120 kW Ultra-Fast CCS2 DC Charger</p>
+              <div>
+                <h4 className="text-sm font-bold text-white">Knowledge City Hub — DC02</h4>
+                <p className="text-xs text-slate-400">120 kW Ultra-Fast CCS2 DC Charger</p>
+              </div>
+              <div className="flex flex-wrap gap-1.5 text-[10px] text-slate-300">
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">☕ Starbucks (40m)</span>
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">🚻 Clean Restrooms</span>
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">⭐ 4.8 (98)</span>
+              </div>
               <div className="pt-2 border-t border-[#0E2C52] flex items-center justify-between text-xs font-mono">
-                <span className="text-amber-400">1 / 2 Free</span>
+                <span className="text-amber-400 font-semibold">1 of 2 Free</span>
                 <span className="text-white font-bold">₹21.00 / kWh</span>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#061426] border border-[#0E2C52] space-y-2">
+            <div className="p-4 rounded-xl bg-[#061426] border border-[#0E2C52] space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   AVAILABLE NOW
                 </span>
                 <span className="text-[11px] font-mono text-slate-400">4.1 km away</span>
               </div>
-              <h4 className="text-sm font-bold text-white">Gachibowli Tech Park — AC</h4>
-              <p className="text-xs text-slate-400">22 kW Type-2 AC Destination Charger</p>
+              <div>
+                <h4 className="text-sm font-bold text-white">Gachibowli Tech Park — AC</h4>
+                <p className="text-xs text-slate-400">22 kW Type-2 AC Destination Charger</p>
+              </div>
+              <div className="flex flex-wrap gap-1.5 text-[10px] text-slate-300">
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">🏢 Office Covered Parking</span>
+                <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">⭐ 4.9 (64)</span>
+              </div>
               <div className="pt-2 border-t border-[#0E2C52] flex items-center justify-between text-xs font-mono">
-                <span className="text-[#00F0FF]">4 / 4 Free</span>
+                <span className="text-[#00F0FF] font-semibold">4 of 4 Free</span>
                 <span className="text-white font-bold">₹14.00 / kWh</span>
               </div>
             </div>

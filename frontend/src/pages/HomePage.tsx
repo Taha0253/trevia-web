@@ -1,8 +1,8 @@
 import React from 'react';
 import { HeroSection } from '../sections/HeroSection';
 import { OurApproachDialSection } from '../sections/OurApproachDialSection';
-import { EnterpriseDashboard } from '../sections/EnterpriseDashboard';
 import { DualAudienceSection } from '../sections/DualAudienceSection';
+import { DriverStoriesSection } from '../sections/DriverStoriesSection';
 import { EcosystemSection } from '../sections/EcosystemSection';
 
 interface HomePageProps {
@@ -29,11 +29,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
       {/* 2. THE SIGNATURE JOURNEY - Our Approach Rotary Dial Architecture */}
       <OurApproachDialSection />
 
-      {/* 3. All-Black Enterprise CPO Dashboard */}
-      <EnterpriseDashboard />
-
-      {/* 4. Dual Audience Architecture (For Drivers vs For CPOs) */}
+      {/* 3. Dual Audience Architecture (For Drivers vs For CPOs) */}
       <DualAudienceSection onRequestDemo={onRequestDemo} />
+
+      {/* 4. Real Driver, Fleet & Host Stories + Environmental Impact */}
+      <DriverStoriesSection />
 
       {/* 5. Connected Ecosystem (T-Hub, GCP, Docker, Firebase, GitHub, DPIIT) */}
       <EcosystemSection />
