@@ -67,11 +67,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         
         {/* Trevia Logo Button to Home */}
-        <Link to="/" onClick={closeAllMenus} className="flex items-center gap-3 group">
+        <Link to="/" onClick={closeAllMenus} className="flex items-center group">
           <img 
-            src="/TREVIA-EV.jpeg" 
+            src="/Trevia.png" 
             alt="Trevia EV - Return to Home" 
-            className="h-10 sm:h-12 w-auto object-contain rounded-xl shadow-[0_0_20px_rgba(0,168,255,0.3)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] group-hover:scale-105 transition-all duration-300"
+            className="h-7 sm:h-8 w-auto object-contain transition-opacity duration-200 hover:opacity-90"
           />
         </Link>
 

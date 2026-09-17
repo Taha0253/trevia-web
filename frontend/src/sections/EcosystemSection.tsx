@@ -1,46 +1,42 @@
 import React from 'react';
-import { Cloud, Flame, Container, GitBranch, Cpu, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export const EcosystemSection: React.FC = () => {
   const partners = [
     {
       name: 'T-Hub',
       category: 'Innovation Incubator',
-      icon: (
-        <div className="w-10 h-10 rounded-xl border border-orange-500/40 bg-orange-500/10 flex items-center justify-center text-orange-400 font-black text-xs">
-          t-hub
-        </div>
-      ),
+      icon: <img src="/thub.png" alt="T-Hub" className="w-10 h-10 object-contain" />,
       description: 'Incubated at India\'s premier tech incubator'
     },
     {
       name: 'GCP',
       category: 'Cloud Infrastructure',
-      icon: <Cloud className="w-9 h-9 text-[#4285F4]" />,
+      icon: <img src="/GCP.png" alt="Google Cloud Platform" className="w-10 h-10 object-contain" />,
       description: 'Google Cloud high-availability clusters'
     },
     {
       name: 'Firebase',
       category: 'Realtime Telemetry',
-      icon: <Flame className="w-9 h-9 text-[#FFCA28]" />,
+      icon: <img src="/firebase.webp" alt="Firebase" className="w-10 h-10 object-contain" />,
       description: 'Sub-second real-time event distribution'
     },
     {
       name: 'Docker',
       category: 'Edge Containers',
-      icon: <Container className="w-9 h-9 text-[#2496ED]" />,
+      icon: <img src="/Docker.webp" alt="Docker" className="w-10 h-10 object-contain" />,
       description: 'Isolated microservices & depot runtime'
     },
     {
       name: 'GitHub',
       category: 'DevOps & CI/CD',
-      icon: <GitBranch className="w-9 h-9 text-white" />,
+      icon: <img src="/git-hub.png" alt="GitHub" className="w-10 h-10 object-contain" />,
       description: 'Enterprise code integrity & OTA versions'
     },
     {
       name: 'OCPP 2.0.1',
       category: 'Open Protocol',
-      icon: <Cpu className="w-9 h-9 text-[#00F0FF]" />,
+      icon: <img src="/OCPP.png" alt="OCPP 2.0.1" className="w-10 h-10 object-contain" />,
       description: 'Open Charge Point Protocol certification'
     }
   ];
