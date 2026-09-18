@@ -23,7 +23,7 @@ export const GovernmentPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =
 
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
               A coordinated, data-driven view of{' '}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-[#00F0FF] to-white">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-[#00A09A] to-white">
                 public charging infrastructure.
               </span>
             </h1>
@@ -35,7 +35,7 @@ export const GovernmentPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onRequestDemo}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,168,255,0.4)] flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,160,154,0.4)] flex items-center gap-2"
               >
                 <span>Discuss Infrastructure</span>
                 <ArrowRight className="w-4 h-4" />
@@ -60,7 +60,7 @@ export const GovernmentPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-[#041224] border border-[#00A8FF]/40 space-y-4 shadow-[0_0_20px_rgba(0,168,255,0.1)]">
+          <div className="p-8 rounded-3xl bg-[#041224] border border-[#00A09A]/40 space-y-4 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 flex items-center gap-1.5">
               <Layers className="w-4 h-4" /> Trevia Solution
             </div>
@@ -104,7 +104,7 @@ export const GovernmentPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =
           </div>
 
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <BarChart3 className="w-6 h-6 text-[#00F0FF]" />
+            <BarChart3 className="w-6 h-6 text-[#00A09A]" />
             <h4 className="text-base font-bold text-white">Utilization & Uptime Reporting</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Track macro network uptime and charger availability metrics across concession zones.
@@ -133,7 +133,7 @@ export const GovernmentPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =
           <div className="flex justify-center gap-4 pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Discuss Infrastructure
             </button>

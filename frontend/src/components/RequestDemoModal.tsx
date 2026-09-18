@@ -33,7 +33,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#00A8FF', '#00F0FF', '#FFFFFF', '#38BDF8']
+        colors: ['#00A09A', '#00A09A', '#FFFFFF', '#4DBDB8']
       });
     } catch (err) {
       console.error(err);
@@ -63,7 +63,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
         onClick={(e) => e.stopPropagation()}
       >
         {/* Glow effect */}
-        <div className="absolute -top-24 -right-24 w-56 h-56 bg-[#00A8FF]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-56 h-56 bg-[#00A09A]/20 rounded-full blur-3xl pointer-events-none" />
 
         {/* Close button */}
         <button
@@ -76,7 +76,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
         {!isSuccess ? (
           <div>
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-mono font-semibold mb-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] text-xs font-mono font-semibold mb-3">
                 <Zap className="w-3.5 h-3.5" />
                 <span>PARTNER & CPO ONBOARDING</span>
               </div>
@@ -99,7 +99,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   placeholder="e.g. Vikramaditya Rao"
                   value={formData.full_name}
                   onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                  className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                  className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                 />
               </div>
 
@@ -114,7 +114,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                     placeholder="name@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                   />
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                   />
                 </div>
               </div>
@@ -141,7 +141,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                     placeholder="e.g. Nexus Energy Infra"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                   />
                 </div>
                 <div>
@@ -151,7 +151,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   <select
                     value={formData.chargers_count}
                     onChange={(e) => setFormData({ ...formData, chargers_count: e.target.value })}
-                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F0FF] transition-colors cursor-pointer"
+                    className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
                   >
                     <option value="1 - 10 chargers">1 - 10 chargers</option>
                     <option value="10 - 50 chargers">10 - 50 chargers</option>
@@ -171,7 +171,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   placeholder="Tell us about your chargers, OCPP version, or roaming partnership..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors resize-none"
+                  className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
                 />
               </div>
 
@@ -179,7 +179,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-[#00A8FF]/25 hover:shadow-[0_0_30px_#00F0FF] disabled:opacity-70 active:scale-[0.99]"
+                  className="w-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] hover:from-[#008F8A] hover:to-[#00A09A] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-[#00A09A]/25 hover:shadow-[0_0_30px_#00A09A] disabled:opacity-70 active:scale-[0.99]"
                 >
                   {isSubmitting ? (
                     <>
@@ -196,19 +196,19 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
               </div>
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#00F0FF]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#00A09A]" />
                 <span>Enterprise grade protocol security • Rapid 24h setup</span>
               </div>
             </form>
           </div>
         ) : (
           <div className="py-8 text-center space-y-4">
-            <div className="w-16 h-16 bg-[#00A8FF]/10 border border-[#00F0FF]/40 rounded-full flex items-center justify-center mx-auto text-[#00F0FF] animate-bounce shadow-[0_0_25px_#00F0FF]">
+            <div className="w-16 h-16 bg-[#00A09A]/10 border border-[#00A09A]/40 rounded-full flex items-center justify-center mx-auto text-[#00A09A] animate-bounce shadow-[0_0_25px_#00A09A]">
               <CheckCircle className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-white">Inquiry Received</h3>
             <p className="text-sm text-slate-300 max-w-sm mx-auto font-normal">
-              Thank you, <span className="text-[#00F0FF] font-semibold">{formData.full_name}</span>. Our technical architecture team has received your details and will get in touch with <span className="text-white font-medium">{formData.email}</span> shortly.
+              Thank you, <span className="text-[#00A09A] font-semibold">{formData.full_name}</span>. Our technical architecture team has received your details and will get in touch with <span className="text-white font-medium">{formData.email}</span> shortly.
             </p>
             <div className="pt-4">
               <button

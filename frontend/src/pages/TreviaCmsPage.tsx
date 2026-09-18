@@ -37,13 +37,13 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
-                <span className="text-[#00F0FF]">Product</span>
+                <span className="text-[#00A09A]">Product</span>
                 <span>/</span>
                 <span className="text-white font-semibold">Trevia CMS</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A8FF]/40 flex items-center justify-center text-[#00F0FF]">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
                   <Radio className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
@@ -59,7 +59,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <button
                 onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)] flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] hover:from-[#008F8A] hover:to-[#00A09A] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
               >
                 <span>Request a Demo</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -90,8 +90,8 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#061426] border border-[#00A8FF]/40 space-y-3 shadow-[0_0_20px_rgba(0,168,255,0.1)]">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF] flex items-center gap-2">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-3 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A] flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4" /> The Solution
             </div>
             <h3 className="text-lg font-bold text-white">
@@ -108,7 +108,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF]">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
               Live Interface Preview
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -126,7 +126,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       {/* 4. Core Capabilities Grid */}
       <section id="capabilities" className="max-w-7xl mx-auto px-6 space-y-8">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Product Specifications
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -137,7 +137,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           
           <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00F0FF]">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Layers className="w-4 h-4" />
             </div>
             <h4 className="text-sm font-bold text-white">Charger Connectivity & OCPP 1.6J</h4>
@@ -147,7 +147,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
           </div>
 
           <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A8FF]">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Activity className="w-4 h-4" />
             </div>
             <h4 className="text-sm font-bold text-white">Real-Time Monitoring</h4>
@@ -197,7 +197,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
           </div>
 
           <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-cyan-400">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Zap className="w-4 h-4" />
             </div>
             <h4 className="text-sm font-bold text-white">Tariff Management</h4>
@@ -207,7 +207,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
           </div>
 
           <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-blue-400">
+            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Code2 className="w-4 h-4" />
             </div>
             <h4 className="text-sm font-bold text-white">APIs & Integrations</h4>
@@ -232,7 +232,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       {/* 5. End-to-End Pipeline */}
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Architecture
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -247,7 +247,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF]">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">
               Operations First
             </div>
             <h3 className="text-lg font-bold text-white">Built for CPO Operations</h3>
@@ -272,7 +272,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       <section className="max-w-7xl mx-auto px-6">
         <div className="p-6 rounded-2xl bg-[#061426]/50 border border-[#0E2C52] flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#00F0FF]">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#00A09A]">
               <Lock className="w-3.5 h-3.5" />
               <span>Security & Reliability</span>
             </div>
@@ -289,7 +289,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       {/* 8. FAQ */}
       <section className="max-w-4xl mx-auto px-6 space-y-6">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             FAQ
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -300,7 +300,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
         <div className="space-y-3">
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
             <h4 className="text-sm font-bold text-white flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              <HelpCircle className="w-4 h-4 text-[#00A09A]" />
               Does Trevia CMS work with our existing charger hardware?
             </h4>
             <p className="text-xs text-slate-300 leading-relaxed pl-6">
@@ -310,7 +310,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
 
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
             <h4 className="text-sm font-bold text-white flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              <HelpCircle className="w-4 h-4 text-[#00A09A]" />
               Can Trevia CMS manage chargers across multiple sites?
             </h4>
             <p className="text-xs text-slate-300 leading-relaxed pl-6">
@@ -320,7 +320,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
 
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
             <h4 className="text-sm font-bold text-white flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              <HelpCircle className="w-4 h-4 text-[#00A09A]" />
               Is there an API available for enterprise integration?
             </h4>
             <p className="text-xs text-slate-300 leading-relaxed pl-6">
@@ -332,7 +332,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
 
       {/* 9. Final CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-2xl bg-[#061426] border border-[#00A8FF]/40 p-8 text-center space-y-4">
+        <div className="rounded-2xl bg-[#061426] border border-[#00A09A]/40 p-8 text-center space-y-4">
           <h3 className="text-xl sm:text-2xl font-bold text-white">
             Request a Demo of Trevia CMS
           </h3>
@@ -342,7 +342,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
           <div className="pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Request a Demo
             </button>

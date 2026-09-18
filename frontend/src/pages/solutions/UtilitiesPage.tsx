@@ -40,7 +40,7 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <button
                 onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)] flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
               >
                 <span>Discuss Infrastructure</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -63,7 +63,7 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#061426] border border-[#00A8FF]/40 space-y-2 shadow-[0_0_20px_rgba(0,168,255,0.1)]">
+          <div className="p-6 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-2 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5" /> Trevia Solution
             </div>
@@ -106,7 +106,7 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
           </div>
 
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Server className="w-5 h-5 text-[#00F0FF]" />
+            <Server className="w-5 h-5 text-[#00A09A]" />
             <h4 className="text-sm font-bold text-white">Standardised Data Pipelines</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Normalize telemetry feeds across disparate hardware models into consistent time-series database schemas.
@@ -114,7 +114,7 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
           </div>
 
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Activity className="w-5 h-5 text-[#00A8FF]" />
+            <Activity className="w-5 h-5 text-[#00A09A]" />
             <h4 className="text-sm font-bold text-white">High-Availability Architecture</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Resilient WebSocket ingestion built to handle continuous telemetry across distributed geographical networks.
@@ -135,7 +135,7 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
           <div className="pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Discuss Infrastructure
             </button>

@@ -57,7 +57,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
 
     const particles: Particle[] = [];
     const maxParticles = 180;
-    const colors = ['#00D09C', '#00A685', '#38BDF8', '#FFFFFF', '#6EE7B7'];
+    const colors = ['#00A09A', '#008F8A', '#4DBDB8', '#FFFFFF', '#66D4CF'];
 
     // Initialize particles
     for (let i = 0; i < maxParticles; i++) {
@@ -165,7 +165,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
       ctx.clearRect(0, 0, width, height);
 
       // Draw subtle background grid lines
-      ctx.strokeStyle = 'rgba(0, 208, 156, 0.04)';
+      ctx.strokeStyle = 'rgba(0, 160, 154, 0.04)';
       ctx.lineWidth = 1;
       const gridSize = 40;
       for (let x = 0; x < width; x += gridSize) {
@@ -189,8 +189,8 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
 
         // Glowing center core
         const grad = ctx.createRadialGradient(cx, cy, 5, cx, cy, 70);
-        grad.addColorStop(0, 'rgba(0, 208, 156, 0.35)');
-        grad.addColorStop(0.5, 'rgba(0, 166, 133, 0.15)');
+        grad.addColorStop(0, 'rgba(0, 160, 154, 0.35)');
+        grad.addColorStop(0.5, 'rgba(0, 143, 138, 0.15)');
         grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
@@ -198,7 +198,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         ctx.fill();
 
         // Hub border
-        ctx.strokeStyle = 'rgba(0, 208, 156, 0.6)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.6)';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.arc(cx, cy, 32, 0, Math.PI * 2);
@@ -208,7 +208,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         ctx.font = '600 11px Inter, sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('TREVIA CORE', cx, cy - 4);
-        ctx.fillStyle = '#00D09C';
+        ctx.fillStyle = '#00A09A';
         ctx.font = '500 9px monospace';
         ctx.fillText('OCPP 2.0.1', cx, cy + 10);
 
@@ -228,7 +228,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
           ctx.stroke();
 
           ctx.fillStyle = 'rgba(11, 35, 28, 0.8)';
-          ctx.strokeStyle = 'rgba(0, 208, 156, 0.4)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.4)';
           ctx.beginPath();
           ctx.roundRect(n.x - 55, n.y - 14, 110, 28, 6);
           ctx.fill();
@@ -244,7 +244,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         const adapters = ['ABB Terra 54 (CCS2)', 'Delta Ultra (Type 2)', 'Exicom Spin (GB/T)', 'Schneider EVlink (CHAdeMO)'];
         adapters.forEach((adapter, idx) => {
           const y = (height / 5) * (idx + 1);
-          ctx.strokeStyle = 'rgba(0, 208, 156, 0.12)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.12)';
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(50, y);
@@ -253,13 +253,13 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
 
           // Gateway pill
           ctx.fillStyle = 'rgba(10, 25, 20, 0.9)';
-          ctx.strokeStyle = 'rgba(0, 208, 156, 0.4)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.4)';
           ctx.beginPath();
           ctx.roundRect(width / 2 - 90, y - 13, 180, 26, 6);
           ctx.fill();
           ctx.stroke();
 
-          ctx.fillStyle = '#00D09C';
+          ctx.fillStyle = '#00A09A';
           ctx.font = '500 9px monospace';
           ctx.textAlign = 'center';
           ctx.fillText(`⚡ AUTO-TRANSLATE: ${adapter}`, width / 2, y + 4);
@@ -267,7 +267,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
 
       } else if (activeStep === 3) {
         // Telemetry waveform & sensor points
-        ctx.strokeStyle = 'rgba(0, 208, 156, 0.25)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.25)';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         for (let x = 0; x < width; x += 10) {
@@ -279,7 +279,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
 
         // HUD indicators
         ctx.fillStyle = 'rgba(13, 30, 25, 0.85)';
-        ctx.strokeStyle = 'rgba(0, 208, 156, 0.5)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.5)';
         ctx.beginPath();
         ctx.roundRect(40, 30, 220, 50, 8);
         ctx.fill();
@@ -289,7 +289,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         ctx.font = '600 11px Inter, sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('● LIVE SENSOR TELEMETRY', 55, 50);
-        ctx.fillStyle = '#00D09C';
+        ctx.fillStyle = '#00A09A';
         ctx.font = '500 10px monospace';
         ctx.fillText('99.98% Voltage/Power Precision', 55, 68);
 
@@ -301,14 +301,14 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         ];
 
         loops.forEach((l) => {
-          ctx.strokeStyle = 'rgba(0, 208, 156, 0.25)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.25)';
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.arc(l.cx, l.cy, 65, 0, Math.PI * 2);
           ctx.stroke();
 
           ctx.fillStyle = 'rgba(10, 22, 18, 0.9)';
-          ctx.strokeStyle = 'rgba(0, 208, 156, 0.5)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.5)';
           ctx.beginPath();
           ctx.roundRect(l.cx - 75, l.cy - 12, 150, 24, 6);
           ctx.fill();
@@ -330,7 +330,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
           { x: width * 0.65, y: height * 0.7, label: 'Central Hub (Hyderabad)' }
         ];
 
-        ctx.strokeStyle = 'rgba(0, 208, 156, 0.15)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.15)';
         ctx.lineWidth = 1;
         for (let i = 0; i < clusters.length; i++) {
           for (let j = i + 1; j < clusters.length; j++) {
@@ -342,7 +342,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         }
 
         clusters.forEach((c) => {
-          ctx.fillStyle = '#00D09C';
+          ctx.fillStyle = '#00A09A';
           ctx.beginPath();
           ctx.arc(c.x, c.y, 4, 0, Math.PI * 2);
           ctx.fill();
@@ -413,15 +413,15 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
       {/* Top Simulation Header & Telemetry Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#142B22]">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-[#00D09C]/10 border border-[#00D09C]/30 text-[#00D09C] flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] flex items-center justify-center">
             <Cpu className="w-5 h-5 animate-pulse" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-bold text-[#00D09C] uppercase tracking-wider">
+              <span className="text-xs font-mono font-bold text-[#00A09A] uppercase tracking-wider">
                 STEP {stepTitles[activeStep - 1].num} SIMULATION
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00D09C] animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00A09A] animate-ping" />
             </div>
             <h4 className="text-sm sm:text-base font-bold text-white tracking-tight">
               {stepTitles[activeStep - 1].title}
@@ -432,16 +432,16 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         {/* Live Simulation Metric Badges */}
         <div className="flex items-center flex-wrap gap-2 text-xs">
           <div className="bg-[#0D221A] border border-[#1A3D30] px-3 py-1.5 rounded-lg text-neutral-300 flex items-center gap-1.5">
-            <Activity className="w-3.5 h-3.5 text-[#00D09C]" />
+            <Activity className="w-3.5 h-3.5 text-[#00A09A]" />
             <span>180 Micro-Particles Flowing</span>
           </div>
           <div className="bg-[#0D221A] border border-[#1A3D30] px-3 py-1.5 rounded-lg text-neutral-300 flex items-center gap-1.5">
-            <Zap className="w-3.5 h-3.5 text-[#38BDF8]" />
+            <Zap className="w-3.5 h-3.5 text-[#4DBDB8]" />
             <span>Telemetry: 14ms ping</span>
           </div>
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="p-1.5 rounded-lg bg-[#00D09C] hover:bg-[#00BF8A] text-[#060B09] font-bold transition"
+            className="p-1.5 rounded-lg bg-[#00A09A] hover:bg-[#008F8A] text-[#060B09] font-bold transition"
             title={isPlaying ? "Pause Simulation" : "Play Simulation"}
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -451,7 +451,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
 
       {/* Description of what particles are showing */}
       <div className="pt-3 pb-2 text-xs text-neutral-400 font-medium">
-        <span className="text-[#00D09C] font-semibold">Visualizing Operation: </span>
+        <span className="text-[#00A09A] font-semibold">Visualizing Operation: </span>
         {stepTitles[activeStep - 1].desc}
       </div>
 
@@ -472,7 +472,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
               onClick={() => onStepChange?.(step)}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
                 activeStep === step
-                  ? 'bg-[#00D09C] text-black shadow-md shadow-[#00D09C]/30 scale-105'
+                  ? 'bg-[#00A09A] text-black shadow-md shadow-[#00A09A]/30 scale-105'
                   : 'bg-[#0D221A] text-neutral-400 hover:text-white hover:bg-[#133025]'
               }`}
             >

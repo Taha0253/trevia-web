@@ -11,19 +11,19 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
       
       {/* Hero */}
       <section className="relative pt-12 pb-16 md:pt-24 md:pb-24 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[#00A8FF]/10 rounded-full blur-[200px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[#00A09A]/10 rounded-full blur-[200px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A8FF] text-xs font-mono font-medium tracking-wider uppercase">
-              <Code2 className="w-3.5 h-3.5 text-[#00A8FF]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
+              <Code2 className="w-3.5 h-3.5 text-[#00A09A]" />
               <span>Technology — APIs & Integrations</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
               Programmatic access to your{' '}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">
                 charging data.
               </span>
             </h1>
@@ -35,7 +35,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onRequestDemo}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,168,255,0.4)] flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,160,154,0.4)] flex items-center gap-2"
               >
                 <span>Request API Access</span>
                 <ArrowRight className="w-4 h-4" />
@@ -49,7 +49,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
       {/* Core API Endpoints Reference */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             API Endpoints
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
@@ -94,7 +94,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#0E2C52]">
               <div className="flex items-center gap-3 font-mono text-xs">
-                <span className="px-2.5 py-1 rounded bg-blue-500/20 text-[#00F0FF] font-bold">POST</span>
+                <span className="px-2.5 py-1 rounded bg-[#00A09A]/20 text-[#00A09A] font-bold">POST</span>
                 <span className="text-white font-bold">/v1/remote/reset</span>
               </div>
               <span className="text-slate-400 text-xs font-mono">Execute soft/hard remote reboot</span>
@@ -114,7 +114,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
       {/* Webhooks Section */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A8FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             Event Streams
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
@@ -127,7 +127,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
           <div className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-1.5">
-            <div className="text-[#00F0FF] font-bold">session.started</div>
+            <div className="text-[#00A09A] font-bold">session.started</div>
             <div className="text-slate-400">Triggered when transaction is authorized and connector lock is engaged.</div>
           </div>
           <div className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-1.5">
@@ -147,7 +147,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-3xl bg-[#061426] border border-[#00A8FF]/40 p-8 sm:p-12 text-center space-y-6">
+        <div className="rounded-3xl bg-[#061426] border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-6">
           <h2 className="text-2xl sm:text-4xl font-bold text-white">
             Integrate Trevia into your software stack
           </h2>
@@ -157,7 +157,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
           <div className="flex justify-center gap-4 pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Request API Access
             </button>

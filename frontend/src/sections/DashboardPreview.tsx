@@ -56,7 +56,7 @@ export const DashboardPreview: React.FC = () => {
                   <Icon className="w-3.5 h-3.5" />
                   <span>{tab.name}</span>
                   {tab.isNew && (
-                    <span className="bg-[#00D09C] text-black text-[9px] font-bold px-1.5 py-0.2 rounded uppercase">
+                    <span className="bg-[#00A09A] text-black text-[9px] font-bold px-1.5 py-0.2 rounded uppercase">
                       NEW
                     </span>
                   )}
@@ -78,14 +78,14 @@ export const DashboardPreview: React.FC = () => {
 
             <div className="flex items-center flex-wrap gap-2.5">
               <div className="bg-[#07241E]/80 border border-[#164D40] px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-200 flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5 text-[#00D09C]" />
+                <Zap className="w-3.5 h-3.5 text-[#00A09A]" />
                 <span>{stats?.live_sessions ?? 0} Live Sessions</span>
               </div>
               <div className="bg-[#07241E]/80 border border-[#164D40] px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-200 flex items-center gap-1.5">
                 <span>{stats ? `${stats.available_stations} of ${stats.total_stations}` : '4 of 7'} Available</span>
               </div>
-              <div className="bg-[#07241E]/80 border border-[#164D40] px-3 py-1.5 rounded-full text-xs font-semibold text-[#00D09C] flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#00D09C] animate-ping" />
+              <div className="bg-[#07241E]/80 border border-[#164D40] px-3 py-1.5 rounded-full text-xs font-semibold text-[#00A09A] flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#00A09A] animate-ping" />
                 <span>Live</span>
               </div>
             </div>
@@ -100,7 +100,7 @@ export const DashboardPreview: React.FC = () => {
                 <div className="text-xs font-medium text-neutral-500 mb-1">Total Stations</div>
                 <div className="text-3xl font-bold text-neutral-900">{stats?.total_stations ?? 7}</div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#00A685] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#008F8A] flex items-center justify-center">
                 <MapPin className="w-5 h-5" />
               </div>
             </div>
@@ -113,7 +113,7 @@ export const DashboardPreview: React.FC = () => {
                   {stats?.lifetime_revenue_formatted || "₹3,29,272.65"}
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#00A685] flex items-center justify-center font-bold text-base">
+              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#008F8A] flex items-center justify-center font-bold text-base">
                 <IndianRupee className="w-5 h-5" />
               </div>
             </div>
@@ -125,11 +125,11 @@ export const DashboardPreview: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <span className="text-3xl font-bold text-neutral-900">100%</span>
                   <div className="flex-1 max-w-[90px] h-2 bg-neutral-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#00A685] rounded-full w-full" />
+                    <div className="h-full bg-[#008F8A] rounded-full w-full" />
                   </div>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#00A685] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#008F8A] flex items-center justify-center shrink-0">
                 <Wifi className="w-5 h-5" />
               </div>
             </div>
@@ -140,7 +140,7 @@ export const DashboardPreview: React.FC = () => {
                 <div className="text-xs font-medium text-neutral-500 mb-1">Daily Sessions</div>
                 <div className="text-3xl font-bold text-neutral-900">{stats?.daily_sessions ?? 0}</div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#00A685] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#E6F8F3] text-[#008F8A] flex items-center justify-center">
                 <Zap className="w-5 h-5" />
               </div>
             </div>
@@ -216,7 +216,7 @@ export const DashboardPreview: React.FC = () => {
                       <div
                         className={`w-full max-w-[48px] rounded-t-md transition-all duration-300 ${
                           item.highlight
-                            ? 'bg-[#00A685] hover:bg-[#008f72] shadow-sm'
+                            ? 'bg-[#008F8A] hover:bg-[#008f72] shadow-sm'
                             : 'bg-neutral-100 hover:bg-neutral-200'
                         }`}
                         style={{ height: `${item.val * 100}%` }}
@@ -251,7 +251,7 @@ export const DashboardPreview: React.FC = () => {
                     strokeWidth="15"
                     fill="transparent"
                   />
-                  {/* Segment: Available (4 of 7 -> 57%) - Teal/Dark Green #00A685 */}
+                  {/* Segment: Available (4 of 7 -> 57%) - Teal/Dark Green #008F8A */}
                   <circle
                     cx="50"
                     cy="50"
@@ -303,7 +303,7 @@ export const DashboardPreview: React.FC = () => {
                   <span>Available 4</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00D09C]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00A09A]" />
                   <span>Occupied 0</span>
                 </div>
                 <div className="flex items-center gap-1.5">

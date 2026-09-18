@@ -107,7 +107,7 @@ export const OurApproachJourney: React.FC = () => {
         // STEP 1: Discover (Concentric Radar Sweep & Station Nodes)
         // Radar circles
         for (let r = 50; r <= 180; r += 45) {
-          ctx.strokeStyle = 'rgba(0, 168, 255, 0.15)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.15)';
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.arc(cx, cy, r, 0, Math.PI * 2);
@@ -120,8 +120,8 @@ export const OurApproachJourney: React.FC = () => {
         ctx.translate(cx, cy);
         ctx.rotate(radarAngle);
         const beamGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 190);
-        beamGrad.addColorStop(0, 'rgba(0, 240, 255, 0.45)');
-        beamGrad.addColorStop(0.8, 'rgba(0, 168, 255, 0.08)');
+        beamGrad.addColorStop(0, 'rgba(0, 160, 154, 0.45)');
+        beamGrad.addColorStop(0.8, 'rgba(0, 160, 154, 0.08)');
         beamGrad.addColorStop(1, 'transparent');
         ctx.fillStyle = beamGrad;
         ctx.beginPath();
@@ -141,7 +141,7 @@ export const OurApproachJourney: React.FC = () => {
 
         stations.forEach((st, idx) => {
           const isGlowing = Math.sin(frame * 0.05 + idx) > 0;
-          ctx.fillStyle = isGlowing ? '#00F0FF' : '#00A8FF';
+          ctx.fillStyle = isGlowing ? '#00A09A' : '#00A09A';
           ctx.beginPath();
           ctx.arc(st.x, st.y, 4, 0, Math.PI * 2);
           ctx.fill();
@@ -150,14 +150,14 @@ export const OurApproachJourney: React.FC = () => {
           ctx.font = '600 10px Manrope, sans-serif';
           ctx.fillText(st.name, st.x + 8, st.y + 3);
 
-          ctx.fillStyle = st.status === 'Available' ? '#00F0FF' : '#94A3B8';
+          ctx.fillStyle = st.status === 'Available' ? '#00A09A' : '#94A3B8';
           ctx.font = '500 8px monospace';
           ctx.fillText(`● ${st.status}`, st.x + 8, st.y + 14);
         });
 
       } else if (activeStep === 2) {
         // STEP 2: Navigate (Predictive Curved Trajectory & Highway Energy Route)
-        ctx.strokeStyle = 'rgba(0, 168, 255, 0.2)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.2)';
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(60, height - 80);
@@ -177,7 +177,7 @@ export const OurApproachJourney: React.FC = () => {
 
         // Vehicle marker
         ctx.save();
-        ctx.shadowColor = '#00F0FF';
+        ctx.shadowColor = '#00A09A';
         ctx.shadowBlur = 18;
         ctx.fillStyle = '#FFFFFF';
         ctx.beginPath();
@@ -187,7 +187,7 @@ export const OurApproachJourney: React.FC = () => {
 
         // HUD overlay on destination
         ctx.fillStyle = '#061628';
-        ctx.strokeStyle = '#00A8FF';
+        ctx.strokeStyle = '#00A09A';
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.roundRect(width - 200, 40, 150, 60, 10);
@@ -197,7 +197,7 @@ export const OurApproachJourney: React.FC = () => {
         ctx.fillStyle = '#FFFFFF';
         ctx.font = '700 11px Manrope';
         ctx.fillText('BAY #3 RESERVED', width - 185, 62);
-        ctx.fillStyle = '#00F0FF';
+        ctx.fillStyle = '#00A09A';
         ctx.font = '500 10px monospace';
         ctx.fillText('ETA: 8 min • Arr. SOC: 32%', width - 185, 80);
 
@@ -205,14 +205,14 @@ export const OurApproachJourney: React.FC = () => {
         // STEP 3: Charge (High Voltage Flowing Cable into Battery Pack)
         // Charger box left
         ctx.fillStyle = '#061324';
-        ctx.strokeStyle = '#00A8FF';
+        ctx.strokeStyle = '#00A09A';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.roundRect(60, cy - 80, 80, 160, 12);
         ctx.fill();
         ctx.stroke();
 
-        ctx.fillStyle = '#00F0FF';
+        ctx.fillStyle = '#00A09A';
         ctx.font = '700 12px Manrope';
         ctx.fillText('DC FAST', 76, cy - 50);
         ctx.fillStyle = '#FFFFFF';
@@ -224,7 +224,7 @@ export const OurApproachJourney: React.FC = () => {
 
         // Vehicle battery right
         ctx.fillStyle = '#061324';
-        ctx.strokeStyle = '#00F0FF';
+        ctx.strokeStyle = '#00A09A';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.roundRect(width - 160, cy - 80, 100, 160, 12);
@@ -233,18 +233,18 @@ export const OurApproachJourney: React.FC = () => {
 
         // Battery level fill animated
         const batteryPct = 0.4 + (Math.sin(frame * 0.02) + 1) * 0.25;
-        ctx.fillStyle = 'rgba(0, 240, 255, 0.35)';
+        ctx.fillStyle = 'rgba(0, 160, 154, 0.35)';
         ctx.fillRect(width - 155, cy + 70 - 140 * batteryPct, 90, 140 * batteryPct);
 
         ctx.fillStyle = '#FFFFFF';
         ctx.font = '700 14px Manrope';
         ctx.fillText(`${Math.round(batteryPct * 100)}%`, width - 125, cy);
-        ctx.fillStyle = '#00F0FF';
+        ctx.fillStyle = '#00A09A';
         ctx.font = '500 9px monospace';
         ctx.fillText('800V CHARGING', width - 145, cy + 20);
 
         // Flowing electric cable with high-speed particles
-        ctx.strokeStyle = 'rgba(0, 168, 255, 0.4)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.4)';
         ctx.lineWidth = 6;
         ctx.beginPath();
         ctx.moveTo(140, cy);
@@ -258,7 +258,7 @@ export const OurApproachJourney: React.FC = () => {
           const py = cy + Math.sin(particleT * Math.PI * 2) * 35;
 
           ctx.save();
-          ctx.shadowColor = '#00F0FF';
+          ctx.shadowColor = '#00A09A';
           ctx.shadowBlur = 12;
           ctx.fillStyle = '#FFFFFF';
           ctx.beginPath();
@@ -271,10 +271,10 @@ export const OurApproachJourney: React.FC = () => {
         // STEP 4: Pay (Unified Digital Settlement Hub)
         // Center wallet shield
         ctx.save();
-        ctx.shadowColor = '#00A8FF';
+        ctx.shadowColor = '#00A09A';
         ctx.shadowBlur = 25;
         ctx.fillStyle = '#061426';
-        ctx.strokeStyle = '#00F0FF';
+        ctx.strokeStyle = '#00A09A';
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.arc(cx, cy, 75, 0, Math.PI * 2);
@@ -286,7 +286,7 @@ export const OurApproachJourney: React.FC = () => {
         ctx.font = '800 20px Manrope';
         ctx.textAlign = 'center';
         ctx.fillText('TREVIA', cx, cy - 10);
-        ctx.fillStyle = '#00F0FF';
+        ctx.fillStyle = '#00A09A';
         ctx.font = '700 12px monospace';
         ctx.fillText('UNIFIED WALLET', cx, cy + 12);
         ctx.fillStyle = '#94A3B8';
@@ -304,7 +304,7 @@ export const OurApproachJourney: React.FC = () => {
         ];
 
         cpoCoords.forEach((pos, idx) => {
-          ctx.strokeStyle = 'rgba(0, 168, 255, 0.3)';
+          ctx.strokeStyle = 'rgba(0, 160, 154, 0.3)';
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(pos.x, pos.y);
@@ -338,7 +338,7 @@ export const OurApproachJourney: React.FC = () => {
         ];
 
         // Draw mesh lines
-        ctx.strokeStyle = 'rgba(0, 168, 255, 0.2)';
+        ctx.strokeStyle = 'rgba(0, 160, 154, 0.2)';
         ctx.lineWidth = 1;
         for (let i = 0; i < meshNodes.length; i++) {
           for (let j = i + 1; j < meshNodes.length; j++) {
@@ -357,9 +357,9 @@ export const OurApproachJourney: React.FC = () => {
         const py = p1.y + (p2.y - p1.y) * pulseT;
 
         ctx.save();
-        ctx.shadowColor = '#00F0FF';
+        ctx.shadowColor = '#00A09A';
         ctx.shadowBlur = 14;
-        ctx.fillStyle = '#00F0FF';
+        ctx.fillStyle = '#00A09A';
         ctx.beginPath();
         ctx.arc(px, py, 4, 0, Math.PI * 2);
         ctx.fill();
@@ -367,12 +367,12 @@ export const OurApproachJourney: React.FC = () => {
 
         // Node markers
         meshNodes.forEach((n, idx) => {
-          ctx.fillStyle = '#00A8FF';
+          ctx.fillStyle = '#00A09A';
           ctx.beginPath();
           ctx.arc(n.x, n.y, 4, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.fillStyle = 'rgba(0, 240, 255, 0.3)';
+          ctx.fillStyle = 'rgba(0, 160, 154, 0.3)';
           ctx.beginPath();
           ctx.arc(n.x, n.y, 8 + Math.sin(frame * 0.05 + idx) * 2, 0, Math.PI * 2);
           ctx.fill();
@@ -380,7 +380,7 @@ export const OurApproachJourney: React.FC = () => {
 
         // Center badge
         ctx.fillStyle = '#040C1A';
-        ctx.strokeStyle = '#00F0FF';
+        ctx.strokeStyle = '#00A09A';
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.roundRect(cx - 75, cy - 14, 150, 28, 8);
@@ -409,19 +409,19 @@ export const OurApproachJourney: React.FC = () => {
     <section id="approach" className="py-28 bg-[#02060D] relative overflow-hidden">
       
       {/* Background radial blue glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] bg-gradient-to-b from-[#00A8FF]/8 via-[#00F0FF]/4 to-transparent rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] bg-gradient-to-b from-[#00A09A]/8 via-[#00A09A]/4 to-transparent rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00F0FF] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
+            <div className="inline-flex items-center gap-2 text-[#00A09A] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00A09A] animate-pulse" />
               <span>THE SIGNATURE JOURNEY</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
-              Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white">Approach.</span>
+              Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">Approach.</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-400 max-w-xl mt-3 font-normal">
               An uninterrupted, 5-stage energy journey that harmonizes discovery, navigation, charging, payments, and grid intelligence.
@@ -436,18 +436,18 @@ export const OurApproachJourney: React.FC = () => {
             >
               {isPlaying ? (
                 <>
-                  <Pause className="w-3.5 h-3.5 text-[#00F0FF]" />
+                  <Pause className="w-3.5 h-3.5 text-[#00A09A]" />
                   <span>Cycle Active</span>
                 </>
               ) : (
                 <>
-                  <Play className="w-3.5 h-3.5 text-[#00F0FF]" />
+                  <Play className="w-3.5 h-3.5 text-[#00A09A]" />
                   <span>Cycle Paused</span>
                 </>
               )}
             </button>
             <div className="w-px h-4 bg-[#0E223D]" />
-            <span className="text-[11px] font-mono text-[#00F0FF]">
+            <span className="text-[11px] font-mono text-[#00A09A]">
               Step 0{activeStep} of 05
             </span>
           </div>
@@ -462,7 +462,7 @@ export const OurApproachJourney: React.FC = () => {
             <div className="w-full h-0.5 bg-[#0E223D]" />
             {/* Active illuminated electric wire track */}
             <div 
-              className="h-0.5 bg-gradient-to-r from-[#00A8FF] to-[#00F0FF] transition-all duration-700 absolute top-0 left-0 shadow-[0_0_12px_#00F0FF]"
+              className="h-0.5 bg-gradient-to-r from-[#00A09A] to-[#00A09A] transition-all duration-700 absolute top-0 left-0 shadow-[0_0_12px_#00A09A]"
               style={{ width: `${((activeStep - 1) / 4) * 100}%` }}
             />
           </div>
@@ -484,25 +484,25 @@ export const OurApproachJourney: React.FC = () => {
                   }}
                   className={`p-5 rounded-2xl cursor-pointer transition-all duration-300 relative group flex flex-col justify-between ${
                     isActive
-                      ? 'bg-[#071324] border-2 border-[#00F0FF] shadow-[0_0_30px_rgba(0,240,255,0.25)] -translate-y-1.5'
+                      ? 'bg-[#071324] border-2 border-[#00A09A] shadow-[0_0_30px_rgba(0,160,154,0.25)] -translate-y-1.5'
                       : isPast
-                      ? 'bg-[#040C18]/80 border border-[#0E2C52] hover:border-[#00A8FF]'
+                      ? 'bg-[#040C18]/80 border border-[#0E2C52] hover:border-[#00A09A]'
                       : 'bg-[#030914]/60 border border-[#0A1A2E] hover:border-[#0E2C52]'
                   }`}
                 >
                   {/* Top Node Header: Number + Icon */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
-                      <span className={`text-xl font-mono font-extrabold ${isActive ? 'text-[#00F0FF]' : isPast ? 'text-[#00A8FF]' : 'text-slate-600'}`}>
+                      <span className={`text-xl font-mono font-extrabold ${isActive ? 'text-[#00A09A]' : isPast ? 'text-[#00A09A]' : 'text-slate-600'}`}>
                         {s.num}
                       </span>
                     </div>
 
                     <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
                       isActive 
-                        ? 'bg-[#00F0FF] text-black shadow-[0_0_15px_#00F0FF]' 
+                        ? 'bg-[#00A09A] text-black shadow-[0_0_15px_#00A09A]' 
                         : isPast 
-                        ? 'bg-[#0E2C52] text-[#00F0FF]' 
+                        ? 'bg-[#0E2C52] text-[#00A09A]' 
                         : 'bg-[#061426] text-slate-500 group-hover:text-slate-300'
                     }`}>
                       <Icon className="w-4 h-4" />
@@ -514,17 +514,17 @@ export const OurApproachJourney: React.FC = () => {
                     <h3 className="text-base font-bold text-white tracking-tight">
                       {s.title}
                     </h3>
-                    <p className="text-[11px] text-[#00A8FF] font-medium mt-0.5">
+                    <p className="text-[11px] text-[#00A09A] font-medium mt-0.5">
                       {s.tagline}
                     </p>
                   </div>
 
                   {/* Active Indicator Bar */}
                   <div className="mt-4 pt-3 border-t border-[#0E223D]/60 flex items-center justify-between text-[10px] text-slate-400">
-                    <span className={isActive ? 'text-[#00F0FF] font-semibold' : ''}>
+                    <span className={isActive ? 'text-[#00A09A] font-semibold' : ''}>
                       {isActive ? '● Stage Active' : isPast ? '✓ Completed' : 'Pending'}
                     </span>
-                    <ChevronRight className={`w-3.5 h-3.5 transition-transform ${isActive ? 'text-[#00F0FF] translate-x-1' : 'text-slate-600'}`} />
+                    <ChevronRight className={`w-3.5 h-3.5 transition-transform ${isActive ? 'text-[#00A09A] translate-x-1' : 'text-slate-600'}`} />
                   </div>
                 </div>
               );
@@ -537,12 +537,12 @@ export const OurApproachJourney: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#040B17] border border-[#0E2644] rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           
           {/* Subtle background circuit pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(#00A8FF_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(#00A09A_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
 
           {/* Left Column: Step Editorial Details */}
           <div className="lg:col-span-6 space-y-6 relative z-10">
             <div className="flex items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-mono font-semibold">
+              <span className="px-3 py-1 rounded-full bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] text-xs font-mono font-semibold">
                 STAGE {steps[activeStep - 1].num} • {steps[activeStep - 1].pill}
               </span>
               <span className="text-xs text-slate-400">
@@ -553,11 +553,11 @@ export const OurApproachJourney: React.FC = () => {
             <div>
               <h3 className="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-1">
                 {steps[activeStep - 1].title}{' '}
-                <span className="font-extrabold text-[#00F0FF]">
+                <span className="font-extrabold text-[#00A09A]">
                   Architecture
                 </span>
               </h3>
-              <p className="text-sm font-medium text-[#00A8FF]">
+              <p className="text-sm font-medium text-[#00A09A]">
                 {steps[activeStep - 1].tagline}
               </p>
             </div>
@@ -570,7 +570,7 @@ export const OurApproachJourney: React.FC = () => {
             <div className="space-y-2.5 pt-2">
               {steps[activeStep - 1].details.map((item, i) => (
                 <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                  <div className="w-4 h-4 rounded-full bg-[#00F0FF]/10 text-[#00F0FF] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-4 h-4 rounded-full bg-[#00A09A]/10 text-[#00A09A] flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
                   <span>{item}</span>
@@ -582,13 +582,13 @@ export const OurApproachJourney: React.FC = () => {
             <div className="pt-4 flex items-center gap-3">
               <button
                 onClick={() => setActiveStep(activeStep === 1 ? 5 : activeStep - 1)}
-                className="px-4 py-2 rounded-xl bg-[#061222] border border-[#0E2A4D] hover:border-[#00A8FF] text-xs font-semibold text-slate-300 hover:text-white transition"
+                className="px-4 py-2 rounded-xl bg-[#061222] border border-[#0E2A4D] hover:border-[#00A09A] text-xs font-semibold text-slate-300 hover:text-white transition"
               >
                 ← Previous Stage
               </button>
               <button
                 onClick={() => setActiveStep((activeStep % 5) + 1)}
-                className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black text-xs font-bold transition flex items-center gap-1.5 shadow-md shadow-[#00A8FF]/20"
+                className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black text-xs font-bold transition flex items-center gap-1.5 shadow-md shadow-[#00A09A]/20"
               >
                 <span>Next Stage</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -603,10 +603,10 @@ export const OurApproachJourney: React.FC = () => {
               {/* Top Simulation HUD indicator */}
               <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-slate-400 pointer-events-none z-20">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-ping" />
+                  <span className="w-2 h-2 rounded-full bg-[#00A09A] animate-ping" />
                   <span className="text-white font-semibold uppercase">SIMULATION: {steps[activeStep - 1].title}</span>
                 </div>
-                <div className="text-[#00A8FF]">
+                <div className="text-[#00A09A]">
                   60 FPS • HIGH PRECISION
                 </div>
               </div>
@@ -617,7 +617,7 @@ export const OurApproachJourney: React.FC = () => {
               {/* Bottom Telemetry Bar */}
               <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[10px] font-mono text-slate-400 bg-[#040C1A]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#0E223D]">
                 <span>Status: Optimal Handshake</span>
-                <span className="text-[#00F0FF]">Latency: 12ms</span>
+                <span className="text-[#00A09A]">Latency: 12ms</span>
                 <span>OCPP 2.0.1 Encrypted</span>
               </div>
 

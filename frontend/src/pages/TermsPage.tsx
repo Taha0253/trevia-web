@@ -5,7 +5,7 @@ export const TermsPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24 space-y-8">
       <div className="space-y-3 pb-6 border-b border-[#0E2C52]">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00F0FF] text-xs font-mono uppercase">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono uppercase">
           <Shield className="w-3.5 h-3.5" /> Legal Document
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold text-white">Terms of Use</h1>
@@ -37,7 +37,7 @@ export const TermsPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-white">4. Inquiries</h2>
           <p>
-            For legal inquiries, contact <a href="mailto:legal@treviaev.in" className="text-[#00F0FF] underline">legal@treviaev.in</a>.
+            For legal inquiries, contact <a href="mailto:legal@treviaev.in" className="text-[#00A09A] underline">legal@treviaev.in</a>.
           </p>
         </section>
       </div>

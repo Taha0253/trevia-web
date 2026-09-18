@@ -5,7 +5,7 @@ export const PrivacyPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24 space-y-8">
       <div className="space-y-3 pb-6 border-b border-[#0E2C52]">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00F0FF] text-xs font-mono uppercase">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono uppercase">
           <Shield className="w-3.5 h-3.5" /> Legal Document
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold text-white">Privacy Policy</h1>
@@ -43,7 +43,7 @@ export const PrivacyPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-white">4. Contact Us</h2>
           <p>
-            If you have questions regarding this Privacy Policy, contact us at <a href="mailto:privacy@treviaev.in" className="text-[#00F0FF] underline">privacy@treviaev.in</a>.
+            If you have questions regarding this Privacy Policy, contact us at <a href="mailto:privacy@treviaev.in" className="text-[#00A09A] underline">privacy@treviaev.in</a>.
           </p>
         </section>
       </div>

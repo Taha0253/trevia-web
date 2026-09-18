@@ -25,13 +25,13 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
-                <span className="text-[#00F0FF]">Architecture</span>
+                <span className="text-[#00A09A]">Architecture</span>
                 <span>/</span>
                 <span className="text-white font-semibold">Platform Layer</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A8FF]/40 flex items-center justify-center text-[#00F0FF]">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
                   <Layers className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
@@ -47,7 +47,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <button
                 onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)] flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
               >
                 <span>Request a Demo</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -60,7 +60,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
       {/* End-to-End Architecture */}
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Topology
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -75,12 +75,12 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#00A8FF]/40 space-y-4">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#00A09A]/40 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded bg-[#00A8FF]/20 text-[#00F0FF] font-bold">
+              <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded bg-[#00A09A]/20 text-[#00A09A] font-bold">
                 Operator Layer
               </span>
-              <Radio className="w-5 h-5 text-[#00A8FF]" />
+              <Radio className="w-5 h-5 text-[#00A09A]" />
             </div>
 
             <h3 className="text-xl font-bold text-white">Trevia CMS</h3>
@@ -90,21 +90,21 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
 
             <ul className="space-y-2 text-xs text-slate-300">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00F0FF]" />
+                <CheckCircle2 className="w-4 h-4 text-[#00A09A]" />
                 <span>OCPP 1.6J multi-vendor charger connectivity</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00F0FF]" />
+                <CheckCircle2 className="w-4 h-4 text-[#00A09A]" />
                 <span>Real-time telemetry, session state & power monitoring</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00F0FF]" />
+                <CheckCircle2 className="w-4 h-4 text-[#00A09A]" />
                 <span>Remote operations: Reset, Unlock & Diagnostics</span>
               </li>
             </ul>
 
             <div className="pt-2">
-              <Link to="/cms" className="text-xs font-mono text-[#00F0FF] hover:underline inline-flex items-center gap-1">
+              <Link to="/cms" className="text-xs font-mono text-[#00A09A] hover:underline inline-flex items-center gap-1">
                 <span>View Trevia CMS</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -116,7 +116,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
               <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 font-bold">
                 Driver Layer
               </span>
-              <Smartphone className="w-5 h-5 text-[#00F0FF]" />
+              <Smartphone className="w-5 h-5 text-[#00A09A]" />
             </div>
 
             <h3 className="text-xl font-bold text-white">Trevia Drive</h3>
@@ -149,7 +149,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
       {/* Structural Differentiation */}
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Category Matrix
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -163,7 +163,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo }) => 
               <tr className="border-b border-[#0E2C52] bg-[#061426] text-slate-400 font-mono text-xs uppercase">
                 <th className="p-4">Category</th>
                 <th className="p-4">Typical Approach</th>
-                <th className="p-4 text-[#00F0FF]">Trevia's Structural Advantage</th>
+                <th className="p-4 text-[#00A09A]">Trevia's Structural Advantage</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#0E2C52]/60 text-slate-300">
