@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 
 export const EcosystemSection: React.FC = () => {
   const partners = [
