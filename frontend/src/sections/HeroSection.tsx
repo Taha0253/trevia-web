@@ -22,13 +22,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-4 lg:gap-0">
           <div className="lg:col-span-5 space-y-6 z-10 lg:pr-2 max-w-xl">
             <div className="space-y-1">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[74px] font-extralight text-white tracking-tight leading-[1.06]">
-                Redefining
-              </h1>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[74px] font-extralight text-white tracking-tight leading-[1.06]">
-                the{' '}
-                <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white drop-shadow-[0_0_30px_rgba(0,160,154,0.6)]">
-                  CHARGE.
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-extralight text-white tracking-tight leading-[1.15]">
+                Building the digital infrastructure behind{' '}
+                <span className="font-extrabold text-[#00A09A]">
+                  EV charging.
                 </span>
               </h1>
             </div>

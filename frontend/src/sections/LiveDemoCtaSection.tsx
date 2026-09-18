@@ -11,11 +11,12 @@ const StarMark: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const rings = [
-  { size: 'w-[48%] h-[48%]', delay: '0s', dots: [{ t: '6%', l: '50%' }] },
-  { size: 'w-[64%] h-[64%]', delay: '0.16s', dots: [{ t: '18%', l: '12%' }, { t: '78%', l: '86%' }] },
-  { size: 'w-[80%] h-[80%]', delay: '0.32s', dots: [{ t: '12%', l: '72%' }, { t: '88%', l: '28%' }] },
-  { size: 'w-[96%] h-[96%]', delay: '0.48s', dots: [{ t: '30%', l: '6%' }, { t: '70%', l: '94%' }] },
+const staticRings = ['w-[40%] h-[40%]', 'w-[64%] h-[64%]', 'w-[88%] h-[88%]'];
+const sonarRings = [0, 1, 2, 3];
+const orbits = [
+  { size: 'w-[46%] h-[46%]', duration: '16s', reverse: false, dots: 1 },
+  { size: 'w-[68%] h-[68%]', duration: '26s', reverse: true, dots: 2 },
+  { size: 'w-[92%] h-[92%]', duration: '38s', reverse: false, dots: 1 },
 ];
 
 interface LiveDemoCtaSectionProps {
@@ -29,19 +30,40 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
         <div className="demo-core-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
         <div className="absolute inset-0 pointer-events-none">
-          {rings.map((ring, index) => (
+          {/* Rotating radar sweep */}
+          <div className="demo-radar-sweep absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[94%] h-[94%] rounded-full" />
+
+          {/* Static reference rings */}
+          {staticRings.map((size, index) => (
             <div
-              key={index}
-              className={`demo-ring-cycle absolute rounded-full border border-[#00A09A]/35 ${ring.size}`}
-              style={{ animationDelay: ring.delay }}
+              key={`static-${index}`}
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#00A09A]/20 ${size}`}
+            />
+          ))}
+
+          {/* Continuous sonar pings, staggered so one is always mid-expansion */}
+          {sonarRings.map((index) => (
+            <span
+              key={`sonar-${index}`}
+              className="demo-sonar-ring absolute top-1/2 left-1/2 rounded-full border border-[#00A09A]/50"
+              style={{ animationDelay: `${index * 1}s` }}
+            />
+          ))}
+
+          {/* Dots orbiting the core at different radii/speeds */}
+          {orbits.map((orbit, index) => (
+            <div
+              key={`orbit-${index}`}
+              className={`demo-orbit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${orbit.size}`}
+              style={{
+                animationDuration: orbit.duration,
+                animationDirection: orbit.reverse ? 'reverse' : 'normal'
+              }}
             >
-              {ring.dots.map((dot, dotIndex) => (
-                <span
-                  key={dotIndex}
-                  className="demo-orbit-dot"
-                  style={{ top: dot.t, left: dot.l }}
-                />
-              ))}
+              <span className="demo-orbit-dot" style={{ top: 0, left: '50%' }} />
+              {orbit.dots > 1 && (
+                <span className="demo-orbit-dot" style={{ top: '100%', left: '50%' }} />
+              )}
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
   ChevronDown, 
@@ -30,14 +30,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   const solutionsRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const companyRef = useRef<HTMLDivElement>(null);
+  const hoverCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Close dropdowns
   const closeAllMenus = () => {
+    if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
     setSolutionsOpen(false);
     setTechOpen(false);
     setCompanyOpen(false);
     setMobileOpen(false);
   };
+
+  // Open a dropdown immediately on hover, closing the others
+  const openMenuOnHover = useCallback((menu: 'solutions' | 'technology' | 'company') => {
+    if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
+    setSolutionsOpen(menu === 'solutions');
+    setTechOpen(menu === 'technology');
+    setCompanyOpen(menu === 'company');
+  }, []);
+
+  // Small delay so moving the cursor from the trigger into the panel doesn't close it
+  const scheduleMenusClose = useCallback(() => {
+    if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
+    hoverCloseTimeout.current = setTimeout(() => {
+      setSolutionsOpen(false);
+      setTechOpen(false);
+      setCompanyOpen(false);
+    }, 120);
+  }, []);
 
   // Click outside to close desktop dropdowns
   useEffect(() => {
@@ -119,7 +139,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           </Link>
 
           {/* Solutions Dropdown */}
-          <div className="relative" ref={solutionsRef}>
+          <div
+            className="relative"
+            ref={solutionsRef}
+            onMouseEnter={() => openMenuOnHover('solutions')}
+            onMouseLeave={scheduleMenusClose}
+          >
             <button
               onClick={() => {
                 setSolutionsOpen(!solutionsOpen);
@@ -215,7 +240,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           </div>
 
           {/* Technology Dropdown */}
-          <div className="relative" ref={techRef}>
+          <div
+            className="relative"
+            ref={techRef}
+            onMouseEnter={() => openMenuOnHover('technology')}
+            onMouseLeave={scheduleMenusClose}
+          >
             <button
               onClick={() => {
                 setTechOpen(!techOpen);
@@ -263,7 +293,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           </div>
 
           {/* Company Dropdown */}
-          <div className="relative" ref={companyRef}>
+          <div
+            className="relative"
+            ref={companyRef}
+            onMouseEnter={() => openMenuOnHover('company')}
+            onMouseLeave={scheduleMenusClose}
+          >
             <button
               onClick={() => {
                 setCompanyOpen(!companyOpen);

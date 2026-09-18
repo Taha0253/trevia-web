@@ -89,14 +89,33 @@
   border-radius: 9999px;
   background: radial-gradient(circle, rgba(0, 160, 154, 0.55) 0%, rgba(0, 160, 154, 0.12) 48%, transparent 72%);
   filter: blur(18px);
-  animation: demo-glow-cycle 14s ease-in-out infinite;
+  animation: demo-glow-breathe 6s ease-in-out infinite;
 }
 
-.demo-ring-cycle {
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
-  animation: demo-ring-loop 14s ease-in-out infinite;
+/* Continuously expanding sonar pings — staggered delays keep at least one ring
+   always mid-expansion, so the animation never has a dead/empty moment. */
+.demo-sonar-ring {
+  width: 20%;
+  height: 20%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  animation: demo-sonar-ping 4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+/* Rotating conic sweep masked to a thin ring, like a radar scan */
+.demo-radar-sweep {
+  background: conic-gradient(from 0deg, rgba(0, 160, 154, 0.45), transparent 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, transparent 57%, black 58%, black 100%);
+  mask-image: radial-gradient(circle, transparent 57%, black 58%, black 100%);
+  mix-blend-mode: screen;
+  animation: demo-radar-rotate 7s linear infinite;
+}
+
+/* Dots that continuously orbit the core at varying radii/speeds/directions */
+.demo-orbit {
+  animation-name: demo-orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .demo-orbit-dot {
@@ -136,42 +155,47 @@
 .demo-star-bl { bottom: -10px; left: -10px; }
 .demo-star-br { bottom: -10px; right: -10px; }
 
-@keyframes demo-ring-loop {
-  0%,
-  12% {
-    transform: translate(-50%, -50%) scale(0.04) rotate(0deg);
+@keyframes demo-sonar-ping {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
     opacity: 0;
   }
-  38% {
-    transform: translate(-50%, -50%) scale(1) rotate(0deg);
-    opacity: 1;
+  10% {
+    opacity: 0.9;
   }
-  68% {
-    transform: translate(-50%, -50%) scale(1) rotate(210deg);
-    opacity: 1;
-  }
-  90%,
   100% {
-    transform: translate(-50%, -50%) scale(0.04) rotate(260deg);
+    transform: translate(-50%, -50%) scale(3.1);
     opacity: 0;
   }
 }
 
-@keyframes demo-glow-cycle {
+@keyframes demo-radar-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes demo-orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes demo-glow-breathe {
   0%,
-  12% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.4);
-  }
-  38%,
-  68% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  90%,
   100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.15);
   }
 }
 
@@ -196,7 +220,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .demo-ring-cycle,
+  .demo-sonar-ring,
+  .demo-radar-sweep,
+  .demo-orbit,
   .demo-core-glow {
     animation: none;
     opacity: 0.35;
