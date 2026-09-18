@@ -90,8 +90,7 @@ export const EcosystemSection: React.FC = () => {
 
         {/* Bottom Tag */}
         <div className="mt-12 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#040E1C] border border-[#0F2644] text-xs text-slate-300">
-          <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
-          <span>Recognized by DPIIT • Incubated at T-Hub • Serving 12,000+ EV charging sessions</span>
+          
         </div>
 
       </div>

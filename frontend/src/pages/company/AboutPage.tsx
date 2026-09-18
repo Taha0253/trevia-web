@@ -25,6 +25,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
               Redefining
             </h1>
+            <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
+              the{' '}
+              <span className="font-extrabold text-[#00A09A]">
+                CHARGE.
+              </span>
+            </h1>
 
             <p className="text-lg text-slate-300 font-normal leading-relaxed">
               Trevia EV Technologies is a software infrastructure company for India's EV charging ecosystem. Its primary product, Trevia CMS, is the operating layer that connects charging hardware to the people who run it.

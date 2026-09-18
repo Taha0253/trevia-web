@@ -58,7 +58,7 @@ export const ChargedParticlesBackground: React.FC = () => {
     // Create particles with higher density and hero concentration
     const particleCount = Math.min(Math.floor((width * height) / 8500), 140);
     const particles: Particle[] = [];
-    const colors = ['#00A8FF', '#00F0FF', '#38BDF8', '#7DD3FC', '#00D2C4', '#FFFFFF'];
+    const colors = ['#00A09A', '#00C9C1', '#5EEAD4', '#7DD3FC', '#00A09A', '#FFFFFF'];
 
     for (let i = 0; i < particleCount; i++) {
       const vx = (Math.random() - 0.5) * 0.5;
@@ -95,7 +95,7 @@ export const ChargedParticlesBackground: React.FC = () => {
 
           if (dist < 110) {
             const lineAlpha = (1 - dist / 110) * 0.16;
-            ctx.strokeStyle = `rgba(0, 168, 255, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(0, 160, 154, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -125,7 +125,7 @@ export const ChargedParticlesBackground: React.FC = () => {
 
             // Draw interactive luminous energy filament from cursor to particle
             const lineAlpha = (1 - dist / mouse.radius) * 0.55;
-            ctx.strokeStyle = `rgba(0, 240, 255, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(0, 160, 154, ${lineAlpha})`;
             ctx.lineWidth = 1.2;
             ctx.beginPath();
             ctx.moveTo(mouse.x, mouse.y);
@@ -134,7 +134,7 @@ export const ChargedParticlesBackground: React.FC = () => {
 
             // Glow burst around reacting particles
             ctx.save();
-            ctx.shadowColor = '#00F0FF';
+            ctx.shadowColor = '#00A09A';
             ctx.shadowBlur = 12;
             ctx.fillStyle = '#FFFFFF';
             ctx.beginPath();
