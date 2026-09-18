@@ -88,10 +88,6 @@ export const EcosystemSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom Tag */}
-        <div className="mt-12 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#040E1C] border border-[#0F2644] text-xs text-slate-300">
-          
-        </div>
 
       </div>
     </section>
