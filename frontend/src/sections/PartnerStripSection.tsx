@@ -20,19 +20,7 @@ const GcpMark: React.FC = () => (
 );
 
 const AwsMark: React.FC = () => (
-  <svg viewBox="0 0 100 58" className="h-8 w-14" aria-hidden="true">
-    <text x="50" y="30" textAnchor="middle" fill="#fff" fontSize="30" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="-1">
-      aws
-    </text>
-    <path
-      fill="none"
-      stroke="#FF9900"
-      strokeWidth="3.4"
-      strokeLinecap="round"
-      d="M4 40c18 12 74 12 92 0"
-    />
-    <path fill="#FF9900" d="M92 34.5 100 38l-9.5 4.5 1.5-4Z" />
-  </svg>
+  <img src="/AWS-white-text.png" alt="AWS" loading="lazy" decoding="async" className="h-9 w-auto object-contain" />
 );
 
 const ThubMark: React.FC = () => (
