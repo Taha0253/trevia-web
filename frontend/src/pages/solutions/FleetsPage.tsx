@@ -18,13 +18,13 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
-                <span className="text-[#00A8FF]">Solutions</span>
+                <span className="text-[#00A09A]">Solutions</span>
                 <span>/</span>
                 <span className="text-white font-semibold">Fleets</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A8FF]/40 flex items-center justify-center text-[#00A8FF]">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
                   <Truck className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
@@ -40,7 +40,7 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <button
                 onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)] flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
               >
                 <span>Talk to Sales</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -63,8 +63,8 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#061426] border border-[#00A8FF]/40 space-y-2 shadow-[0_0_20px_rgba(0,168,255,0.1)]">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A8FF] flex items-center gap-1.5">
+          <div className="p-6 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-2 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A] flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5" /> Trevia Solution
             </div>
             <h3 className="text-base font-bold text-white">Telemetry Tied to Fleet Ops</h3>
@@ -88,7 +88,7 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
       {/* Fleet Capabilities */}
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A8FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Fleet Tools
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -98,7 +98,7 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Clock className="w-5 h-5 text-[#00A8FF]" />
+            <Clock className="w-5 h-5 text-[#00A09A]" />
             <h4 className="text-sm font-bold text-white">Depot Turnaround Scheduling</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Track real-time charging status across all depot bays to ensure delivery vans and transit vehicles meet shift departure deadlines.
@@ -106,7 +106,7 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
           </div>
 
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Zap className="w-5 h-5 text-[#00F0FF]" />
+            <Zap className="w-5 h-5 text-[#00A09A]" />
             <h4 className="text-sm font-bold text-white">Energy Cost Accounting</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Reconcile exact kWh consumption, peak tariff costs, and charging durations per vehicle identification tag or RFID fob.
@@ -125,7 +125,7 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-2xl bg-[#061426] border border-[#00A8FF]/40 p-8 text-center space-y-4">
+        <div className="rounded-2xl bg-[#061426] border border-[#00A09A]/40 p-8 text-center space-y-4">
           <h3 className="text-xl font-bold text-white">
             Optimize your fleet charging operations
           </h3>
@@ -135,7 +135,7 @@ export const FleetsPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
           <div className="pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Talk to Sales
             </button>

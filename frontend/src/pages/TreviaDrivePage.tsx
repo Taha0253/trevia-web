@@ -27,13 +27,13 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
-                <span className="text-[#00F0FF]">Product</span>
+                <span className="text-[#00A09A]">Product</span>
                 <span>/</span>
                 <span className="text-white font-semibold">Trevia Drive</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00F0FF]/40 flex items-center justify-center text-[#00F0FF]">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
                   <Smartphone className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
@@ -49,7 +49,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <button
                 onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,168,255,0.3)]"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)]"
               >
                 Join Waitlist / Partner
               </button>
@@ -73,8 +73,8 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
             </p>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#061426] border border-[#00F0FF]/40 space-y-3">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF] flex items-center gap-2">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-3">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A] flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4" /> The Solution
             </div>
             <h3 className="text-lg font-bold text-white">
@@ -90,7 +90,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
       {/* 3. Interactive Discovery Mock */}
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Interface Preview
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -113,7 +113,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               <button
                 onClick={() => setActiveFilter('all')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
-                  activeFilter === 'all' ? 'bg-[#00F0FF] text-black' : 'bg-[#061426] text-slate-300 border border-[#0E2C52]'
+                  activeFilter === 'all' ? 'bg-[#00A09A] text-black' : 'bg-[#061426] text-slate-300 border border-[#0E2C52]'
                 }`}
               >
                 All (12)
@@ -121,7 +121,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               <button
                 onClick={() => setActiveFilter('dc')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
-                  activeFilter === 'dc' ? 'bg-[#00F0FF] text-black' : 'bg-[#061426] text-slate-300 border border-[#0E2C52]'
+                  activeFilter === 'dc' ? 'bg-[#00A09A] text-black' : 'bg-[#061426] text-slate-300 border border-[#0E2C52]'
                 }`}
               >
                 CCS2 DC (8)
@@ -129,7 +129,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               <button
                 onClick={() => setActiveFilter('ac')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
-                  activeFilter === 'ac' ? 'bg-[#00F0FF] text-black' : 'bg-[#061426] text-slate-300 border border-[#0E2C52]'
+                  activeFilter === 'ac' ? 'bg-[#00A09A] text-black' : 'bg-[#061426] text-slate-300 border border-[#0E2C52]'
                 }`}
               >
                 AC Type 2 (4)
@@ -138,7 +138,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl bg-[#061426] border border-[#00F0FF]/40 space-y-3 shadow-lg">
+            <div className="p-4 rounded-xl bg-[#061426] border border-[#00A09A]/40 space-y-3 shadow-lg">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -156,7 +156,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
                 <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">⭐ 4.9 (142)</span>
               </div>
               <div className="pt-2 border-t border-[#0E2C52] flex items-center justify-between text-xs font-mono">
-                <span className="text-[#00F0FF] font-semibold">2 of 2 Free</span>
+                <span className="text-[#00A09A] font-semibold">2 of 2 Free</span>
                 <span className="text-white font-bold">₹18.50 / kWh</span>
               </div>
             </div>
@@ -200,7 +200,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
                 <span className="bg-[#030914] px-2 py-0.5 rounded-md border border-[#0E2C52]">⭐ 4.9 (64)</span>
               </div>
               <div className="pt-2 border-t border-[#0E2C52] flex items-center justify-between text-xs font-mono">
-                <span className="text-[#00F0FF] font-semibold">4 of 4 Free</span>
+                <span className="text-[#00A09A] font-semibold">4 of 4 Free</span>
                 <span className="text-white font-bold">₹14.00 / kWh</span>
               </div>
             </div>
@@ -211,7 +211,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
       {/* 4. Core Features */}
       <section className="max-w-7xl mx-auto px-6 space-y-4">
         <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-1">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Driver Benefits
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -221,7 +221,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00F0FF]">
+            <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <MapPin className="w-4 h-4" />
             </div>
             <h4 className="text-sm font-bold text-white">Multi-Network Aggregation</h4>
@@ -246,7 +246,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
       <section className="max-w-4xl mx-auto px-6 space-y-4">
         <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
           <h4 className="text-sm font-bold text-white flex items-center gap-2">
-            <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+            <HelpCircle className="w-4 h-4 text-[#00A09A]" />
             Is Trevia Drive connected to Trevia CMS?
           </h4>
           <p className="text-xs text-slate-300 leading-relaxed pl-6">
@@ -257,7 +257,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
 
       {/* 6. CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-2xl bg-[#061426] border border-[#00F0FF]/40 p-8 text-center space-y-4">
+        <div className="rounded-2xl bg-[#061426] border border-[#00A09A]/40 p-8 text-center space-y-4">
           <h3 className="text-xl font-bold text-white">
             Looking for enterprise charging management?
           </h3>
@@ -267,7 +267,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
           <div className="pt-2">
             <Link
               to="/cms"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider inline-block"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider inline-block"
             >
               Explore Trevia CMS
             </Link>

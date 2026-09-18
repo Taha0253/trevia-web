@@ -93,13 +93,13 @@ export const OurApproachSection: React.FC = () => {
     <section id="approach" className="py-24 bg-[#060B09] relative overflow-hidden">
       
       {/* Background radial glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#00D09C]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#00A09A]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Eyebrow matching Image 4 */}
         <div className="mb-4">
-          <span className="text-[#00D09C] font-mono text-xs sm:text-sm font-bold tracking-[0.25em] uppercase">
+          <span className="text-[#00A09A] font-mono text-xs sm:text-sm font-bold tracking-[0.25em] uppercase">
             OUR APPROACH
           </span>
         </div>
@@ -117,7 +117,7 @@ export const OurApproachSection: React.FC = () => {
         {/* Autoplay & Interaction Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6 bg-[#091510] border border-[#142C23] p-4 rounded-2xl">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#00D09C]/20 border border-[#00D09C]/40 text-[#00D09C] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#00A09A]/20 border border-[#00A09A]/40 text-[#00A09A] flex items-center justify-center">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
@@ -135,7 +135,7 @@ export const OurApproachSection: React.FC = () => {
               onClick={() => setAutoPlay(!autoPlay)}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                 autoPlay 
-                  ? 'bg-[#00D09C] text-black font-bold' 
+                  ? 'bg-[#00A09A] text-black font-bold' 
                   : 'bg-neutral-800 text-neutral-300 hover:text-white'
               }`}
             >
@@ -170,13 +170,13 @@ export const OurApproachSection: React.FC = () => {
                 }}
                 className={`bg-white rounded-[2rem] p-6 text-neutral-900 flex flex-col justify-between cursor-pointer transition-all duration-300 relative group shadow-lg ${
                   isActive
-                    ? 'ring-4 ring-[#00D09C] shadow-2xl shadow-[#00D09C]/25 -translate-y-2'
+                    ? 'ring-4 ring-[#00A09A] shadow-2xl shadow-[#00A09A]/25 -translate-y-2'
                     : 'hover:-translate-y-1 hover:shadow-xl'
                 }`}
               >
                 {/* Active Pill Badge */}
                 {isActive && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00D09C] text-black text-[10px] font-black uppercase tracking-wider px-3 py-0.5 rounded-full shadow-md whitespace-nowrap">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00A09A] text-black text-[10px] font-black uppercase tracking-wider px-3 py-0.5 rounded-full shadow-md whitespace-nowrap">
                     Active Step Simulation
                   </div>
                 )}
@@ -184,7 +184,7 @@ export const OurApproachSection: React.FC = () => {
                 {/* Top Row: 01 and + button */}
                 <div>
                   <div className="flex items-center justify-between mb-8">
-                    <span className="text-xl font-bold text-[#00A685] font-mono tracking-tight">
+                    <span className="text-xl font-bold text-[#008F8A] font-mono tracking-tight">
                       {card.stepNum}
                     </span>
                     <button
@@ -206,7 +206,7 @@ export const OurApproachSection: React.FC = () => {
                   {/* Center Rounded Dark Square with Teal Icon */}
                   <div className="flex justify-center mb-10">
                     <div className="w-20 h-20 rounded-2xl bg-[#08120E] flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-200">
-                      <Icon className="w-8 h-8 text-[#00D09C]" />
+                      <Icon className="w-8 h-8 text-[#00A09A]" />
                     </div>
                   </div>
 
@@ -216,7 +216,7 @@ export const OurApproachSection: React.FC = () => {
                   </h3>
 
                   {/* Teal Accent Line */}
-                  <div className="w-8 h-1 bg-[#00A685] rounded-full mb-3" />
+                  <div className="w-8 h-1 bg-[#008F8A] rounded-full mb-3" />
 
                   {/* Description */}
                   <p className="text-xs sm:text-[13px] text-neutral-600 leading-relaxed">
@@ -229,7 +229,7 @@ export const OurApproachSection: React.FC = () => {
                   <span className="font-medium">
                     {isActive ? '● Simulating' : 'View flow'}
                   </span>
-                  <ArrowRight className={`w-3.5 h-3.5 text-[#00A685] transition-transform ${isActive ? 'translate-x-1' : ''}`} />
+                  <ArrowRight className={`w-3.5 h-3.5 text-[#008F8A] transition-transform ${isActive ? 'translate-x-1' : ''}`} />
                 </div>
               </div>
             );
@@ -253,7 +253,7 @@ export const OurApproachSection: React.FC = () => {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="flex items-center gap-2 text-[#00D09C] text-xs font-mono font-bold mb-2">
+              <div className="flex items-center gap-2 text-[#00A09A] text-xs font-mono font-bold mb-2">
                 <span>STEP {cards[expandedCard - 1].stepNum} ARCHITECTURAL SPECIFICATION</span>
               </div>
               <h3 className="text-2xl font-bold mb-2 text-white">
@@ -282,7 +282,7 @@ export const OurApproachSection: React.FC = () => {
                     setActiveStep(expandedCard);
                     setExpandedCard(null);
                   }}
-                  className="bg-[#00D09C] text-black font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-[#00BF8A] transition"
+                  className="bg-[#00A09A] text-black font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-[#008F8A] transition"
                 >
                   Activate Particle Simulation
                 </button>

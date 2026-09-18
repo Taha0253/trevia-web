@@ -17,19 +17,19 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
       
       {/* Hero */}
       <section className="relative pt-12 pb-16 md:pt-24 md:pb-24 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[#00A8FF]/10 rounded-full blur-[200px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[#00A09A]/10 rounded-full blur-[200px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00F0FF] text-xs font-mono font-medium tracking-wider uppercase">
-              <Layers className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
+              <Layers className="w-3.5 h-3.5 text-[#00A09A]" />
               <span>Technology — OCPP & Interoperability</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
               Built for interoperability, not a{' '}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">
                 single vendor.
               </span>
             </h1>
@@ -41,7 +41,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onRequestDemo}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,168,255,0.4)] flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,160,154,0.4)] flex items-center gap-2"
               >
                 <span>Talk to Our Team</span>
                 <ArrowRight className="w-4 h-4" />
@@ -61,7 +61,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
       {/* Architecture Overview */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             System Topology
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
@@ -78,7 +78,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
       {/* Technical Specifications Grid */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             Protocol Engineering
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
@@ -90,7 +90,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
           
           {/* OCPP 1.6J */}
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="text-[#00F0FF] font-mono text-xs font-bold uppercase">Open Standard</div>
+            <div className="text-[#00A09A] font-mono text-xs font-bold uppercase">Open Standard</div>
             <h4 className="text-lg font-bold text-white">OCPP 1.6J</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Trevia CMS communicates with chargers using OCPP 1.6J, the open protocol most widely supported across charger hardware manufacturers — the foundation of Trevia's hardware-agnostic positioning.
@@ -99,7 +99,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
 
           {/* WebSocket Connectivity */}
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="text-[#00A8FF] font-mono text-xs font-bold uppercase">Networking</div>
+            <div className="text-[#00A09A] font-mono text-xs font-bold uppercase">Networking</div>
             <h4 className="text-lg font-bold text-white">WebSocket Connectivity</h4>
             <p className="text-xs text-slate-300 leading-relaxed">
               Chargers maintain a persistent WebSocket connection to Trevia CMS, enabling real-time status updates rather than periodic polling.
@@ -148,7 +148,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
       {/* Protocol Message Format Snippet */}
       <section className="max-w-7xl mx-auto px-6 space-y-6">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             Protocol Schema
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -161,10 +161,10 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
 
         <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] font-mono text-xs text-slate-300 overflow-x-auto">
           <div className="flex items-center justify-between pb-3 border-b border-[#0E2C52] mb-3 text-slate-400">
-            <span className="text-[#00F0FF]">Heartbeat & MeterValues Schema</span>
+            <span className="text-[#00A09A]">Heartbeat & MeterValues Schema</span>
             <span>WSS /ocpp/v16/chargepoint_01</span>
           </div>
-          <pre className="text-[#00F0FF] leading-relaxed">
+          <pre className="text-[#00A09A] leading-relaxed">
 {`[
   2,
   "msg-948192-meter",
@@ -192,7 +192,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-6 space-y-8">
         <div className="text-center space-y-2">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF]">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
             Technical FAQ
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white">
@@ -203,7 +203,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
         <div className="space-y-4">
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-2">
             <h4 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              <HelpCircle className="w-4 h-4 text-[#00A09A]" />
               What protocol does Trevia CMS use to connect to chargers?
             </h4>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-6">
@@ -213,7 +213,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
 
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-2">
             <h4 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-[#00F0FF]" />
+              <HelpCircle className="w-4 h-4 text-[#00A09A]" />
               Can our existing systems integrate with Trevia CMS?
             </h4>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-6">
@@ -225,7 +225,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-3xl bg-[#061426] border border-[#00A8FF]/40 p-8 sm:p-12 text-center space-y-6">
+        <div className="rounded-3xl bg-[#061426] border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-6">
           <h2 className="text-2xl sm:text-4xl font-bold text-white">
             Discuss technical integration
           </h2>
@@ -235,7 +235,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
           <div className="flex justify-center gap-4 pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Talk to Our Team
             </button>

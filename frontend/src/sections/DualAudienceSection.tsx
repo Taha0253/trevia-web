@@ -12,11 +12,11 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-[#00F0FF] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-3">
+          <div className="inline-flex items-center gap-2 text-[#00A09A] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-3">
             <span>BUILT FOR REAL PEOPLE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-white tracking-tight">
-            Designed for <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF]">Drivers &amp; Operators Alike.</span>
+            Designed for <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#00A09A]">Drivers &amp; Operators Alike.</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400 mt-3 font-normal">
             Whether you're behind the wheel or managing a nationwide charging network, Trevia removes the friction.
@@ -27,12 +27,12 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Column 1: For Drivers */}
-          <div id="drivers" className="bg-[#030914] border border-[#0E2644] hover:border-[#00A8FF]/50 rounded-3xl p-8 sm:p-10 transition-all duration-300 relative group flex flex-col justify-between">
+          <div id="drivers" className="bg-[#030914] border border-[#0E2644] hover:border-[#00A09A]/50 rounded-3xl p-8 sm:p-10 transition-all duration-300 relative group flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#00A8FF]/10 border border-[#00A8FF]/30 text-[#00F0FF] flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] flex items-center justify-center mb-6">
                 <User className="w-6 h-6" />
               </div>
-              <div className="text-xs font-mono uppercase text-[#00F0FF] tracking-wider mb-1 font-semibold">
+              <div className="text-xs font-mono uppercase text-[#00A09A] tracking-wider mb-1 font-semibold">
                 FOR EVERYDAY EV DRIVERS
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
@@ -50,7 +50,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
                   'Instant UPI wallet and automated GST invoices'
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
-                    <CheckCircle className="w-4 h-4 text-[#00F0FF] shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-[#00A09A] shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -60,7 +60,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
             <div className="mt-8 pt-6 border-t border-[#0A1A2E]">
               <button
                 onClick={onRequestDemo}
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00F0FF] group-hover:text-white transition"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A09A] group-hover:text-white transition"
               >
                 <span>Join Driver App Waitlist</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -69,12 +69,12 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
           </div>
 
           {/* Column 2: For CPOs */}
-          <div id="cpos" className="bg-[#030914] border border-[#0E2644] hover:border-[#00F0FF]/50 rounded-3xl p-8 sm:p-10 transition-all duration-300 relative group flex flex-col justify-between">
+          <div id="cpos" className="bg-[#030914] border border-[#0E2644] hover:border-[#00A09A]/50 rounded-3xl p-8 sm:p-10 transition-all duration-300 relative group flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] flex items-center justify-center mb-6">
                 <Building2 className="w-6 h-6" />
               </div>
-              <div className="text-xs font-mono uppercase text-[#00A8FF] tracking-wider mb-1 font-semibold">
+              <div className="text-xs font-mono uppercase text-[#00A09A] tracking-wider mb-1 font-semibold">
                 FOR CHARGING OPERATORS &amp; FLEETS
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
@@ -92,7 +92,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
                   'Automated monthly driver settlements and payout reconciliations'
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
-                    <CheckCircle className="w-4 h-4 text-[#00A8FF] shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-[#00A09A] shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -102,7 +102,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
             <div className="mt-8 pt-6 border-t border-[#0A1A2E]">
               <button
                 onClick={onRequestDemo}
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A8FF] group-hover:text-white transition"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A09A] group-hover:text-white transition"
               >
                 <span>Schedule a Platform Walkthrough</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

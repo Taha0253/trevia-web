@@ -12,23 +12,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
       
       {/* Hero */}
       <section className="relative pt-12 pb-16 md:pt-24 md:pb-24 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[#00A8FF]/10 rounded-full blur-[200px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[#00A09A]/10 rounded-full blur-[200px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00F0FF] text-xs font-mono font-medium tracking-wider uppercase">
-              <Info className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
+              <Info className="w-3.5 h-3.5 text-[#00A09A]" />
               <span>Company — About Trevia</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
-              Redefining
-            </h1>
-            <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
-              the{' '}
-              <span className="font-extrabold text-[#00A09A]">
-                CHARGE.
+              Building the digital infrastructure behind{' '}
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">
+                EV charging.
               </span>
             </h1>
 
@@ -39,7 +36,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onRequestDemo}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,168,255,0.4)] flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,160,154,0.4)] flex items-center gap-2"
               >
                 <span>Partner With Trevia</span>
                 <ArrowRight className="w-4 h-4" />
@@ -61,7 +58,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           <div className="p-8 sm:p-10 rounded-3xl bg-[#030A14] border border-[#0E2C52] space-y-4">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF]">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">
               Category Definition
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white">
@@ -90,7 +87,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
       {/* Core Engineering Principles */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             Engineering Principles
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
@@ -100,7 +97,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00F0FF]">
+            <div className="w-10 h-10 rounded-xl bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Layers className="w-5 h-5" />
             </div>
             <h4 className="text-base font-bold text-white">Interoperability First</h4>
@@ -110,7 +107,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
           </div>
 
           <div className="p-6 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A8FF]">
+            <div className="w-10 h-10 rounded-xl bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Zap className="w-5 h-5" />
             </div>
             <h4 className="text-base font-bold text-white">Operational Reliability</h4>
@@ -133,7 +130,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-3xl bg-[#061426] border border-[#00A8FF]/40 p-8 sm:p-12 text-center space-y-6">
+        <div className="rounded-3xl bg-[#061426] border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-6">
           <h2 className="text-2xl sm:text-4xl font-bold text-white">
             Connect with Trevia EV Technologies
           </h2>
@@ -143,7 +140,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
           <div className="flex justify-center gap-4 pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Contact Team
             </button>

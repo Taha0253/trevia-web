@@ -43,13 +43,13 @@ export const EcosystemSection: React.FC = () => {
   return (
     <section className="py-24 bg-[#02060D] relative overflow-hidden border-t border-b border-[#081528]">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00A8FF]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00A09A]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         
         {/* Eyebrow */}
         <div className="mb-3">
-          <span className="text-[#00F0FF] font-mono text-xs font-semibold tracking-[0.25em] uppercase">
+          <span className="text-[#00A09A] font-mono text-xs font-semibold tracking-[0.25em] uppercase">
             CONNECTED ECOSYSTEM
           </span>
         </div>
@@ -57,7 +57,7 @@ export const EcosystemSection: React.FC = () => {
         {/* Headline */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-white tracking-tight max-w-3xl mx-auto leading-tight mb-4">
           Built to work with the{' '}
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF]">
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#00A09A]">
             technologies you already use.
           </span>
         </h2>
@@ -72,7 +72,7 @@ export const EcosystemSection: React.FC = () => {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-[#030914] hover:bg-[#061426] border border-[#0E223D] hover:border-[#00A8FF]/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-[#030914] hover:bg-[#061426] border border-[#0E223D] hover:border-[#00A09A]/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
             >
               <div className="mb-3 transition-transform duration-300 group-hover:scale-110">
                 {partner.icon}
@@ -86,7 +86,6 @@ export const EcosystemSection: React.FC = () => {
             </div>
           ))}
         </div>
-
 
       </div>
     </section>

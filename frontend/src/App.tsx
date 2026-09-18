@@ -29,10 +29,10 @@ const DemoPage = lazy(() => import('./pages/DemoPage').then(m => ({ default: m.D
 const PageLoadingFallback: React.FC = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 text-center px-4">
     <div className="relative w-12 h-12">
-      <div className="absolute inset-0 rounded-full border-2 border-[#00A8FF]/20 animate-ping" />
-      <div className="w-12 h-12 rounded-full border-2 border-t-[#00F0FF] border-r-[#00A8FF] border-b-transparent border-l-transparent animate-spin" />
+      <div className="absolute inset-0 rounded-full border-2 border-[#00A09A]/20 animate-ping" />
+      <div className="w-12 h-12 rounded-full border-2 border-t-[#00A09A] border-r-[#00A09A] border-b-transparent border-l-transparent animate-spin" />
     </div>
-    <div className="text-xs font-mono tracking-widest text-[#00F0FF] uppercase animate-pulse">
+    <div className="text-xs font-mono tracking-widest text-[#00A09A] uppercase animate-pulse">
       Connecting To Trevia...
     </div>
   </div>
@@ -44,7 +44,7 @@ const AppContent: React.FC = () => {
   const isHomePage = location.pathname === '/';
 
   return (
-    <div className="min-h-screen bg-[#02060D] text-slate-100 flex flex-col font-sans selection:bg-[#00A8FF] selection:text-white relative">
+    <div className="min-h-screen bg-[#02060D] text-slate-100 flex flex-col font-sans selection:bg-[#00A09A] selection:text-white relative">
       
       {/* Scroll restoration */}
       <ScrollToTop />

@@ -7,7 +7,7 @@ export const DriverStoriesSection: React.FC = () => {
       name: 'Rohit Mehta',
       role: 'Tata Nexon EV Max Owner',
       location: 'Bengaluru, Karnataka',
-      avatarColor: 'from-cyan-500 to-blue-600',
+      avatarColor: 'from-[#00A09A] to-[#008F8A]',
       initials: 'RM',
       usage: '🚗 18,000+ km road-tripped',
       category: 'Highway Traveler',
@@ -47,19 +47,19 @@ export const DriverStoriesSection: React.FC = () => {
   return (
     <section className="py-20 sm:py-24 bg-[#02060D] relative overflow-hidden border-t border-[#0A1D36]">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#00A8FF]/6 to-transparent rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#00A09A]/6 to-transparent rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#040E1C] border border-[#0E284A] text-[#00F0FF] text-xs font-mono font-semibold uppercase tracking-[0.2em] mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#040E1C] border border-[#0E284A] text-[#00A09A] text-xs font-mono font-semibold uppercase tracking-[0.2em] mb-4">
             <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
             <span>REAL STORIES • REAL IMPACT</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-white tracking-tight">
             Loved by Drivers, Fleets &amp;{' '}
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] to-[#00F0FF]">
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#00A09A]">
               Station Hosts.
             </span>
           </h2>
@@ -73,12 +73,12 @@ export const DriverStoriesSection: React.FC = () => {
           {stories.map((story, idx) => (
             <div
               key={idx}
-              className="bg-[#030914] border border-[#0E2644] hover:border-[#00A8FF]/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,168,255,0.12)] relative group"
+              className="bg-[#030914] border border-[#0E2644] hover:border-[#00A09A]/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,160,154,0.12)] relative group"
             >
               <div>
                 {/* Top Badge & Rating */}
                 <div className="flex items-center justify-between gap-2 mb-5">
-                  <span className="text-[11px] font-mono text-[#00F0FF] bg-[#00A8FF]/10 border border-[#00A8FF]/20 px-2.5 py-1 rounded-full font-semibold">
+                  <span className="text-[11px] font-mono text-[#00A09A] bg-[#00A09A]/10 border border-[#00A09A]/20 px-2.5 py-1 rounded-full font-semibold">
                     {story.category}
                   </span>
                   <div className="flex items-center gap-1 text-amber-300">
@@ -107,11 +107,11 @@ export const DriverStoriesSection: React.FC = () => {
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5">
                     <span className="text-sm font-bold text-white truncate">{story.name}</span>
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#00F0FF] shrink-0" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#00A09A] shrink-0" />
                   </div>
                   <div className="text-[11px] text-slate-400 truncate">{story.role}</div>
                   <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5">
-                    <MapPin className="w-2.5 h-2.5 text-[#00A8FF]" />
+                    <MapPin className="w-2.5 h-2.5 text-[#00A09A]" />
                     <span>{story.location}</span>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export const DriverStoriesSection: React.FC = () => {
             </div>
 
             <div className="pt-4 lg:pt-0">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#00F0FF] tracking-tight">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#00A09A] tracking-tight">
                 50+ Cities
               </div>
               <div className="text-xs text-slate-400 font-medium mt-1">Highway Corridors &amp; Hubs</div>

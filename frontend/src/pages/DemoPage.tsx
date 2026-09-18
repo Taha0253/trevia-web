@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { 
   Zap, ShieldCheck, CheckCircle2, ArrowRight, Play, RotateCw, 
   Unlock, Radio, Activity, Terminal, Check,
-  Sparkles, Loader2
+  Loader2
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
@@ -83,7 +83,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
         particleCount: 90,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#00A8FF', '#00F0FF', '#FFFFFF', '#00D2C4']
+        colors: ['#00A09A', '#00A09A', '#FFFFFF', '#33C4BF']
       });
     } catch (err) {
       console.error(err);
@@ -96,24 +96,21 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
   return (
     <div className="min-h-screen bg-[#02060D] text-white pt-8 pb-24 relative overflow-hidden">
       {/* Volumetric background lights */}
-      <div className="absolute top-10 left-1/4 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#00A8FF]/10 via-[#00F0FF]/5 to-transparent rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#00D2C4]/8 rounded-full blur-[220px] pointer-events-none" />
+      <div className="absolute top-10 left-1/4 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#00A09A]/10 via-[#00A09A]/5 to-transparent rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#33C4BF]/8 rounded-full blur-[220px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Breadcrumb & Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 pt-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00F0FF] text-xs font-mono font-medium tracking-wider uppercase mb-5 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>INTERACTIVE ENTERPRISE DEMO & ONBOARDING</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase mb-5 shadow-[0_0_20px_rgba(0,160,154,0.2)]">
+            <Zap className="w-3.5 h-3.5" />
+            <span>Interactive enterprise demo</span>
           </div>
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight mb-6">
-            Experience TreviaEV <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white drop-shadow-[0_0_35px_rgba(0,168,255,0.4)]">Live.</span>
+            Experience TreviaEV <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">Live.</span>
           </h1>
-
           <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-            Test our real-time OCPP telemetry engine and remote commanding console below, or book a 30-minute tailored technical walkthrough with our system architects.
+            Test the OCPP telemetry engine and remote commanding console, or book a 30-minute walkthrough with our architects.
           </p>
         </div>
 
@@ -127,7 +124,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
               {/* Header Bar */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#0E2C52]">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#061426] border border-[#00F0FF]/40 text-[#00F0FF] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#061426] border border-[#00A09A]/40 text-[#00A09A] flex items-center justify-center">
                     <Terminal className="w-5 h-5" />
                   </div>
                   <div>
@@ -142,7 +139,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     onClick={() => setActiveTab('telemetry')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
                       activeTab === 'telemetry' 
-                        ? 'bg-[#00F0FF] text-black font-bold' 
+                        ? 'bg-[#00A09A] text-black font-bold' 
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -152,7 +149,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     onClick={() => setActiveTab('commands')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
                       activeTab === 'commands' 
-                        ? 'bg-[#00F0FF] text-black font-bold' 
+                        ? 'bg-[#00A09A] text-black font-bold' 
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -162,7 +159,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     onClick={() => setActiveTab('roaming')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
                       activeTab === 'roaming' 
-                        ? 'bg-[#00F0FF] text-black font-bold' 
+                        ? 'bg-[#00A09A] text-black font-bold' 
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -179,7 +176,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                   <div className="grid grid-cols-3 gap-3">
                     <div className="bg-[#02060D] p-4 rounded-2xl border border-[#0E223D]">
                       <span className="text-[10px] font-mono text-slate-400 block uppercase">Active Power</span>
-                      <span className="text-xl sm:text-2xl font-mono font-black text-[#00F0FF] mt-1 block">
+                      <span className="text-xl sm:text-2xl font-mono font-black text-[#00A09A] mt-1 block">
                         {activePower.toFixed(1)} <span className="text-xs text-slate-400">kW</span>
                       </span>
                       <span className="text-[10px] text-emerald-400 flex items-center gap-1 mt-1">
@@ -195,7 +192,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       </span>
                       <div className="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
                         <div 
-                          className="bg-gradient-to-r from-[#00A8FF] to-[#00F0FF] h-full transition-all duration-500" 
+                          className="bg-gradient-to-r from-[#00A09A] to-[#00A09A] h-full transition-all duration-500" 
                           style={{ width: `${activeSoc}%` }}
                         />
                       </div>
@@ -216,10 +213,10 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                   <div className="bg-[#02060D] rounded-2xl p-4 border border-[#0E223D] font-mono text-xs">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-[11px] text-slate-400">
                       <span className="flex items-center gap-2">
-                        <Activity className="w-3.5 h-3.5 text-[#00F0FF]" />
+                        <Activity className="w-3.5 h-3.5 text-[#00A09A]" />
                         <span>Live OCPP WebSocket Stream</span>
                       </span>
-                      <span className="text-[#00F0FF] font-bold">100ms Granularity</span>
+                      <span className="text-[#00A09A] font-bold">100ms Granularity</span>
                     </div>
                     <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
                       {simLogs.map((log, i) => (
@@ -251,7 +248,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                           ...prev
                         ]);
                       }}
-                      className="px-4 py-2 rounded-xl bg-[#061426] border border-[#0E2C52] hover:border-[#00F0FF] text-xs font-mono text-[#00F0FF] flex items-center gap-2 transition"
+                      className="px-4 py-2 rounded-xl bg-[#061426] border border-[#0E2C52] hover:border-[#00A09A] text-xs font-mono text-[#00A09A] flex items-center gap-2 transition"
                     >
                       <RotateCw className="w-3.5 h-3.5" />
                       <span>Trigger MeterValues</span>
@@ -272,39 +269,39 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     <button
                       disabled={simCommandLoading !== null}
                       onClick={() => handleCommandSimulate('Reset (Soft)', '{"type": "Soft"}')}
-                      className="p-4 rounded-2xl bg-[#02060D] border border-[#0E223D] hover:border-[#00F0FF] text-left transition group disabled:opacity-50"
+                      className="p-4 rounded-2xl bg-[#02060D] border border-[#0E223D] hover:border-[#00A09A] text-left transition group disabled:opacity-50"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <RotateCw className="w-5 h-5 text-[#00F0FF]" />
+                        <RotateCw className="w-5 h-5 text-[#00A09A]" />
                         <span className="text-[10px] font-mono text-slate-500">OCPP 1.6J</span>
                       </div>
-                      <div className="text-sm font-bold text-white group-hover:text-[#00F0FF]">Soft Reset</div>
+                      <div className="text-sm font-bold text-white group-hover:text-[#00A09A]">Soft Reset</div>
                       <div className="text-[11px] text-slate-400 mt-1">Reboots controller software safely</div>
                     </button>
 
                     <button
                       disabled={simCommandLoading !== null}
                       onClick={() => handleCommandSimulate('UnlockConnector', '{"connectorId": 1}')}
-                      className="p-4 rounded-2xl bg-[#02060D] border border-[#0E223D] hover:border-[#00F0FF] text-left transition group disabled:opacity-50"
+                      className="p-4 rounded-2xl bg-[#02060D] border border-[#0E223D] hover:border-[#00A09A] text-left transition group disabled:opacity-50"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <Unlock className="w-5 h-5 text-[#00D2C4]" />
+                        <Unlock className="w-5 h-5 text-[#33C4BF]" />
                         <span className="text-[10px] font-mono text-slate-500">OCPP 1.6J</span>
                       </div>
-                      <div className="text-sm font-bold text-white group-hover:text-[#00D2C4]">Unlock Gun</div>
+                      <div className="text-sm font-bold text-white group-hover:text-[#33C4BF]">Unlock Gun</div>
                       <div className="text-[11px] text-slate-400 mt-1">Releases mechanical lock solenoid</div>
                     </button>
 
                     <button
                       disabled={simCommandLoading !== null}
                       onClick={() => handleCommandSimulate('RemoteStartTransaction', '{"idTag": "TREVIA-WALLET-901", "connectorId": 1}')}
-                      className="p-4 rounded-2xl bg-[#02060D] border border-[#0E223D] hover:border-[#00A8FF] text-left transition group disabled:opacity-50"
+                      className="p-4 rounded-2xl bg-[#02060D] border border-[#0E223D] hover:border-[#00A09A] text-left transition group disabled:opacity-50"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <Play className="w-5 h-5 text-[#00A8FF]" />
+                        <Play className="w-5 h-5 text-[#00A09A]" />
                         <span className="text-[10px] font-mono text-slate-500">OCPP 1.6J</span>
                       </div>
-                      <div className="text-sm font-bold text-white group-hover:text-[#00A8FF]">Remote Start</div>
+                      <div className="text-sm font-bold text-white group-hover:text-[#00A09A]">Remote Start</div>
                       <div className="text-[11px] text-slate-400 mt-1">Authorizes energy flow via app</div>
                     </button>
 
@@ -345,7 +342,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     </div>
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-slate-400">Single Wallet Balance:</span>
-                      <span className="font-mono text-[#00F0FF] font-bold">₹1,450.00</span>
+                      <span className="font-mono text-[#00A09A] font-bold">₹1,450.00</span>
                     </div>
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-slate-400">Target CPO Network:</span>
@@ -360,7 +357,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-gradient-to-r from-[#00A8FF]/10 to-[#00D2C4]/10 border border-[#00F0FF]/30 text-xs leading-relaxed text-slate-200">
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-[#00A09A]/10 to-[#33C4BF]/10 border border-[#00A09A]/30 text-xs leading-relaxed text-slate-200">
                     Trevia eliminates closed-loop wallet silos. EV drivers charge at any affiliated station across India using a single unified Trevia wallet while CPOs receive automated reconciliation.
                   </div>
                 </div>
@@ -371,7 +368,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
             {/* Trust Highlights under the Simulator */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D] text-center">
-                <span className="text-xs font-mono font-bold text-[#00F0FF] block">OCPP 1.6J / 2.0.1</span>
+                <span className="text-xs font-mono font-bold text-[#00A09A] block">OCPP 1.6J / 2.0.1</span>
                 <span className="text-[10px] text-slate-400 block mt-0.5">Protocol Certified</span>
               </div>
               <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D] text-center">
@@ -379,7 +376,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                 <span className="text-[10px] text-slate-400 block mt-0.5">Plug & Charge</span>
               </div>
               <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D] text-center">
-                <span className="text-xs font-mono font-bold text-[#00D2C4] block">99.99% Cloud</span>
+                <span className="text-xs font-mono font-bold text-[#33C4BF] block">99.99% Cloud</span>
                 <span className="text-[10px] text-slate-400 block mt-0.5">Uptime SLA</span>
               </div>
               <div className="bg-[#030914] p-3 rounded-xl border border-[#0E223D] text-center">
@@ -391,16 +388,16 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
           </div>
 
           {/* RIGHT 5-COL: ENTERPRISE DEMO BOOKING FORM */}
-          <div className="lg:col-span-5">
+          <div id="demo-request" className="lg:col-span-5">
             <div className="bg-[#030A16] border border-[#0E3460] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
               
               {/* Electric Cyan Edge Glow Header */}
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-[#00D2C4]" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-[#33C4BF]" />
 
               {!isSuccess ? (
                 <div>
                   <div className="mb-6">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-mono font-semibold mb-2">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] text-xs font-mono font-semibold mb-2">
                       <Zap className="w-3.5 h-3.5" />
                       <span>SCHEDULE 1-ON-1 DEMO</span>
                     </div>
@@ -423,7 +420,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="e.g. Vikramaditya Rao"
                         value={formData.full_name}
                         onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                       />
                     </div>
 
@@ -438,7 +435,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                           placeholder="name@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                         />
                       </div>
                       <div>
@@ -450,7 +447,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                           placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                         />
                       </div>
                     </div>
@@ -465,7 +462,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                           placeholder="e.g. Nexus Energy Infra"
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                         />
                       </div>
                       <div>
@@ -475,7 +472,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         <select
                           value={formData.chargers_count}
                           onChange={(e) => setFormData({ ...formData, chargers_count: e.target.value })}
-                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F0FF] transition-colors cursor-pointer"
+                          className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
                         >
                           <option value="1 - 10 chargers">1 - 10 chargers</option>
                           <option value="10 - 50 chargers">10 - 50 chargers</option>
@@ -493,7 +490,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       <select
                         value={formData.demo_focus}
                         onChange={(e) => setFormData({ ...formData, demo_focus: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F0FF] transition-colors cursor-pointer"
+                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
                       >
                         <option value="Trevia CMS Full Walkthrough">Trevia CMS Full Walkthrough</option>
                         <option value="Hardware Compatibility & OCPP 2.0.1 Test">Hardware Compatibility & OCPP 2.0.1 Test</option>
@@ -512,7 +509,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="Tell us about your charger models, existing backend, or migration timeline..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00F0FF] transition-colors resize-none"
+                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
                       />
                     </div>
 
@@ -520,7 +517,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-[#00A8FF]/25 hover:shadow-[0_0_30px_#00F0FF] disabled:opacity-70 active:scale-[0.99]"
+                        className="w-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] hover:from-[#008F8A] hover:to-[#00A09A] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-[#00A09A]/25 hover:shadow-[0_0_30px_#00A09A] disabled:opacity-70 active:scale-[0.99]"
                       >
                         {isSubmitting ? (
                           <>
@@ -537,19 +534,19 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     </div>
 
                     <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-1">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#00F0FF]" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#00A09A]" />
                       <span>Direct founder consultation • Strict NDA protected</span>
                     </div>
                   </form>
                 </div>
               ) : (
                 <div className="py-10 text-center space-y-4">
-                  <div className="w-16 h-16 bg-[#00A8FF]/10 border border-[#00F0FF]/40 rounded-full flex items-center justify-center mx-auto text-[#00F0FF] animate-bounce shadow-[0_0_25px_#00F0FF]">
+                  <div className="w-16 h-16 bg-[#00A09A]/10 border border-[#00A09A]/40 rounded-full flex items-center justify-center mx-auto text-[#00A09A] animate-bounce shadow-[0_0_25px_#00A09A]">
                     <Check className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">Demo Scheduled</h3>
                   <p className="text-sm text-slate-300 max-w-sm mx-auto font-normal leading-relaxed">
-                    Thank you, <span className="text-[#00F0FF] font-semibold">{formData.full_name}</span>. Our technical architecture team has received your request for <span className="text-white font-medium">{formData.demo_focus}</span>. A calendar invitation has been prepared for <span className="text-white font-medium">{formData.email}</span>.
+                    Thank you, <span className="text-[#00A09A] font-semibold">{formData.full_name}</span>. Our technical architecture team has received your request for <span className="text-white font-medium">{formData.demo_focus}</span>. A calendar invitation has been prepared for <span className="text-white font-medium">{formData.email}</span>.
                   </p>
                   <div className="pt-4">
                     <button
@@ -580,7 +577,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-[#02060D] p-6 rounded-2xl border border-[#0E223D] space-y-3">
-              <div className="w-8 h-8 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] font-mono font-bold flex items-center justify-center text-sm">
+              <div className="w-8 h-8 rounded-full bg-[#00A09A]/15 text-[#00A09A] font-mono font-bold flex items-center justify-center text-sm">
                 01
               </div>
               <h4 className="text-base font-bold text-white">Architecture & Protocol Audit</h4>
@@ -590,7 +587,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
             </div>
 
             <div className="bg-[#02060D] p-6 rounded-2xl border border-[#0E223D] space-y-3">
-              <div className="w-8 h-8 rounded-full bg-[#00A8FF]/15 text-[#00A8FF] font-mono font-bold flex items-center justify-center text-sm">
+              <div className="w-8 h-8 rounded-full bg-[#00A09A]/15 text-[#00A09A] font-mono font-bold flex items-center justify-center text-sm">
                 02
               </div>
               <h4 className="text-base font-bold text-white">Live Hardware Simulation</h4>

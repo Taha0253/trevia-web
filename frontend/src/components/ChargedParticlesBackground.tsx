@@ -56,9 +56,9 @@ export const ChargedParticlesBackground: React.FC = () => {
     window.addEventListener('mouseleave', handleMouseLeave);
 
     // Create particles with higher density and hero concentration
-    const particleCount = Math.min(Math.floor((width * height) / 8500), 140);
+    const particleCount = Math.min(Math.floor((width * height) / 7000), 170);
     const particles: Particle[] = [];
-    const colors = ['#00A09A', '#00C9C1', '#5EEAD4', '#7DD3FC', '#00A09A', '#FFFFFF'];
+    const colors = ['#00A09A', '#33C4BF', '#5EE0D8', '#8AF0E8', '#B8FFF8', '#FFFFFF'];
 
     for (let i = 0; i < particleCount; i++) {
       const vx = (Math.random() - 0.5) * 0.5;
@@ -93,8 +93,8 @@ export const ChargedParticlesBackground: React.FC = () => {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 110) {
-            const lineAlpha = (1 - dist / 110) * 0.16;
+          if (dist < 130) {
+            const lineAlpha = (1 - dist / 130) * 0.22;
             ctx.strokeStyle = `rgba(0, 160, 154, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.beginPath();

@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             to="/platform"
             onClick={closeAllMenus}
             className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/platform') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+              isActive('/platform') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
             }`}
           >
             Platform
@@ -97,12 +97,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             onClick={closeAllMenus}
             className={`px-3 py-2 rounded-lg transition-all flex items-center gap-1.5 ${
               isActive('/cms') 
-                ? 'text-[#00F0FF] bg-[#0A2240]/70 border border-[#00A8FF]/40' 
-                : 'text-white hover:text-[#00F0FF] hover:bg-slate-800/40'
+                ? 'text-[#00A09A] bg-[#0A2240]/70 border border-[#00A09A]/40' 
+                : 'text-white hover:text-[#00A09A] hover:bg-slate-800/40'
             }`}
           >
             <span>Trevia CMS</span>
-            <span className="text-[9px] px-1.5 py-0.5 rounded bg-gradient-to-r from-[#00A8FF]/20 to-[#00F0FF]/20 border border-[#00F0FF]/40 text-[#00F0FF] font-mono normal-case">
+            <span className="text-[9px] px-1.5 py-0.5 rounded bg-gradient-to-r from-[#00A09A]/20 to-[#00A09A]/20 border border-[#00A09A]/40 text-[#00A09A] font-mono normal-case">
               Core
             </span>
           </Link>
@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             to="/drive"
             onClick={closeAllMenus}
             className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/drive') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+              isActive('/drive') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
             }`}
           >
             Trevia Drive
@@ -127,11 +127,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setCompanyOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
-                isActive('/solutions') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+                isActive('/solutions') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
               }`}
             >
               <span>Solutions</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180 text-[#00F0FF]' : ''}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180 text-[#00A09A]' : ''}`} />
             </button>
 
             {solutionsOpen && (
@@ -145,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                     onClick={closeAllMenus}
                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
                   >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00F0FF] group-hover:border-[#00A8FF]">
+                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
                       <Radio className="w-4 h-4" />
                     </div>
                     <div>
@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                     onClick={closeAllMenus}
                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
                   >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A8FF] group-hover:border-[#00A8FF]">
+                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
                       <Truck className="w-4 h-4" />
                     </div>
                     <div>
@@ -223,11 +223,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setCompanyOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
-                isActive('/technology') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+                isActive('/technology') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
               }`}
             >
               <span>Technology</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${techOpen ? 'rotate-180 text-[#00F0FF]' : ''}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${techOpen ? 'rotate-180 text-[#00A09A]' : ''}`} />
             </button>
 
             {techOpen && (
@@ -237,7 +237,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                   onClick={closeAllMenus}
                   className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
                 >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00F0FF] group-hover:border-[#00A8FF]">
+                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
                     <Layers className="w-4 h-4" />
                   </div>
                   <div>
@@ -250,7 +250,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                   onClick={closeAllMenus}
                   className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
                 >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A8FF] group-hover:border-[#00A8FF]">
+                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
                     <Code2 className="w-4 h-4" />
                   </div>
                   <div>
@@ -271,11 +271,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setTechOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
-                isActive('/about') || isActive('/traction') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+                isActive('/about') || isActive('/traction') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
               }`}
             >
               <span>Company</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${companyOpen ? 'rotate-180 text-[#00F0FF]' : ''}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${companyOpen ? 'rotate-180 text-[#00A09A]' : ''}`} />
             </button>
 
             {companyOpen && (
@@ -285,7 +285,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                   onClick={closeAllMenus}
                   className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
                 >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00F0FF] group-hover:border-[#00A8FF]">
+                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
                     <Info className="w-4 h-4" />
                   </div>
                   <div>
@@ -316,12 +316,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             to="/resources"
             onClick={closeAllMenus}
             className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/resources') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+              isActive('/resources') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
             }`}
           >
             Resources
           </Link>
-
         </nav>
 
         {/* Right CTA Button */}
@@ -329,7 +328,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <Link
             to="/demo"
             onClick={closeAllMenus}
-            className="px-5 py-2.5 rounded-full bg-transparent border border-[#00A09A] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:border-[#00A09A] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-[#33C4BF] hover:from-[#008F8A] hover:to-[#00A09A] text-black text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(0,160,154,0.35)] hover:shadow-[0_0_30px_rgba(0,160,154,0.6)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
           >
             <span>Request a Demo</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -341,7 +340,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <Link
             to="/demo"
             onClick={() => setMobileOpen(false)}
-            className="px-3 py-1.5 rounded-full bg-[#00A8FF] text-black text-[11px] font-bold uppercase"
+            className="px-3 py-1.5 rounded-full bg-[#00A09A] text-black text-[11px] font-bold uppercase"
           >
             Demo
           </Link>
@@ -359,24 +358,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       {/* Mobile Drawer */}
       {mobileOpen && (
         <div className="lg:hidden bg-[#030A14] border-b border-[#0E2C52] px-6 py-6 space-y-4 text-xs font-semibold uppercase tracking-wider max-h-[85vh] overflow-y-auto">
-          <Link to="/demo" onClick={closeAllMenus} className="block py-2 text-[#00F0FF] hover:text-white border-b border-[#0E2C52]/40 flex items-center justify-between">
-            <span>Interactive Demo & Sandbox</span>
-            <span className="text-[9px] px-2 py-0.5 rounded bg-[#00F0FF]/20 text-[#00F0FF]">Live</span>
-          </Link>
-          <Link to="/platform" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00F0FF] border-b border-[#0E2C52]/40">
+          <Link to="/platform" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00A09A] border-b border-[#0E2C52]/40">
             Platform
           </Link>
-          <Link to="/cms" onClick={closeAllMenus} className="block py-2 text-white hover:text-[#00F0FF] border-b border-[#0E2C52]/40 flex items-center justify-between">
+          <Link to="/cms" onClick={closeAllMenus} className="block py-2 text-white hover:text-[#00A09A] border-b border-[#0E2C52]/40 flex items-center justify-between">
             <span>Trevia CMS</span>
-            <span className="text-[9px] px-2 py-0.5 rounded bg-[#00F0FF]/20 text-[#00F0FF]">Core Product</span>
+            <span className="text-[9px] px-2 py-0.5 rounded bg-[#00A09A]/20 text-[#00A09A]">Core Product</span>
           </Link>
-          <Link to="/drive" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00F0FF] border-b border-[#0E2C52]/40">
+          <Link to="/drive" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00A09A] border-b border-[#0E2C52]/40">
             Trevia Drive
           </Link>
 
           {/* Solutions Mobile Group */}
           <div className="py-2 border-b border-[#0E2C52]/40 space-y-2">
-            <div className="text-[10px] font-mono text-[#00F0FF]">Solutions</div>
+            <div className="text-[10px] font-mono text-[#00A09A]">Solutions</div>
             <div className="pl-3 space-y-2 normal-case font-medium">
               <Link to="/solutions/cpos" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">For CPOs & Operators</Link>
               <Link to="/solutions/fleets" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">For Fleets</Link>
@@ -388,7 +383,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
 
           {/* Technology Mobile Group */}
           <div className="py-2 border-b border-[#0E2C52]/40 space-y-2">
-            <div className="text-[10px] font-mono text-[#00F0FF]">Technology</div>
+            <div className="text-[10px] font-mono text-[#00A09A]">Technology</div>
             <div className="pl-3 space-y-2 normal-case font-medium">
               <Link to="/technology" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">OCPP & Interoperability</Link>
               <Link to="/technology/apis" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">APIs & Integrations</Link>
@@ -397,14 +392,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
 
           {/* Company Mobile Group */}
           <div className="py-2 border-b border-[#0E2C52]/40 space-y-2">
-            <div className="text-[10px] font-mono text-[#00F0FF]">Company</div>
+            <div className="text-[10px] font-mono text-[#00A09A]">Company</div>
             <div className="pl-3 space-y-2 normal-case font-medium">
               <Link to="/about" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">About Trevia</Link>
               <Link to="/traction" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">Traction & Journey</Link>
             </div>
           </div>
 
-          <Link to="/resources" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00F0FF] border-b border-[#0E2C52]/40">
+          <Link to="/resources" onClick={closeAllMenus} className="block py-2 text-slate-300 hover:text-[#00A09A] border-b border-[#0E2C52]/40">
             Resources
           </Link>
 
@@ -414,7 +409,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 closeAllMenus();
                 onRequestDemo();
               }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold uppercase tracking-wider text-center"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold uppercase tracking-wider text-center"
             >
               Request a Demo
             </button>

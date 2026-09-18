@@ -23,7 +23,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
 
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
               Milestone framework & verified{' '}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-[#00F0FF] to-white">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-[#00A09A] to-white">
                 progress.
               </span>
             </h1>
@@ -35,7 +35,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onRequestDemo}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,168,255,0.4)] flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(0,160,154,0.4)] flex items-center gap-2"
               >
                 <span>Request a Demo</span>
                 <ArrowRight className="w-4 h-4" />
@@ -49,7 +49,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
       {/* Verified Milestone Table (Section I) */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF] mb-2">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             Verified Milestones
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
@@ -101,7 +101,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
                 <td className="p-4 sm:p-5 font-bold text-white whitespace-nowrap">Google for Startups</td>
                 <td className="p-4 sm:p-5">Engaged with Google for Startups / Google Cloud Program</td>
                 <td className="p-4 sm:p-5">
-                  <span className="px-2.5 py-1 rounded-full bg-blue-500/20 text-[#00F0FF] font-mono text-xs font-bold">
+                  <span className="px-2.5 py-1 rounded-full bg-[#00A09A]/20 text-[#00A09A] font-mono text-xs font-bold">
                     Ecosystem
                   </span>
                 </td>
@@ -110,7 +110,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
                 <td className="p-4 sm:p-5 font-bold text-white whitespace-nowrap">AWS Startups</td>
                 <td className="p-4 sm:p-5">Engaged with AWS Startups Program</td>
                 <td className="p-4 sm:p-5">
-                  <span className="px-2.5 py-1 rounded-full bg-blue-500/20 text-[#00F0FF] font-mono text-xs font-bold">
+                  <span className="px-2.5 py-1 rounded-full bg-[#00A09A]/20 text-[#00A09A] font-mono text-xs font-bold">
                     Ecosystem
                   </span>
                 </td>
@@ -131,7 +131,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-3xl bg-[#061426] border border-[#00A8FF]/40 p-8 sm:p-12 text-center space-y-6">
+        <div className="rounded-3xl bg-[#061426] border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-6">
           <h2 className="text-2xl sm:text-4xl font-bold text-white">
             Partner with Trevia on our journey
           </h2>
@@ -141,7 +141,7 @@ export const TractionPage: React.FC<TractionPageProps> = ({ onRequestDemo }) => 
           <div className="flex justify-center gap-4 pt-2">
             <button
               onClick={onRequestDemo}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A8FF] to-[#00D2C4] text-black font-bold text-xs uppercase tracking-wider"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
             >
               Request a Demo
             </button>
