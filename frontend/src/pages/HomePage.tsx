@@ -4,7 +4,7 @@ import { PartnerStripSection } from '../sections/PartnerStripSection';
 import { OurApproachDialSection } from '../sections/OurApproachDialSection';
 import { DualAudienceSection } from '../sections/DualAudienceSection';
 import { DriverStoriesSection } from '../sections/DriverStoriesSection';
-import { EcosystemSection } from '../sections/EcosystemSection';
+import { LiveDemoCtaSection } from '../sections/LiveDemoCtaSection';
 
 interface HomePageProps {
   onRequestDemo: () => void;
@@ -39,8 +39,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
       {/* 4. Real Driver, Fleet & Host Stories + Environmental Impact */}
       <DriverStoriesSection />
 
-      {/* 5. Connected Ecosystem (T-Hub, GCP, Docker, Firebase, GitHub, DPIIT) */}
-      <EcosystemSection />
+      <LiveDemoCtaSection onCta={onRequestDemo} />
 
     </div>
   );
