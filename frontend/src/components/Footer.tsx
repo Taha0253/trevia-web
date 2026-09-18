@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, Shield, ArrowUpRight, Globe, Mail } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
   onRequestDemo?: () => void;
@@ -11,49 +11,6 @@ export const Footer: React.FC<FooterProps> = () => {
     <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Top Banner / Trust Badges Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pb-12 border-b border-[#0E223D]/80">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00F0FF]">
-              <Shield className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-white text-xs font-bold">DPIIT-Recognised</div>
-              <div className="text-[11px] text-slate-400">Government of India Startup</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A8FF]">
-              <Zap className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-white text-xs font-bold">T-Hub Blitz Cohort 3</div>
-              <div className="text-[11px] text-slate-400">Incubated & Accelerated</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
-              <Globe className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-white text-xs font-bold">OCPP 1.6J Open Protocol</div>
-              <div className="text-[11px] text-slate-400">Hardware-Agnostic Core</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-amber-400">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-white text-xs font-bold">Hyderabad, India</div>
-              <div className="text-[11px] text-slate-400">contact@treviaev.in</div>
-            </div>
-          </div>
-        </div>
-
         {/* 5-Column Sitemap Link Matrix (Section B.3) */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-12">
           

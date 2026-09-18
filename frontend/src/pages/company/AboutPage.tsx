@@ -23,10 +23,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-light text-white tracking-tight leading-[1.08]">
-              Building the digital infrastructure behind{' '}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-white">
-                EV charging.
-              </span>
+              Redefining
             </h1>
 
             <p className="text-lg text-slate-300 font-normal leading-relaxed">

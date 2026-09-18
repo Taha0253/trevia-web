@@ -322,17 +322,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             Resources
           </Link>
 
-          {/* Live Demo */}
-          <Link
-            to="/demo"
-            onClick={closeAllMenus}
-            className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-              isActive('/demo') ? 'text-[#00F0FF] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
-            }`}
-          >
-            <span>Live Demo</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
-          </Link>
         </nav>
 
         {/* Right CTA Button */}
@@ -340,7 +329,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <Link
             to="/demo"
             onClick={closeAllMenus}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#00A8FF] via-[#00F0FF] to-[#00D2C4] hover:from-[#1B84FF] hover:to-[#00F0FF] text-black text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(0,168,255,0.35)] hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-transparent border border-[#00A09A] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:border-[#00A09A] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
           >
             <span>Request a Demo</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
