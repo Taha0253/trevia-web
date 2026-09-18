@@ -16,26 +16,27 @@ const GitHubMark: React.FC = () => (
 );
 
 const GcpMark: React.FC = () => (
-  <svg viewBox="0 0 24 24" className="h-9 w-9" aria-hidden="true">
-    <path fill="#4285F4" d="M12.9 4.1a6.4 6.4 0 0 1 5.7 3.5h-3.4a3.3 3.3 0 0 0-5.6 1.2L7.3 7.3A6.4 6.4 0 0 1 12.9 4.1Z" />
-    <path fill="#EA4335" d="M19.8 9.1A6.4 6.4 0 0 1 20.6 12c0 1.2-.3 2.3-.8 3.3l-2.6-1.5c.2-.6.3-1.2.3-1.8 0-.5-.1-1-.2-1.5h3.5Z" />
-    <path fill="#34A853" d="M16.8 16.8A6.4 6.4 0 0 1 6.9 15l2.5-1.6a3.3 3.3 0 0 0 5.1 1.2l2.3 2.2Z" />
-    <path fill="#FBBC05" d="M6.1 8.6 8.7 10a3.3 3.3 0 0 0 0 4.1l-2.6 1.6A6.4 6.4 0 0 1 6.1 8.6Z" />
-  </svg>
+  <img src="/GCP.png" alt="Google Cloud Platform" loading="lazy" decoding="async" className="h-9 w-9 object-contain" />
 );
 
 const AwsMark: React.FC = () => (
-  <svg viewBox="0 0 48 28" className="h-7 w-11" aria-hidden="true">
-    <path fill="#fff" d="M13.3 8.4c0 .5-.1.9-.3 1.2-.3.4-.7.6-1.3.8l1.7 2.2h-1.8l-1.5-2h-.7v2H8V5.6h2.6c.7 0 1.2.1 1.6.4.3.3.5.7.5 1.2 0 .5-.2.9-.5 1.2.4.2.6.6.6 1Zm-2.4-1.8c0-.3-.2-.4-.6-.4h-1v.9h1c.4 0 .6-.2.6-.5Zm.2 2.4c0-.3-.2-.5-.7-.5h-1.1v1h1.1c.5 0 .7-.2.7-.5ZM19 12.6h-1.6l-1.8-6.9h1.6l1.1 4.8 1.2-4.8h1.5l-2 6.9Zm5.4 0h-3.6V5.6h3.5v1.2h-2.1v1.4h2v1.2h-2v1.9h2.2v1.3Zm5.1-5.6v1.2h-2.2v4.4h-1.5V8.2h-2.1V7h5.8Zm3.2 5.7c-.9 0-1.6-.3-2.1-.8l.8-1c.3.3.8.5 1.3.5.5 0 .8-.2.8-.5 0-.2-.1-.3-.4-.4l-1.2-.3c-.9-.3-1.3-.7-1.3-1.5 0-.5.2-1 .6-1.3.4-.3 1-.5 1.7-.5.8 0 1.4.2 1.9.7l-.8 1c-.3-.3-.7-.4-1.2-.4-.4 0-.6.2-.6.4 0 .2.2.3.5.4l1.2.3c.9.2 1.3.7 1.3 1.5 0 .6-.2 1-.6 1.3-.4.4-1 .6-1.8.6Zm6.1-.1-1.6-4.4h1.6l.9 2.8.9-2.8h1.5l-2.5 6.8h-1.5l.7-2.4Z" />
-    <path fill="#FF9900" d="M28.6 18.1c-4.6 3.4-11.2 5.2-16.9 5.2-8 0-15.2-3-20.6-7.9-.4-.4-.1-.9.5-.6 6.3 3.7 14.1 5.9 22.2 5.9 5.4 0 11.4-1.1 16.9-3.4.8-.4 1.5.5.7 1.4 0 0-.8.8-2.8 2.4Z" />
+  <svg viewBox="0 0 100 58" className="h-8 w-14" aria-hidden="true">
+    <text x="50" y="30" textAnchor="middle" fill="#fff" fontSize="30" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="-1">
+      aws
+    </text>
+    <path
+      fill="none"
+      stroke="#FF9900"
+      strokeWidth="3.4"
+      strokeLinecap="round"
+      d="M4 40c18 12 74 12 92 0"
+    />
+    <path fill="#FF9900" d="M92 34.5 100 38l-9.5 4.5 1.5-4Z" />
   </svg>
 );
 
 const ThubMark: React.FC = () => (
-  <svg viewBox="0 0 32 32" className="h-9 w-9" aria-hidden="true">
-    <circle cx="16" cy="16" r="15" fill="#F15A24" />
-    <path fill="#fff" d="M17.6 7.2c2.4.2 4.1 1.6 4.3 3.8.2 2.1-1 3.8-3.1 4.4 1.8.6 2.8 2 2.6 4.1-.3 2.6-2.4 4.3-5.4 4.5H10.4V7.2h7.2Zm-4.7 2.4v4.4h3.4c1.5 0 2.4-.8 2.3-2.2 0-1.3-.9-2.1-2.5-2.2h-3.2Zm0 6.8v5.8h3.8c1.8 0 2.9-1 3-2.8.1-1.8-1-2.9-3-3H12.9Z" />
-  </svg>
+  <img src="/thub.png" alt="T-Hub" loading="lazy" decoding="async" className="h-9 w-9 object-contain" />
 );
 
 const DpiitMark: React.FC = () => (
