@@ -12,12 +12,12 @@ export const Footer: React.FC<FooterProps> = () => {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* 5-Column Sitemap Link Matrix (Section B.3) */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-10 md:gap-x-14 lg:gap-x-20 py-12">
           
           {/* Col 1: Product */}
-          <div className="space-y-3">
+          <div className="space-y-5">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Product</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/cms" className="hover:text-[#00A09A] transition-colors flex items-center gap-1">
                   <span>Trevia CMS</span>
@@ -34,9 +34,9 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Col 2: Solutions */}
-          <div className="space-y-3">
+          <div className="space-y-5">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Solutions</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/solutions/cpos" className="hover:text-[#00A09A] transition-colors">CPOs & Operators</Link>
               </li>
@@ -56,9 +56,9 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Col 3: Technology */}
-          <div className="space-y-3">
+          <div className="space-y-5">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Technology</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/technology" className="hover:text-[#00A09A] transition-colors">OCPP & Interoperability</Link>
               </li>
@@ -75,9 +75,9 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Col 4: Company */}
-          <div className="space-y-3">
+          <div className="space-y-5">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Company</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/about" className="hover:text-[#00A09A] transition-colors">About Trevia</Link>
               </li>
@@ -94,9 +94,9 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Col 5: Legal */}
-          <div className="space-y-3">
+          <div className="space-y-5">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Legal</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/privacy" className="hover:text-[#00A09A] transition-colors">Privacy Policy</Link>
               </li>

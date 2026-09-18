@@ -363,7 +363,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <Link
             to="/demo"
             onClick={closeAllMenus}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-[#33C4BF] hover:from-[#008F8A] hover:to-[#00A09A] text-black text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(0,160,154,0.35)] hover:shadow-[0_0_30px_rgba(0,160,154,0.6)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-transparent border border-[#00A09A] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
           >
             <span>Request a Demo</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

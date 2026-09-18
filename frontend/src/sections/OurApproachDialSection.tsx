@@ -192,7 +192,7 @@ export const OurApproachDialSection: React.FC = () => {
               >
                 <Constellation card={card} featured={featured} />
 
-                <div className="relative z-10 px-5 pb-6 pt-2">
+                <div className="relative z-10 pl-6 xl:pl-9 pr-5 pb-6 pt-2">
                   <h3 className={`font-semibold text-white tracking-tight ${featured ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
                     {card.title}
                   </h3>
