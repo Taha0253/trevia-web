@@ -74,7 +74,7 @@ export const ChargedParticlesBackground: React.FC = () => {
         vy,
         baseVx: vx,
         baseVy: vy,
-        size: Math.random() * 2.0 + 0.8,
+        size: Math.random() * 1.1 + 0.5,
         color: colors[Math.floor(Math.random() * colors.length)],
         alpha: Math.random() * 0.6 + 0.25,
         charge: Math.random() * Math.PI * 2
@@ -117,11 +117,11 @@ export const ChargedParticlesBackground: React.FC = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < mouse.radius && dist > 0) {
-            // Repulsion force
-            const force = (1 - dist / mouse.radius) * 2.4;
+            // Repulsion force (kept gentle so particles don't drift far)
+            const force = (1 - dist / mouse.radius) * 1.1;
             const angle = Math.atan2(dy, dx);
-            p.vx += Math.cos(angle) * force * 0.28;
-            p.vy += Math.sin(angle) * force * 0.28;
+            p.vx += Math.cos(angle) * force * 0.16;
+            p.vy += Math.sin(angle) * force * 0.16;
 
             // Draw interactive luminous energy filament from cursor to particle
             const lineAlpha = (1 - dist / mouse.radius) * 0.55;
@@ -132,21 +132,29 @@ export const ChargedParticlesBackground: React.FC = () => {
             ctx.lineTo(p.x, p.y);
             ctx.stroke();
 
-            // Glow burst around reacting particles
+            // Subtle glow around reacting particles
             ctx.save();
             ctx.shadowColor = '#00A09A';
-            ctx.shadowBlur = 12;
+            ctx.shadowBlur = 4;
             ctx.fillStyle = '#FFFFFF';
             ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size * 1.5, 0, Math.PI * 2);
+            ctx.arc(p.x, p.y, p.size * 1.1, 0, Math.PI * 2);
             ctx.fill();
             ctx.restore();
           }
         }
 
-        // Return smoothly towards base velocity
-        p.vx = p.vx * 0.94 + p.baseVx * 0.06;
-        p.vy = p.vy * 0.94 + p.baseVy * 0.06;
+        // Return smoothly towards base velocity (snappier so drift stays contained)
+        p.vx = p.vx * 0.88 + p.baseVx * 0.12;
+        p.vy = p.vy * 0.88 + p.baseVy * 0.12;
+
+        // Cap speed so a burst of repulsion can't fling a particle far
+        const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+        const maxSpeed = 1.4;
+        if (speed > maxSpeed) {
+          p.vx = (p.vx / speed) * maxSpeed;
+          p.vy = (p.vy / speed) * maxSpeed;
+        }
 
         p.x += p.vx;
         p.y += p.vy;
@@ -160,9 +168,9 @@ export const ChargedParticlesBackground: React.FC = () => {
         // Draw particle with electric glow
         ctx.save();
         ctx.shadowColor = p.color;
-        ctx.shadowBlur = p.size * 5;
+        ctx.shadowBlur = p.size * 2;
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = Math.max(0.15, Math.min(0.95, currentAlpha));
+        ctx.globalAlpha = Math.max(0.1, Math.min(0.7, currentAlpha));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -186,7 +194,7 @@ export const ChargedParticlesBackground: React.FC = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.95 }}
+      style={{ opacity: 0.57 }}
     />
   );
 };

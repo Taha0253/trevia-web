@@ -58,6 +58,7 @@ const AppContent: React.FC = () => {
       {/* Dynamic Route Pages with Lazy Loading */}
       <main className="flex-1 relative z-10">
         <Suspense fallback={<PageLoadingFallback />}>
+          <div key={location.pathname} className="page-transition">
           <Routes>
             <Route path="/" element={<HomePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             <Route path="/platform" element={<PlatformPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
@@ -92,6 +93,7 @@ const AppContent: React.FC = () => {
             {/* Fallback */}
             <Route path="*" element={<HomePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
           </Routes>
+          </div>
         </Suspense>
       </main>
 

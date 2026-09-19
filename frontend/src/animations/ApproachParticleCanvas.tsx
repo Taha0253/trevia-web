@@ -376,7 +376,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
         ctx.shadowColor = p.color;
         ctx.shadowBlur = p.size * 3;
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = Math.max(0, p.alpha * (1 - p.life / p.maxLife));
+        ctx.globalAlpha = Math.max(0, p.alpha * (1 - p.life / p.maxLife)) * 0.6;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();

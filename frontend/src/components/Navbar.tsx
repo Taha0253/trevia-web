@@ -1,18 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
-  Layers, 
-  Radio, 
-  Truck, 
-  Building2, 
-  Zap, 
-  Landmark, 
-  Code2, 
-  TrendingUp, 
-  Info, 
+import {
+  ChevronDown,
+  Menu,
+  X,
   ArrowUpRight
 } from 'lucide-react';
 
@@ -22,11 +13,13 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [platformOpen, setPlatformOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [techOpen, setTechOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const location = useLocation();
 
+  const platformRef = useRef<HTMLDivElement>(null);
   const solutionsRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const companyRef = useRef<HTMLDivElement>(null);
@@ -35,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   // Close dropdowns
   const closeAllMenus = () => {
     if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
+    setPlatformOpen(false);
     setSolutionsOpen(false);
     setTechOpen(false);
     setCompanyOpen(false);
@@ -42,8 +36,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   };
 
   // Open a dropdown immediately on hover, closing the others
-  const openMenuOnHover = useCallback((menu: 'solutions' | 'technology' | 'company') => {
+  const openMenuOnHover = useCallback((menu: 'platform' | 'solutions' | 'technology' | 'company') => {
     if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
+    setPlatformOpen(menu === 'platform');
     setSolutionsOpen(menu === 'solutions');
     setTechOpen(menu === 'technology');
     setCompanyOpen(menu === 'company');
@@ -53,6 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   const scheduleMenusClose = useCallback(() => {
     if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
     hoverCloseTimeout.current = setTimeout(() => {
+      setPlatformOpen(false);
       setSolutionsOpen(false);
       setTechOpen(false);
       setCompanyOpen(false);
@@ -62,6 +58,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   // Click outside to close desktop dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      if (platformRef.current && !platformRef.current.contains(event.target as Node)) {
+        setPlatformOpen(false);
+      }
       if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
         setSolutionsOpen(false);
       }
@@ -100,16 +99,40 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-semibold uppercase tracking-wider text-slate-300">
           
-          {/* Platform */}
-          <Link
-            to="/platform"
-            onClick={closeAllMenus}
-            className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/platform') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
-            }`}
+          {/* Platform Dropdown */}
+          <div
+            className="relative"
+            ref={platformRef}
+            onMouseEnter={() => openMenuOnHover('platform')}
+            onMouseLeave={scheduleMenusClose}
           >
-            Platform
-          </Link>
+            <button
+              onClick={() => {
+                setPlatformOpen(!platformOpen);
+                setSolutionsOpen(false);
+                setTechOpen(false);
+                setCompanyOpen(false);
+              }}
+              className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
+                isActive('/platform') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+              }`}
+            >
+              <span>Platform</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${platformOpen ? 'rotate-180 text-[#00A09A]' : ''}`} />
+            </button>
+
+            {platformOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
+                <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
+                  Platform
+                </div>
+                <Link to="/platform" onClick={closeAllMenus} className="block hover:text-[#00A09A] transition-colors group">
+                  <div className="text-sm font-semibold text-white normal-case group-hover:text-[#00A09A]">Platform Overview</div>
+                  <div className="text-xs text-slate-400 normal-case mt-0.5">CMS + Drive</div>
+                </Link>
+              </div>
+            )}
+          </div>
 
           {/* Trevia CMS (Primary Product) */}
           <Link
@@ -160,80 +183,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </button>
 
             {solutionsOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-2xl">
-                <div className="text-[10px] font-mono text-slate-400 px-3 py-1.5 uppercase tracking-wider border-b border-[#0E2C52]/50">
-                  Buyer-Specific Solutions
+              <div className="absolute top-full left-0 mt-2 w-[440px] bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl grid grid-cols-2 gap-x-8 gap-y-5">
+                <div>
+                  <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
+                    Charging Model
+                  </div>
+                  <div className="space-y-3">
+                    <Link to="/solutions/cpos" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                      CPOs & Operators
+                    </Link>
+                    <Link to="/solutions/fleets" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                      Fleets
+                    </Link>
+                    <Link to="/solutions/enterprises" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                      Enterprises
+                    </Link>
+                  </div>
                 </div>
-                <div className="space-y-1 mt-1">
-                  <Link
-                    to="/solutions/cpos"
-                    onClick={closeAllMenus}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
-                      <Radio className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white normal-case">For CPOs & Operators</div>
-                      <div className="text-[11px] text-slate-400 normal-case font-normal leading-tight">Centralised control across chargers, sites & vendors</div>
-                    </div>
-                  </Link>
 
-                  <Link
-                    to="/solutions/fleets"
-                    onClick={closeAllMenus}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
-                      <Truck className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white normal-case">For Fleets</div>
-                      <div className="text-[11px] text-slate-400 normal-case font-normal leading-tight">Charging visibility & telemetry tied to fleet schedules</div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/solutions/enterprises"
-                    onClick={closeAllMenus}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-emerald-400 group-hover:border-emerald-400">
-                      <Building2 className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white normal-case">For Enterprises</div>
-                      <div className="text-[11px] text-slate-400 normal-case font-normal leading-tight">Workplace & destination charging as a managed asset</div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/solutions/energy-utilities"
-                    onClick={closeAllMenus}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-amber-400 group-hover:border-amber-400">
-                      <Zap className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white normal-case">For Energy & Utilities</div>
-                      <div className="text-[11px] text-slate-400 normal-case font-normal leading-tight">Network-level grid visibility & interoperable data</div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/solutions/government"
-                    onClick={closeAllMenus}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-indigo-400 group-hover:border-indigo-400">
-                      <Landmark className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white normal-case">For Government / Public Bodies</div>
-                      <div className="text-[11px] text-slate-400 normal-case font-normal leading-tight">Coordinated oversight for public charging rollouts</div>
-                    </div>
-                  </Link>
+                <div>
+                  <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
+                    Public & Utilities
+                  </div>
+                  <div className="space-y-3">
+                    <Link to="/solutions/energy-utilities" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                      Energy & Utilities
+                    </Link>
+                    <Link to="/solutions/government" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                      Government / Public Bodies
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
@@ -261,33 +240,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </button>
 
             {techOpen && (
-              <div className="absolute top-full left-0 mt-2 w-72 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-2xl">
-                <Link
-                  to="/technology"
-                  onClick={closeAllMenus}
-                  className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
-                    <Layers className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white normal-case">OCPP & Interoperability</div>
-                    <div className="text-[11px] text-slate-400 normal-case font-normal">OCPP 1.6J WebSocket architecture</div>
-                  </div>
-                </Link>
-                <Link
-                  to="/technology/apis"
-                  onClick={closeAllMenus}
-                  className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
-                    <Code2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white normal-case">APIs & Integrations</div>
-                    <div className="text-[11px] text-slate-400 normal-case font-normal">REST telemetry, webhooks & exports</div>
-                  </div>
-                </Link>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
+                <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
+                  Technology
+                </div>
+                <div className="space-y-3">
+                  <Link to="/technology" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                    OCPP & Interoperability
+                  </Link>
+                  <Link to="/technology/apis" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                    APIs & Integrations
+                  </Link>
+                </div>
               </div>
             )}
           </div>
@@ -314,33 +278,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </button>
 
             {companyOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-2xl">
-                <Link
-                  to="/about"
-                  onClick={closeAllMenus}
-                  className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-[#00A09A] group-hover:border-[#00A09A]">
-                    <Info className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white normal-case">About Trevia</div>
-                    <div className="text-[11px] text-slate-400 normal-case font-normal">Mission, category & foundation</div>
-                  </div>
-                </Link>
-                <Link
-                  to="/traction"
-                  onClick={closeAllMenus}
-                  className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#0A2240]/70 transition-colors group"
-                >
-                  <div className="p-2 rounded-lg bg-[#061426] border border-[#0E2C52] text-emerald-400 group-hover:border-emerald-400">
-                    <TrendingUp className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white normal-case">Traction & Journey</div>
-                    <div className="text-[11px] text-slate-400 normal-case font-normal">DPIIT, T-Hub & verified milestones</div>
-                  </div>
-                </Link>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
+                <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
+                  Company
+                </div>
+                <div className="space-y-3">
+                  <Link to="/about" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                    About Trevia
+                  </Link>
+                  <Link to="/traction" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                    Traction & Journey
+                  </Link>
+                </div>
               </div>
             )}
           </div>

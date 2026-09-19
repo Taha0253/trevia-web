@@ -19,7 +19,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
   };
 
   return (
-    <div className="space-y-0 pb-16">
+    <div className="space-y-0">
       
       {/* 1. Editorial Hero Section */}
       <HeroSection 

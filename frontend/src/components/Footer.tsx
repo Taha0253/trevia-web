@@ -8,11 +8,11 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = () => {
   return (
-    <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-16 pb-12">
+    <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-10 pb-12">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* 5-Column Sitemap Link Matrix (Section B.3) */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-10 md:gap-x-14 lg:gap-x-20 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-10 md:gap-x-14 lg:gap-x-20 pb-10">
           
           {/* Col 1: Product */}
           <div className="space-y-5">
