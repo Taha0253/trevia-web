@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, CheckCircle2, ShieldCheck, Heart, Leaf, MapPin } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, Heart, MapPin } from 'lucide-react';
 
 export const DriverStoriesSection: React.FC = () => {
   const stories = [
@@ -50,7 +50,7 @@ export const DriverStoriesSection: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#00A09A]/6 to-transparent rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#040E1C] border border-[#0E284A] text-[#00A09A] text-xs font-mono font-semibold uppercase tracking-[0.2em] mb-4">
@@ -123,7 +123,7 @@ export const DriverStoriesSection: React.FC = () => {
         {/* Live Community Impact Numbers Banner */}
         <div className="bg-[#030914] border border-[#0E2644] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#0E2644]/80">
-            
+
             <div className="pt-4 lg:pt-0">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center justify-center gap-1">
                 <span>170-station </span>
