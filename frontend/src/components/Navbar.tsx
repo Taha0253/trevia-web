@@ -17,28 +17,28 @@ const FEATURE_COLUMNS: { heading: string; items: FeatureItem[] }[] = [
   {
     heading: 'Highlights',
     items: [
-      { title: 'OCPP Connectivity', desc: 'Connect and communicate with chargers.', to: '/technology' },
-      { title: 'Real-Time Monitoring', desc: 'See charging activity as it happens.', to: '/technology#telemetry' },
-      { title: 'Remote Operations', desc: 'Control and manage charging remotely.', to: '/cms' },
-      { title: 'Fault Visibility', desc: 'Identify charger issues quickly.', to: '/cms' },
+      { title: 'OCPP Connectivity', desc: 'Connect and communicate with chargers.', to: '/cms#ocpp-connectivity' },
+      { title: 'Real-Time Monitoring', desc: 'See charging activity as it happens.', to: '/cms#real-time-monitoring' },
+      { title: 'Remote Operations', desc: 'Control and manage charging remotely.', to: '/cms#remote-operations' },
+      { title: 'Fault Visibility', desc: 'Identify charger issues quickly.', to: '/cms#fault-visibility' },
     ],
   },
   {
     heading: 'Public Charging',
     items: [
-      { title: 'Sessions & Transactions', desc: 'Track sessions and charging activity.', to: '/solutions/cpos' },
-      { title: 'Multi-Site Management', desc: 'Manage charging sites from one place.', to: '/platform' },
-      { title: 'Tariff Management', desc: 'Configure flexible charging tariffs.', to: '/cms' },
-      { title: 'Analytics', desc: 'Turn charging data into insights.', to: '/cms' },
+      { title: 'Sessions & Transactions', desc: 'Track sessions and charging activity.', to: '/cms#sessions-transactions' },
+      { title: 'Multi-Site Management', desc: 'Manage charging sites from one place.', to: '/cms#multi-site-management' },
+      { title: 'Tariff Management', desc: 'Configure flexible charging tariffs.', to: '/cms#tariff-management' },
+      { title: 'Analytics', desc: 'Turn charging data into insights.', to: '/cms#analytics' },
     ],
   },
   {
     heading: 'Fleet Charging',
     items: [
-      { title: 'APIs & Integrations', desc: 'Connect Trevia with your systems.', to: '/technology/apis' },
-      { title: 'Hardware Agnostic', desc: 'Work across different charger hardware.', to: '/technology' },
-      { title: 'Digital Infrastructure', desc: 'Build scalable charging operations.', to: '/platform' },
-      { title: 'Network Visibility', desc: 'Get visibility across your network.', to: '/solutions/fleets' },
+      { title: 'APIs & Integrations', desc: 'Connect Trevia with your systems.', to: '/cms#apis-integrations' },
+      { title: 'Hardware Agnostic', desc: 'Work across different charger hardware.', to: '/cms#hardware-agnostic' },
+      { title: 'Digital Infrastructure', desc: 'Build scalable charging operations.', to: '/cms#digital-infrastructure' },
+      { title: 'Network Visibility', desc: 'Get visibility across your network.', to: '/cms#network-visibility' },
     ],
   },
 ];
@@ -201,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                     <div className="text-xs text-slate-400 normal-case font-normal">The operating layer for EV charging.</div>
                   </div>
                   <Link
-                    to="/platform"
+                    to="/cms#capabilities"
                     onClick={closeAllMenus}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00A09A] hover:text-white normal-case transition-colors"
                   >

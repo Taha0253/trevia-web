@@ -105,16 +105,6 @@
   100% { background-position: 56px 56px; }
 }
 
-.hero-grid-pattern {
-  background-image:
-    linear-gradient(rgba(0, 160, 154, 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 160, 154, 0.14) 1px, transparent 1px);
-  background-size: 56px 56px;
-  animation: hero-grid-pan 22s linear infinite;
-  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 30% 45%, black 30%, transparent 75%);
-  mask-image: radial-gradient(ellipse 70% 70% at 30% 45%, black 30%, transparent 75%);
-}
-
 /* Same panning grid, centered — for symmetric CTA-style sections */
 .hero-grid-pattern-center {
   background-image:
@@ -126,10 +116,21 @@
   mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, black 30%, transparent 75%);
 }
 
+/* Same panning grid, fading in from the top edge — used above the footer */
+.footer-grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 160, 154, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 160, 154, 0.14) 1px, transparent 1px);
+  background-size: 56px 56px;
+  animation: hero-grid-pan 22s linear infinite;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 90%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-glow,
-  .hero-grid-pattern,
-  .hero-grid-pattern-center {
+  .hero-grid-pattern-center,
+  .footer-grid-pattern {
     animation: none;
   }
 }

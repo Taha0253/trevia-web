@@ -105,7 +105,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       </section>
 
       {/* 3. Live Dashboard Interactive View */}
-      <section className="max-w-7xl mx-auto px-6 space-y-4">
+      <section id="network-visibility" className="max-w-7xl mx-auto px-6 space-y-4 scroll-mt-24">
         <div className="flex items-center justify-between">
           <div>
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
@@ -124,7 +124,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       </section>
 
       {/* 4. Core Capabilities Grid */}
-      <section id="capabilities" className="max-w-7xl mx-auto px-6 space-y-8">
+      <section id="capabilities" className="max-w-7xl mx-auto px-6 space-y-8 scroll-mt-24">
         <div>
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Product Specifications
@@ -136,7 +136,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="ocpp-connectivity" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Layers className="w-4 h-4" />
             </div>
@@ -146,7 +146,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="real-time-monitoring" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Activity className="w-4 h-4" />
             </div>
@@ -156,7 +156,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="remote-operations" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
               <RefreshCw className="w-4 h-4" />
             </div>
@@ -166,7 +166,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="sessions-transactions" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-amber-400">
               <Database className="w-4 h-4" />
             </div>
@@ -176,7 +176,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="fault-visibility" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-rose-400">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -186,7 +186,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="multi-site-management" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-indigo-400">
               <Sliders className="w-5 h-5" />
             </div>
@@ -196,7 +196,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="tariff-management" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Zap className="w-4 h-4" />
             </div>
@@ -206,7 +206,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="apis-integrations" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
               <Code2 className="w-4 h-4" />
             </div>
@@ -216,7 +216,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div id="analytics" className="p-5 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3 scroll-mt-28">
             <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-purple-400">
               <BarChart3 className="w-4 h-4" />
             </div>
@@ -230,7 +230,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       </section>
 
       {/* 5. End-to-End Pipeline */}
-      <section className="max-w-7xl mx-auto px-6 space-y-4">
+      <section id="hardware-agnostic" className="max-w-7xl mx-auto px-6 space-y-4 scroll-mt-24">
         <div>
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Architecture
@@ -244,7 +244,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
       </section>
 
       {/* 6. Built for CPO Ops & Scalability */}
-      <section className="max-w-7xl mx-auto px-6">
+      <section id="digital-infrastructure" className="max-w-7xl mx-auto px-6 scroll-mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-2">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">
