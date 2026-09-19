@@ -212,7 +212,7 @@ export const OurApproachDialSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-light text-white tracking-tight leading-[1.15]">
             Five layers. One operating system.
             <br className="hidden md:block" />
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-white">
+            <span className="font-extrabold text-[#00A09A]">
               {' '}Our Approach.
             </span>
           </h2>
