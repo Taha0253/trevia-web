@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollReveal } from '../components/ScrollReveal';
 
 const LOGO_SIZE = 'h-11 w-11 object-contain';
 const WORDMARK_SIZE = 'h-[60px] w-auto max-w-[160px] object-contain';
@@ -43,7 +44,7 @@ export const PartnerStripSection: React.FC = () => {
 
   return (
     <section className="relative py-16 sm:py-20 bg-[#02060D] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+      <ScrollReveal className="max-w-6xl mx-auto px-6 relative z-10 text-center">
         <div className="mb-3">
           <span className="text-[#00A09A] font-mono text-[11px] font-semibold tracking-[0.28em] uppercase">
             Connected Ecosystem
@@ -58,7 +59,7 @@ export const PartnerStripSection: React.FC = () => {
         <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-slate-400">
           Recognised by government bodies, incubators, and the platforms powering our infrastructure.
         </p>
-      </div>
+      </ScrollReveal>
 
       <div className="relative w-full overflow-hidden mt-10">
         <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-20 bg-gradient-to-r from-[#02060D] to-transparent md:w-40" />

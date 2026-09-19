@@ -1,6 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { ChargedParticlesBackground } from './components/ChargedParticlesBackground';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { RequestDemoModal } from './components/RequestDemoModal';
@@ -23,6 +22,9 @@ const TractionPage = lazy(() => import('./pages/company/TractionPage').then(m =>
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage').then(m => ({ default: m.ResourcesPage })));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage })));
 const TermsPage = lazy(() => import('./pages/TermsPage').then(m => ({ default: m.TermsPage })));
+const SecurityPage = lazy(() => import('./pages/SecurityPage').then(m => ({ default: m.SecurityPage })));
+const IntegrationsPage = lazy(() => import('./pages/IntegrationsPage').then(m => ({ default: m.IntegrationsPage })));
+const CareersPage = lazy(() => import('./pages/CareersPage').then(m => ({ default: m.CareersPage })));
 const DemoPage = lazy(() => import('./pages/DemoPage').then(m => ({ default: m.DemoPage })));
 
 // Sleek Trevia Loading Indicator
@@ -41,16 +43,12 @@ const PageLoadingFallback: React.FC = () => (
 const AppContent: React.FC = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   return (
     <div className="min-h-screen bg-[#02060D] text-slate-100 flex flex-col font-sans selection:bg-[#00A09A] selection:text-white relative">
-      
+
       {/* Scroll restoration */}
       <ScrollToTop />
-
-      {/* Charged Particles ONLY on Landing/Home Page */}
-      {isHomePage && <ChargedParticlesBackground />}
 
       {/* Global Navbar */}
       <Navbar onRequestDemo={() => setIsDemoModalOpen(true)} />
@@ -89,6 +87,9 @@ const AppContent: React.FC = () => {
             <Route path="/resources" element={<ResourcesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/security" element={<SecurityPage />} />
+            <Route path="/integrations" element={<IntegrationsPage />} />
+            <Route path="/careers" element={<CareersPage />} />
 
             {/* Fallback */}
             <Route path="*" element={<HomePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />

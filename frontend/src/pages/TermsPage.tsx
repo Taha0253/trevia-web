@@ -37,7 +37,9 @@ export const TermsPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-white">4. Inquiries</h2>
           <p>
-            For legal inquiries, contact <a href="mailto:legal@treviaev.in" className="text-[#00A09A] underline">legal@treviaev.in</a>.
+            For legal inquiries, contact{' '}
+            {/* PLACEHOLDER — replace admin@trevia.com with the real legal contact */}
+            <a href="mailto:admin@trevia.com" className="text-[#00A09A] underline">admin@trevia.com</a>.
           </p>
         </section>
       </div>

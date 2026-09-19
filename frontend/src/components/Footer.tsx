@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/drive" className="hover:text-[#00A09A] transition-colors">Trevia Drive</Link>
+                <Link to="/drive" className="hover:text-[#00A09A] transition-colors">Driver Platform</Link>
               </li>
               <li>
                 <Link to="/platform" className="hover:text-[#00A09A] transition-colors">Platform Architecture</Link>
@@ -63,13 +63,16 @@ export const Footer: React.FC<FooterProps> = () => {
                 <Link to="/technology" className="hover:text-[#00A09A] transition-colors">OCPP & Interoperability</Link>
               </li>
               <li>
-                <Link to="/technology/apis" className="hover:text-[#00A09A] transition-colors">APIs & Integrations</Link>
+                <Link to="/technology/apis" className="hover:text-[#00A09A] transition-colors">API Documentation</Link>
               </li>
               <li>
                 <Link to="/technology#websockets" className="hover:text-[#00A09A] transition-colors">WebSocket Engine</Link>
               </li>
               <li>
                 <Link to="/technology#telemetry" className="hover:text-[#00A09A] transition-colors">Telemetry & Sessions</Link>
+              </li>
+              <li>
+                <Link to="/integrations" className="hover:text-[#00A09A] transition-colors">Integration Partners</Link>
               </li>
             </ul>
           </div>
@@ -88,7 +91,11 @@ export const Footer: React.FC<FooterProps> = () => {
                 <Link to="/resources" className="hover:text-[#00A09A] transition-colors">Resources & Insights</Link>
               </li>
               <li>
-                <a href="mailto:contact@treviaev.in" className="hover:text-[#00A09A] transition-colors">Contact Founder</a>
+                <Link to="/careers" className="hover:text-[#00A09A] transition-colors">Careers</Link>
+              </li>
+              <li>
+                {/* PLACEHOLDER — replace admin@trevia.com with the real founder/admin email */}
+                <a href="mailto:admin@trevia.com" className="hover:text-[#00A09A] transition-colors">Contact Founder</a>
               </li>
             </ul>
           </div>
@@ -97,6 +104,9 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="space-y-5">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Legal</h4>
             <ul className="space-y-4 text-xs">
+              <li>
+                <Link to="/security" className="hover:text-[#00A09A] transition-colors">Security</Link>
+              </li>
               <li>
                 <Link to="/privacy" className="hover:text-[#00A09A] transition-colors">Privacy Policy</Link>
               </li>

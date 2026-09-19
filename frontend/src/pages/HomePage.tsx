@@ -20,11 +20,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
 
   return (
     <div className="space-y-0">
-      
+
       {/* 1. Editorial Hero Section */}
-      <HeroSection 
-        onExplore={scrollToApproach} 
-        onPartner={onRequestDemo} 
+      <HeroSection
+        onExplore={scrollToApproach}
+        onPartner={onRequestDemo}
       />
 
       {/* Partner logos: T-Hub, Google for Startups, GitHub, GCP, AWS, DPIIT */}

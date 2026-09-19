@@ -5,10 +5,13 @@ import {
   Activity, Thermometer, BarChart3, Bell, Unlock, Wrench,
   Shield, RefreshCw, Building2, Globe, Users, TrendingUp, type LucideIcon
 } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import { ScrollReveal } from '../components/ScrollReveal';
 
 interface ApproachCard {
   stepNum: string;
   id: string;
+  layer: string;
   title: string;
   subtitle: string;
   shortDesc: string;
@@ -20,9 +23,10 @@ const cards: ApproachCard[] = [
   {
     stepNum: '01',
     id: 'unified-layer',
-    title: 'Unified Network Layer',
+    layer: 'Infrastructure',
+    title: 'Multi-Vendor Connectivity',
     subtitle: 'Every charger, one roof',
-    shortDesc: 'Connects all chargers over OCPP into one seamless control center.',
+    shortDesc: 'Onboard any AC/DC charger brand into a single, unified control layer.',
     icon: GitFork,
     satellites: [
       { icon: Radio, top: '18%', left: '22%' },
@@ -34,9 +38,10 @@ const cards: ApproachCard[] = [
   {
     stepNum: '02',
     id: 'hardware-agnostic',
-    title: 'Hardware Freedom',
+    layer: 'Connectivity',
+    title: 'OCPP-Based Control',
     subtitle: 'Any brand, any plug',
-    shortDesc: 'Works with major AC & DC charger brands — no hardware lock-in.',
+    shortDesc: 'Standards-based OCPP messaging governs every charger, with no hardware lock-in.',
     icon: PlugZap,
     satellites: [
       { icon: Zap, top: '16%', left: '30%' },
@@ -48,9 +53,10 @@ const cards: ApproachCard[] = [
   {
     stepNum: '03',
     id: 'live-data',
-    title: 'Live Station Pulse',
+    layer: 'Trevia CMS',
+    title: 'Real-Time Telemetry',
     subtitle: 'Zero ghost chargers',
-    shortDesc: 'Live power, voltage, and socket status so drivers never hit a dead charger.',
+    shortDesc: 'Live power, voltage, and socket-status streams give operators full visibility.',
     icon: Gauge,
     satellites: [
       { icon: Activity, top: '14%', left: '50%' },
@@ -63,7 +69,8 @@ const cards: ApproachCard[] = [
   {
     stepNum: '04',
     id: 'automation-control',
-    title: 'Smart Self-Healing',
+    layer: 'Network & Mobility',
+    title: 'Remote Operations',
     subtitle: 'Fixes without site trips',
     shortDesc: 'Reboot, unlock, and recover chargers remotely in seconds.',
     icon: RotateCw,
@@ -77,9 +84,10 @@ const cards: ApproachCard[] = [
   {
     stepNum: '05',
     id: 'scales-network',
-    title: 'Grows With You',
+    layer: 'Intelligence',
+    title: 'Network Scalability',
     subtitle: '1 station to 50,000+',
-    shortDesc: 'Add cities, depots, and highway hubs without adding complexity.',
+    shortDesc: 'Add cities, depots, and highway hubs without adding operational complexity.',
     icon: MapPin,
     satellites: [
       { icon: Globe, top: '18%', left: '24%' },
@@ -142,6 +150,48 @@ const Constellation: React.FC<{ card: ApproachCard; featured: boolean }> = ({ ca
   );
 };
 
+const RevealCard: React.FC<{
+  card: ApproachCard;
+  featured: boolean;
+  frame: (typeof cardFrame)[number];
+  index: number;
+  onClick: () => void;
+}> = ({ card, featured, frame, index, onClick }) => {
+  const { ref, isVisible } = useScrollReveal<HTMLElement>();
+
+  return (
+    <article
+      ref={ref}
+      onClick={onClick}
+      className={`
+        relative flex flex-col origin-bottom overflow-hidden rounded-2xl cursor-pointer
+        bg-[linear-gradient(to_bottom_right,#04080C_82%,#00A09A)]
+        transition-all duration-700 ease-out
+        hover:shadow-[0px_0px_54px_0px_rgba(0,160,154,0.4)]
+        w-full max-w-[340px] h-[420px]
+        ${frame.height} ${frame.z}
+        ${featured ? 'shadow-[0px_0px_40px_0px_rgba(0,160,154,0.28)]' : ''}
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+      `}
+      style={{ transitionDelay: isVisible ? `${index * 90}ms` : '0ms' }}
+    >
+      <Constellation card={card} featured={featured} />
+
+      <div className="relative z-10 pl-6 xl:pl-9 pr-5 pb-6 pt-2">
+        <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#00A09A]">
+          {card.layer}
+        </span>
+        <h3 className={`mt-1 font-semibold text-white tracking-tight ${featured ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
+          {card.title}
+        </h3>
+        <p className="mt-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          {card.shortDesc}
+        </p>
+      </div>
+    </article>
+  );
+};
+
 export const OurApproachDialSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(2);
 
@@ -153,7 +203,7 @@ export const OurApproachDialSection: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[650px] bg-gradient-to-b from-[#00A09A]/8 via-[#00A09A]/4 to-transparent rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-10 md:mb-14">
+        <ScrollReveal className="text-center mb-10 md:mb-14">
           <div className="inline-flex border border-white/15 rounded-full px-4 py-1.5 mb-4">
             <span className="text-slate-400 text-[11px] font-mono font-semibold tracking-[0.28em] uppercase">
               The Signature Journey
@@ -169,40 +219,19 @@ export const OurApproachDialSection: React.FC = () => {
           <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
             An uninterrupted energy operating layer that harmonizes charger connectivity, real-time intelligence, remote control, and network scalability.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="mt-8 md:mt-12 flex flex-col items-center gap-6 md:flex-row md:items-end md:justify-center md:gap-0 md:-space-x-5 xl:-space-x-8">
-          {cards.map((card, index) => {
-            const featured = index === activeIndex;
-            const frame = cardFrame[index];
-
-            return (
-              <article
-                key={card.id}
-                onClick={() => setActiveIndex(index)}
-                className={`
-                  relative flex flex-col origin-bottom overflow-hidden rounded-2xl cursor-pointer
-                  bg-[linear-gradient(to_bottom_right,#04080C_82%,#00A09A)]
-                  transition-all duration-500 ease-out
-                  hover:shadow-[0px_0px_54px_0px_rgba(0,160,154,0.4)]
-                  w-full max-w-[340px] h-[420px]
-                  ${frame.height} ${frame.z}
-                  ${featured ? 'shadow-[0px_0px_40px_0px_rgba(0,160,154,0.28)]' : ''}
-                `}
-              >
-                <Constellation card={card} featured={featured} />
-
-                <div className="relative z-10 pl-6 xl:pl-9 pr-5 pb-6 pt-2">
-                  <h3 className={`font-semibold text-white tracking-tight ${featured ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
-                    {card.title}
-                  </h3>
-                  <p className="mt-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {card.shortDesc}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+          {cards.map((card, index) => (
+            <RevealCard
+              key={card.id}
+              card={card}
+              featured={index === activeIndex}
+              frame={cardFrame[index]}
+              index={index}
+              onClick={() => setActiveIndex(index)}
+            />
+          ))}
         </div>
       </div>
     </section>

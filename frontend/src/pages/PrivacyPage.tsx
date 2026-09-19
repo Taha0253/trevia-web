@@ -43,7 +43,9 @@ export const PrivacyPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-white">4. Contact Us</h2>
           <p>
-            If you have questions regarding this Privacy Policy, contact us at <a href="mailto:privacy@treviaev.in" className="text-[#00A09A] underline">privacy@treviaev.in</a>.
+            If you have questions regarding this Privacy Policy, contact us at{' '}
+            {/* PLACEHOLDER — replace admin@trevia.com with the real privacy contact */}
+            <a href="mailto:admin@trevia.com" className="text-[#00A09A] underline">admin@trevia.com</a>.
           </p>
         </section>
       </div>

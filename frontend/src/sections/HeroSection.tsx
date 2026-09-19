@@ -9,7 +9,9 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }) => {
   return (
     <section className="relative min-h-[calc(100svh-5rem)] flex items-center overflow-hidden pt-4 pb-8 lg:pt-0 lg:pb-0">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1300px] h-[750px] bg-gradient-to-b from-[#00A09A]/12 via-[#00A09A]/6 to-transparent rounded-full blur-[240px] pointer-events-none" />
+      {/* Faint animated grid + soft breathing glow behind the headline */}
+      <div className="absolute inset-0 hero-grid-pattern pointer-events-none" />
+      <div className="absolute top-1/2 left-[28%] w-[900px] h-[900px] bg-gradient-to-br from-[#00A09A]/16 via-[#00A09A]/6 to-transparent rounded-full blur-[180px] pointer-events-none animate-hero-glow" />
 
       <div className="w-full pl-6 sm:pl-10 md:pl-14 lg:pl-16 xl:pl-20 pr-0 relative z-10">
         <div className="mb-5 flex items-center gap-3">
