@@ -9,9 +9,6 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-10 pb-12 overflow-hidden">
-      {/* Faint animated grid fading in above the footer content */}
-      <div className="absolute inset-x-0 top-0 h-72 footer-grid-pattern pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* 5-Column Sitemap Link Matrix (Section B.3) */}
