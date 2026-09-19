@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from ..core.database import get_db
+from ..core.email import send_notification_email
 from ..models.lead import Lead, ChargerStation
 from ..schemas.lead import LeadCreate, LeadResponse, ContactCreate
 from ..schemas.dashboard import DashboardStatsResponse, ApproachStep
@@ -31,6 +32,18 @@ def create_demo_lead(lead_in: LeadCreate, db: Session = Depends(get_db)):
     db.add(db_lead)
     db.commit()
     db.refresh(db_lead)
+
+    send_notification_email(
+        subject=f"New demo request from {db_lead.full_name}",
+        body=(
+            f"Name: {db_lead.full_name}\n"
+            f"Email: {db_lead.email}\n"
+            f"Phone: {db_lead.phone or '-'}\n"
+            f"Company: {db_lead.company or '-'}\n"
+            f"Chargers: {db_lead.chargers_count or '-'}\n"
+            f"Message: {db_lead.message or '-'}"
+        )
+    )
     return db_lead
 
 @router.post("/contact", status_code=status.HTTP_201_CREATED)
@@ -44,6 +57,16 @@ def submit_contact(contact_in: ContactCreate, db: Session = Depends(get_db)):
     )
     db.add(db_lead)
     db.commit()
+
+    send_notification_email(
+        subject=f"New contact form submission from {contact_in.full_name}",
+        body=(
+            f"Name: {contact_in.full_name}\n"
+            f"Email: {contact_in.email}\n"
+            f"Subject: {contact_in.subject}\n"
+            f"Message: {contact_in.message}"
+        )
+    )
     return {"message": "Thank you for reaching out to Trevia! Our CPO onboarding team will contact you within 24 hours."}
 
 @router.get("/dashboard/stats", response_model=DashboardStatsResponse)

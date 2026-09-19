@@ -14,4 +14,21 @@ class Settings(BaseModel):
         "*"
     ]
 
+    # PLACEHOLDER — replace with the real inbox that should receive lead/contact
+    # notifications before going live.
+    ADMIN_EMAIL: str = os.getenv("ADMIN_EMAIL", "admin@trevia.com")
+
+    # PLACEHOLDER — replace with the real careers inbox.
+    CAREERS_EMAIL: str = os.getenv("CAREERS_EMAIL", "careers@trevia.com")
+
+    # SMTP settings for outbound notification emails. All placeholders below
+    # must be replaced with real credentials (e.g. an SES/SendGrid/Gmail SMTP
+    # relay) before notifications will actually send. Until then, the email
+    # helper just logs the notification instead of sending it.
+    SMTP_HOST: str = os.getenv("SMTP_HOST", "")  # PLACEHOLDER — e.g. smtp.sendgrid.net
+    SMTP_PORT: int = int(os.getenv("SMTP_PORT", "587"))
+    SMTP_USERNAME: str = os.getenv("SMTP_USERNAME", "")  # PLACEHOLDER
+    SMTP_PASSWORD: str = os.getenv("SMTP_PASSWORD", "")  # PLACEHOLDER
+    SMTP_FROM_EMAIL: str = os.getenv("SMTP_FROM_EMAIL", "noreply@trevia.com")  # PLACEHOLDER
+
 settings = Settings()
