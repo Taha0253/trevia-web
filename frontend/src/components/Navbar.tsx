@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </span>
           </Link>
 
-          {/* Trevia Drive */}
+          {/* Trevia Drive's Platform */}
           <Link
             to="/drive"
             onClick={closeAllMenus}
@@ -135,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
               isActive('/drive') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
             }`}
           >
-            Trevia Drive
+            Driver's Platform
           </Link>
 
           {/* Solutions Dropdown */}

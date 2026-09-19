@@ -20,7 +20,7 @@ const GcpMark: React.FC = () => (
 );
 
 const AwsMark: React.FC = () => (
-  <img src="/AWS-white-text.png" alt="AWS" loading="lazy" decoding="async" className="h-9 w-auto object-contain" />
+  <img src="/aws-startups-white.png" alt="AWS" loading="lazy" decoding="async" className="h-9 w-auto object-contain" />
 );
 
 const ThubMark: React.FC = () => (

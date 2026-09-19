@@ -126,33 +126,32 @@ export const DriverStoriesSection: React.FC = () => {
             
             <div className="pt-4 lg:pt-0">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center justify-center gap-1">
-                <span>12,000+</span>
-                <span className="text-emerald-400 text-lg">⚡</span>
+                <span>170-station </span>
               </div>
-              <div className="text-xs text-slate-400 font-medium mt-1">Happy EV Drivers Served</div>
+              <div className="text-xs text-slate-400 font-medium mt-1">commercial pilot secured</div>
             </div>
 
             <div className="pt-4 lg:pt-0">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#00A09A] tracking-tight">
-                50+ Cities
+                CMS
               </div>
-              <div className="text-xs text-slate-400 font-medium mt-1">Highway Corridors &amp; Hubs</div>
+              <div className="text-xs text-slate-400 font-medium mt-1">in final testing</div>
             </div>
 
             <div className="pt-4 lg:pt-0">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-emerald-400 tracking-tight flex items-center justify-center gap-1">
-                <Leaf className="w-6 h-6 text-emerald-400" />
-                <span>3.4M kg</span>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#00A09A] tracking-tight">
+                <div className="w-6 h-6 text-emerald-400" />
+                <span>Enterprise CPO </span>
               </div>
-              <div className="text-xs text-slate-400 font-medium mt-1">CO₂ Emissions Prevented</div>
+              <div className="text-xs text-slate-400 font-medium mt-1">discussions underway</div>
             </div>
 
             <div className="pt-4 lg:pt-0">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center justify-center gap-1">
-                <span>99.8%</span>
+                <span>T-Hub Incubated </span>
                 <CheckCircle2 className="w-5 h-5 text-emerald-400" />
               </div>
-              <div className="text-xs text-slate-400 font-medium mt-1">Proven Session Uptime</div>
+              <div className="text-xs text-slate-400 font-medium mt-1">DPIIT Recognised</div>
             </div>
 
           </div>

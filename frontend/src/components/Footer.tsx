@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="pt-8 border-t border-[#0E223D]/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2">
             <span className="text-white font-bold">Trevia EV Technologies</span>
-            <span>— The operating layer for your charging network.</span>
+            <span>— The operating system for EV charging infrastructure.</span>
           </div>
           <div className="text-slate-500 font-mono text-[11px]">
             © 2026 Trevia EV Technologies. Incorporated Sept 2025. All rights reserved.

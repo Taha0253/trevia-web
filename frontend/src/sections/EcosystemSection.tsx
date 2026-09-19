@@ -55,17 +55,12 @@ export const EcosystemSection: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-white tracking-tight max-w-3xl mx-auto leading-tight mb-4">
-          Built to work with the{' '}
+        <h2>
           <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#00A09A]">
-            technologies you already use.
+            Backed & Supported by:
           </span>
         </h2>
 
-        {/* Subtitle */}
-        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-14 font-normal">
-          Open infrastructure. Interoperable technology. Connected networks.
-        </p>
 
         {/* Partner Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">

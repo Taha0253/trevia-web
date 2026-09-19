@@ -23,15 +23,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
           <div className="lg:col-span-5 space-y-6 z-10 lg:pr-2 max-w-xl">
             <div className="space-y-1">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-extralight text-white tracking-tight leading-[1.15]">
-                Building the digital infrastructure behind{' '}
+                The Operating System for{' '}
                 <span className="font-extrabold text-[#00A09A]">
-                  EV charging.
+                  EV charging Infrastructure.
                 </span>
               </h1>
             </div>
 
             <p className="text-base sm:text-lg text-slate-300/90 font-normal leading-relaxed">
-              Say goodbye to range anxiety and juggling 10 different charging apps. Trevia connects India's EV chargers into one effortless map and wallet — so you can plug in, grab a coffee, and drive with confidence.
+              Trevia connects multi-vendor charging infrastructure through an interoperable operating layer for CPOs, fleets and charging networks.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-1">
@@ -65,20 +65,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
             <div className="pt-5 border-t border-[#0E223D]/70 flex items-center gap-6 sm:gap-8 text-xs text-slate-400">
               <div>
                 <div className="text-lg font-bold text-white flex items-center gap-1">
-                  <span>99.8%</span>
+                  <span>OCPP</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 </div>
-                <div className="mt-0.5 text-slate-400 font-medium">Session Reliability</div>
+                <div className="mt-0.5 text-slate-400 font-medium">Native</div>
               </div>
               <div className="w-px h-8 bg-[#0E223D]" />
               <div>
-                <div className="text-lg font-bold text-[#00A09A]">1 App &amp; Wallet</div>
-                <div className="mt-0.5 text-slate-400 font-medium">All 45+ Networks</div>
+                <div className="text-lg font-bold text-white">Multi-Vendor </div>
+                <div className="mt-0.5 text-slate-400 font-medium">Infrastructure </div>
               </div>
               <div className="w-px h-8 bg-[#0E223D]" />
               <div>
-                <div className="text-lg font-bold text-white">0 Wait Time</div>
-                <div className="mt-0.5 text-slate-400 font-medium">Live Slot Booking</div>
+                <div className="text-lg font-bold text-white">Real-Time</div>
+                <div className="mt-0.5 text-slate-400 font-medium">Telemetry</div>
               </div>
             </div>
           </div>

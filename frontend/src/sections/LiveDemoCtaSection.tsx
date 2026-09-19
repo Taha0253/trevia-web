@@ -70,11 +70,11 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
 
         <div className="relative z-10 flex flex-col items-center text-center px-10 sm:px-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[1.08]">
-            <span className="block">See your chargers</span>
-            <span className="block">run as one network.</span>
+            <span className="block">See your charging infrastructure </span>
+            <span className="block">operate as one network.</span>
           </h2>
           <p className="mt-4 max-w-md text-sm sm:text-base text-slate-400 leading-relaxed">
-            Spend 30 minutes in the live sandbox — OCPP telemetry, remote commands, and roaming — then book a walkthrough on your own stations.
+            Explore Trevia CMS through a live walkthrough of OCPP connectivity, telemetry, remote operations and network management.
           </p>
 
           <button
@@ -88,7 +88,7 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
             <StarMark className="demo-star demo-star-br w-3.5 h-3.5" />
 
             <span className="relative z-10 flex items-center gap-2">
-              Book a live demo
+              Book a CMS demo
               <ArrowRight className="w-4 h-4" />
             </span>
           </button>
