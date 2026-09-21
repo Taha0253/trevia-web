@@ -15,7 +15,6 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
     phone: '',
     company: '',
     chargers_count: '10 - 50 chargers',
-    demo_focus: 'Trevia CMS Full Walkthrough',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +30,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
         phone: formData.phone,
         company: formData.company,
         chargers_count: formData.chargers_count,
-        message: `[Demo Focus: ${formData.demo_focus}] ${formData.message}`
+        message: formData.message
       });
       setIsSuccess(true);
       confetti({
@@ -58,13 +57,8 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
 
         {/* Breadcrumb & Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 pt-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase mb-5">
-            
-            <span>Interactive Enterprise Demo</span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight mb-6">
-            See Trevia CMS <span className="font-extrabold text-[#00A09A]">in Action.</span>
+            See Trevia <span className="font-extrabold text-[#00A09A]">in Action.</span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
@@ -170,28 +164,11 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
 
                   <div>
                     <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
-                      Primary Demo Focus
-                    </label>
-                    <select
-                      value={formData.demo_focus}
-                      onChange={(e) => setFormData({ ...formData, demo_focus: e.target.value })}
-                      className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
-                    >
-                      <option value="Trevia CMS Full Walkthrough">Trevia CMS Full Walkthrough</option>
-                      <option value="Hardware Compatibility & OCPP 2.0.1 Test">Hardware Compatibility & OCPP 2.0.1 Test</option>
-                      <option value="Fleet Depot & Schedule Integration">Fleet Depot & Schedule Integration</option>
-                      <option value="Multi-CPO Roaming & Wallet Gateway">Multi-CPO Roaming & Wallet Gateway</option>
-                      <option value="Custom API & ERP Integration">Custom API & ERP Integration</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
-                      Technical Scope / Questions
+                      Tell Us More About Yourself
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="Tell us about your charger models, existing backend, or migration timeline..."
+                      placeholder="Tell us about your charging network, timeline, or specific requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
@@ -231,7 +208,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white">Demo Scheduled</h3>
                 <p className="text-sm text-slate-300 max-w-sm mx-auto font-normal leading-relaxed">
-                  Thank you, <span className="text-[#00A09A] font-semibold">{formData.full_name}</span>. Our technical architecture team has received your request for <span className="text-white font-medium">{formData.demo_focus}</span>. A calendar invitation has been prepared for <span className="text-white font-medium">{formData.email}</span>.
+                  Thank you, <span className="text-[#00A09A] font-semibold">{formData.full_name}</span>. Our team has received your demo request. A calendar invitation has been prepared for <span className="text-white font-medium">{formData.email}</span>.
                 </p>
                 <div className="pt-4">
                   <button
@@ -244,50 +221,6 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
               </div>
             )}
 
-          </div>
-        </div>
-
-        {/* 3-STEP AGENDA: What happens during the demo? */}
-        <div className="bg-[#030A14] border border-[#0E2C52] rounded-3xl p-8 sm:p-10 mb-16">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white">
-              What to Expect in Your 30-Minute Demo
-            </h3>
-            <p className="text-sm text-slate-400 mt-2">
-              A high-density technical briefing tailored specifically to your charging footprint.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#02060D] p-6 rounded-2xl border border-[#0E223D] space-y-3">
-              <div className="w-8 h-8 rounded-full bg-[#00A09A]/15 text-[#00A09A] font-mono font-bold flex items-center justify-center text-sm">
-                01
-              </div>
-              <h4 className="text-base font-bold text-white">Architecture & Protocol Audit</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Review your current charger models, OCPP versions (1.6J or 2.0.1), and gateway latency requirements with zero hardware rip-and-replace.
-              </p>
-            </div>
-
-            <div className="bg-[#02060D] p-6 rounded-2xl border border-[#0E223D] space-y-3">
-              <div className="w-8 h-8 rounded-full bg-[#00A09A]/15 text-[#00A09A] font-mono font-bold flex items-center justify-center text-sm">
-                02
-              </div>
-              <h4 className="text-base font-bold text-white">Live Hardware Simulation</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Watch Trevia CMS ingest live telemetry from your test station, issue remote soft/hard resets, and run automated self-healing loops.
-              </p>
-            </div>
-
-            <div className="bg-[#02060D] p-6 rounded-2xl border border-[#0E223D] space-y-3">
-              <div className="w-8 h-8 rounded-full bg-emerald-400/15 text-emerald-400 font-mono font-bold flex items-center justify-center text-sm">
-                03
-              </div>
-              <h4 className="text-base font-bold text-white">Tariff & Roaming Strategy</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Configure dynamic time-of-use (ToU) tariffs, fleet billing settlement, and single-wallet multi-CPO roaming for your drivers.
-              </p>
-            </div>
           </div>
         </div>
 
