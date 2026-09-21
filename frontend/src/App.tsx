@@ -8,6 +8,7 @@ import { ScrollToTop } from './components/ScrollToTop';
 // Lazy-loaded Pages for instant initial load and optimal performance
 const HomePage = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
 const PlatformPage = lazy(() => import('./pages/PlatformPage').then(m => ({ default: m.PlatformPage })));
+const FeaturesPage = lazy(() => import('./pages/FeaturesPage').then(m => ({ default: m.FeaturesPage })));
 const TreviaCmsPage = lazy(() => import('./pages/TreviaCmsPage').then(m => ({ default: m.TreviaCmsPage })));
 const TreviaDrivePage = lazy(() => import('./pages/TreviaDrivePage').then(m => ({ default: m.TreviaDrivePage })));
 const CposPage = lazy(() => import('./pages/solutions/CposPage').then(m => ({ default: m.CposPage })));
@@ -60,6 +61,7 @@ const AppContent: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             <Route path="/platform" element={<PlatformPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+            <Route path="/features" element={<FeaturesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             <Route path="/cms" element={<TreviaCmsPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             <Route path="/drive" element={<TreviaDrivePage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             

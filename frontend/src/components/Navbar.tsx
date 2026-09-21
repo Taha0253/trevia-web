@@ -4,42 +4,50 @@ import {
   ChevronDown,
   Menu,
   X,
-  ArrowUpRight
+  ArrowUpRight,
+  LayoutDashboard,
+  Smartphone
 } from 'lucide-react';
 
-interface FeatureItem {
-  title: string;
-  desc: string;
-  to: string;
+interface FeatureProduct {
+  key: 'cms' | 'ev';
+  name: string;
+  icp: string;
+  tagline: string;
+  items: string[];
+  cta: { label: string; to: string };
 }
 
-const FEATURE_COLUMNS: { heading: string; items: FeatureItem[] }[] = [
+const FEATURE_PRODUCTS: FeatureProduct[] = [
   {
-    heading: 'Highlights',
+    key: 'cms',
+    name: 'Trevia CMS',
+    icp: 'For CPOs & Charging Network Operators',
+    tagline: 'One operating layer for multi-vendor charging infrastructure.',
     items: [
-      { title: 'OCPP Connectivity', desc: 'Connect and communicate with chargers.', to: '/cms#ocpp-connectivity' },
-      { title: 'Real-Time Monitoring', desc: 'See charging activity as it happens.', to: '/cms#real-time-monitoring' },
-      { title: 'Remote Operations', desc: 'Control and manage charging remotely.', to: '/cms#remote-operations' },
-      { title: 'Fault Visibility', desc: 'Identify charger issues quickly.', to: '/cms#fault-visibility' },
+      'OCPP Connectivity',
+      'Real-Time Monitoring',
+      'Remote Operations',
+      'Multi-Site Management',
+      'Sessions & Transactions',
+      'APIs & Integrations',
     ],
+    cta: { label: 'Explore Trevia CMS', to: '/cms' },
   },
   {
-    heading: 'Public Charging',
+    key: 'ev',
+    name: 'Trevia EV',
+    icp: 'For EV Drivers & Fleets',
+    tagline: 'One charging experience across connected networks.',
     items: [
-      { title: 'Sessions & Transactions', desc: 'Track sessions and charging activity.', to: '/cms#sessions-transactions' },
-      { title: 'Multi-Site Management', desc: 'Manage charging sites from one place.', to: '/cms#multi-site-management' },
-      { title: 'Tariff Management', desc: 'Configure flexible charging tariffs.', to: '/cms#tariff-management' },
-      { title: 'Analytics', desc: 'Turn charging data into insights.', to: '/cms#analytics' },
+      'Charger Discovery',
+      'Real-Time Availability',
+      'AI Trip Planner',
+      'Smart Route Planning',
+      'Reserve & Navigate',
+      'Unified Payments',
     ],
-  },
-  {
-    heading: 'Fleet Charging',
-    items: [
-      { title: 'APIs & Integrations', desc: 'Connect Trevia with your systems.', to: '/cms#apis-integrations' },
-      { title: 'Hardware Agnostic', desc: 'Work across different charger hardware.', to: '/cms#hardware-agnostic' },
-      { title: 'Digital Infrastructure', desc: 'Build scalable charging operations.', to: '/cms#digital-infrastructure' },
-      { title: 'Network Visibility', desc: 'Get visibility across your network.', to: '/cms#network-visibility' },
-    ],
+    cta: { label: 'Explore Trevia EV', to: '/drive' },
   },
 ];
 
@@ -130,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         
         {/* Trevia Logo Button to Home */}
-        <Link to="/" onClick={closeAllMenus} className="flex items-center group">
+        <Link to="/" onClick={closeAllMenus} className="flex items-center group outline-none focus:outline-none focus-visible:outline-none">
           <img 
             src="/Trevia.png" 
             alt="Trevia EV - Return to Home" 
@@ -167,45 +175,92 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </button>
 
             {featuresOpen && (
-              <div className="absolute top-full left-0 mt-2 w-[720px] bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl z-50 backdrop-blur-2xl overflow-hidden">
-                <div className="grid grid-cols-3 gap-x-8 p-6">
-                  {FEATURE_COLUMNS.map((col) => (
-                    <div key={col.heading}>
-                      <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-4">
-                        {col.heading}
+              <div className="absolute top-full left-0 mt-2 w-[640px] bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl z-50 backdrop-blur-2xl overflow-hidden">
+                <div className="grid grid-cols-2">
+                  {/* Trevia CMS — emphasized as the core B2B product */}
+                  <div className="p-6 border-r border-[#0E2C52]/70 bg-gradient-to-b from-[#0A2240]/50 to-transparent">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A] shrink-0">
+                        <LayoutDashboard className="w-4 h-4" />
                       </div>
-                      <div className="space-y-4">
-                        {col.items.map((item) => (
-                          <Link
-                            key={item.title}
-                            to={item.to}
-                            onClick={closeAllMenus}
-                            className="block group"
-                          >
-                            <div className="text-sm font-semibold text-white normal-case group-hover:text-[#00A09A] transition-colors">
-                              {item.title}
-                            </div>
-                            <div className="text-xs text-slate-400 normal-case font-normal leading-snug mt-0.5">
-                              {item.desc}
-                            </div>
-                          </Link>
-                        ))}
+                      <div>
+                        <div className="text-sm font-bold text-white normal-case leading-tight">Trevia CMS</div>
+                        <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider">For CPOs & Charging Network Operators</div>
                       </div>
                     </div>
-                  ))}
+                    <p className="text-xs text-slate-400 normal-case font-normal leading-snug mb-4">
+                      {FEATURE_PRODUCTS[0].tagline}
+                    </p>
+                    <div className="space-y-2.5 mb-5">
+                      {FEATURE_PRODUCTS[0].items.map((item) => (
+                        <Link
+                          key={item}
+                          to="/features#cms"
+                          onClick={closeAllMenus}
+                          className="block text-xs font-semibold text-slate-200 normal-case hover:text-[#00A09A] transition-colors"
+                        >
+                          {item}
+                        </Link>
+                      ))}
+                    </div>
+                    <Link
+                      to={FEATURE_PRODUCTS[0].cta.to}
+                      onClick={closeAllMenus}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00A09A] hover:text-white normal-case transition-colors"
+                    >
+                      <span>{FEATURE_PRODUCTS[0].cta.label}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+
+                  {/* Trevia EV */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-[#061426] border border-emerald-400/40 flex items-center justify-center text-emerald-400 shrink-0">
+                        <Smartphone className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-white normal-case leading-tight">Trevia EV</div>
+                        <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">For EV Drivers & Fleets</div>
+                      </div>
+                    </div>
+                    <p className="text-xs text-slate-400 normal-case font-normal leading-snug mb-4">
+                      {FEATURE_PRODUCTS[1].tagline}
+                    </p>
+                    <div className="space-y-2.5 mb-5">
+                      {FEATURE_PRODUCTS[1].items.map((item) => (
+                        <Link
+                          key={item}
+                          to="/features#ev"
+                          onClick={closeAllMenus}
+                          className="block text-xs font-semibold text-slate-200 normal-case hover:text-emerald-400 transition-colors"
+                        >
+                          {item}
+                        </Link>
+                      ))}
+                    </div>
+                    <Link
+                      to={FEATURE_PRODUCTS[1].cta.to}
+                      onClick={closeAllMenus}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-white normal-case transition-colors"
+                    >
+                      <span>{FEATURE_PRODUCTS[1].cta.label}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between px-6 py-4 border-t border-[#0E2C52]/70 bg-[#040C18]">
+                <div className="flex items-center justify-between gap-4 px-6 py-4 border-t border-[#0E2C52]/70 bg-[#040C18]">
                   <div>
-                    <div className="text-sm font-bold text-white normal-case">Trevia Platform</div>
-                    <div className="text-xs text-slate-400 normal-case font-normal">The operating layer for EV charging.</div>
+                    <div className="text-sm font-bold text-white normal-case">One Platform. Two Experiences.</div>
+                    <div className="text-xs text-slate-400 normal-case font-normal">Trevia connects the infrastructure operators running charging networks with the drivers using them.</div>
                   </div>
                   <Link
-                    to="/cms#capabilities"
+                    to="/platform"
                     onClick={closeAllMenus}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00A09A] hover:text-white normal-case transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00A09A] hover:text-white normal-case transition-colors shrink-0"
                   >
-                    <span>See all features</span>
+                    <span>Explore Trevia Platform</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -445,20 +500,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       {mobileOpen && (
         <div className="lg:hidden bg-[#030A14] border-b border-[#0E2C52] px-6 py-6 space-y-4 text-xs font-semibold uppercase tracking-wider max-h-[85vh] overflow-y-auto">
           {/* Features Mobile Group */}
-          <div className="py-2 border-b border-[#0E2C52]/40 space-y-3">
+          <div className="py-2 border-b border-[#0E2C52]/40 space-y-4">
             <div className="text-[10px] font-mono text-[#00A09A]">Features</div>
-            {FEATURE_COLUMNS.map((col) => (
-              <div key={col.heading} className="pl-3 space-y-2">
-                <div className="text-[9px] font-mono text-slate-500 normal-case">{col.heading}</div>
+            {FEATURE_PRODUCTS.map((product) => (
+              <div key={product.key} className="pl-3 space-y-2">
+                <div className="normal-case">
+                  <div className="text-xs font-bold text-white">{product.name}</div>
+                  <div className="text-[9px] font-mono text-slate-500">{product.icp}</div>
+                </div>
                 <div className="pl-1 space-y-2 normal-case font-medium">
-                  {col.items.map((item) => (
-                    <Link key={item.title} to={item.to} onClick={closeAllMenus} className="block text-slate-300 hover:text-white">
-                      {item.title}
+                  {product.items.map((item) => (
+                    <Link
+                      key={item}
+                      to={`/features#${product.key}`}
+                      onClick={closeAllMenus}
+                      className="block text-slate-300 hover:text-white"
+                    >
+                      {item}
                     </Link>
                   ))}
+                  <Link to={product.cta.to} onClick={closeAllMenus} className="block text-[#00A09A] font-bold">
+                    {product.cta.label} &rarr;
+                  </Link>
                 </div>
               </div>
             ))}
+            <Link to="/platform" onClick={closeAllMenus} className="block pl-3 text-slate-300 hover:text-white normal-case font-medium">
+              Explore Trevia Platform &rarr;
+            </Link>
           </div>
 
           {/* Platform Mobile Group */}

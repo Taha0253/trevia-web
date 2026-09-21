@@ -3,7 +3,6 @@ import { HeroSection } from '../sections/HeroSection';
 import { PartnerStripSection } from '../sections/PartnerStripSection';
 import { OurApproachDialSection } from '../sections/OurApproachDialSection';
 import { DualAudienceSection } from '../sections/DualAudienceSection';
-import { DriverStoriesSection } from '../sections/DriverStoriesSection';
 import { LiveDemoCtaSection } from '../sections/LiveDemoCtaSection';
 
 interface HomePageProps {
@@ -35,9 +34,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
 
       {/* 3. Dual Audience Architecture (For Drivers vs For CPOs) */}
       <DualAudienceSection onRequestDemo={onRequestDemo} />
-
-      {/* 4. Real Driver, Fleet & Host Stories + Environmental Impact */}
-      <DriverStoriesSection />
 
       <LiveDemoCtaSection onCta={onRequestDemo} />
 

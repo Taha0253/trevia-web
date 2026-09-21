@@ -24,10 +24,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
           <div className="lg:col-span-5 space-y-6 z-10 lg:pr-2 max-w-xl">
             <div className="space-y-1">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-extralight text-white tracking-tight leading-[1.15]">
-                The Operating System for{' '}
-                <span className="font-extrabold text-[#00A09A]">
-                  EV charging Infrastructure.
-                </span>
+                <span className="whitespace-nowrap">
+                  The{' '}
+                  <span className="font-extrabold text-[#00A09A]">Operating System</span>
+                </span>{' '}
+                for EV charging Infrastructure.
               </h1>
             </div>
 

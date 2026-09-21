@@ -34,7 +34,7 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
         <button
           type="button"
           onClick={onCta}
-          className="group relative mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#7EE8E0] bg-[#7EE8E0] px-8 py-3.5 font-bold text-sm text-[#022824] transition-all duration-300 hover:bg-white hover:border-white"
+          className="group relative mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#00A09A] bg-transparent px-8 py-3.5 font-bold text-sm text-white transition-all duration-300 hover:bg-[#00A09A] hover:text-black hover:-translate-y-0.5 active:translate-y-0"
         >
           <StarMark className="demo-star demo-star-tl w-4 h-4" />
           <StarMark className="demo-star demo-star-tr w-4 h-4" />

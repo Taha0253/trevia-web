@@ -59,16 +59,16 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
         {/* Breadcrumb & Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 pt-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase mb-5">
-            <Sparkles className="w-3.5 h-3.5" />
+            
             <span>Interactive Enterprise Demo</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight mb-6">
-            Experience TreviaEV <span className="font-extrabold text-[#00A09A]">Live.</span>
+            See Trevia CMS <span className="font-extrabold text-[#00A09A]">in Action.</span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-            Book a 30-minute tailored technical walkthrough with our system architects.
+            Get a 30-minute walkthrough of how Trevia connects, monitors and operates EV charging infrastructure.
           </p>
         </div>
 
@@ -87,10 +87,10 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     <span>SCHEDULE 1-ON-1 DEMO</span>
                   </div>
                   <h2 className="text-2xl font-bold tracking-tight text-white">
-                    Book an Architectural Tour
+                    Book a CMS Demo
                   </h2>
                   <p className="text-xs text-slate-400 mt-1 font-normal leading-relaxed">
-                    Speak directly with our engineering founders. We'll connect to your chargers and show you live fleet telemetry.
+                    Tell us about your charging network and we'll tailor the demo accordingly.
                   </p>
                 </div>
 

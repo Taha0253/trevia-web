@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScrollReveal } from '../components/ScrollReveal';
 
-const LOGO_SIZE = 'h-11 w-11 object-contain';
-const WORDMARK_SIZE = 'h-[60px] w-auto max-w-[160px] object-contain';
+const LOGO_SIZE = 'h-14 w-14 object-contain';
+const WORDMARK_SIZE = 'h-[72px] w-auto max-w-[190px] object-contain';
 
 const GoogleForStartupsMark: React.FC = () => (
   <img src="/google-for-startups-white.png" alt="Google for Startups" loading="lazy" decoding="async" className={WORDMARK_SIZE} />
@@ -73,7 +73,7 @@ export const PartnerStripSection: React.FC = () => {
                 key={`${partner.name}-${index}`}
                 className="flex h-32 w-48 shrink-0 flex-col items-center justify-center md:w-56"
               >
-                <div className="flex h-[60px] max-w-full items-center justify-center px-2 opacity-70 transition-all duration-300 hover:scale-110 hover:opacity-100">
+                <div className="flex h-[72px] max-w-full items-center justify-center px-2 opacity-100">
                   <Icon />
                 </div>
               </div>
