@@ -129,7 +129,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo }) => 
             ))}
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 lg:sticky lg:top-28 self-start">
             <CmsDashboardMock />
           </div>
         </div>

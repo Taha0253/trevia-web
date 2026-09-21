@@ -50,7 +50,7 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
 
       <div className="relative z-10 mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs sm:text-sm text-slate-500 px-6">
         <Link to="/drive" className="hover:text-[#00A09A] transition-colors">
-          See the Driver Platform
+          See Trevia EV
         </Link>
         <Link to="/platform" className="hover:text-[#00A09A] transition-colors">
           Explore the platform

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, Zap, AlertTriangle, Activity } from 'lucide-react';
+import { Radio, Zap, AlertTriangle, Activity, Clock } from 'lucide-react';
 
 const STATIONS = [
   { name: 'Gachibowli Hub', status: 'Charging', tone: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
@@ -7,6 +7,19 @@ const STATIONS = [
   { name: 'Knowledge City', status: 'Fault', tone: 'text-rose-400 bg-rose-500/10 border-rose-500/30' },
   { name: 'Kondapur Depot', status: 'Charging', tone: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
 ];
+
+const SESSIONS = [
+  { id: '#SES-2291', station: 'Gachibowli Hub · Bay 02', energy: '18.4 kWh', duration: '00:24:10' },
+  { id: '#SES-2288', station: 'Kondapur Depot · Bay 01', energy: '9.7 kWh', duration: '00:11:42' },
+  { id: '#SES-2284', station: 'Madhapur Square · Bay 04', energy: '31.2 kWh', duration: '00:48:03' },
+];
+
+const FAULTS = [
+  { station: 'Knowledge City · Bay 03', issue: 'Connector lock fault', age: '6 min ago' },
+  { station: 'Hitec City Plaza · Bay 02', issue: 'Offline — heartbeat lost', age: '22 min ago' },
+];
+
+const TELEMETRY_BARS = [30, 55, 40, 70, 62, 85, 48, 72, 90, 58, 66, 75];
 
 interface CmsDashboardMockProps {
   compact?: boolean;
@@ -25,7 +38,8 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
         </span>
       </div>
 
-      <div className={`grid grid-cols-3 gap-2 p-4 ${compact ? '' : 'sm:gap-3'}`}>
+      {/* Network overview */}
+      <div className={`grid grid-cols-4 gap-2 p-4 ${compact ? 'grid-cols-3' : 'sm:gap-3'}`}>
         <div className="bg-[#061426] border border-[#0E2C52]/70 rounded-xl p-3">
           <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Stations</div>
           <div className="text-lg font-bold text-white font-mono">128</div>
@@ -38,9 +52,17 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
           <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Faults</div>
           <div className="text-lg font-bold text-rose-400 font-mono">2</div>
         </div>
+        {!compact && (
+          <div className="bg-[#061426] border border-[#0E2C52]/70 rounded-xl p-3">
+            <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Uptime</div>
+            <div className="text-lg font-bold text-[#00A09A] font-mono">99.4%</div>
+          </div>
+        )}
       </div>
 
+      {/* Charger status */}
       <div className="px-4 pb-4 space-y-1.5">
+        <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-1.5">Charger Status</div>
         {(compact ? STATIONS.slice(0, 2) : STATIONS).map((s) => (
           <div key={s.name} className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#061426]/60 border border-[#0E2C52]/50">
             <div className="flex items-center gap-2 text-xs text-slate-200">
@@ -55,10 +77,59 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
       </div>
 
       {!compact && (
-        <div className="px-4 pb-4 flex items-center gap-4 text-[10px] font-mono text-slate-500">
-          <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-[#00A09A]" /> Telemetry streaming</span>
-          <span className="flex items-center gap-1"><AlertTriangle className="w-3 h-3 text-rose-400" /> Auto fault alerts</span>
-        </div>
+        <>
+          {/* Active sessions */}
+          <div className="px-4 pb-4 space-y-1.5">
+            <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-1.5">Active Sessions</div>
+            {SESSIONS.map((s) => (
+              <div key={s.id} className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#061426]/60 border border-[#0E2C52]/50">
+                <div className="flex items-center gap-2 text-xs text-slate-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span className="font-mono text-[10px] text-slate-500">{s.id}</span>
+                  <span>{s.station}</span>
+                </div>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400 shrink-0">
+                  <span className="text-[#00A09A]">{s.energy}</span>
+                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{s.duration}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Faults */}
+          <div className="px-4 pb-4 space-y-1.5">
+            <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-1.5">Faults</div>
+            {FAULTS.map((f) => (
+              <div key={f.station} className="flex items-center justify-between px-3 py-2 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                <div className="flex items-center gap-2 text-xs text-slate-200">
+                  <AlertTriangle className="w-3 h-3 text-rose-400 shrink-0" />
+                  <span>{f.station}</span>
+                  <span className="text-slate-500">— {f.issue}</span>
+                </div>
+                <span className="text-[10px] font-mono text-slate-500 shrink-0">{f.age}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Telemetry */}
+          <div className="px-4 pb-4">
+            <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-2">Network Telemetry — Load (24h)</div>
+            <div className="flex items-end gap-1 h-16 bg-[#061426]/60 border border-[#0E2C52]/50 rounded-lg p-2">
+              {TELEMETRY_BARS.map((h, i) => (
+                <div
+                  key={i}
+                  className="flex-1 rounded-sm bg-gradient-to-t from-[#00A09A]/30 to-[#00A09A]"
+                  style={{ height: `${h}%` }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="px-4 pb-4 flex items-center gap-4 text-[10px] font-mono text-slate-500">
+            <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-[#00A09A]" /> Telemetry streaming</span>
+            <span className="flex items-center gap-1"><AlertTriangle className="w-3 h-3 text-rose-400" /> Auto fault alerts</span>
+          </div>
+        </>
       )}
     </div>
   );

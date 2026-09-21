@@ -29,7 +29,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
                 <span>/</span>
                 <span className="text-[#00A09A]">Product</span>
                 <span>/</span>
-                <span className="text-white font-semibold">Trevia Drive</span>
+                <span className="text-white font-semibold">Trevia EV</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -37,7 +37,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
                   <Smartphone className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-                  Trevia Drive — Effortless EV Charging Discovery
+                  Trevia EV — Effortless EV Charging Discovery
                 </h1>
               </div>
 
@@ -81,7 +81,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
               One App, Every Network, Total Peace of Mind
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Trevia Drive brings all charging networks into a single, reliable experience with verified live socket status, upfront pricing, guaranteed stall holds, and one-tap UPI payment.
+              Trevia EV brings all charging networks into a single, reliable experience with verified live socket status, upfront pricing, guaranteed stall holds, and one-tap UPI payment.
             </p>
           </div>
         </div>
@@ -215,7 +215,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
             Driver Benefits
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
-            What Trevia Drive Delivers
+            What Trevia EV Delivers
           </h2>
         </div>
 
@@ -247,10 +247,10 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
         <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
           <h4 className="text-sm font-bold text-white flex items-center gap-2">
             <HelpCircle className="w-4 h-4 text-[#00A09A]" />
-            Is Trevia Drive connected to Trevia CMS?
+            Is Trevia EV connected to Trevia CMS?
           </h4>
           <p className="text-xs text-slate-300 leading-relaxed pl-6">
-            Yes — both run on Trevia's underlying charging infrastructure layer, which is what allows Trevia Drive to surface charger data from connected networks.
+            Yes — both run on Trevia's underlying charging infrastructure layer, which is what allows Trevia EV to surface charger data from connected networks.
           </p>
         </div>
       </section>

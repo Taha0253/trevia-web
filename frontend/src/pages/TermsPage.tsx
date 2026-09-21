@@ -16,7 +16,7 @@ export const TermsPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-white">1. Acceptance of Terms</h2>
           <p>
-            By accessing or using the Trevia EV Technologies platform, websites, and APIs (including Trevia CMS and Trevia Drive), you agree to be bound by these Terms of Use and all applicable laws and regulations.
+            By accessing or using the Trevia EV Technologies platform, websites, and APIs (including Trevia CMS and Trevia EV), you agree to be bound by these Terms of Use and all applicable laws and regulations.
           </p>
         </section>
 

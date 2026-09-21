@@ -60,14 +60,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [techOpen, setTechOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const location = useLocation();
 
   const featuresRef = useRef<HTMLDivElement>(null);
   const platformRef = useRef<HTMLDivElement>(null);
   const solutionsRef = useRef<HTMLDivElement>(null);
-  const techRef = useRef<HTMLDivElement>(null);
   const companyRef = useRef<HTMLDivElement>(null);
   const hoverCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -77,18 +75,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
     setFeaturesOpen(false);
     setPlatformOpen(false);
     setSolutionsOpen(false);
-    setTechOpen(false);
     setCompanyOpen(false);
     setMobileOpen(false);
   };
 
   // Open a dropdown immediately on hover, closing the others
-  const openMenuOnHover = useCallback((menu: 'features' | 'platform' | 'solutions' | 'technology' | 'company') => {
+  const openMenuOnHover = useCallback((menu: 'features' | 'platform' | 'solutions' | 'company') => {
     if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
     setFeaturesOpen(menu === 'features');
     setPlatformOpen(menu === 'platform');
     setSolutionsOpen(menu === 'solutions');
-    setTechOpen(menu === 'technology');
     setCompanyOpen(menu === 'company');
   }, []);
 
@@ -99,7 +95,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       setFeaturesOpen(false);
       setPlatformOpen(false);
       setSolutionsOpen(false);
-      setTechOpen(false);
       setCompanyOpen(false);
     }, 120);
   }, []);
@@ -115,9 +110,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       }
       if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
         setSolutionsOpen(false);
-      }
-      if (techRef.current && !techRef.current.contains(event.target as Node)) {
-        setTechOpen(false);
       }
       if (companyRef.current && !companyRef.current.contains(event.target as Node)) {
         setCompanyOpen(false);
@@ -163,7 +155,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setFeaturesOpen(!featuresOpen);
                 setPlatformOpen(false);
                 setSolutionsOpen(false);
-                setTechOpen(false);
                 setCompanyOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
@@ -280,7 +271,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setFeaturesOpen(false);
                 setPlatformOpen(!platformOpen);
                 setSolutionsOpen(false);
-                setTechOpen(false);
                 setCompanyOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
@@ -305,7 +295,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                     <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#00A09A]/20 border border-[#00A09A]/40 text-[#00A09A] font-mono normal-case">Core</span>
                   </Link>
                   <Link to="/drive" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
-                    Driver Platform
+                    Trevia EV
                   </Link>
                 </div>
               </div>
@@ -324,7 +314,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setFeaturesOpen(false);
                 setPlatformOpen(false);
                 setSolutionsOpen(!solutionsOpen);
-                setTechOpen(false);
                 setCompanyOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
@@ -371,46 +360,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             )}
           </div>
 
-          {/* Technology Dropdown */}
-          <div
-            className="relative"
-            ref={techRef}
-            onMouseEnter={() => openMenuOnHover('technology')}
-            onMouseLeave={scheduleMenusClose}
-          >
-            <button
-              onClick={() => {
-                setFeaturesOpen(false);
-                setPlatformOpen(false);
-                setTechOpen(!techOpen);
-                setSolutionsOpen(false);
-                setCompanyOpen(false);
-              }}
-              className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
-                isActive('/technology') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
-              }`}
-            >
-              <span>Technology</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${techOpen ? 'rotate-180 text-[#00A09A]' : ''}`} />
-            </button>
-
-            {techOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
-                <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
-                  Technology
-                </div>
-                <div className="space-y-3">
-                  <Link to="/technology" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
-                    OCPP & Interoperability
-                  </Link>
-                  <Link to="/technology/apis" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
-                    APIs & Integrations
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
           {/* Company Dropdown */}
           <div
             className="relative"
@@ -424,7 +373,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setPlatformOpen(false);
                 setCompanyOpen(!companyOpen);
                 setSolutionsOpen(false);
-                setTechOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
                 isActive('/about') || isActive('/traction') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
@@ -539,7 +487,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 <span>Trevia CMS</span>
                 <span className="text-[9px] px-2 py-0.5 rounded bg-[#00A09A]/20 text-[#00A09A]">Core</span>
               </Link>
-              <Link to="/drive" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">Driver Platform</Link>
+              <Link to="/drive" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">Trevia EV</Link>
             </div>
           </div>
 
@@ -552,15 +500,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
               <Link to="/solutions/enterprises" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">For Enterprises</Link>
               <Link to="/solutions/energy-utilities" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">For Energy & Utilities</Link>
               <Link to="/solutions/government" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">For Government / Public Bodies</Link>
-            </div>
-          </div>
-
-          {/* Technology Mobile Group */}
-          <div className="py-2 border-b border-[#0E2C52]/40 space-y-2">
-            <div className="text-[10px] font-mono text-[#00A09A]">Technology</div>
-            <div className="pl-3 space-y-2 normal-case font-medium">
-              <Link to="/technology" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">OCPP & Interoperability</Link>
-              <Link to="/technology/apis" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">APIs & Integrations</Link>
             </div>
           </div>
 

@@ -1,20 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, ArrowRight, CheckCircle2, AlertTriangle, Layers, ShieldCheck, DollarSign, LayoutDashboard } from 'lucide-react';
+import { Building2, ArrowRight, CheckCircle2, AlertTriangle, Layers, LayoutDashboard, Activity, Zap, RefreshCw, Radio, Code2 } from 'lucide-react';
+import { CmsDashboardMock } from '../../components/CmsDashboardMock';
 
 interface SolutionPageProps {
   onRequestDemo: () => void;
 }
 
+const CAPABILITIES = [
+  { icon: LayoutDashboard, title: 'Multi-Site Management', desc: 'Monitor charging infrastructure across multiple properties from one platform.' },
+  { icon: Activity, title: 'Charger Monitoring', desc: 'Track charger status, connectivity and charging activity.' },
+  { icon: Zap, title: 'Access & Charging Sessions', desc: 'Monitor charging sessions across workplace and destination sites.' },
+  { icon: RefreshCw, title: 'Remote Operations', desc: 'Execute supported charger commands remotely.' },
+  { icon: Radio, title: 'Multi-Vendor Connectivity', desc: 'Connect supported charging hardware through OCPP.' },
+  { icon: Code2, title: 'APIs & Integrations', desc: 'Connect charging operations with existing enterprise systems.' },
+];
+
 export const EnterprisesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
   return (
     <div className="space-y-16 pb-24">
-      
+
       {/* Header */}
       <section className="border-b border-[#0E2C52]/80 bg-[#030A14] py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div className="space-y-3 max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div className="lg:col-span-3 space-y-3">
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
@@ -23,28 +33,36 @@ export const EnterprisesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) 
                 <span className="text-white font-semibold">Enterprises</span>
               </div>
 
+              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">
+                Solutions — For Enterprises & Real Estate
+              </div>
+
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-[#061426] border border-emerald-500/40 flex items-center justify-center text-emerald-400">
                   <Building2 className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-                  For Enterprises & Real Estate
+                  Manage Workplace & Destination Charging
                 </h1>
               </div>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Manage workplace and destination charging as one unified asset class across corporate parks, commercial facilities, and retail properties.
+                Manage charging infrastructure across offices, commercial properties and other facilities through one operational layer.
               </p>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  onClick={onRequestDemo}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
+                >
+                  <span>Discuss Infrastructure</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <button
-                onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
-              >
-                <span>Discuss Infrastructure</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+            <div className="lg:col-span-2">
+              <CmsDashboardMock compact />
             </div>
           </div>
         </div>
@@ -57,19 +75,19 @@ export const EnterprisesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) 
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
               <AlertTriangle className="w-3.5 h-3.5" /> Problem
             </div>
-            <h3 className="text-base font-bold text-white">Vendor Spread & Afterthoughts</h3>
+            <h3 className="text-base font-bold text-white">Fragmented Charging Assets</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Workplace and destination charging is often managed as an afterthought, spread across whichever vendor installed each site's hardware.
+              Charging infrastructure installed across different properties or vendors can create fragmented operational workflows.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-2 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
+          <div className="p-6 sm:p-7 rounded-2xl bg-[#061426] border-2 border-emerald-500/50 space-y-2 shadow-[0_0_25px_rgba(16,185,129,0.15)] md:scale-105">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5" /> Trevia Solution
             </div>
-            <h3 className="text-base font-bold text-white">Unified Asset Portfolio</h3>
+            <h3 className="text-base font-bold text-white">One Operational View</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Trevia CMS provides a single operational view across all of an enterprise's charging assets, regardless of which vendor installed them.
+              Trevia CMS provides centralized visibility and management across supported charging infrastructure, regardless of hardware vendor.
             </p>
           </div>
 
@@ -77,48 +95,47 @@ export const EnterprisesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) 
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5" /> Business Outcome
             </div>
-            <h3 className="text-base font-bold text-white">Streamlined Facilities Ops</h3>
+            <h3 className="text-base font-bold text-white">Simpler Facilities Operations</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Charging becomes a manageable, visible part of facilities operations rather than a collection of disconnected vendor relationships.
+              Manage charging assets as part of your broader facility infrastructure rather than through separate vendor systems.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Enterprise Capabilities */}
-      <section className="max-w-7xl mx-auto px-6 space-y-4">
+      {/* Capabilities */}
+      <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div>
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400 mb-1">
             Enterprise Features
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
-            Workplace & Commercial Control
+            Workplace & Commercial Charging
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <LayoutDashboard className="w-5 h-5 text-emerald-400" />
-            <h4 className="text-sm font-bold text-white">Multi-Property Dashboard</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Oversee charging units across offices, commercial parks, and retail malls from one centralized corporate view.
-            </p>
-          </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs font-mono text-slate-400">
+          <span className="px-3 py-1.5 rounded-lg bg-[#061426] border border-[#0E2C52]">Portfolio of Properties</span>
+          <ArrowRight className="w-3.5 h-3.5 text-emerald-400 rotate-90 sm:rotate-0" />
+          <span className="px-3 py-1.5 rounded-lg bg-[#061426] border border-[#0E2C52]">Chargers</span>
+          <ArrowRight className="w-3.5 h-3.5 text-emerald-400 rotate-90 sm:rotate-0" />
+          <span className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold">Trevia CMS</span>
+        </div>
 
-          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <DollarSign className="w-5 h-5 text-[#00A09A]" />
-            <h4 className="text-sm font-bold text-white">Employee vs Guest Tariffs</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Set differentiated tariffs for staff, VIPs, and public visitors with automated billing and authentication.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            {CAPABILITIES.map((cap) => (
+              <div key={cap.title} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
+                  <cap.icon className="w-4 h-4" />
+                </div>
+                <h4 className="text-sm font-bold text-white">{cap.title}</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">{cap.desc}</p>
+              </div>
+            ))}
           </div>
-
-          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <ShieldCheck className="w-5 h-5 text-[#00A09A]" />
-            <h4 className="text-sm font-bold text-white">Zero Vendor Lock-in</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Expand your facilities with bids from any hardware manufacturer without replacing your software operating layer.
-            </p>
+          <div className="lg:col-span-3">
+            <CmsDashboardMock />
           </div>
         </div>
       </section>
@@ -127,10 +144,10 @@ export const EnterprisesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) 
       <section className="max-w-7xl mx-auto px-6">
         <div className="rounded-2xl bg-[#061426] border border-emerald-500/40 p-8 text-center space-y-4">
           <h3 className="text-xl font-bold text-white">
-            Modernize your enterprise charging infrastructure
+            Modernize Your Charging Infrastructure
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto">
-            Unify multiple campus and facility charging assets under Trevia CMS.
+            Bring workplace and destination charging assets into one operational layer.
           </p>
           <div className="pt-2">
             <button

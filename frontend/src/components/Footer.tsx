@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
                 </Link>
               </li>
               <li>
-                <Link to="/drive" className="hover:text-[#00A09A] transition-colors">Driver Platform</Link>
+                <Link to="/drive" className="hover:text-[#00A09A] transition-colors">Trevia EV</Link>
               </li>
               <li>
                 <Link to="/platform" className="hover:text-[#00A09A] transition-colors">Platform Architecture</Link>

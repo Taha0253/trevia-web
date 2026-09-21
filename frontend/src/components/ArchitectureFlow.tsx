@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { ArrowRight, Server, Zap, Cpu, Layers, ShieldCheck, Database } from 'lucide-react';
+import { ArrowRight, Server, Zap, Radio, Activity, RefreshCw, Layers, Database, Smartphone, Building2, Webhook } from 'lucide-react';
 
 export const ArchitectureFlow: React.FC = () => {
   return (
@@ -8,19 +8,14 @@ export const ArchitectureFlow: React.FC = () => {
       
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
         
-        {/* Step 1: Multi-Vendor Hardware */}
+        {/* Step 1: Charging Infrastructure */}
         <div className="flex-1 w-full p-4 rounded-xl bg-[#061426] border border-[#0E2C52]/80 group hover:border-[#00A09A]/50 transition-all">
           <div className="flex items-center gap-2 mb-2 text-[#00A09A]">
             <Zap className="w-4 h-4" />
-            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold">Physical Layer</span>
+            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold">Charging Infrastructure</span>
           </div>
-          <h4 className="text-sm font-bold text-white mb-1">Multi-Vendor Hardware</h4>
-          <p className="text-xs text-slate-400">AC/DC Fast Chargers, Depot units, & Destination hardware</p>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            <span className="text-[10px] px-2 py-0.5 rounded bg-[#0A2240] text-slate-300 font-mono">AC Type 2</span>
-            <span className="text-[10px] px-2 py-0.5 rounded bg-[#0A2240] text-slate-300 font-mono">CCS2 DC</span>
-            <span className="text-[10px] px-2 py-0.5 rounded bg-[#0A2240] text-slate-300 font-mono">Bharat AC001</span>
-          </div>
+          <h4 className="text-sm font-bold text-white mb-1">Multi-Vendor Chargers</h4>
+          <p className="text-xs text-slate-400">AC, DC Fast & Depot Chargers</p>
         </div>
 
         {/* Protocol arrow 1 */}
@@ -36,52 +31,52 @@ export const ArchitectureFlow: React.FC = () => {
           </div>
           <div className="flex items-center gap-2 mb-2 text-[#00A09A]">
             <Layers className="w-4 h-4" />
-            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold">Trevia CMS Core</span>
+            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold">Trevia CMS</span>
           </div>
-          <h4 className="text-sm font-bold text-white mb-1">Centralised Orchestration</h4>
-          <p className="text-xs text-slate-300 mb-3">Persistent WebSockets, real-time telemetry, session state machine, tariffs & fault engine.</p>
+          <h4 className="text-sm font-bold text-white mb-1">Unified Charging Operations</h4>
+          <p className="text-xs text-slate-300 mb-3">Connects, monitors and operates supported charging infrastructure.</p>
           <div className="grid grid-cols-2 gap-1.5 text-[10px] font-mono text-slate-300">
             <div className="bg-[#030A14] p-1.5 rounded border border-[#0E2C52]/60 flex items-center gap-1">
-              <Cpu className="w-3 h-3 text-[#00A09A]" /> Telemetry Ingestion
+              <Radio className="w-3 h-3 text-[#00A09A]" /> OCPP Connectivity
             </div>
             <div className="bg-[#030A14] p-1.5 rounded border border-[#0E2C52]/60 flex items-center gap-1">
-              <Server className="w-3 h-3 text-[#00A09A]" /> Remote Ops & Reset
+              <Activity className="w-3 h-3 text-[#00A09A]" /> Real-Time Monitoring
             </div>
             <div className="bg-[#030A14] p-1.5 rounded border border-[#0E2C52]/60 flex items-center gap-1">
-              <Database className="w-3 h-3 text-[#00A09A]" /> Tariff & Billing
+              <RefreshCw className="w-3 h-3 text-[#00A09A]" /> Remote Operations
             </div>
             <div className="bg-[#030A14] p-1.5 rounded border border-[#0E2C52]/60 flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-emerald-400" /> Fault Isolation
+              <Database className="w-3 h-3 text-[#00A09A]" /> Sessions & Transactions
             </div>
           </div>
         </div>
 
         {/* Protocol arrow 2 */}
         <div className="flex md:flex-col items-center justify-center gap-1 text-[#00A09A] py-2 md:py-0">
-          <span className="text-[10px] font-mono font-bold tracking-tight bg-[#0A2240] px-2 py-0.5 rounded border border-[#00A09A]/30">REST / Webhooks</span>
+          <span className="text-[10px] font-mono font-bold tracking-tight bg-[#0A2240] px-2 py-0.5 rounded border border-[#00A09A]/30">APIs / Webhooks</span>
           <ArrowRight className="w-4 h-4 rotate-90 md:rotate-0 hidden md:block" />
         </div>
 
-        {/* Step 3: Consumers & Applications */}
+        {/* Step 3: Application & Integration Layer */}
         <div className="flex-1 w-full p-4 rounded-xl bg-[#061426] border border-[#0E2C52]/80 group hover:border-[#00A09A]/50 transition-all">
           <div className="flex items-center gap-2 mb-2 text-[#00A09A]">
             <Server className="w-4 h-4" />
-            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold">Consumption Layer</span>
+            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold">Application & Integration Layer</span>
           </div>
-          <h4 className="text-sm font-bold text-white mb-1">Operational Endpoints</h4>
-          <p className="text-xs text-slate-400">Applications consuming live telemetry and operations</p>
+          <h4 className="text-sm font-bold text-white mb-1">Applications & Integrations</h4>
+          <p className="text-xs text-slate-400">Products and systems consuming Trevia CMS data</p>
           <div className="mt-3 space-y-1.5 text-xs text-slate-300">
-            <div className="flex items-center justify-between px-2 py-1 bg-[#0A2240]/60 rounded text-[11px]">
-              <span>CPO Operations Suite</span>
-              <span className="text-[#00A09A] font-mono">Trevia CMS</span>
+            <div className="flex items-center gap-2 px-2 py-1.5 bg-[#0A2240]/60 rounded text-[11px]">
+              <Smartphone className="w-3.5 h-3.5 text-[#00A09A]" />
+              <span>Trevia EV</span>
             </div>
-            <div className="flex items-center justify-between px-2 py-1 bg-[#0A2240]/60 rounded text-[11px]">
-              <span>Fleet & Enterprise ERP</span>
-              <span className="text-slate-400 font-mono">Open APIs</span>
+            <div className="flex items-center gap-2 px-2 py-1.5 bg-[#0A2240]/60 rounded text-[11px]">
+              <Building2 className="w-3.5 h-3.5 text-[#00A09A]" />
+              <span>Fleet & Enterprise Systems</span>
             </div>
-            <div className="flex items-center justify-between px-2 py-1 bg-[#0A2240]/60 rounded text-[11px]">
-              <span>Driver Discovery App</span>
-              <span className="text-[#00A09A] font-mono">Trevia Drive</span>
+            <div className="flex items-center gap-2 px-2 py-1.5 bg-[#0A2240]/60 rounded text-[11px]">
+              <Webhook className="w-3.5 h-3.5 text-[#00A09A]" />
+              <span>APIs & Webhooks</span>
             </div>
           </div>
         </div>

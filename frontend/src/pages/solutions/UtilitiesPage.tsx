@@ -1,20 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, ArrowRight, CheckCircle2, AlertTriangle, Layers, Activity, Gauge, Server } from 'lucide-react';
+import { Zap, ArrowRight, CheckCircle2, AlertTriangle, Layers, Activity, Radio, Database, BarChart3, Code2 } from 'lucide-react';
+import { CmsDashboardMock } from '../../components/CmsDashboardMock';
 
 interface SolutionPageProps {
   onRequestDemo: () => void;
 }
 
+const CAPABILITIES = [
+  { icon: Activity, title: 'Real-Time Charger Monitoring', desc: 'Monitor charger status and connectivity across connected sites.' },
+  { icon: Database, title: 'Telemetry & Session Data', desc: 'Access charging activity, session and energy data from connected chargers.' },
+  { icon: Layers, title: 'Multi-Site Visibility', desc: 'View charging infrastructure across multiple locations from one platform.' },
+  { icon: Radio, title: 'Multi-Vendor Connectivity', desc: 'Connect supported charging hardware through OCPP.' },
+  { icon: BarChart3, title: 'Network Analytics', desc: 'Use charging and infrastructure data to understand network activity.' },
+  { icon: Code2, title: 'APIs & Integrations', desc: 'Connect charging data with existing enterprise systems.' },
+];
+
 export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
   return (
     <div className="space-y-16 pb-24">
-      
+
       {/* Header */}
       <section className="border-b border-[#0E2C52]/80 bg-[#030A14] py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div className="space-y-3 max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div className="lg:col-span-3 space-y-3">
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
@@ -23,28 +33,36 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
                 <span className="text-white font-semibold">Energy & Utilities</span>
               </div>
 
+              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-amber-400">
+                Solutions — For Energy & Utilities
+              </div>
+
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-[#061426] border border-amber-500/40 flex items-center justify-center text-amber-400">
                   <Zap className="w-4 h-4" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-                  For Energy Providers & Utilities
+                  Connect and Monitor EV Charging Infrastructure
                 </h1>
               </div>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Network-level visibility and interoperable telemetry designed to manage public charging infrastructure with the same operational rigor as traditional grid assets.
+                Give energy providers visibility into connected EV charging infrastructure across multiple sites and hardware vendors.
               </p>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  onClick={onRequestDemo}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
+                >
+                  <span>Discuss Infrastructure</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <button
-                onClick={onRequestDemo}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
-              >
-                <span>Discuss Infrastructure</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+            <div className="lg:col-span-2">
+              <CmsDashboardMock compact />
             </div>
           </div>
         </div>
@@ -57,19 +75,19 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
               <AlertTriangle className="w-3.5 h-3.5" /> Problem
             </div>
-            <h3 className="text-base font-bold text-white">Scaling Beyond Individual Sites</h3>
+            <h3 className="text-base font-bold text-white">Distributed Charging Infrastructure</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              As utilities and energy companies expand into EV charging, they need infrastructure-level visibility and data that scales with public charging networks, not just individual sites.
+              As charging deployments grow across sites and hardware vendors, monitoring infrastructure consistently becomes more difficult.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-2 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
+          <div className="p-6 sm:p-7 rounded-2xl bg-[#061426] border-2 border-amber-500/50 space-y-2 shadow-[0_0_25px_rgba(251,191,36,0.12)] md:scale-105">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5" /> Trevia Solution
             </div>
-            <h3 className="text-base font-bold text-white">Interoperable Grid-Scale Data</h3>
+            <h3 className="text-base font-bold text-white">Connected Charging Visibility</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Trevia CMS offers network-level visibility, interoperable data across hardware vendors, and a platform designed to scale with public charging deployments.
+              Trevia CMS connects supported charging infrastructure and provides centralized visibility into charger status, sessions and network activity.
             </p>
           </div>
 
@@ -77,48 +95,47 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5" /> Business Outcome
             </div>
-            <h3 className="text-base font-bold text-white">Operational Rigor</h3>
+            <h3 className="text-base font-bold text-white">Network-Level Visibility</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Utilities can manage charging infrastructure with the same operational rigor as other grid-connected assets, using comparable data across the network.
+              Access consistent charging data across connected sites and infrastructure.
             </p>
           </div>
         </div>
       </section>
 
       {/* Capabilities */}
-      <section className="max-w-7xl mx-auto px-6 space-y-4">
+      <section className="max-w-7xl mx-auto px-6 space-y-8">
         <div>
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-amber-400 mb-1">
-            Grid & Telemetry Features
+            Network Visibility Features
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
-            Infrastructure-Grade Telemetry
+            Charging Infrastructure Visibility
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Gauge className="w-5 h-5 text-amber-400" />
-            <h4 className="text-sm font-bold text-white">Aggregated Load Visibility</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Monitor active kW power demand and cumulative MWh load profiles across distribution feeders in real time.
-            </p>
-          </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs font-mono text-slate-400">
+          <span className="px-3 py-1.5 rounded-lg bg-[#061426] border border-[#0E2C52]">Multiple Charging Sites</span>
+          <ArrowRight className="w-3.5 h-3.5 text-amber-400 rotate-90 sm:rotate-0" />
+          <span className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold">Trevia CMS</span>
+          <ArrowRight className="w-3.5 h-3.5 text-amber-400 rotate-90 sm:rotate-0" />
+          <span className="px-3 py-1.5 rounded-lg bg-[#061426] border border-[#0E2C52]">Telemetry / Sessions / Analytics</span>
+        </div>
 
-          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Server className="w-5 h-5 text-[#00A09A]" />
-            <h4 className="text-sm font-bold text-white">Standardised Data Pipelines</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Normalize telemetry feeds across disparate hardware models into consistent time-series database schemas.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            {CAPABILITIES.map((cap) => (
+              <div key={cap.title} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-amber-400">
+                  <cap.icon className="w-4 h-4" />
+                </div>
+                <h4 className="text-sm font-bold text-white">{cap.title}</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">{cap.desc}</p>
+              </div>
+            ))}
           </div>
-
-          <div className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-            <Activity className="w-5 h-5 text-[#00A09A]" />
-            <h4 className="text-sm font-bold text-white">High-Availability Architecture</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Resilient WebSocket ingestion built to handle continuous telemetry across distributed geographical networks.
-            </p>
+          <div className="lg:col-span-3">
+            <CmsDashboardMock />
           </div>
         </div>
       </section>
@@ -127,10 +144,10 @@ export const UtilitiesPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =>
       <section className="max-w-7xl mx-auto px-6">
         <div className="rounded-2xl bg-[#061426] border border-amber-500/40 p-8 text-center space-y-4">
           <h3 className="text-xl font-bold text-white">
-            Discuss utility-scale charging infrastructure
+            Connect Your Charging Infrastructure
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto">
-            Connect with our engineering team to plan and scale your network-level deployments.
+            Explore how Trevia can provide centralized visibility across your charging network.
           </p>
           <div className="pt-2">
             <button

@@ -16,7 +16,7 @@ export const PrivacyPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-white">1. Overview</h2>
           <p>
-            Trevia EV Technologies (“Trevia”, “we”, “our”, or “us”) respects your privacy and is committed to protecting the telemetry, transactional, and personal data processed through our enterprise charging management software (Trevia CMS) and discovery services (Trevia Drive).
+            Trevia EV Technologies (“Trevia”, “we”, “our”, or “us”) respects your privacy and is committed to protecting the telemetry, transactional, and personal data processed through our enterprise charging management software (Trevia CMS) and discovery services (Trevia EV).
           </p>
         </section>
 
