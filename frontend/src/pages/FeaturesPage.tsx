@@ -22,7 +22,7 @@ const FlowStep: React.FC<{ label: string; highlight?: boolean }> = ({ label, hig
     className={`px-4 py-2.5 rounded-xl text-xs font-semibold text-center whitespace-nowrap ${
       highlight
         ? 'bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black shadow-[0_0_20px_rgba(0,160,154,0.35)]'
-        : 'bg-[#061426] border border-[#0E2C52] text-slate-200'
+        : 'bg-surface2 border border-edge text-ink2'
     }`}
   >
     {label}
@@ -38,15 +38,15 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
     <div className="space-y-20 pb-24">
 
       {/* Header */}
-      <section className="border-b border-[#0E2C52]/80 bg-[#030A14] py-10 sm:py-14">
+      <section className="border-b border-edge/80 bg-surface py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6 text-center space-y-4">
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
             Features
           </div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
             One Platform. Two Experiences.
           </h1>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-ink2 leading-relaxed max-w-2xl mx-auto">
             Trevia connects the infrastructure operators running charging networks with the drivers using them.
           </p>
         </div>
@@ -58,25 +58,25 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
             For CPOs & Charging Network Operators
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
             One Operating Layer for Your Charging Network
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-edge space-y-3">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-rose-400 flex items-center gap-2">
               <AlertCircle className="w-4 h-4" /> The Problem
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink2 leading-relaxed">
               Multi-vendor chargers create fragmented dashboards, inconsistent data and complex operational workflows.
             </p>
           </div>
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#061426] border border-[#00A09A]/40 space-y-3 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface2 border border-[#00A09A]/40 space-y-3 shadow-[0_0_20px_rgba(0,160,154,0.1)]">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A] flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4" /> The Solution
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink2 leading-relaxed">
               Trevia CMS connects multi-vendor charging infrastructure through OCPP, giving operators one platform to monitor, manage and operate their charging network.
             </p>
           </div>
@@ -93,12 +93,12 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
             {CMS_CAPABILITIES.map((cap) => (
-              <div key={cap.slug} id={cap.slug} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2 scroll-mt-28">
-                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
+              <div key={cap.slug} id={cap.slug} className="p-4 rounded-xl bg-surface border border-edge space-y-2 scroll-mt-28">
+                <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A]">
                   <cap.icon className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold text-white">{cap.title}</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">{cap.desc}</p>
+                <h4 className="text-sm font-bold text-ink">{cap.title}</h4>
+                <p className="text-xs text-ink3 leading-relaxed">{cap.desc}</p>
               </div>
             ))}
           </div>
@@ -111,7 +111,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
         <div>
           <Link
             to="/cms"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#00A09A] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#00A09A] hover:text-ink transition-colors"
           >
             <span>Explore Trevia CMS</span>
             <ArrowRight className="w-4 h-4" />
@@ -125,17 +125,17 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400 mb-2">
             For EV Drivers & Fleets
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
             One Charging Experience Across Networks
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-edge space-y-3">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-rose-400 flex items-center gap-2">
               <AlertCircle className="w-4 h-4" /> The Problem
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink2 leading-relaxed">
               Charging is fragmented across networks, making it harder to find available chargers, plan journeys and manage charging across different operators.
             </p>
           </div>
@@ -143,7 +143,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4" /> The Solution
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink2 leading-relaxed">
               Trevia EV brings connected charging networks together so drivers can discover, plan and charge from one platform.
             </p>
           </div>
@@ -163,13 +163,13 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
           <div className="lg:col-span-3 flex items-center justify-center gap-4 sm:gap-6 flex-wrap order-2 lg:order-1">
             <PhoneMockup label="Discover">
               <div className="flex-1 p-2.5 space-y-2">
-                <div className="h-6 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center px-2 gap-1.5">
+                <div className="h-6 rounded-lg bg-surface2 border border-edge flex items-center px-2 gap-1.5">
                   <MapPin className="w-2.5 h-2.5 text-emerald-400" />
-                  <div className="h-1 flex-1 rounded bg-[#0E2C52]" />
+                  <div className="h-1 flex-1 rounded bg-surface2" />
                 </div>
                 {['Trevia Hub', 'Cyber Towers', 'Knowledge City'].map((s) => (
-                  <div key={s} className="p-1.5 rounded-lg bg-[#061426] border border-[#0E2C52]/70 flex items-center justify-between">
-                    <span className="text-[8px] text-slate-300">{s}</span>
+                  <div key={s} className="p-1.5 rounded-lg bg-surface2 border border-edge/70 flex items-center justify-between">
+                    <span className="text-[8px] text-ink2">{s}</span>
                     <span className="text-[7px] font-mono text-emerald-400">Open</span>
                   </div>
                 ))}
@@ -177,8 +177,8 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
             </PhoneMockup>
             <PhoneMockup label="Station">
               <div className="flex-1 p-2.5 space-y-2">
-                <div className="h-14 rounded-lg bg-[#061426] border border-[#0E2C52]" />
-                <div className="text-[8px] text-white font-semibold">Cyber Towers Hub</div>
+                <div className="h-14 rounded-lg bg-surface2 border border-edge" />
+                <div className="text-[8px] text-ink font-semibold">Cyber Towers Hub</div>
                 <div className="flex gap-1">
                   <span className="text-[7px] font-mono px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">CCS2</span>
                   <span className="text-[7px] font-mono px-1.5 py-0.5 rounded-full bg-[#00A09A]/10 text-[#00A09A] border border-[#00A09A]/30">4/6 Free</span>
@@ -189,11 +189,11 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
               <div className="flex-1 p-2.5 space-y-2">
                 <div className="flex items-center gap-1">
                   <RouteIcon className="w-2.5 h-2.5 text-[#00A09A]" />
-                  <div className="h-1 flex-1 rounded bg-[#0E2C52]" />
+                  <div className="h-1 flex-1 rounded bg-surface2" />
                 </div>
-                <div className="p-1.5 rounded-lg bg-[#061426] border border-[#0E2C52]/70 flex items-center gap-1.5">
-                  <CalendarClock className="w-2.5 h-2.5 text-slate-400" />
-                  <span className="text-[7px] text-slate-300">1 stop · 18 min charge</span>
+                <div className="p-1.5 rounded-lg bg-surface2 border border-edge/70 flex items-center gap-1.5">
+                  <CalendarClock className="w-2.5 h-2.5 text-ink3" />
+                  <span className="text-[7px] text-ink2">1 stop · 18 min charge</span>
                 </div>
                 <div className="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-1.5">
                   <Navigation className="w-2.5 h-2.5 text-emerald-400" />
@@ -205,12 +205,12 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
 
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 order-1 lg:order-2">
             {EV_CAPABILITIES.map((cap) => (
-              <div key={cap.slug} id={cap.slug} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2 scroll-mt-28">
-                <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
+              <div key={cap.slug} id={cap.slug} className="p-4 rounded-xl bg-surface border border-edge space-y-2 scroll-mt-28">
+                <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-emerald-400">
                   <cap.icon className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold text-white">{cap.title}</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">{cap.desc}</p>
+                <h4 className="text-sm font-bold text-ink">{cap.title}</h4>
+                <p className="text-xs text-ink3 leading-relaxed">{cap.desc}</p>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
         <div>
           <Link
             to="/drive"
-            className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-ink transition-colors"
           >
             <span>Explore Trevia EV</span>
             <ArrowRight className="w-4 h-4" />
@@ -233,10 +233,10 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
             How Trevia Connects the Ecosystem
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
             From Charging Infrastructure to Charging Experience
           </h2>
-          <p className="text-sm text-slate-300 leading-relaxed">
+          <p className="text-sm text-ink2 leading-relaxed">
             Trevia connects the systems operating charging infrastructure with the platforms and drivers using it.
           </p>
         </div>
@@ -260,33 +260,33 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
           <div className="flex items-center gap-4">
             <PhoneMockup label="Trevia EV" compact>
               <div className="flex-1 p-2 space-y-1.5">
-                <div className="h-4 rounded bg-[#061426] border border-[#0E2C52]" />
-                <div className="h-4 rounded bg-[#061426] border border-[#0E2C52]" />
+                <div className="h-4 rounded bg-surface2 border border-edge" />
+                <div className="h-4 rounded bg-surface2 border border-edge" />
                 <div className="h-4 rounded bg-emerald-500/10 border border-emerald-500/30" />
               </div>
             </PhoneMockup>
             <PhoneMockup label="Fleets" compact>
               <div className="flex-1 p-2 space-y-1.5">
-                <div className="h-4 rounded bg-[#061426] border border-[#0E2C52]" />
+                <div className="h-4 rounded bg-surface2 border border-edge" />
                 <div className="h-4 rounded bg-emerald-500/10 border border-emerald-500/30" />
-                <div className="h-4 rounded bg-[#061426] border border-[#0E2C52]" />
+                <div className="h-4 rounded bg-surface2 border border-edge" />
               </div>
             </PhoneMockup>
           </div>
         </div>
 
-        <p className="text-center text-xs sm:text-sm text-slate-400 font-medium max-w-xl mx-auto">
+        <p className="text-center text-xs sm:text-sm text-ink3 font-medium max-w-xl mx-auto">
           Operate the infrastructure. Connect the networks. Simplify the charging experience.
         </p>
       </section>
 
       {/* Bottom: One Platform, Two Experiences */}
-      <section className="w-full bg-[#030A14] border-y border-[#0E2C52]/80 py-14">
+      <section className="w-full bg-surface border-y border-edge/80 py-14">
         <div className="max-w-4xl mx-auto px-6 text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
             One Platform. Two Experiences.
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-ink2 leading-relaxed max-w-2xl mx-auto">
             Trevia connects the infrastructure operators running charging networks with the drivers using them.
           </p>
           <div className="pt-2">

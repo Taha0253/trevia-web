@@ -41,7 +41,7 @@ export const EcosystemSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#02060D] relative overflow-hidden border-t border-b border-[#081528]">
+    <section className="py-24 bg-base relative overflow-hidden border-t border-b border-[#081528]">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00A09A]/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -56,7 +56,7 @@ export const EcosystemSection: React.FC = () => {
 
         {/* Headline */}
         <h2>
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#00A09A]">
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">
             Backed & Supported by:
           </span>
         </h2>
@@ -67,15 +67,15 @@ export const EcosystemSection: React.FC = () => {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-[#030914] hover:bg-[#061426] border border-[#0E223D] hover:border-[#00A09A]/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-surface hover:bg-surface2 border border-edge2 hover:border-[#00A09A]/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
             >
               <div className="mb-3 transition-transform duration-300 group-hover:scale-110">
                 {partner.icon}
               </div>
-              <span className="text-sm font-bold text-white tracking-wide">
+              <span className="text-sm font-bold text-ink tracking-wide">
                 {partner.name}
               </span>
-              <span className="text-[11px] text-slate-400 mt-1 font-mono">
+              <span className="text-[11px] text-ink3 mt-1 font-mono">
                 {partner.category}
               </span>
             </div>

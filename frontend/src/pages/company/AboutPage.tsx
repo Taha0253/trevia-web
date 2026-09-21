@@ -56,20 +56,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
     <div className="space-y-20 pb-24">
 
       {/* 1. Hero */}
-      <section className="border-b border-[#0E2C52]/80 bg-[#030A14] py-10 sm:py-14">
+      <section className="border-b border-edge/80 bg-surface py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             <div className="lg:col-span-3 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface2 border border-edge text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
                 <Info className="w-3.5 h-3.5 text-[#00A09A]" />
                 <span>Company — About Trevia</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight leading-[1.15]">
                 Building the digital infrastructure behind EV charging.
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base text-ink2 leading-relaxed max-w-xl">
                 Trevia is building the operating system for EV charging infrastructure, connecting multi-vendor charging hardware through an interoperable software layer for CPOs, fleets and charging networks.
               </p>
 
@@ -83,7 +83,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
                 </Link>
                 <a
                   href="#traction"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-ink2 hover:text-ink transition-colors uppercase tracking-wider"
                 >
                   <span>View Our Traction</span>
                   <ChevronDown className="w-3.5 h-3.5" />
@@ -104,24 +104,24 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Our Story
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-ink">
             From an EV charging idea to infrastructure software.
           </h2>
         </div>
 
-        <p className="text-sm text-slate-300 leading-relaxed">
+        <p className="text-sm text-ink2 leading-relaxed">
           Trevia started with a simple question: why should EV charging infrastructure remain fragmented across hardware vendors, networks and software systems? We evolved from building around the charging experience to building the digital operating layer behind it. Today, Trevia CMS connects multi-vendor chargers through OCPP, giving charging operators a unified platform to monitor and operate their networks.
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch gap-3">
           {STORY_STEPS.map((step, i) => (
             <React.Fragment key={step.label}>
-              <div className="flex-1 p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-1.5">
-                <div className="w-7 h-7 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
+              <div className="flex-1 p-4 rounded-xl bg-surface border border-edge space-y-1.5">
+                <div className="w-7 h-7 rounded-lg bg-surface2 border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
                   {i === 0 ? <Lightbulb className="w-3.5 h-3.5" /> : i === 1 ? <RefreshCw className="w-3.5 h-3.5" /> : <Network className="w-3.5 h-3.5" />}
                 </div>
                 <div className="text-xs font-mono uppercase tracking-wider text-[#00A09A]">{step.label}</div>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                <p className="text-xs text-ink3 leading-relaxed">{step.desc}</p>
               </div>
               {i < STORY_STEPS.length - 1 && (
                 <div className="hidden sm:flex items-center justify-center text-[#00A09A]">
@@ -136,21 +136,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
       {/* 3. Mission & Vision */}
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-edge space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A]">
               <Target className="w-4 h-4" />
             </div>
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">Mission</div>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-ink2 leading-relaxed">
               Make EV charging infrastructure easier to connect, operate and scale.
             </p>
           </div>
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-3">
-            <div className="w-9 h-9 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-edge space-y-3">
+            <div className="w-9 h-9 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A]">
               <Eye className="w-4 h-4" />
             </div>
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">Vision</div>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-ink2 leading-relaxed">
               A connected EV charging ecosystem where infrastructure can operate across hardware and networks without fragmentation.
             </p>
           </div>
@@ -163,17 +163,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Traction
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-ink">
             From product development to commercial validation.
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {TRACTION.map((t) => (
-            <div key={t.label} className="p-6 rounded-2xl bg-[#061426] border border-[#00A09A]/30 text-center space-y-2">
-              <div className="text-3xl font-black text-white font-mono">{t.value}</div>
-              <div className="text-xs font-bold text-white">{t.label}</div>
-              <div className="text-[11px] text-slate-400">{t.desc}</div>
+            <div key={t.label} className="p-6 rounded-2xl bg-surface2 border border-[#00A09A]/30 text-center space-y-2">
+              <div className="text-3xl font-black text-ink font-mono">{t.value}</div>
+              <div className="text-xs font-bold text-ink">{t.label}</div>
+              <div className="text-[11px] text-ink3">{t.desc}</div>
             </div>
           ))}
         </div>
@@ -185,19 +185,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Our Principles
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-ink">
             Built around how infrastructure actually works.
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {PRINCIPLES.map((p) => (
-            <div key={p.title} className="p-5 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
-                <p.icon className="w-4 h-4" />
+            <div key={p.title} className="p-5 rounded-xl bg-surface border border-edge space-y-2">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A] shrink-0">
+                  <p.icon className="w-4 h-4" />
+                </div>
+                <h4 className="text-sm font-bold text-ink">{p.title}</h4>
               </div>
-              <h4 className="text-sm font-bold text-white">{p.title}</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">{p.desc}</p>
+              <p className="text-xs text-ink3 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -210,32 +212,32 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
               The Founder
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white">
+            <h2 className="text-xl sm:text-2xl font-bold text-ink">
               Building Trevia from the ground up.
             </h2>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start gap-8 p-8 sm:p-12 rounded-2xl bg-[#030A14] border border-[#0E2C52]">
+          <div className="flex flex-col sm:flex-row items-start gap-8 p-8 sm:p-12 rounded-2xl bg-surface border border-edge">
             <img
               src="/John.jpeg"
               alt="John Garapati, Founder & CEO of Trevia EV Technologies"
               loading="lazy"
               decoding="async"
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl object-cover border border-[#0E2C52] shrink-0"
+              className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl object-cover border border-edge shrink-0"
             />
             <div className="space-y-4">
-              <p className="text-base text-slate-300 leading-relaxed">
+              <p className="text-base text-ink2 leading-relaxed">
                 John Garapati is the Founder &amp; CEO of Trevia EV Technologies, building software infrastructure for the rapidly evolving EV charging ecosystem. He leads Trevia across product, GTM, partnerships, sales &amp; marketing.
               </p>
               <div>
-                <div className="text-base font-bold text-white">John Garapati</div>
-                <div className="text-sm text-slate-400">Founder &amp; CEO, Trevia EV Technologies</div>
+                <div className="text-base font-bold text-ink">John Garapati</div>
+                <div className="text-sm text-ink3">Founder &amp; CEO, Trevia EV Technologies</div>
               </div>
               <a
                 href="https://www.linkedin.com/in/johnkiran7/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00A09A] hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00A09A] hover:text-ink transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Connect on LinkedIn</span>
@@ -251,9 +253,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           </div>
           <div className="flex flex-col sm:flex-row items-stretch gap-2">
             {MILESTONES.map((m, i) => (
-              <div key={i} className="flex-1 p-3 rounded-lg bg-[#030A14] border border-[#0E2C52] text-center">
-                <div className="text-[10px] font-mono text-[#00A09A] mb-1">{m.year}</div>
-                <div className="text-[11px] text-slate-300 leading-snug">{m.text}</div>
+              <div key={i} className="flex-1 p-4 rounded-lg bg-surface border border-edge text-center">
+                <div className="text-sm font-mono font-bold text-[#00A09A] mb-1.5">{m.year}</div>
+                <div className="text-sm text-ink2 leading-snug">{m.text}</div>
               </div>
             ))}
           </div>
@@ -262,22 +264,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
 
       {/* 7. Final CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-2xl bg-[#061426] border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+        <div className="rounded-2xl bg-surface2 border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink">
             Building the future of EV charging infrastructure together.
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-ink text-sm sm:text-base max-w-xl mx-auto opacity-90">
             Whether you operate charging infrastructure, build charging hardware, or are building the next layer of EV mobility, let's connect.
           </p>
-          <div className="pt-2">
-            <Link
-              to="/careers"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider"
-            >
-              <span>Join Trevia Team</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
+          <p className="text-ink text-sm sm:text-base pt-1 opacity-90">
+            Send us your resume/portfolio at{' '}
+            <a href="mailto:careers@treviaev.in" className="text-[#00A09A] font-semibold hover:text-ink transition-colors opacity-100">
+              careers@treviaev.in
+            </a>{' '}
+            to join our team.
+          </p>
         </div>
       </section>
 

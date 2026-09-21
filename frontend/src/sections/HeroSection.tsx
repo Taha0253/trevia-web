@@ -17,16 +17,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-4 lg:gap-0">
           <div className="lg:col-span-5 space-y-6 z-10 lg:pr-2 max-w-xl">
             <div className="space-y-1">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-extralight text-white tracking-tight leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-extralight text-ink tracking-tight leading-[1.15]">
                 <span className="whitespace-nowrap">
                   The{' '}
-                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00A09A]">Operating System</span>
+                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ink to-[#00A09A]">Operating System</span>
                 </span>{' '}
                 for EV charging Infrastructure.
               </h1>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-300/90 font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-ink2/90 font-normal leading-relaxed">
               Trevia connects multi-vendor charging infrastructure through an interoperable operating layer for CPOs, fleets and charging networks.
             </p>
 
@@ -41,29 +41,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
 
               <button
                 onClick={onPartner}
-                className="px-8 py-3.5 rounded-full bg-[#040C18]/80 hover:bg-[#08172D] border border-[#0E2C52] hover:border-[#00A09A] text-slate-200 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+                className="px-8 py-3.5 rounded-full bg-surface3/80 hover:bg-surface2 border border-edge hover:border-[#00A09A] text-ink2 hover:text-ink font-medium text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
               >
                 Partner with Trevia
               </button>
             </div>
 
-            <div className="pt-5 border-t border-[#0E223D]/70 flex items-center gap-6 sm:gap-8 text-xs text-slate-400">
+            <div className="pt-5 border-t border-edge2/70 flex items-center gap-6 sm:gap-8 text-xs text-ink3">
               <div>
-                <div className="text-lg font-bold text-white flex items-center gap-1">
+                <div className="text-lg font-bold text-ink flex items-center gap-1">
                   <span>OCPP</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 </div>
-                <div className="mt-0.5 text-slate-400 font-medium">Native</div>
+                <div className="mt-0.5 text-ink3 font-medium">Native</div>
               </div>
-              <div className="w-px h-8 bg-[#0E223D]" />
+              <div className="w-px h-8 bg-surface2" />
               <div>
-                <div className="text-lg font-bold text-white">Multi-Vendor </div>
-                <div className="mt-0.5 text-slate-400 font-medium">Infrastructure </div>
+                <div className="text-lg font-bold text-ink">Multi-Vendor </div>
+                <div className="mt-0.5 text-ink3 font-medium">Infrastructure </div>
               </div>
-              <div className="w-px h-8 bg-[#0E223D]" />
+              <div className="w-px h-8 bg-surface2" />
               <div>
-                <div className="text-lg font-bold text-white">Real-Time</div>
-                <div className="mt-0.5 text-slate-400 font-medium">Telemetry</div>
+                <div className="text-lg font-bold text-ink">Real-Time</div>
+                <div className="mt-0.5 text-ink3 font-medium">Telemetry</div>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
                 alt="Electric vehicle charging at a Trevia-connected station"
                 loading="eager"
                 decoding="async"
-                className="w-full max-w-none h-auto lg:h-[min(68vh,620px)] object-contain object-right select-none pointer-events-none"
+                className="hero-dark-only w-full max-w-none h-auto lg:h-[min(68vh,620px)] object-contain object-right select-none pointer-events-none"
                 style={{
                   maskImage: 'radial-gradient(ellipse 90% 86% at 58% 50%, black 74%, transparent 100%)',
                   WebkitMaskImage: 'radial-gradient(ellipse 90% 86% at 58% 50%, black 74%, transparent 100%)'
@@ -85,10 +85,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
                 draggable={false}
               />
 
-              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#02060D] to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 inset-x-0 h-14 bg-gradient-to-t from-[#02060D] via-[#02060D]/70 to-transparent pointer-events-none" />
-              <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-[#02060D] to-transparent pointer-events-none" />
-              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#02060D] to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-base to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 inset-x-0 h-14 bg-gradient-to-t from-base via-base/70 to-transparent pointer-events-none" />
+              <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-base to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-base to-transparent pointer-events-none" />
             </div>
           </div>
         </div>

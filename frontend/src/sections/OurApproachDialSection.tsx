@@ -130,7 +130,7 @@ const Constellation: React.FC<{ card: ApproachCard; featured: boolean }> = ({ ca
             className="absolute -translate-x-1/2 -translate-y-1/2"
             style={{ top: node.top, left: node.left }}
           >
-            <div className="w-7 h-7 rounded-full bg-[#04110F] border border-[#00A09A]/35 flex items-center justify-center shadow-[0_0_12px_rgba(0,160,154,0.35)]">
+            <div className="w-7 h-7 rounded-full bg-surface border border-[#00A09A]/35 flex items-center justify-center shadow-[0_0_12px_rgba(0,160,154,0.35)]">
               <NodeIcon className="w-3 h-3 text-[#00A09A]" />
             </div>
           </div>
@@ -139,7 +139,7 @@ const Constellation: React.FC<{ card: ApproachCard; featured: boolean }> = ({ ca
 
       <div className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2">
         <div
-          className={`rounded-full bg-[#04110F] border border-[#00A09A] flex items-center justify-center shadow-[0_0_28px_rgba(0,160,154,0.55)] ${
+          className={`rounded-full bg-surface border border-[#00A09A] flex items-center justify-center shadow-[0_0_28px_rgba(0,160,154,0.55)] ${
             featured ? 'w-14 h-14' : 'w-11 h-11'
           }`}
         >
@@ -165,7 +165,8 @@ const RevealCard: React.FC<{
       onClick={onClick}
       className={`
         relative flex flex-col origin-bottom overflow-hidden rounded-2xl cursor-pointer
-        bg-[linear-gradient(to_bottom_right,#04080C_82%,#00A09A)]
+        approach-card-border border border-transparent
+        bg-[linear-gradient(to_bottom_right,rgb(var(--c-bg-surface))_82%,#00A09A)]
         transition-all duration-700 ease-out
         hover:shadow-[0px_0px_54px_0px_rgba(0,160,154,0.4)]
         w-full max-w-[340px] h-[420px]
@@ -181,10 +182,10 @@ const RevealCard: React.FC<{
         <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#00A09A]">
           {card.layer}
         </span>
-        <h3 className={`mt-1 font-semibold text-white tracking-tight ${featured ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
+        <h3 className={`mt-1 font-semibold text-ink tracking-tight ${featured ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
           {card.title}
         </h3>
-        <p className="mt-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <p className="mt-1.5 text-xs sm:text-sm text-ink2 leading-relaxed">
           {card.shortDesc}
         </p>
       </div>
@@ -198,25 +199,25 @@ export const OurApproachDialSection: React.FC = () => {
   return (
     <section
       id="approach"
-      className="py-16 sm:py-20 md:py-24 bg-[#02060D] relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 bg-base relative overflow-hidden"
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[650px] bg-gradient-to-b from-[#00A09A]/8 via-[#00A09A]/4 to-transparent rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal className="text-center mb-10 md:mb-14">
-          <div className="inline-flex border border-white/15 rounded-full px-4 py-1.5 mb-4">
-            <span className="text-slate-400 text-[11px] font-mono font-semibold tracking-[0.28em] uppercase">
+          <div className="inline-flex border border-edge rounded-full px-4 py-1.5 mb-4">
+            <span className="text-ink3 text-[11px] font-mono font-semibold tracking-[0.28em] uppercase">
               The Signature Journey
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-light text-white tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-light text-ink tracking-tight leading-[1.15]">
             Five layers. One operating system.
             <br className="hidden md:block" />
-            <span className="font-extrabold text-[#00A09A]">
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">
               {' '}Our Approach.
             </span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-ink3 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
             An uninterrupted energy operating layer that harmonizes charger connectivity, real-time intelligence, remote control, and network scalability.
           </p>
         </ScrollReveal>

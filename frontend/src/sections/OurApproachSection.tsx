@@ -106,7 +106,7 @@ export const OurApproachSection: React.FC = () => {
 
         {/* Section Heading & Subtitle matching Image 4 */}
         <div className="max-w-3xl mb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-ink tracking-tight leading-[1.08] mb-6">
             Built to help CPOs grow and operate at scale.
           </h2>
           <p className="text-lg sm:text-xl text-neutral-300 font-normal leading-relaxed">
@@ -121,7 +121,7 @@ export const OurApproachSection: React.FC = () => {
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs font-bold text-white uppercase tracking-wide">
+              <div className="text-xs font-bold text-ink uppercase tracking-wide">
                 Interactive Operational Simulation
               </div>
               <div className="text-[11px] text-neutral-400">
@@ -136,7 +136,7 @@ export const OurApproachSection: React.FC = () => {
               className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                 autoPlay 
                   ? 'bg-[#00A09A] text-black font-bold' 
-                  : 'bg-neutral-800 text-neutral-300 hover:text-white'
+                  : 'bg-neutral-800 text-neutral-300 hover:text-ink'
               }`}
             >
               <Play className={`w-3.5 h-3.5 ${autoPlay ? 'fill-current' : ''}`} />
@@ -194,7 +194,7 @@ export const OurApproachSection: React.FC = () => {
                       }}
                       className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-all ${
                         expandedCard === stepIndex
-                          ? 'bg-neutral-900 text-white border-neutral-900 rotate-45'
+                          ? 'bg-neutral-900 text-ink border-neutral-900 rotate-45'
                           : 'border-neutral-200 text-neutral-500 hover:border-neutral-900 hover:text-neutral-900'
                       }`}
                       title="Click for deep-dive technical specs"
@@ -243,12 +243,12 @@ export const OurApproachSection: React.FC = () => {
             onClick={() => setExpandedCard(null)}
           >
             <div 
-              className="bg-[#0A1612] border border-[#1B3C30] rounded-3xl p-7 max-w-lg w-full text-white shadow-2xl relative"
+              className="bg-[#0A1612] border border-[#1B3C30] rounded-3xl p-7 max-w-lg w-full text-ink shadow-2xl relative"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setExpandedCard(null)}
-                className="absolute top-5 right-5 p-2 rounded-full text-neutral-400 hover:text-white bg-white/5 hover:bg-white/10"
+                className="absolute top-5 right-5 p-2 rounded-full text-neutral-400 hover:text-ink bg-white/5 hover:bg-white/10"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -256,7 +256,7 @@ export const OurApproachSection: React.FC = () => {
               <div className="flex items-center gap-2 text-[#00A09A] text-xs font-mono font-bold mb-2">
                 <span>STEP {cards[expandedCard - 1].stepNum} ARCHITECTURAL SPECIFICATION</span>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-white">
+              <h3 className="text-2xl font-bold mb-2 text-ink">
                 {cards[expandedCard - 1].title}
               </h3>
               <p className="text-sm text-neutral-300 mb-6">

@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { RequestDemoModal } from './components/RequestDemoModal';
 import { ScrollToTop } from './components/ScrollToTop';
+import { ThemeProvider } from './hooks/useTheme';
 
 // Lazy-loaded Pages for instant initial load and optimal performance
 const HomePage = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
@@ -46,7 +47,7 @@ const AppContent: React.FC = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-[#02060D] text-slate-100 flex flex-col font-sans selection:bg-[#00A09A] selection:text-white relative">
+    <div className="min-h-screen bg-base text-ink2 flex flex-col font-sans selection:bg-[#00A09A] selection:text-ink relative">
 
       {/* Scroll restoration */}
       <ScrollToTop />
@@ -115,9 +116,11 @@ const AppContent: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 

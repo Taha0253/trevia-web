@@ -7,6 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
+        base: 'rgb(var(--c-bg-base) / <alpha-value>)',
+        surface: 'rgb(var(--c-bg-surface) / <alpha-value>)',
+        surface2: 'rgb(var(--c-bg-surface2) / <alpha-value>)',
+        surface3: 'rgb(var(--c-bg-surface3) / <alpha-value>)',
+        edge: 'rgb(var(--c-border) / <alpha-value>)',
+        edge2: 'rgb(var(--c-border-faint) / <alpha-value>)',
+        ink: 'rgb(var(--c-text-primary) / <alpha-value>)',
+        ink2: 'rgb(var(--c-text-secondary) / <alpha-value>)',
+        ink3: 'rgb(var(--c-text-muted) / <alpha-value>)',
+        ink4: 'rgb(var(--c-text-faint) / <alpha-value>)',
         trevia: {
           darkest: "#02060D",
           navy: "#030A12",

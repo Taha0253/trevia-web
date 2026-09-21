@@ -423,7 +423,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#00A09A] animate-ping" />
             </div>
-            <h4 className="text-sm sm:text-base font-bold text-white tracking-tight">
+            <h4 className="text-sm sm:text-base font-bold text-ink tracking-tight">
               {stepTitles[activeStep - 1].title}
             </h4>
           </div>
@@ -473,7 +473,7 @@ export const ApproachParticleCanvas: React.FC<ApproachParticleCanvasProps> = ({
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
                 activeStep === step
                   ? 'bg-[#00A09A] text-black shadow-md shadow-[#00A09A]/30 scale-105'
-                  : 'bg-[#0D221A] text-neutral-400 hover:text-white hover:bg-[#133025]'
+                  : 'bg-surface2 text-neutral-400 hover:text-ink hover:bg-edge'
               }`}
             >
               Step 0{step}

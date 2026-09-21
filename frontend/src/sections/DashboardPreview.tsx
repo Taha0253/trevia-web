@@ -49,7 +49,7 @@ export const DashboardPreview: React.FC = () => {
                   onClick={() => setActiveTab(tab.name)}
                   className={`flex items-center gap-2 px-3.5 py-2 rounded-full whitespace-nowrap transition-all duration-200 ${
                     isActive
-                      ? 'bg-[#0E3D32] text-white font-semibold shadow-sm'
+                      ? 'bg-[#0E3D32] text-ink font-semibold shadow-sm'
                       : 'hover:bg-black/5 text-neutral-700'
                   }`}
                 >
@@ -66,7 +66,7 @@ export const DashboardPreview: React.FC = () => {
           </div>
 
           {/* Banner Header: Deep Green Banner Card */}
-          <div className="bg-[#0D382E] text-white rounded-2xl p-6 sm:p-7 mb-6 shadow-md relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="bg-[#0D382E] text-ink rounded-2xl p-6 sm:p-7 mb-6 shadow-md relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-1">
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
                 {stats?.greeting || "Good afternoon, Admin"}
@@ -166,7 +166,7 @@ export const DashboardPreview: React.FC = () => {
                       onClick={() => setTimeRange(r)}
                       className={`px-3 py-1 rounded-md transition-all ${
                         timeRange === r
-                          ? 'bg-[#0E3D32] text-white shadow-sm'
+                          ? 'bg-[#0E3D32] text-ink shadow-sm'
                           : 'hover:text-neutral-900'
                       }`}
                     >
@@ -207,7 +207,7 @@ export const DashboardPreview: React.FC = () => {
                     >
                       {/* Tooltip */}
                       {hoveredBar === idx && (
-                        <div className="absolute -top-9 bg-neutral-900 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap z-20 pointer-events-none">
+                        <div className="absolute -top-9 bg-neutral-900 text-ink text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap z-20 pointer-events-none">
                           {item.amount || '₹0.00'}
                         </div>
                       )}

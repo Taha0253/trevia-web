@@ -37,8 +37,8 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
 
       {/* Gradient outline frame */}
       <div className="p-px rounded-2xl bg-gradient-to-br from-white/15 via-[#00A09A]/25 to-indigo-400/20 shadow-[0_0_40px_rgba(0,160,154,0.1)]">
-        <div className="w-full bg-[#030A14] rounded-2xl overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-[#0E2C52] bg-[#061426]">
+        <div className="w-full bg-surface rounded-2xl overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-edge bg-surface2">
             <div className="flex items-center gap-2 text-[#00A09A]">
               <Radio className="w-3.5 h-3.5" />
               <span className="text-[10px] font-mono uppercase tracking-wider font-semibold">Trevia CMS — Network Console</span>
@@ -50,21 +50,21 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
 
       {/* Network overview */}
       <div className={`grid grid-cols-4 gap-2 p-4 ${compact ? 'grid-cols-3' : 'sm:gap-3'}`}>
-        <div className="bg-[#061426] border border-[#0E2C52]/70 rounded-xl p-3">
-          <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Stations</div>
-          <div className="text-lg font-bold text-white font-mono">128</div>
+        <div className="bg-surface2 border border-edge/70 rounded-xl p-3">
+          <div className="text-[9px] font-mono uppercase text-ink4 mb-1">Stations</div>
+          <div className="text-lg font-bold text-ink font-mono">128</div>
         </div>
-        <div className="bg-[#061426] border border-[#0E2C52]/70 rounded-xl p-3">
-          <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Active</div>
-          <div className="text-lg font-bold text-white font-mono">74</div>
+        <div className="bg-surface2 border border-edge/70 rounded-xl p-3">
+          <div className="text-[9px] font-mono uppercase text-ink4 mb-1">Active</div>
+          <div className="text-lg font-bold text-ink font-mono">74</div>
         </div>
-        <div className="bg-[#061426] border border-[#0E2C52]/70 rounded-xl p-3">
-          <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Faults</div>
+        <div className="bg-surface2 border border-edge/70 rounded-xl p-3">
+          <div className="text-[9px] font-mono uppercase text-ink4 mb-1">Faults</div>
           <div className="text-lg font-bold text-rose-400 font-mono">2</div>
         </div>
         {!compact && (
-          <div className="bg-[#061426] border border-[#0E2C52]/70 rounded-xl p-3">
-            <div className="text-[9px] font-mono uppercase text-slate-500 mb-1">Uptime</div>
+          <div className="bg-surface2 border border-edge/70 rounded-xl p-3">
+            <div className="text-[9px] font-mono uppercase text-ink4 mb-1">Uptime</div>
             <div className="text-lg font-bold text-[#00A09A] font-mono">99.4%</div>
           </div>
         )}
@@ -72,11 +72,11 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
 
       {/* Charger status */}
       <div className="px-4 pb-4 space-y-1.5">
-        <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-1.5">Charger Status</div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-ink4 mb-1.5">Charger Status</div>
         {(compact ? STATIONS.slice(0, 2) : STATIONS).map((s) => (
-          <div key={s.name} className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#061426]/60 border border-[#0E2C52]/50">
-            <div className="flex items-center gap-2 text-xs text-slate-200">
-              <Zap className="w-3 h-3 text-slate-500" />
+          <div key={s.name} className="flex items-center justify-between px-3 py-2 rounded-lg bg-surface2/60 border border-edge/50">
+            <div className="flex items-center gap-2 text-xs text-ink2">
+              <Zap className="w-3 h-3 text-ink4" />
               <span>{s.name}</span>
             </div>
             <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${s.tone}`}>
@@ -90,15 +90,15 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
         <>
           {/* Active sessions */}
           <div className="px-4 pb-4 space-y-1.5">
-            <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-1.5">Active Sessions</div>
+            <div className="text-[9px] font-mono uppercase tracking-wider text-ink4 mb-1.5">Active Sessions</div>
             {SESSIONS.map((s) => (
-              <div key={s.id} className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#061426]/60 border border-[#0E2C52]/50">
-                <div className="flex items-center gap-2 text-xs text-slate-200">
+              <div key={s.id} className="flex items-center justify-between px-3 py-2 rounded-lg bg-surface2/60 border border-edge/50">
+                <div className="flex items-center gap-2 text-xs text-ink2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                  <span className="font-mono text-[10px] text-slate-500">{s.id}</span>
+                  <span className="font-mono text-[10px] text-ink4">{s.id}</span>
                   <span>{s.station}</span>
                 </div>
-                <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400 shrink-0">
+                <div className="flex items-center gap-2 text-[10px] font-mono text-ink3 shrink-0">
                   <span className="text-[#00A09A]">{s.energy}</span>
                   <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{s.duration}</span>
                 </div>
@@ -108,23 +108,23 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
 
           {/* Faults */}
           <div className="px-4 pb-4 space-y-1.5">
-            <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-1.5">Faults</div>
+            <div className="text-[9px] font-mono uppercase tracking-wider text-ink4 mb-1.5">Faults</div>
             {FAULTS.map((f) => (
               <div key={f.station} className="flex items-center justify-between px-3 py-2 rounded-lg bg-rose-500/5 border border-rose-500/20">
-                <div className="flex items-center gap-2 text-xs text-slate-200">
+                <div className="flex items-center gap-2 text-xs text-ink2">
                   <AlertTriangle className="w-3 h-3 text-rose-400 shrink-0" />
                   <span>{f.station}</span>
-                  <span className="text-slate-500">— {f.issue}</span>
+                  <span className="text-ink4">— {f.issue}</span>
                 </div>
-                <span className="text-[10px] font-mono text-slate-500 shrink-0">{f.age}</span>
+                <span className="text-[10px] font-mono text-ink4 shrink-0">{f.age}</span>
               </div>
             ))}
           </div>
 
           {/* Telemetry */}
           <div className="px-4 pb-4">
-            <div className="text-[9px] font-mono uppercase tracking-wider text-slate-500 mb-2">Network Telemetry — Load (24h)</div>
-            <div className="flex items-end gap-1 h-16 bg-[#061426]/60 border border-[#0E2C52]/50 rounded-lg p-2">
+            <div className="text-[9px] font-mono uppercase tracking-wider text-ink4 mb-2">Network Telemetry — Load (24h)</div>
+            <div className="flex items-end gap-1 h-16 bg-surface2/60 border border-edge/50 rounded-lg p-2">
               {TELEMETRY_BARS.map((h, i) => (
                 <div
                   key={i}
@@ -135,7 +135,7 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
             </div>
           </div>
 
-          <div className="px-4 pb-4 flex items-center gap-4 text-[10px] font-mono text-slate-500">
+          <div className="px-4 pb-4 flex items-center gap-4 text-[10px] font-mono text-ink4">
             <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-[#00A09A]" /> Telemetry streaming</span>
             <span className="flex items-center gap-1"><AlertTriangle className="w-3 h-3 text-rose-400" /> Auto fault alerts</span>
           </div>

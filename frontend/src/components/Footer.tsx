@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
   return (
-    <footer className="bg-[#010408] border-t border-[#0E223D] text-slate-400 text-sm relative z-20 pt-10 pb-12 overflow-hidden">
+    <footer className="bg-base border-t border-edge2 text-ink3 text-sm relative z-20 pt-10 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* 5-Column Sitemap Link Matrix (Section B.3) */}
@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
           
           {/* Col 1: Product */}
           <div className="space-y-5">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Product</h4>
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-ink">Product</h4>
             <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/cms" className="hover:text-[#00A09A] transition-colors flex items-center gap-1">
@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
 
           {/* Col 2: Solutions */}
           <div className="space-y-5">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Solutions</h4>
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-ink">Solutions</h4>
             <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/solutions/cpos" className="hover:text-[#00A09A] transition-colors">CPOs & Operators</Link>
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
 
           {/* Col 3: Technology */}
           <div className="space-y-5">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Technology</h4>
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-ink">Technology</h4>
             <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/technology" className="hover:text-[#00A09A] transition-colors">OCPP & Interoperability</Link>
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
 
           {/* Col 4: Company */}
           <div className="space-y-5">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Company</h4>
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-ink">Company</h4>
             <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/about" className="hover:text-[#00A09A] transition-colors">About Trevia</Link>
@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
 
           {/* Col 5: Legal */}
           <div className="space-y-5">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">Legal</h4>
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-ink">Legal</h4>
             <ul className="space-y-4 text-xs">
               <li>
                 <Link to="/security" className="hover:text-[#00A09A] transition-colors">Security</Link>
@@ -122,20 +122,20 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#0E223D]/60 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs">
-          <span className="text-white font-semibold text-sm sm:text-base">
+        <div className="pt-8 border-t border-edge2/60 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs">
+          <span className="text-ink font-semibold text-sm sm:text-base">
             The operating system for your charging network.
           </span>
           <button
             type="button"
             onClick={onRequestDemo}
-            className="inline-flex items-center gap-1.5 shrink-0 px-5 py-2.5 rounded-full border border-[#00A09A] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black"
+            className="inline-flex items-center gap-1.5 shrink-0 px-5 py-2.5 rounded-full border border-[#00A09A] text-ink text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black"
           >
             <span>Explore Trevia</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         </div>
-        <div className="pt-6 text-slate-500 font-mono text-[11px] text-center sm:text-left">
+        <div className="pt-6 text-ink4 font-mono text-[11px] text-center sm:text-left">
           © 2026 Trevia EV Technologies. Incorporated Sept 2025. All rights reserved.
         </div>
 

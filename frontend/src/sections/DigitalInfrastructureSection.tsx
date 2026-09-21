@@ -24,7 +24,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
         {/* Headline and Subtitle Grid matching Image 5 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20">
           <div className="lg:col-span-7">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08]">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-ink tracking-tight leading-[1.08]">
               The layer <br />
               behind <br />
               connected <br />
@@ -67,7 +67,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-[#00A09A]/10 flex items-center justify-center text-[#00A09A] mb-1">
                 <Layers className="w-6 h-6 animate-pulse" />
               </div>
-              <span className="text-sm font-extrabold tracking-wider text-white trevia-brand-text">
+              <span className="text-sm font-extrabold tracking-wider text-ink trevia-brand-text">
                 TREVIA
               </span>
               <span className="text-[11px] font-medium text-[#00A09A]">
@@ -91,7 +91,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
                   </div>
                   <span className="text-xs font-mono font-bold text-[#00A09A]">01</span>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Connectivity</h4>
+                <h4 className="text-xl font-bold text-ink mb-2">Connectivity</h4>
                 <p className="text-sm text-neutral-400 leading-relaxed">
                   Connect networks, operators, and charging infrastructure through one digital layer.
                 </p>
@@ -110,7 +110,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
                   </div>
                   <span className="text-xs font-mono font-bold text-[#00A09A]">02</span>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Real-time data</h4>
+                <h4 className="text-xl font-bold text-ink mb-2">Real-time data</h4>
                 <p className="text-sm text-neutral-400 leading-relaxed">
                   Bring charger status, sessions, faults, and network activity into a real-time operational view.
                 </p>
@@ -129,7 +129,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
                   </div>
                   <span className="text-xs font-mono font-bold text-[#00A09A]">03</span>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Digital operations</h4>
+                <h4 className="text-xl font-bold text-ink mb-2">Digital operations</h4>
                 <p className="text-sm text-neutral-400 leading-relaxed">
                   Monitor, configure, troubleshoot, and operate charging infrastructure remotely.
                 </p>
@@ -148,7 +148,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
                   </div>
                   <span className="text-xs font-mono font-bold text-[#00A09A]">04</span>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">APIs & integrations</h4>
+                <h4 className="text-xl font-bold text-ink mb-2">APIs & integrations</h4>
                 <p className="text-sm text-neutral-400 leading-relaxed">
                   Connect Trevia with the systems, applications, and workflows already used across your business.
                 </p>
@@ -175,7 +175,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
                 <div className="w-12 h-12 rounded-2xl bg-[#091813] border border-[#143D30] text-[#00A09A] flex items-center justify-center mb-3 shadow-lg group-hover:border-[#00A09A] group-hover:scale-110 transition-all">
                   <Monitor className="w-6 h-6" />
                 </div>
-                <span className="text-base font-bold text-white">Trevia CMS</span>
+                <span className="text-base font-bold text-ink">Trevia CMS</span>
                 <span className="text-xs text-neutral-400 mt-0.5">Operator experience</span>
               </div>
 
@@ -184,7 +184,7 @@ export const DigitalInfrastructureSection: React.FC = () => {
                 <div className="w-12 h-12 rounded-2xl bg-[#091813] border border-[#143D30] text-[#00A09A] flex items-center justify-center mb-3 shadow-lg group-hover:border-[#00A09A] group-hover:scale-110 transition-all">
                   <Smartphone className="w-6 h-6" />
                 </div>
-                <span className="text-base font-bold text-white">Trevia EV App</span>
+                <span className="text-base font-bold text-ink">Trevia EV App</span>
                 <span className="text-xs text-neutral-400 mt-0.5">Driver experience</span>
               </div>
 

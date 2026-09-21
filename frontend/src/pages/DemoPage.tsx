@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, ShieldCheck, ArrowRight, Check, Loader2 } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Check, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 
@@ -48,7 +48,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#02060D] text-white pt-8 pb-24 relative overflow-hidden">
+    <div className="min-h-screen bg-base text-ink pt-8 pb-24 relative overflow-hidden">
       {/* Volumetric background lights */}
       <div className="absolute top-10 left-1/4 -translate-x-1/2 w-[900px] h-[500px] bg-[#00A09A]/8 rounded-full blur-[200px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#00A09A]/6 rounded-full blur-[220px] pointer-events-none" />
@@ -57,18 +57,18 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
 
         {/* Breadcrumb & Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 pt-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight mb-6">
-            See Trevia <span className="font-extrabold text-[#00A09A]">in Action.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-ink tracking-tight leading-tight mb-6">
+            See Trevia <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">in Action.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-ink2 font-normal leading-relaxed">
             Get a 30-minute walkthrough of how Trevia connects, monitors and operates EV charging infrastructure.
           </p>
         </div>
 
         {/* DEMO REQUEST FORM */}
         <div className="max-w-xl mx-auto mb-20">
-          <div className="bg-[#030A16] border border-[#0E3460] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+          <div className="bg-surface border border-[#0E3460] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
 
             {/* Edge Accent */}
             <div className="absolute top-0 inset-x-0 h-1 bg-[#00A09A]" />
@@ -76,21 +76,18 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
             {!isSuccess ? (
               <div>
                 <div className="mb-6">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] text-xs font-mono font-semibold mb-2">
-                    <Zap className="w-3.5 h-3.5" />
-                    <span>SCHEDULE 1-ON-1 DEMO</span>
-                  </div>
-                  <h2 className="text-2xl font-bold tracking-tight text-white">
-                    Book a CMS Demo
+
+                  <h2 className="text-2xl font-bold tracking-tight text-ink">
+                    Book a Demo
                   </h2>
-                  <p className="text-xs text-slate-400 mt-1 font-normal leading-relaxed">
+                  <p className="text-xs text-ink3 mt-1 font-normal leading-relaxed">
                     Tell us about your charging network and we'll tailor the demo accordingly.
                   </p>
                 </div>
 
                 <form onSubmit={handleFormSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-ink3 mb-1">
                       Full Name *
                     </label>
                     <input
@@ -99,13 +96,13 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       placeholder="e.g. Vikramaditya Rao"
                       value={formData.full_name}
                       onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                      className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink3 mb-1">
                         Work Email *
                       </label>
                       <input
@@ -114,11 +111,11 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="name@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink3 mb-1">
                         Phone Number
                       </label>
                       <input
@@ -126,14 +123,14 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink3 mb-1">
                         Organization / CPO
                       </label>
                       <input
@@ -141,17 +138,17 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="e.g. Nexus Energy Infra"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink3 mb-1">
                         Network Scale
                       </label>
                       <select
                         value={formData.chargers_count}
                         onChange={(e) => setFormData({ ...formData, chargers_count: e.target.value })}
-                        className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
                       >
                         <option value="1 - 10 chargers">1 - 10 chargers</option>
                         <option value="10 - 50 chargers">10 - 50 chargers</option>
@@ -163,7 +160,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-ink3 mb-1">
                       Tell Us More About Yourself
                     </label>
                     <textarea
@@ -171,7 +168,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       placeholder="Tell us about your charging network, timeline, or specific requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#02060D] border border-[#0E284A] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
+                      className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
                     />
                   </div>
 
@@ -195,7 +192,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     </button>
                   </div>
 
-                  <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-1">
+                  <div className="flex items-center justify-center gap-2 text-[11px] text-ink4 pt-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#00A09A]" />
                     <span>Direct founder consultation • Strict NDA protected</span>
                   </div>
@@ -206,9 +203,9 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                 <div className="w-16 h-16 bg-[#00A09A]/10 border border-[#00A09A]/40 rounded-full flex items-center justify-center mx-auto text-[#00A09A]">
                   <Check className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Demo Scheduled</h3>
-                <p className="text-sm text-slate-300 max-w-sm mx-auto font-normal leading-relaxed">
-                  Thank you, <span className="text-[#00A09A] font-semibold">{formData.full_name}</span>. Our team has received your demo request. A calendar invitation has been prepared for <span className="text-white font-medium">{formData.email}</span>.
+                <h3 className="text-2xl font-bold text-ink">Demo Scheduled</h3>
+                <p className="text-sm text-ink2 max-w-sm mx-auto font-normal leading-relaxed">
+                  Thank you, <span className="text-[#00A09A] font-semibold">{formData.full_name}</span>. Our team has received your demo request. A calendar invitation has been prepared for <span className="text-ink font-medium">{formData.email}</span>.
                 </p>
                 <div className="pt-4">
                   <button

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 import { ScrollReveal } from '../components/ScrollReveal';
 
 interface LiveDemoCtaSectionProps {
@@ -15,33 +15,26 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-[#00A09A]/18 via-[#00A09A]/6 to-transparent rounded-full blur-[160px] pointer-events-none animate-hero-glow" />
 
       <ScrollReveal className="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[1.15]">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-[1.15]">
           See your charging infrastructure operate as one network.
         </h2>
-        <p className="mt-4 max-w-md text-sm sm:text-base text-slate-400 leading-relaxed">
+        <p className="mt-4 max-w-md text-sm sm:text-base text-ink3 leading-relaxed">
           Explore Trevia CMS through a live walkthrough of OCPP connectivity, telemetry, remote operations and network management.
         </p>
 
         <button
           type="button"
           onClick={onCta}
-          className="group relative mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#00A09A] bg-transparent px-8 py-3.5 font-bold text-sm text-white transition-all duration-300 hover:bg-[#00A09A] hover:text-black hover:-translate-y-0.5 active:translate-y-0"
+          className="group relative mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#00A09A] bg-transparent px-8 py-3.5 font-bold text-sm text-ink transition-all duration-300 hover:bg-[#00A09A] hover:text-black hover:-translate-y-0.5 active:translate-y-0"
         >
           <span className="relative z-10 flex items-center gap-2">
-            Book a CMS demo
+            Book a demo
             <ArrowRight className="w-4 h-4" />
           </span>
         </button>
       </ScrollReveal>
 
-      <div className="relative z-10 mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs sm:text-sm text-slate-500 px-6">
-        <Link to="/drive" className="hover:text-[#00A09A] transition-colors">
-          See Trevia EV
-        </Link>
-        <Link to="/platform" className="hover:text-[#00A09A] transition-colors">
-          Explore the platform
-        </Link>
-      </div>
+
     </section>
   );
 };

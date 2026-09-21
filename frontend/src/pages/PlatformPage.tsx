@@ -20,22 +20,22 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
     <div className="space-y-16 pb-24">
 
       {/* Header */}
-      <section className="border-b border-[#0E2C52]/80 bg-[#030A14] py-10 sm:py-14">
+      <section className="border-b border-edge/80 bg-surface py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6 space-y-3 max-w-3xl">
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
             Platform Architecture
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
+            <div className="w-8 h-8 rounded-lg bg-surface2 border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
               <Layers className="w-4 h-4" />
             </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
               The Digital Infrastructure for EV Charging
             </h1>
           </div>
 
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-ink2 leading-relaxed">
             Trevia connects charging hardware, network operations and charging experiences through a unified software platform.
           </p>
         </div>
@@ -47,7 +47,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Topology
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-ink">
             How Trevia Connects EV Charging
           </h2>
         </div>
@@ -59,7 +59,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border-2 border-[#00A09A]/50 shadow-[0_0_25px_rgba(0,160,154,0.08)] space-y-4">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface border-2 border-[#00A09A]/50 shadow-[0_0_25px_rgba(0,160,154,0.08)] space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded bg-[#00A09A]/20 text-[#00A09A] font-bold">
                 Operator Layer
@@ -67,12 +67,12 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
               <Radio className="w-5 h-5 text-[#00A09A]" />
             </div>
 
-            <h3 className="text-xl font-bold text-white">Trevia CMS</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <h3 className="text-xl font-bold text-ink">Trevia CMS</h3>
+            <p className="text-xs sm:text-sm text-ink2 leading-relaxed">
               The operating software for CPOs and charging network operators to connect, monitor and manage multi-vendor charging infrastructure.
             </p>
 
-            <ul className="space-y-2 text-xs text-slate-300">
+            <ul className="space-y-2 text-xs text-ink2">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00A09A]" />
                 <span>OCPP 1.6J multi-vendor charger connectivity</span>
@@ -99,20 +99,20 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
             </div>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#030A14] border border-[#0E2C52] space-y-4">
+          <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-edge space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 font-bold">
+              <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded bg-surface2 text-ink2 font-bold">
                 Driver Layer
               </span>
               <Smartphone className="w-5 h-5 text-emerald-400" />
             </div>
 
-            <h3 className="text-xl font-bold text-white">Trevia EV</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <h3 className="text-xl font-bold text-ink">Trevia EV</h3>
+            <p className="text-xs sm:text-sm text-ink2 leading-relaxed">
               A charging aggregation platform that brings connected charging networks into one experience for EV drivers.
             </p>
 
-            <ul className="space-y-2 text-xs text-slate-300">
+            <ul className="space-y-2 text-xs text-ink2">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 <span>Discover chargers across connected networks</span>
@@ -137,15 +137,15 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
             <div className="pt-2 flex items-center justify-center gap-4">
               <PhoneMockup label="Discover" compact>
                 <div className="flex-1 p-2 space-y-1.5">
-                  <div className="h-3 rounded bg-[#061426] border border-[#0E2C52]" />
+                  <div className="h-3 rounded bg-surface2 border border-edge" />
                   <div className="h-3 rounded bg-emerald-500/10 border border-emerald-500/30" />
-                  <div className="h-3 rounded bg-[#061426] border border-[#0E2C52]" />
+                  <div className="h-3 rounded bg-surface2 border border-edge" />
                 </div>
               </PhoneMockup>
               <PhoneMockup label="Plan" compact>
                 <div className="flex-1 p-2 space-y-1.5">
-                  <div className="h-3 rounded bg-[#061426] border border-[#0E2C52]" />
-                  <div className="h-3 rounded bg-[#061426] border border-[#0E2C52]" />
+                  <div className="h-3 rounded bg-surface2 border border-edge" />
+                  <div className="h-3 rounded bg-surface2 border border-edge" />
                   <div className="h-3 rounded bg-emerald-500/10 border border-emerald-500/30" />
                 </div>
               </PhoneMockup>
@@ -161,41 +161,41 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
             Category Matrix
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-ink">
             How Trevia Fits the Charging Stack
           </h2>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-[#0E2C52] bg-[#030A14]">
+        <div className="overflow-x-auto rounded-2xl border border-edge bg-surface">
           <table className="w-full text-left text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-[#0E2C52] bg-[#061426] text-slate-400 font-mono text-xs uppercase">
+              <tr className="border-b border-edge bg-surface2 text-ink3 font-mono text-xs uppercase">
                 <th className="p-4">Category</th>
                 <th className="p-4">Typical Role</th>
                 <th className="p-4 text-[#00A09A]">Trevia</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#0E2C52]/60 text-slate-300">
+            <tbody className="divide-y divide-[#0E2C52]/60 text-ink2">
               <tr>
-                <td className="p-4 font-bold text-white">Charger Hardware</td>
-                <td className="p-4 text-slate-400">Physical charging infrastructure</td>
-                <td className="p-4 text-slate-200">Connect through the software layer</td>
+                <td className="p-4 font-bold text-ink">Charger Hardware</td>
+                <td className="p-4 text-ink3">Physical charging infrastructure</td>
+                <td className="p-4 text-ink2">Connect through the software layer</td>
               </tr>
               <tr>
-                <td className="p-4 font-bold text-white">CPO Platforms</td>
-                <td className="p-4 text-slate-400">Operate a specific charging network</td>
-                <td className="p-4 text-slate-200">Multi-vendor CMS layer</td>
+                <td className="p-4 font-bold text-ink">CPO Platforms</td>
+                <td className="p-4 text-ink3">Operate a specific charging network</td>
+                <td className="p-4 text-ink2">Multi-vendor CMS layer</td>
               </tr>
               <tr>
-                <td className="p-4 font-bold text-white">Charging Aggregators</td>
-                <td className="p-4 text-slate-400">Discover and access charging networks</td>
-                <td className="p-4 text-slate-200">Trevia EV aggregation layer</td>
+                <td className="p-4 font-bold text-ink">Charging Aggregators</td>
+                <td className="p-4 text-ink3">Discover and access charging networks</td>
+                <td className="p-4 text-ink2">Trevia EV aggregation layer</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p className="text-xs sm:text-sm text-slate-400">
+        <p className="text-xs sm:text-sm text-ink3">
           Trevia connects the operational layer with the charging experience through one platform.
         </p>
       </section>

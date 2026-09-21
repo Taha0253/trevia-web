@@ -406,7 +406,7 @@ export const OurApproachJourney: React.FC = () => {
   }, [activeStep]);
 
   return (
-    <section id="approach" className="py-28 bg-[#02060D] relative overflow-hidden">
+    <section id="approach" className="py-28 bg-base relative overflow-hidden">
       
       {/* Background radial blue glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] bg-gradient-to-b from-[#00A09A]/8 via-[#00A09A]/4 to-transparent rounded-full blur-[200px] pointer-events-none" />
@@ -420,19 +420,19 @@ export const OurApproachJourney: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-[#00A09A] animate-pulse" />
               <span>THE SIGNATURE JOURNEY</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-ink tracking-tight leading-tight">
               Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">Approach.</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-400 max-w-xl mt-3 font-normal">
+            <p className="text-base sm:text-lg text-ink3 max-w-xl mt-3 font-normal">
               An uninterrupted, 5-stage energy journey that harmonizes discovery, navigation, charging, payments, and grid intelligence.
             </p>
           </div>
 
           {/* Controls: Play/Pause and Step Jump */}
-          <div className="flex items-center gap-3 self-start md:self-auto bg-[#06101E] border border-[#0E223D] px-4 py-2 rounded-full">
+          <div className="flex items-center gap-3 self-start md:self-auto bg-[#06101E] border border-edge2 px-4 py-2 rounded-full">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="flex items-center gap-2 text-xs font-semibold text-slate-200 hover:text-white transition"
+              className="flex items-center gap-2 text-xs font-semibold text-ink2 hover:text-ink transition"
             >
               {isPlaying ? (
                 <>
@@ -446,7 +446,7 @@ export const OurApproachJourney: React.FC = () => {
                 </>
               )}
             </button>
-            <div className="w-px h-4 bg-[#0E223D]" />
+            <div className="w-px h-4 bg-surface2" />
             <span className="text-[11px] font-mono text-[#00A09A]">
               Step 0{activeStep} of 05
             </span>
@@ -459,7 +459,7 @@ export const OurApproachJourney: React.FC = () => {
           {/* Connecting SVG Power Line */}
           <div className="hidden lg:block absolute top-7 left-[8%] right-[8%] h-1 pointer-events-none">
             {/* Dark base track */}
-            <div className="w-full h-0.5 bg-[#0E223D]" />
+            <div className="w-full h-0.5 bg-surface2" />
             {/* Active illuminated electric wire track */}
             <div 
               className="h-0.5 bg-gradient-to-r from-[#00A09A] to-[#00A09A] transition-all duration-700 absolute top-0 left-0 shadow-[0_0_12px_#00A09A]"
@@ -486,8 +486,8 @@ export const OurApproachJourney: React.FC = () => {
                     isActive
                       ? 'bg-[#071324] border-2 border-[#00A09A] shadow-[0_0_30px_rgba(0,160,154,0.25)] -translate-y-1.5'
                       : isPast
-                      ? 'bg-[#040C18]/80 border border-[#0E2C52] hover:border-[#00A09A]'
-                      : 'bg-[#030914]/60 border border-[#0A1A2E] hover:border-[#0E2C52]'
+                      ? 'bg-surface3/80 border border-edge hover:border-[#00A09A]'
+                      : 'bg-surface/60 border border-edge2 hover:border-edge'
                   }`}
                 >
                   {/* Top Node Header: Number + Icon */}
@@ -502,8 +502,8 @@ export const OurApproachJourney: React.FC = () => {
                       isActive 
                         ? 'bg-[#00A09A] text-black shadow-[0_0_15px_#00A09A]' 
                         : isPast 
-                        ? 'bg-[#0E2C52] text-[#00A09A]' 
-                        : 'bg-[#061426] text-slate-500 group-hover:text-slate-300'
+                        ? 'bg-surface2 text-[#00A09A]' 
+                        : 'bg-surface2 text-ink4 group-hover:text-ink2'
                     }`}>
                       <Icon className="w-4 h-4" />
                     </div>
@@ -511,7 +511,7 @@ export const OurApproachJourney: React.FC = () => {
 
                   {/* Title & Tagline */}
                   <div>
-                    <h3 className="text-base font-bold text-white tracking-tight">
+                    <h3 className="text-base font-bold text-ink tracking-tight">
                       {s.title}
                     </h3>
                     <p className="text-[11px] text-[#00A09A] font-medium mt-0.5">
@@ -520,7 +520,7 @@ export const OurApproachJourney: React.FC = () => {
                   </div>
 
                   {/* Active Indicator Bar */}
-                  <div className="mt-4 pt-3 border-t border-[#0E223D]/60 flex items-center justify-between text-[10px] text-slate-400">
+                  <div className="mt-4 pt-3 border-t border-edge2/60 flex items-center justify-between text-[10px] text-ink3">
                     <span className={isActive ? 'text-[#00A09A] font-semibold' : ''}>
                       {isActive ? '● Stage Active' : isPast ? '✓ Completed' : 'Pending'}
                     </span>
@@ -534,7 +534,7 @@ export const OurApproachJourney: React.FC = () => {
         </div>
 
         {/* The Central Stage: Deep Dive Visualizer & Technical Breakdown */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#040B17] border border-[#0E2644] rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#040B17] border border-edge2 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           
           {/* Subtle background circuit pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(#00A09A_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
@@ -545,15 +545,15 @@ export const OurApproachJourney: React.FC = () => {
               <span className="px-3 py-1 rounded-full bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] text-xs font-mono font-semibold">
                 STAGE {steps[activeStep - 1].num} • {steps[activeStep - 1].pill}
               </span>
-              <span className="text-xs text-slate-400">
+              <span className="text-xs text-ink3">
                 {steps[activeStep - 1].metric}
               </span>
             </div>
 
             <div>
-              <h3 className="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-1">
+              <h3 className="text-3xl sm:text-4xl font-extralight text-ink tracking-tight mb-1">
                 {steps[activeStep - 1].title}{' '}
-                <span className="font-extrabold text-[#00A09A]">
+                <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">
                   Architecture
                 </span>
               </h3>
@@ -562,14 +562,14 @@ export const OurApproachJourney: React.FC = () => {
               </p>
             </div>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-ink2 leading-relaxed font-normal">
               {steps[activeStep - 1].desc}
             </p>
 
             {/* Micro-spec bullet list */}
             <div className="space-y-2.5 pt-2">
               {steps[activeStep - 1].details.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-ink2">
                   <div className="w-4 h-4 rounded-full bg-[#00A09A]/10 text-[#00A09A] flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
@@ -582,7 +582,7 @@ export const OurApproachJourney: React.FC = () => {
             <div className="pt-4 flex items-center gap-3">
               <button
                 onClick={() => setActiveStep(activeStep === 1 ? 5 : activeStep - 1)}
-                className="px-4 py-2 rounded-xl bg-[#061222] border border-[#0E2A4D] hover:border-[#00A09A] text-xs font-semibold text-slate-300 hover:text-white transition"
+                className="px-4 py-2 rounded-xl bg-[#061222] border border-[#0E2A4D] hover:border-[#00A09A] text-xs font-semibold text-ink2 hover:text-ink transition"
               >
                 ← Previous Stage
               </button>
@@ -598,13 +598,13 @@ export const OurApproachJourney: React.FC = () => {
 
           {/* Right Column: Dynamic Stage Canvas Simulation */}
           <div className="lg:col-span-6 relative z-10">
-            <div className="w-full h-[380px] sm:h-[420px] rounded-2xl bg-[#020710] border border-[#0E223D] overflow-hidden relative shadow-inner flex items-center justify-center">
+            <div className="w-full h-[380px] sm:h-[420px] rounded-2xl bg-[#020710] border border-edge2 overflow-hidden relative shadow-inner flex items-center justify-center">
               
               {/* Top Simulation HUD indicator */}
-              <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-slate-400 pointer-events-none z-20">
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-ink3 pointer-events-none z-20">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#00A09A] animate-ping" />
-                  <span className="text-white font-semibold uppercase">SIMULATION: {steps[activeStep - 1].title}</span>
+                  <span className="text-ink font-semibold uppercase">SIMULATION: {steps[activeStep - 1].title}</span>
                 </div>
                 <div className="text-[#00A09A]">
                   60 FPS • HIGH PRECISION
@@ -615,7 +615,7 @@ export const OurApproachJourney: React.FC = () => {
               <canvas ref={canvasRef} className="w-full h-full block" />
 
               {/* Bottom Telemetry Bar */}
-              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[10px] font-mono text-slate-400 bg-[#040C1A]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#0E223D]">
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[10px] font-mono text-ink3 bg-surface3/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-edge2">
                 <span>Status: Optimal Handshake</span>
                 <span className="text-[#00A09A]">Latency: 12ms</span>
                 <span>OCPP 2.0.1 Encrypted</span>
