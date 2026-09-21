@@ -15,14 +15,13 @@ import {
   Route as RouteIcon,
   CalendarClock,
   Wallet,
-  Zap,
   Compass,
 } from 'lucide-react';
 import { PhoneMockup } from '../components/PhoneMockup';
 import { CmsDashboardMock } from '../components/CmsDashboardMock';
 
 interface FeaturesPageProps {
-  onRequestDemo: () => void;
+  
 }
 
 const CMS_CAPABILITIES = [
