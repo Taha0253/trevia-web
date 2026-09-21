@@ -3,15 +3,6 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ScrollReveal } from '../components/ScrollReveal';
 
-const StarMark: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 16 16" className={className} fill="none" aria-hidden="true">
-    <path
-      d="M8 0.6 9.4 6.2 15.4 8 9.4 9.8 8 15.4 6.6 9.8 0.6 8 6.6 6.2 8 0.6Z"
-      fill="#00A09A"
-    />
-  </svg>
-);
-
 interface LiveDemoCtaSectionProps {
   onCta: () => void;
 }
@@ -36,11 +27,6 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
           onClick={onCta}
           className="group relative mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#00A09A] bg-transparent px-8 py-3.5 font-bold text-sm text-white transition-all duration-300 hover:bg-[#00A09A] hover:text-black hover:-translate-y-0.5 active:translate-y-0"
         >
-          <StarMark className="demo-star demo-star-tl w-4 h-4" />
-          <StarMark className="demo-star demo-star-tr w-4 h-4" />
-          <StarMark className="demo-star demo-star-bl w-3.5 h-3.5" />
-          <StarMark className="demo-star demo-star-br w-3.5 h-3.5" />
-
           <span className="relative z-10 flex items-center gap-2">
             Book a CMS demo
             <ArrowRight className="w-4 h-4" />

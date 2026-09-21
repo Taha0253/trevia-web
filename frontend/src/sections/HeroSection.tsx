@@ -20,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-extralight text-white tracking-tight leading-[1.15]">
                 <span className="whitespace-nowrap">
                   The{' '}
-                  <span className="font-extrabold text-[#00A09A]">Operating System</span>
+                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00A09A]">Operating System</span>
                 </span>{' '}
                 for EV charging Infrastructure.
               </h1>
