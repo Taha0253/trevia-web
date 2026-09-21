@@ -4,9 +4,6 @@ import {
   Flag,
   Zap,
   Users,
-  Code2,
-  Megaphone,
-  Settings,
   Mail,
   ArrowRight,
 } from 'lucide-react';
@@ -16,12 +13,6 @@ const CULTURE = [
   { icon: Rocket, title: 'Day 0 Mentality', desc: 'Stay hungry, move fast, and keep questioning what can be built better as we scale.' },
   { icon: Users, title: 'Small, Dense Team', desc: 'A lean team based out of T-Hub where every hire shapes the product and the culture.' },
   { icon: Zap, title: 'Bias for Action', desc: 'Learn by doing. Make informed decisions, execute quickly, and iterate on real infrastructure.' },
-];
-
-const TEAMS = [
-  { icon: Code2, title: 'Engineering', desc: 'Product & platform engineering across Trevia CMS and Trevia EV.' },
-  { icon: Settings, title: 'Operations', desc: 'Charger onboarding, network operations and partner support.' },
-  { icon: Megaphone, title: 'Growth & Sales', desc: 'Partnerships, GTM and enterprise CPO relationships.' },
 ];
 
 export const CareersPage: React.FC = () => {
@@ -77,31 +68,7 @@ export const CareersPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Where we're hiring next */}
-      <section className="max-w-7xl mx-auto px-6 space-y-8">
-        <div>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
-            Where We'll Be Hiring
-          </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-ink">
-            No open roles yet — but these are the teams we'll grow first.
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {TEAMS.map((t) => (
-            <div key={t.title} className="p-6 rounded-2xl bg-surface2 border border-edge space-y-3">
-              <div className="w-9 h-9 rounded-lg bg-surface border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
-                <t.icon className="w-4 h-4" />
-              </div>
-              <div className="text-sm font-bold text-ink">{t.title}</div>
-              <p className="text-xs text-ink3 leading-relaxed">{t.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Final CTA */}
+      {/* 3. Final CTA */}
       <section className="max-w-7xl mx-auto px-6">
         <div className="rounded-2xl bg-surface2 border border-[#00A09A]/40 p-8 sm:p-12 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-4">

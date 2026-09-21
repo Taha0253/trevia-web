@@ -110,12 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
               <li>
                 <Link to="/terms" className="hover:text-[#00A09A] transition-colors">Terms of Use</Link>
               </li>
-              <li>
-                <a href="https://treviaev.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A09A] transition-colors flex items-center gap-1">
-                  <span>treviaev.in</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              </li>
+
             </ul>
           </div>
 
