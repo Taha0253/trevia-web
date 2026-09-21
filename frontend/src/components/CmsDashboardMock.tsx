@@ -27,16 +27,26 @@ interface CmsDashboardMockProps {
 
 export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = false }) => {
   return (
-    <div className="w-full bg-[#030A14] border border-[#0E2C52] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,160,154,0.08)]">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#0E2C52] bg-[#061426]">
-        <div className="flex items-center gap-2 text-[#00A09A]">
-          <Radio className="w-3.5 h-3.5" />
-          <span className="text-[10px] font-mono uppercase tracking-wider font-semibold">Trevia CMS — Network Console</span>
-        </div>
-        <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">
-          Live
-        </span>
+    <div className="relative w-full">
+      {/* Soft gradient glow behind the card */}
+      <div className="absolute -inset-6 sm:-inset-10 -z-10 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-56 h-56 bg-indigo-400/20 rounded-full blur-[80px]" />
+        <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#00A09A]/20 rounded-full blur-[80px]" />
+        <div className="absolute top-1/3 right-0 w-40 h-40 bg-violet-400/15 rounded-full blur-[70px]" />
       </div>
+
+      {/* Gradient outline frame */}
+      <div className="p-px rounded-2xl bg-gradient-to-br from-white/15 via-[#00A09A]/25 to-indigo-400/20 shadow-[0_0_40px_rgba(0,160,154,0.1)]">
+        <div className="w-full bg-[#030A14] rounded-2xl overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-[#0E2C52] bg-[#061426]">
+            <div className="flex items-center gap-2 text-[#00A09A]">
+              <Radio className="w-3.5 h-3.5" />
+              <span className="text-[10px] font-mono uppercase tracking-wider font-semibold">Trevia CMS — Network Console</span>
+            </div>
+            <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">
+              Live
+            </span>
+          </div>
 
       {/* Network overview */}
       <div className={`grid grid-cols-4 gap-2 p-4 ${compact ? 'grid-cols-3' : 'sm:gap-3'}`}>
@@ -131,6 +141,8 @@ export const CmsDashboardMock: React.FC<CmsDashboardMockProps> = ({ compact = fa
           </div>
         </>
       )}
+        </div>
+      </div>
     </div>
   );
 };

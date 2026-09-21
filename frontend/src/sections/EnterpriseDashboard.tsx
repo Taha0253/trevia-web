@@ -54,8 +54,18 @@ export const EnterpriseDashboard: React.FC = () => {
         </div>
 
         {/* The Pure Black Enterprise Dashboard Frame */}
-        <div className="bg-[#030814] rounded-3xl p-5 sm:p-8 border border-[#0E2442] shadow-[0_25px_70px_rgba(0,0,0,0.8)] relative">
-          
+        <div className="relative">
+          {/* Soft gradient glow behind the frame */}
+          <div className="absolute -inset-6 sm:-inset-10 -z-10 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-72 h-72 bg-indigo-400/20 rounded-full blur-[100px]" />
+            <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#00A09A]/20 rounded-full blur-[100px]" />
+            <div className="absolute top-1/3 right-0 w-56 h-56 bg-violet-400/15 rounded-full blur-[90px]" />
+          </div>
+
+          {/* Gradient outline frame */}
+          <div className="p-px rounded-3xl bg-gradient-to-br from-white/15 via-[#00A09A]/25 to-indigo-400/20 shadow-[0_25px_70px_rgba(0,0,0,0.8)]">
+        <div className="bg-[#030814] rounded-3xl p-5 sm:p-8 relative">
+
           {/* Top Pill Navigation Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none text-xs font-medium border-b border-[#0A1D36]">
             {tabs.map((tab) => {
@@ -355,6 +365,8 @@ export const EnterpriseDashboard: React.FC = () => {
             </div>
           </div>
 
+        </div>
+          </div>
         </div>
 
       </div>
