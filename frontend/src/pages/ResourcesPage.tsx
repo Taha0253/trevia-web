@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, ArrowRight, Code2, TrendingUp, Building2 } from 'lucide-react';
+import {ArrowRight, Code2, TrendingUp, Building2 } from 'lucide-react';
 import { RESOURCES, CATEGORY_LABELS } from '../data/resources';
 import type { ResourceCategory } from '../data/resources';
 
@@ -31,13 +31,10 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onRequestDemo }) =
       {/* Hero */}
       <section className="border-b border-edge/80 bg-surface py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-6 space-y-3 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface2 border border-edge text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
-            <FileText className="w-3.5 h-3.5 text-[#00A09A]" />
-            <span>Resources — Knowledge Hub</span>
-          </div>
+
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
-            Insights for the EV charging ecosystem.
+            Insights for the <span className="font-extrabold text-gradient-teal">EV charging ecosystem.</span>
           </h1>
 
           <p className="text-sm sm:text-base text-ink2 leading-relaxed">

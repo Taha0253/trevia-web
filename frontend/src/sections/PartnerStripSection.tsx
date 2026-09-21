@@ -45,16 +45,12 @@ export const PartnerStripSection: React.FC = () => {
   return (
     <section className="relative py-16 sm:py-20 bg-base overflow-hidden">
       <ScrollReveal className="max-w-6xl mx-auto px-6 relative z-10 text-center">
-        <div className="mb-3">
-          <span className="text-[#00A09A] font-mono text-[11px] font-semibold tracking-[0.28em] uppercase">
-            Connected Ecosystem
-          </span>
-        </div>
+
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-ink tracking-tight leading-tight">
           Backed by the ecosystem
           <br />
-          <span className="font-extrabold">building India's EV future.</span>
+          <span className="font-extrabold text-gradient-teal">building India's EV future.</span>
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-ink3">
           Recognised by government bodies, incubators, and the platforms powering our infrastructure.

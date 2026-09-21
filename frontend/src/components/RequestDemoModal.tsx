@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { X, CheckCircle, ArrowRight, ShieldCheck} from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 
@@ -76,10 +76,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
         {!isSuccess ? (
           <div>
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] text-xs font-mono font-semibold mb-3">
-                <Zap className="w-3.5 h-3.5" />
-                <span>PARTNER & CPO ONBOARDING</span>
-              </div>
+
               <h3 className="text-2xl font-bold tracking-tight text-ink">
                 Connect with TreviaEV
               </h3>

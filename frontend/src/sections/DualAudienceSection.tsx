@@ -15,11 +15,9 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
         
         {/* Section Heading */}
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-[#00A09A] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-3">
-            <span>ONE PLATFORM, EVERY LAYER</span>
-          </div>
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-ink tracking-tight">
-            One Platform. <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">Built for Charging Operators, Fleets &amp; Drivers.</span>
+            One Platform. <span className="font-extrabold text-gradient-teal">Built for Charging Operators, Fleets &amp; Drivers.</span>
           </h2>
           <p className="text-sm sm:text-base text-ink3 mt-3 font-normal">
             Trevia CMS runs the network. Trevia's driver layer connects the people who use it.

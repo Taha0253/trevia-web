@@ -32,7 +32,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-3 max-w-3xl">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
-                Trevia CMS — Charging Management Software
+                Trevia CMS — <span className="font-extrabold text-gradient-teal">Charging Management Software</span>
               </h1>
 
               <p className="text-sm sm:text-base text-ink2 leading-relaxed">

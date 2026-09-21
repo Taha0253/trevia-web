@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
           <div className="lg:col-span-7 relative w-full -ml-2 sm:-ml-4 lg:-ml-10 xl:-ml-14">
             <div className="absolute top-1/4 right-[30%] w-64 h-64 bg-[#00A09A]/12 blur-[100px] rounded-full pointer-events-none" />
 
-            <div className="relative flex justify-end items-center w-full">
+            <div className="relative flex justify-end items-center w-full min-h-[320px] lg:min-h-[min(68vh,620px)]">
               <img
                 src="/hero-ev-dark.png"
                 alt="Electric vehicle charging at a Trevia-connected station"
@@ -84,6 +84,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
                 }}
                 draggable={false}
               />
+
+              <div className="hero-light-only absolute inset-0 hero-grid-pattern-center pointer-events-none" />
 
               <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-base to-transparent pointer-events-none" />
               <div className="absolute bottom-0 inset-x-0 h-14 bg-gradient-to-t from-base via-base/70 to-transparent pointer-events-none" />

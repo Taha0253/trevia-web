@@ -28,9 +28,7 @@ export const GovernmentPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) =
       {/* Header */}
       <section className="border-b border-edge/80 bg-surface py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6 space-y-3 max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-indigo-400">
-            Solutions — For Government & Public Bodies
-          </div>
+
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
             A Data-Driven View of Public EV Charging Infrastructure

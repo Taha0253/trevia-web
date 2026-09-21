@@ -48,11 +48,7 @@ export const EcosystemSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         
         {/* Eyebrow */}
-        <div className="mb-3">
-          <span className="text-[#00A09A] font-mono text-xs font-semibold tracking-[0.25em] uppercase">
-            CONNECTED ECOSYSTEM
-          </span>
-        </div>
+
 
         {/* Headline */}
         <h2>

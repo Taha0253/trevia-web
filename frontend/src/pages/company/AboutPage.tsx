@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Info,
   ArrowRight,
   ChevronDown,
   Lightbulb,
@@ -60,13 +59,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             <div className="lg:col-span-3 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface2 border border-edge text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
-                <Info className="w-3.5 h-3.5 text-[#00A09A]" />
-                <span>Company — About Trevia</span>
-              </div>
+
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight leading-[1.15]">
-                Building the digital infrastructure behind EV charging.
+                Building the <span className="font-extrabold text-gradient-teal">digital infrastructure</span> behind EV charging.
               </h1>
 
               <p className="text-sm sm:text-base text-ink2 leading-relaxed max-w-xl">
@@ -264,16 +260,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
 
       {/* 7. Final CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="rounded-2xl bg-surface2 border border-[#00A09A]/40 p-8 sm:p-12 text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-ink">
+        <div className="rounded-2xl bg-surface2 border border-[#00A09A]/40 p-8 sm:p-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-4">
             Building the future of EV charging infrastructure together.
           </h2>
-          <p className="text-ink text-sm sm:text-base max-w-xl mx-auto opacity-90">
+          <p className="text-base sm:text-lg text-ink2 font-normal leading-relaxed max-w-xl mx-auto">
             Whether you operate charging infrastructure, build charging hardware, or are building the next layer of EV mobility, let's connect.
           </p>
-          <p className="text-ink text-sm sm:text-base pt-1 opacity-90">
+          <p className="text-base sm:text-lg text-ink2 font-normal leading-relaxed mt-3">
             Send us your resume/portfolio at{' '}
-            <a href="mailto:careers@treviaev.in" className="text-[#00A09A] font-semibold hover:text-ink transition-colors opacity-100">
+            <a href="mailto:careers@treviaev.in" className="text-[#00A09A] font-semibold hover:text-ink transition-colors">
               careers@treviaev.in
             </a>{' '}
             to join our team.

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Layers, 
+import {  
   ArrowRight, 
   HelpCircle
 } from 'lucide-react';
@@ -22,10 +21,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({ onRequestDemo })
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface2 border border-edge text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
-              <Layers className="w-3.5 h-3.5 text-[#00A09A]" />
-              <span>Technology — OCPP & Interoperability</span>
-            </div>
+
 
             <h1 className="text-4xl sm:text-6xl font-light text-ink tracking-tight leading-[1.08]">
               Built for interoperability, not a{' '}

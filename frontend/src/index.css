@@ -13,6 +13,7 @@
   --c-text-secondary: 203 213 225;
   --c-text-muted: 148 163 184;
   --c-text-faint: 100 116 139;
+  --c-gradient-teal-end: 255 255 255;
   color-scheme: dark;
 }
 
@@ -27,12 +28,29 @@
   --c-text-secondary: 51 65 85;
   --c-text-muted: 100 116 139;
   --c-text-faint: 148 163 184;
+  --c-gradient-teal-end: 8 15 12;
   color-scheme: light;
+}
+
+.text-gradient-teal {
+  background-image: linear-gradient(to right, rgb(var(--c-gradient-teal-end)), #00A09A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Shown only in dark mode — this artwork was composited against a dark background */
 :root[data-theme='light'] .hero-dark-only {
   display: none;
+}
+
+/* Shown only in light mode — fills the space the dark-mode hero artwork occupies */
+.hero-light-only {
+  display: none;
+}
+:root[data-theme='light'] .hero-light-only {
+  display: block;
 }
 
 /* Approach journey cards: invisible in dark mode (matches the original design),

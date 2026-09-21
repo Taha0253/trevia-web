@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface ApisPageProps {
   onRequestDemo: () => void;
@@ -16,10 +16,7 @@ export const ApisPage: React.FC<ApisPageProps> = ({ onRequestDemo }) => {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface2 border border-edge text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase">
-              <Code2 className="w-3.5 h-3.5 text-[#00A09A]" />
-              <span>Technology — APIs & Integrations</span>
-            </div>
+
 
             <h1 className="text-4xl sm:text-6xl font-light text-ink tracking-tight leading-[1.08]">
               Programmatic access to your{' '}

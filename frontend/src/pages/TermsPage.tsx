@@ -1,13 +1,11 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
+
 
 export const TermsPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24 space-y-8">
       <div className="space-y-3 pb-6 border-b border-edge">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface2 border border-edge text-[#00A09A] text-xs font-mono uppercase">
-          <Shield className="w-3.5 h-3.5" /> Legal Document
-        </div>
+
         <h1 className="text-3xl sm:text-5xl font-bold text-ink">Terms of Use</h1>
         <p className="text-xs font-mono text-ink3">Last updated: September 2025 • Trevia EV Technologies</p>
       </div>

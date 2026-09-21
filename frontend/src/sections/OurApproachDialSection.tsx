@@ -205,19 +205,15 @@ export const OurApproachDialSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal className="text-center mb-10 md:mb-14">
-          <div className="inline-flex border border-edge rounded-full px-4 py-1.5 mb-4">
-            <span className="text-ink3 text-[11px] font-mono font-semibold tracking-[0.28em] uppercase">
-              The Signature Journey
-            </span>
-          </div>
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-light text-ink tracking-tight leading-[1.15]">
             Five layers. One operating system.
             <br className="hidden md:block" />
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">
+            <span className="font-extrabold text-gradient-teal">
               {' '}Our Approach.
             </span>
           </h2>
-          <p className="text-sm sm:text-base text-ink3 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
             An uninterrupted energy operating layer that harmonizes charger connectivity, real-time intelligence, remote control, and network scalability.
           </p>
         </ScrollReveal>

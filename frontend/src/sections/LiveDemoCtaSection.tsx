@@ -16,9 +16,9 @@ export const LiveDemoCtaSection: React.FC<LiveDemoCtaSectionProps> = ({ onCta })
 
       <ScrollReveal className="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-[1.15]">
-          See your charging infrastructure operate as one network.
+          See your charging infrastructure <span className="font-extrabold text-gradient-teal">operate as one network.</span>
         </h2>
-        <p className="mt-4 max-w-md text-sm sm:text-base text-ink3 leading-relaxed">
+        <p className="mt-5 max-w-md text-base sm:text-lg text-ink2 font-normal leading-relaxed">
           Explore Trevia CMS through a live walkthrough of OCPP connectivity, telemetry, remote operations and network management.
         </p>
 

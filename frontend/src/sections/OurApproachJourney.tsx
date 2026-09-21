@@ -416,12 +416,9 @@ export const OurApproachJourney: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00A09A] text-xs font-mono font-semibold uppercase tracking-[0.25em] mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00A09A] animate-pulse" />
-              <span>THE SIGNATURE JOURNEY</span>
-            </div>
+
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-ink tracking-tight leading-tight">
-              Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] via-[#00A09A] to-white">Approach.</span>
+              Our <span className="font-extrabold text-gradient-teal">Approach.</span>
             </h2>
             <p className="text-base sm:text-lg text-ink3 max-w-xl mt-3 font-normal">
               An uninterrupted, 5-stage energy journey that harmonizes discovery, navigation, charging, payments, and grid intelligence.

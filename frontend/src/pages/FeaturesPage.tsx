@@ -55,9 +55,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
       {/* TREVIA CMS */}
       <section id="cms" className="max-w-7xl mx-auto px-6 space-y-10 scroll-mt-24">
         <div className="max-w-2xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-2">
-            For CPOs & Charging Network Operators
-          </div>
+
           <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
             One Operating Layer for Your Charging Network
           </h2>
@@ -122,9 +120,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
       {/* TREVIA EV */}
       <section id="ev" className="max-w-7xl mx-auto px-6 space-y-10 scroll-mt-24">
         <div className="max-w-2xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400 mb-2">
-            For EV Drivers & Fleets
-          </div>
+
           <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
             One Charging Experience Across Networks
           </h2>

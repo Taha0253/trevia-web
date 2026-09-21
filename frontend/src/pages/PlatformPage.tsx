@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Layers,
+  
   Radio,
   Smartphone,
   CheckCircle2,
@@ -22,14 +22,10 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
       {/* Header */}
       <section className="border-b border-edge/80 bg-surface py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-6 space-y-3 max-w-3xl">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A]">
-            Platform Architecture
-          </div>
+
 
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-surface2 border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A]">
-              <Layers className="w-4 h-4" />
-            </div>
+
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
               The Digital Infrastructure for EV Charging
             </h1>
