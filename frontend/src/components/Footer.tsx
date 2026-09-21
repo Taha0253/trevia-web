@@ -85,9 +85,6 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
                 <Link to="/about" className="hover:text-[#00A09A] transition-colors">About Trevia</Link>
               </li>
               <li>
-                <Link to="/traction" className="hover:text-[#00A09A] transition-colors">Traction & Journey</Link>
-              </li>
-              <li>
                 <Link to="/resources" className="hover:text-[#00A09A] transition-colors">Resources & Insights</Link>
               </li>
               <li>

@@ -61,12 +61,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   const [platformOpen, setPlatformOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const location = useLocation();
 
   const featuresRef = useRef<HTMLDivElement>(null);
   const platformRef = useRef<HTMLDivElement>(null);
   const solutionsRef = useRef<HTMLDivElement>(null);
   const companyRef = useRef<HTMLDivElement>(null);
+  const resourcesRef = useRef<HTMLDivElement>(null);
   const hoverCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Close dropdowns
@@ -76,16 +78,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
     setPlatformOpen(false);
     setSolutionsOpen(false);
     setCompanyOpen(false);
+    setResourcesOpen(false);
     setMobileOpen(false);
   };
 
   // Open a dropdown immediately on hover, closing the others
-  const openMenuOnHover = useCallback((menu: 'features' | 'platform' | 'solutions' | 'company') => {
+  const openMenuOnHover = useCallback((menu: 'features' | 'platform' | 'solutions' | 'company' | 'resources') => {
     if (hoverCloseTimeout.current) clearTimeout(hoverCloseTimeout.current);
     setFeaturesOpen(menu === 'features');
     setPlatformOpen(menu === 'platform');
     setSolutionsOpen(menu === 'solutions');
     setCompanyOpen(menu === 'company');
+    setResourcesOpen(menu === 'resources');
   }, []);
 
   // Small delay so moving the cursor from the trigger into the panel doesn't close it
@@ -96,6 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       setPlatformOpen(false);
       setSolutionsOpen(false);
       setCompanyOpen(false);
+      setResourcesOpen(false);
     }, 120);
   }, []);
 
@@ -113,6 +118,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       }
       if (companyRef.current && !companyRef.current.contains(event.target as Node)) {
         setCompanyOpen(false);
+      }
+      if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
+        setResourcesOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -156,6 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setPlatformOpen(false);
                 setSolutionsOpen(false);
                 setCompanyOpen(false);
+                setResourcesOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
                 featuresOpen ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
@@ -169,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
               <div className="absolute top-full left-0 mt-2 w-[640px] bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl z-50 backdrop-blur-2xl overflow-hidden">
                 <div className="grid grid-cols-2">
                   {/* Trevia CMS — emphasized as the core B2B product */}
-                  <div className="p-6 border-r border-[#0E2C52]/70 bg-gradient-to-b from-[#0A2240]/50 to-transparent">
+                  <div className="p-6 border-r border-[#0E2C52]/70">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A] shrink-0">
                         <LayoutDashboard className="w-4 h-4" />
@@ -272,6 +281,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setPlatformOpen(!platformOpen);
                 setSolutionsOpen(false);
                 setCompanyOpen(false);
+                setResourcesOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
                 isActive('/platform') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
@@ -315,6 +325,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setPlatformOpen(false);
                 setSolutionsOpen(!solutionsOpen);
                 setCompanyOpen(false);
+                setResourcesOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
                 isActive('/solutions') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
@@ -373,9 +384,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 setPlatformOpen(false);
                 setCompanyOpen(!companyOpen);
                 setSolutionsOpen(false);
+                setResourcesOpen(false);
               }}
               className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
-                isActive('/about') || isActive('/traction') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+                isActive('/about') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
               }`}
             >
               <span>Company</span>
@@ -383,33 +395,61 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </button>
 
             {companyOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
+              <div className="absolute top-full left-0 mt-2 w-64 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
                 <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
                   Company
                 </div>
-                <div className="space-y-3">
-                  <Link to="/about" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
+                <Link to="/about" onClick={closeAllMenus} className="block group">
+                  <div className="text-sm font-semibold text-white normal-case group-hover:text-[#00A09A] transition-colors">
                     About Trevia
-                  </Link>
-                  <Link to="/traction" onClick={closeAllMenus} className="block text-sm font-semibold text-white normal-case hover:text-[#00A09A] transition-colors">
-                    Traction & Journey
-                  </Link>
-                </div>
+                  </div>
+                  <div className="text-xs text-slate-400 normal-case font-normal leading-snug mt-0.5">
+                    Our story, traction and the people building Trevia.
+                  </div>
+                </Link>
               </div>
             )}
           </div>
 
-          {/* Resources */}
-          {/* Resources */}
-          <Link
-            to="/resources"
-            onClick={closeAllMenus}
-            className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/resources') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
-            }`}
+          {/* Resources Dropdown */}
+          <div
+            className="relative"
+            ref={resourcesRef}
+            onMouseEnter={() => openMenuOnHover('resources')}
+            onMouseLeave={scheduleMenusClose}
           >
-            Resources
-          </Link>
+            <button
+              onClick={() => {
+                setFeaturesOpen(false);
+                setPlatformOpen(false);
+                setSolutionsOpen(false);
+                setCompanyOpen(false);
+                setResourcesOpen(!resourcesOpen);
+              }}
+              className={`px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
+                isActive('/resources') ? 'text-[#00A09A] bg-[#0A2240]/50' : 'hover:text-white hover:bg-slate-800/40'
+              }`}
+            >
+              <span>Resources</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? 'rotate-180 text-[#00A09A]' : ''}`} />
+            </button>
+
+            {resourcesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-[#030A14] border border-[#0E2C52] rounded-2xl shadow-2xl p-5 z-50 backdrop-blur-2xl">
+                <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider mb-3">
+                  Resources
+                </div>
+                <Link to="/resources" onClick={closeAllMenus} className="block group">
+                  <div className="text-sm font-semibold text-white normal-case group-hover:text-[#00A09A] transition-colors">
+                    Knowledge Hub
+                  </div>
+                  <div className="text-xs text-slate-400 normal-case font-normal leading-snug mt-0.5">
+                    Insights, technical guides and perspectives on EV charging infrastructure.
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Right CTA Button */}
@@ -508,7 +548,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             <div className="text-[10px] font-mono text-[#00A09A]">Company</div>
             <div className="pl-3 space-y-2 normal-case font-medium">
               <Link to="/about" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">About Trevia</Link>
-              <Link to="/traction" onClick={closeAllMenus} className="block text-slate-300 hover:text-white">Traction & Journey</Link>
             </div>
           </div>
 

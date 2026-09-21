@@ -19,8 +19,8 @@ const GovernmentPage = lazy(() => import('./pages/solutions/GovernmentPage').the
 const TechnologyPage = lazy(() => import('./pages/technology/TechnologyPage').then(m => ({ default: m.TechnologyPage })));
 const ApisPage = lazy(() => import('./pages/technology/ApisPage').then(m => ({ default: m.ApisPage })));
 const AboutPage = lazy(() => import('./pages/company/AboutPage').then(m => ({ default: m.AboutPage })));
-const TractionPage = lazy(() => import('./pages/company/TractionPage').then(m => ({ default: m.TractionPage })));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage').then(m => ({ default: m.ResourcesPage })));
+const ResourceDetailPage = lazy(() => import('./pages/ResourceDetailPage').then(m => ({ default: m.ResourceDetailPage })));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage })));
 const TermsPage = lazy(() => import('./pages/TermsPage').then(m => ({ default: m.TermsPage })));
 const SecurityPage = lazy(() => import('./pages/SecurityPage').then(m => ({ default: m.SecurityPage })));
@@ -78,7 +78,6 @@ const AppContent: React.FC = () => {
             
             {/* Company */}
             <Route path="/about" element={<AboutPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
-            <Route path="/traction" element={<TractionPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
             
             {/* Demo Page */}
             <Route path="/demo" element={<DemoPage onRequestModal={() => setIsDemoModalOpen(true)} />} />
@@ -87,6 +86,7 @@ const AppContent: React.FC = () => {
 
             {/* Resources & Legal */}
             <Route path="/resources" element={<ResourcesPage onRequestDemo={() => setIsDemoModalOpen(true)} />} />
+            <Route path="/resources/:slug" element={<ResourceDetailPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/security" element={<SecurityPage />} />

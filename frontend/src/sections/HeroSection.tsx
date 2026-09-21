@@ -13,12 +13,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
       <div className="absolute top-1/2 left-[28%] w-[900px] h-[900px] bg-gradient-to-br from-[#00A09A]/16 via-[#00A09A]/6 to-transparent rounded-full blur-[180px] pointer-events-none animate-hero-glow" />
 
       <div className="w-full pl-6 sm:pl-10 md:pl-14 lg:pl-16 xl:pl-20 pr-0 relative z-10">
-        <div className="mb-5 flex items-center gap-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#061426] border border-[#0E2C52] text-[#00A09A] text-xs font-mono font-medium tracking-wider uppercase shadow-[0_0_20px_rgba(0,160,154,0.18)]">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>India's Unified EV Network</span>
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-4 lg:gap-0">
           <div className="lg:col-span-5 space-y-6 z-10 lg:pr-2 max-w-xl">
