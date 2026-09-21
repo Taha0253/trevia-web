@@ -21,7 +21,7 @@ import { PhoneMockup } from '../components/PhoneMockup';
 import { CmsDashboardMock } from '../components/CmsDashboardMock';
 
 interface FeaturesPageProps {
-  
+  onRequestDemo: () => void;
 }
 
 const CMS_CAPABILITIES = [
@@ -58,7 +58,7 @@ const FlowArrow: React.FC = () => (
   <ArrowRight className="w-4 h-4 text-[#00A09A] shrink-0 rotate-90 sm:rotate-0" />
 );
 
-export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo }) => {
+export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRequestDemo }) => {
   return (
     <div className="space-y-20 pb-24">
 
