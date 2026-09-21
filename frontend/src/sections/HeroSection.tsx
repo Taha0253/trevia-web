@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, Coffee } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
   onExplore: () => void;
@@ -45,17 +45,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
               >
                 Partner with Trevia
               </button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2.5 pt-1 text-xs text-slate-300">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#030A14] border border-[#0E284A]">
-                <Zap className="w-3.5 h-3.5 text-[#00A09A]" />
-                <span>1-Tap UPI Auto-Pay</span>
-              </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#030A14] border border-[#0E284A]">
-                <Coffee className="w-3.5 h-3.5 text-amber-400" />
-                <span>Cafes &amp; Restrooms Listed</span>
-              </div>
             </div>
 
             <div className="pt-5 border-t border-[#0E223D]/70 flex items-center gap-6 sm:gap-8 text-xs text-slate-400">
