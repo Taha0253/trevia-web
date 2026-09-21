@@ -4,43 +4,18 @@ import {
   AlertCircle,
   CheckCircle2,
   ArrowRight,
-  Radio,
-  Activity,
-  RefreshCw,
-  Sliders,
-  Database,
-  Code2,
   MapPin,
   Navigation,
   Route as RouteIcon,
   CalendarClock,
-  Wallet,
-  Compass,
 } from 'lucide-react';
 import { PhoneMockup } from '../components/PhoneMockup';
 import { CmsDashboardMock } from '../components/CmsDashboardMock';
+import { CMS_CAPABILITIES, EV_CAPABILITIES } from '../data/features';
 
 interface FeaturesPageProps {
   onRequestDemo: () => void;
 }
-
-const CMS_CAPABILITIES = [
-  { icon: Radio, title: 'OCPP Connectivity', desc: 'Connect supported multi-vendor chargers through OCPP.' },
-  { icon: Activity, title: 'Real-Time Monitoring', desc: 'Monitor charger status, connectivity and network activity in real time.' },
-  { icon: RefreshCw, title: 'Remote Operations', desc: 'Execute supported charger commands remotely and reduce unnecessary site visits.' },
-  { icon: Sliders, title: 'Multi-Site Management', desc: 'Manage charging infrastructure across multiple locations from one platform.' },
-  { icon: Database, title: 'Sessions & Transactions', desc: 'Track charging sessions, energy, duration and transaction data.' },
-  { icon: Code2, title: 'APIs & Integrations', desc: 'Connect charging operations with existing enterprise systems.' },
-];
-
-const EV_CAPABILITIES = [
-  { icon: MapPin, title: 'Charger Discovery', desc: 'Find compatible charging stations across connected networks.' },
-  { icon: Activity, title: 'Real-Time Availability', desc: 'See charger availability and station status before you arrive.' },
-  { icon: Compass, title: 'AI Trip Planner', desc: 'Plan EV journeys with charging stops based on route and charging requirements.' },
-  { icon: RouteIcon, title: 'Smart Route Planning', desc: 'Identify practical charging stops along your journey.' },
-  { icon: Navigation, title: 'Reserve & Navigate', desc: 'Reserve supported chargers and navigate directly to the station.' },
-  { icon: Wallet, title: 'Unified Payments', desc: 'Manage charging payments across connected networks through one experience.' },
-];
 
 const FlowStep: React.FC<{ label: string; highlight?: boolean }> = ({ label, highlight }) => (
   <div
@@ -118,7 +93,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
             {CMS_CAPABILITIES.map((cap) => (
-              <div key={cap.title} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+              <div key={cap.slug} id={cap.slug} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2 scroll-mt-28">
                 <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-[#00A09A]">
                   <cap.icon className="w-4 h-4" />
                 </div>
@@ -230,7 +205,7 @@ export const FeaturesPage: React.FC<FeaturesPageProps> = ({ onRequestDemo: _onRe
 
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 order-1 lg:order-2">
             {EV_CAPABILITIES.map((cap) => (
-              <div key={cap.title} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2">
+              <div key={cap.slug} id={cap.slug} className="p-4 rounded-xl bg-[#030A14] border border-[#0E2C52] space-y-2 scroll-mt-28">
                 <div className="w-8 h-8 rounded-lg bg-[#061426] border border-[#0E2C52] flex items-center justify-center text-emerald-400">
                   <cap.icon className="w-4 h-4" />
                 </div>

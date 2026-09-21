@@ -5,16 +5,18 @@ import {
   Menu,
   X,
   ArrowUpRight,
+  CornerDownRight,
   LayoutDashboard,
   Smartphone
 } from 'lucide-react';
+import { CMS_CAPABILITIES, EV_CAPABILITIES } from '../data/features';
 
 interface FeatureProduct {
   key: 'cms' | 'ev';
   name: string;
   icp: string;
   tagline: string;
-  items: string[];
+  capabilities: typeof CMS_CAPABILITIES;
   cta: { label: string; to: string };
 }
 
@@ -24,14 +26,7 @@ const FEATURE_PRODUCTS: FeatureProduct[] = [
     name: 'Trevia CMS',
     icp: 'For CPOs & Charging Network Operators',
     tagline: 'One operating layer for multi-vendor charging infrastructure.',
-    items: [
-      'OCPP Connectivity',
-      'Real-Time Monitoring',
-      'Remote Operations',
-      'Multi-Site Management',
-      'Sessions & Transactions',
-      'APIs & Integrations',
-    ],
+    capabilities: CMS_CAPABILITIES,
     cta: { label: 'Explore Trevia CMS', to: '/cms' },
   },
   {
@@ -39,14 +34,7 @@ const FEATURE_PRODUCTS: FeatureProduct[] = [
     name: 'Trevia EV',
     icp: 'For EV Drivers & Fleets',
     tagline: 'One charging experience across connected networks.',
-    items: [
-      'Charger Discovery',
-      'Real-Time Availability',
-      'AI Trip Planner',
-      'Smart Route Planning',
-      'Reserve & Navigate',
-      'Unified Payments',
-    ],
+    capabilities: EV_CAPABILITIES,
     cta: { label: 'Explore Trevia EV', to: '/drive' },
   },
 ];
@@ -192,14 +180,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                       {FEATURE_PRODUCTS[0].tagline}
                     </p>
                     <div className="space-y-2.5 mb-5">
-                      {FEATURE_PRODUCTS[0].items.map((item) => (
+                      {FEATURE_PRODUCTS[0].capabilities.map((cap) => (
                         <Link
-                          key={item}
-                          to="/features#cms"
+                          key={cap.slug}
+                          to={`/features#${cap.slug}`}
                           onClick={closeAllMenus}
-                          className="block text-xs font-semibold text-slate-200 normal-case hover:text-[#00A09A] transition-colors"
+                          className="group/item flex items-center gap-1.5 text-xs font-semibold text-slate-200 normal-case hover:text-[#00A09A] transition-colors"
                         >
-                          {item}
+                          <CornerDownRight className="w-3 h-3 text-slate-600 group-hover/item:text-[#00A09A] shrink-0 transition-colors" />
+                          <span>{cap.title}</span>
                         </Link>
                       ))}
                     </div>
@@ -228,14 +217,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                       {FEATURE_PRODUCTS[1].tagline}
                     </p>
                     <div className="space-y-2.5 mb-5">
-                      {FEATURE_PRODUCTS[1].items.map((item) => (
+                      {FEATURE_PRODUCTS[1].capabilities.map((cap) => (
                         <Link
-                          key={item}
-                          to="/features#ev"
+                          key={cap.slug}
+                          to={`/features#${cap.slug}`}
                           onClick={closeAllMenus}
-                          className="block text-xs font-semibold text-slate-200 normal-case hover:text-emerald-400 transition-colors"
+                          className="group/item flex items-center gap-1.5 text-xs font-semibold text-slate-200 normal-case hover:text-emerald-400 transition-colors"
                         >
-                          {item}
+                          <CornerDownRight className="w-3 h-3 text-slate-600 group-hover/item:text-emerald-400 shrink-0 transition-colors" />
+                          <span>{cap.title}</span>
                         </Link>
                       ))}
                     </div>
@@ -247,6 +237,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                       <span>{FEATURE_PRODUCTS[1].cta.label}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-4 px-6 py-3 border-t border-[#0E2C52]/70 bg-[#040C18]/60">
+                  <div className="flex items-center gap-4 text-[10px] font-mono text-slate-500 normal-case">
+                    <span className="flex items-center gap-1"><CornerDownRight className="w-3 h-3" /> Jumps to a section on this page</span>
+                    <span className="flex items-center gap-1"><ArrowUpRight className="w-3 h-3" /> Opens a different page</span>
                   </div>
                 </div>
 
@@ -497,18 +494,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                   <div className="text-[9px] font-mono text-slate-500">{product.icp}</div>
                 </div>
                 <div className="pl-1 space-y-2 normal-case font-medium">
-                  {product.items.map((item) => (
+                  {product.capabilities.map((cap) => (
                     <Link
-                      key={item}
-                      to={`/features#${product.key}`}
+                      key={cap.slug}
+                      to={`/features#${cap.slug}`}
                       onClick={closeAllMenus}
-                      className="block text-slate-300 hover:text-white"
+                      className="flex items-center gap-1.5 text-slate-300 hover:text-white"
                     >
-                      {item}
+                      <CornerDownRight className="w-3 h-3 text-slate-600 shrink-0" />
+                      <span>{cap.title}</span>
                     </Link>
                   ))}
-                  <Link to={product.cta.to} onClick={closeAllMenus} className="block text-[#00A09A] font-bold">
-                    {product.cta.label} &rarr;
+                  <Link to={product.cta.to} onClick={closeAllMenus} className="flex items-center gap-1.5 text-[#00A09A] font-bold pt-1">
+                    <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+                    <span>{product.cta.label}</span>
                   </Link>
                 </div>
               </div>
