@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, ShieldCheck, ArrowRight, Check, Sparkles, Loader2 } from 'lucide-react';
+import { Zap, ShieldCheck, ArrowRight, Check, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 
