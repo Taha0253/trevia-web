@@ -186,9 +186,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {PRINCIPLES.map((p) => (
-            <div key={p.title} className="p-5 rounded-xl bg-surface border border-edge space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+          {PRINCIPLES.map((p, idx) => (
+            <div
+              key={p.title}
+              className={`p-5 rounded-xl bg-surface border border-edge transition-colors hover:border-[#00A09A]/40 ${
+                idx < 3 ? 'md:col-span-2' : 'md:col-span-3'
+              }`}
+            >
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A] shrink-0">
                   <p.icon className="w-4 h-4" />
