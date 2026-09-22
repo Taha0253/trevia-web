@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {ArrowRight, Code2, TrendingUp, Building2 } from 'lucide-react';
+import { ArrowRight, Code2, TrendingUp, Building2 } from 'lucide-react';
 import { RESOURCES, CATEGORY_LABELS } from '../data/resources';
 import type { ResourceCategory } from '../data/resources';
 
@@ -48,12 +48,20 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onRequestDemo }) =
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {CATEGORIES.map((cat) => (
             <div key={cat.key} className="p-5 rounded-xl bg-surface border border-edge space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A]">
-                <cat.icon className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">{CATEGORY_LABELS[cat.key]}</div>
-              <p className="text-xs text-ink3 leading-relaxed">{cat.desc}</p>
-            </div>
+  <div className="flex items-center gap-2">
+    <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A] shrink-0">
+      <cat.icon className="w-4 h-4" />
+    </div>
+
+    <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A09A]">
+      {CATEGORY_LABELS[cat.key]}
+    </div>
+  </div>
+
+  <p className="text-xs text-ink3 leading-relaxed">
+    {cat.desc}
+  </p>
+</div>
           ))}
         </div>
 
@@ -63,11 +71,10 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onRequestDemo }) =
             <button
               key={f.key}
               onClick={() => setFilter(f.key)}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider transition-all ${
-                filter === f.key
+              className={`px-4 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider transition-all ${filter === f.key
                   ? 'bg-[#00A09A] text-black'
                   : 'bg-surface2 text-ink2 border border-edge hover:border-[#00A09A]/50'
-              }`}
+                }`}
             >
               {f.label}
             </button>
@@ -110,7 +117,10 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onRequestDemo }) =
           <h2 className="text-xl sm:text-2xl font-bold text-ink">
             Want to talk about EV charging infrastructure?
           </h2>
-          <p className="text-ink2 text-sm sm:text-base max-w-xl mx-auto">
+          <p
+            className="text-sm sm:text-base max-w-xl mx-auto"
+            style={{ color: 'rgb(var(--c-text-secondary))' }}
+          >
             Have a technical, commercial or integration question? Let's discuss how Trevia can fit into your charging ecosystem.
           </p>
           <div className="pt-2">

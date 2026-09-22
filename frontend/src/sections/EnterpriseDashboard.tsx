@@ -48,7 +48,8 @@ export const EnterpriseDashboard: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-ink tracking-tight">
             Next-Gen <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00A09A] to-[#33C4BF]">CPO Command Center.</span>
           </h2>
-          <p className="text-sm sm:text-base text-ink3 mt-3 font-normal">
+          <p className="text-sm sm:text-base max-w-xl mx-auto"
+            style={{ color: 'rgb(var(--c-text-secondary))' }}>
             Monitor every charging station in real time, resolve glitches remotely, and automate driver billing from one intuitive, unified command center.
           </p>
         </div>

@@ -31,7 +31,7 @@ const TRACTION = [
   { value: '170', label: 'Charging Stations', desc: 'Commercial pilot secured' },
   { value: 'CPOs', label: 'Enterprise Discussions', desc: 'Additional commercial opportunities in progress' },
   { value: 'Ecosystem', label: 'T-Hub • DPIIT • Google for Startups', desc: 'Incubation & program support' },
-  { value: 'MoU', label: 'Pilot Signing', desc: 'Underway' },
+  // { value: 'MoU', label: 'Pilot Signing', desc: 'Underway' },
 ];
 
 const PRINCIPLES = [
@@ -195,7 +195,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
                 </div>
                 <h4 className="text-sm font-bold text-ink">{p.title}</h4>
               </div>
-              <p className="text-xs text-ink3 leading-relaxed">{p.desc}</p>
+              {/* <p className="text-xs text-ink3 leading-relaxed">{p.desc}</p> */}
             </div>
           ))}
         </div>
@@ -206,7 +206,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
         <div className="space-y-6">
           <div>
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
-              The Founder
+              Founder
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-ink">
               Building Trevia from the ground up.

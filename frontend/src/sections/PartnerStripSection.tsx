@@ -15,7 +15,7 @@ const GitHubMark: React.FC = () => (
 );
 
 const GcpMark: React.FC = () => (
-  <img src="/GCP.png" alt="Google Cloud Platform" loading="lazy" decoding="async" className={LOGO_SIZE} />
+  <img src="/gcp-logo.webp" alt="Google Cloud Platform" loading="lazy" decoding="async" className="h-24 w-auto max-w-[280px] object-contain" />
 );
 
 const AwsMark: React.FC = () => (

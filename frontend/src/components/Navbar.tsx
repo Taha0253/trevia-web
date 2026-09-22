@@ -108,24 +108,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   return (
     <header className="sticky top-0 z-50 bg-base/90 backdrop-blur-xl border-b border-edge2/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-        
+
         {/* Trevia Logo Button to Home */}
-        <Link to="/" onClick={closeAllMenus} className="flex items-center group outline-none focus:outline-none focus-visible:outline-none">
-          <img
-            src="/Trevia.png"
-            alt="Trevia EV - Return to Home"
-            loading="lazy"
-            decoding="async"
-            className="logo-dark-only h-7 sm:h-8 w-auto object-contain transition-opacity duration-200 hover:opacity-90"
-          />
-          <img
-            src="/Trevia-black.png"
-            alt="Trevia EV - Return to Home"
-            loading="lazy"
-            decoding="async"
-            className="logo-light-only h-7 sm:h-8 w-auto object-contain transition-opacity duration-200 hover:opacity-90"
-          />
-        </Link>
+        <Link
+  to="/"
+  onClick={closeAllMenus}
+  className="relative flex items-center w-[160px] h-10 group"
+>
+  {/* Dark mode */}
+  <img
+    src="/Trevia.png"
+    alt="Trevia"
+    className="logo-dark-only absolute left-0 top-1/2 -translate-y-1/2 w-[160px] h-auto object-contain"
+  />
+
+  {/* Light mode */}
+  <img
+    src="/Trevia-black.png"
+    alt="Trevia"
+    className="logo-light-only absolute left-0 top-1/2 -translate-y-1/2 w-[160px] h-auto object-contain"
+  />
+</Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-semibold uppercase tracking-wider text-ink2">
@@ -138,9 +141,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             onMouseLeave={scheduleMenusClose}
           >
             <div
-              className={`rounded-lg transition-colors flex items-center ${
-                featuresOpen ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
-              }`}
+              className={`rounded-lg transition-colors flex items-center ${featuresOpen ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
+                }`}
             >
               <Link to="/features" onClick={closeAllMenus} className="pl-3 pr-1 py-2 flex items-center">
                 <span>Features</span>
@@ -259,9 +261,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             onMouseLeave={scheduleMenusClose}
           >
             <div
-              className={`rounded-lg transition-colors flex items-center ${
-                isActive('/platform') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
-              }`}
+              className={`rounded-lg transition-colors flex items-center ${isActive('/platform') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
+                }`}
             >
               <Link to="/platform" onClick={closeAllMenus} className="pl-3 pr-1 py-2 flex items-center">
                 <span>Platform</span>
@@ -309,9 +310,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             onMouseLeave={scheduleMenusClose}
           >
             <div
-              className={`rounded-lg transition-colors flex items-center ${
-                isActive('/solutions') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
-              }`}
+              className={`rounded-lg transition-colors flex items-center ${isActive('/solutions') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
+                }`}
             >
               <Link to="/solutions/cpos" onClick={closeAllMenus} className="pl-3 pr-1 py-2 flex items-center">
                 <span>Solutions</span>
@@ -370,9 +370,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <Link
             to="/about"
             onClick={closeAllMenus}
-            className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/about') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
-            }`}
+            className={`px-3 py-2 rounded-lg transition-colors ${isActive('/about') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
+              }`}
           >
             Company
           </Link>
@@ -381,9 +380,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           <Link
             to="/resources"
             onClick={closeAllMenus}
-            className={`px-3 py-2 rounded-lg transition-colors ${
-              isActive('/resources') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
-            }`}
+            className={`px-3 py-2 rounded-lg transition-colors ${isActive('/resources') ? 'text-[#00A09A] bg-surface2/50' : 'hover:text-ink hover:bg-surface2/60'
+              }`}
           >
             Resources
           </Link>
