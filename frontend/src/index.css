@@ -32,6 +32,37 @@
   color-scheme: light;
 }
 
+/* Scoped subtrees with explicit or inverted themes */
+[data-theme='dark'] {
+  --c-bg-base: 2 6 13;
+  --c-bg-surface: 3 10 20;
+  --c-bg-surface2: 6 20 38;
+  --c-bg-surface3: 4 12 24;
+  --c-border: 14 44 82;
+  --c-border-faint: 14 34 61;
+  --c-text-primary: 255 255 255;
+  --c-text-secondary: 203 213 225;
+  --c-text-muted: 148 163 184;
+  --c-text-faint: 100 116 139;
+  --c-gradient-teal-end: 255 255 255;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --c-bg-base: 255 255 255;
+  --c-bg-surface: 248 250 252;
+  --c-bg-surface2: 241 245 249;
+  --c-bg-surface3: 255 255 255;
+  --c-border: 226 232 240;
+  --c-border-faint: 226 232 240;
+  --c-text-primary: 15 23 42;
+  --c-text-secondary: 51 65 85;
+  --c-text-muted: 100 116 139;
+  --c-text-faint: 148 163 184;
+  --c-gradient-teal-end: 8 15 12;
+  color-scheme: light;
+}
+
 .text-gradient-teal {
   background-image: linear-gradient(to right, rgb(var(--c-gradient-teal-end)), #00A09A);
   -webkit-background-clip: text;
