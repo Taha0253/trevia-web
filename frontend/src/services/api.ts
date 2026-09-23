@@ -2,29 +2,43 @@ import type { LeadPayload, DashboardStats, ApproachStepData } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api';
 
+// User-friendly copy only — never surface backend stack traces or raw
+// error bodies to the browser.
+function friendlyErrorMessage(status: number): string {
+  if (status === 422) {
+    return 'Please check the highlighted fields and try again.';
+  }
+  if (status === 429) {
+    return "You're submitting a bit too fast. Please wait a moment and try again.";
+  }
+  if (status >= 500) {
+    return "Something went wrong on our end. Please try again shortly.";
+  }
+  return 'Unable to submit your request right now. Please try again.';
+}
+
 export async function submitLead(data: LeadPayload) {
+  let res: Response;
   try {
-    const res = await fetch(`${API_BASE_URL}/leads`, {
+    res = await fetch(`${API_BASE_URL}/leads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
-    if (!res.ok) {
-      throw new Error(`Server returned ${res.status}`);
-    }
-    return await res.json();
   } catch (error) {
-    console.warn('API call failed, falling back to client-side acknowledgement:', error);
-    return {
-      id: Math.floor(Math.random() * 1000) + 1,
-      full_name: data.full_name,
-      email: data.email,
-      created_at: new Date().toISOString()
-    };
+    console.warn('Lead submission network error:', error);
+    throw new Error('Unable to reach the server. Please check your connection and try again.');
   }
+
+  if (!res.ok) {
+    throw new Error(friendlyErrorMessage(res.status));
+  }
+
+  return await res.json();
 }
+
 
 export async function fetchDashboardStats(): Promise<DashboardStats> {
   try {

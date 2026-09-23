@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, ArrowRight, ShieldCheck} from 'lucide-react';
+import { X, CheckCircle, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 
@@ -19,12 +19,15 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
+    setErrorMessage(null);
 
     try {
       await submitLead(formData);
@@ -36,8 +39,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
         colors: ['#00A09A', '#00A09A', '#FFFFFF', '#4DBDB8']
       });
     } catch (err) {
-      console.error(err);
-      setIsSuccess(true);
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -45,6 +47,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
 
   const handleReset = () => {
     setIsSuccess(false);
+    setErrorMessage(null);
     setFormData({
       full_name: '',
       email: '',
@@ -172,6 +175,13 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                 />
               </div>
 
+              {errorMessage && (
+                <div className="flex items-start gap-2 text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-2.5">
+                  <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <div className="pt-2">
                 <button
                   type="submit"
@@ -179,9 +189,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   className="w-full bg-gradient-to-r from-[#00A09A] to-[#33C4BF] hover:from-[#008F8A] hover:to-[#00A09A] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-[#00A09A]/25 hover:shadow-[0_0_30px_#00A09A] disabled:opacity-70 active:scale-[0.99]"
                 >
                   {isSubmitting ? (
-                    <>
-
-                    </>
+                    <span>Submitting...</span>
                   ) : (
                     <>
                       <span>Book a Demo</span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, ArrowRight, Check, Loader2 } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Check, Loader2, AlertCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 
@@ -19,10 +19,13 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
+    setErrorMessage(null);
     try {
       await submitLead({
         full_name: formData.full_name,
@@ -40,8 +43,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
         colors: ['#00A09A', '#FFFFFF']
       });
     } catch (err) {
-      console.error(err);
-      setIsSuccess(true);
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -171,6 +173,13 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
                     />
                   </div>
+
+                  {errorMessage && (
+                    <div className="flex items-start gap-2 text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-2.5">
+                      <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   <div className="pt-2">
                     <button

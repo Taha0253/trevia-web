@@ -1,5 +1,5 @@
 import datetime
-from sqlalchemy import Column, Integer, String, Text, DateTime, Float
+from sqlalchemy import Column, Integer, String, Text, DateTime, Float, Boolean
 from ..core.database import Base
 
 class Lead(Base):
@@ -14,6 +14,11 @@ class Lead(Base):
     message = Column(Text, nullable=True)
     inquiry_type = Column(String(100), default="demo_request")  # demo_request, partner, contact
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+    # Whether the internal notification email was sent successfully. Never
+    # rolled back / row deleted just because this ends up False — lets the
+    # submission be identified and retried later if needed.
+    email_notified = Column(Boolean, default=False, nullable=False)
 
 class ChargerStation(Base):
     __tablename__ = "charger_stations"

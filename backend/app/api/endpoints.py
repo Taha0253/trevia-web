@@ -1,13 +1,19 @@
+import logging
+
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
+
 from ..core.database import get_db
 from ..core.email import send_notification_email
+from ..core.rate_limit import enforce_rate_limit
 from ..models.lead import Lead, ChargerStation
-from ..schemas.lead import LeadCreate, LeadResponse, ContactCreate
+from ..schemas.lead import LeadCreate, LeadResponse, ContactCreate, ContactResponse
 from ..schemas.dashboard import DashboardStatsResponse, ApproachStep
 from typing import List
 
 router = APIRouter()
+logger = logging.getLogger("trevia.api")
 
 @router.get("/health")
 def health_check():
@@ -18,7 +24,12 @@ def health_check():
         "features": ["leads", "chargers", "approach_particle_telemetry", "dashboard"]
     }
 
-@router.post("/leads", response_model=LeadResponse, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/leads",
+    response_model=LeadResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(enforce_rate_limit)],
+)
 def create_demo_lead(lead_in: LeadCreate, db: Session = Depends(get_db)):
     db_lead = Lead(
         full_name=lead_in.full_name,
@@ -29,24 +40,50 @@ def create_demo_lead(lead_in: LeadCreate, db: Session = Depends(get_db)):
         message=lead_in.message,
         inquiry_type=lead_in.inquiry_type or "demo_request"
     )
-    db.add(db_lead)
-    db.commit()
-    db.refresh(db_lead)
 
-    send_notification_email(
-        subject=f"New demo request from {db_lead.full_name}",
-        body=(
-            f"Name: {db_lead.full_name}\n"
-            f"Email: {db_lead.email}\n"
-            f"Phone: {db_lead.phone or '-'}\n"
-            f"Company: {db_lead.company or '-'}\n"
-            f"Chargers: {db_lead.chargers_count or '-'}\n"
-            f"Message: {db_lead.message or '-'}"
+    try:
+        db.add(db_lead)
+        db.commit()
+        db.refresh(db_lead)
+    except SQLAlchemyError:
+        db.rollback()
+        logger.exception("Failed to persist demo lead submission")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Unable to save your request right now. Please try again shortly.",
         )
+
+    # The submission is safely persisted at this point — an email failure
+    # below must never delete/roll back db_lead.
+    email_sent = send_notification_email(
+        subject=f"New demo request from {db_lead.full_name}",
+        fields={
+            "Name": db_lead.full_name,
+            "Email": db_lead.email,
+            "Phone": db_lead.phone,
+            "Company": db_lead.company,
+            "Chargers": db_lead.chargers_count,
+            "Message": db_lead.message,
+            "Submitted At": db_lead.created_at.isoformat() if db_lead.created_at else None,
+        },
     )
+
+    db_lead.email_notified = email_sent
+    try:
+        db.commit()
+        db.refresh(db_lead)
+    except SQLAlchemyError:
+        db.rollback()
+        logger.exception("Failed to record email notification status for lead %s", db_lead.id)
+
     return db_lead
 
-@router.post("/contact", status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/contact",
+    response_model=ContactResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(enforce_rate_limit)],
+)
 def submit_contact(contact_in: ContactCreate, db: Session = Depends(get_db)):
     db_lead = Lead(
         full_name=contact_in.full_name,
@@ -55,19 +92,41 @@ def submit_contact(contact_in: ContactCreate, db: Session = Depends(get_db)):
         chargers_count=contact_in.subject,
         inquiry_type="contact_form"
     )
-    db.add(db_lead)
-    db.commit()
 
-    send_notification_email(
-        subject=f"New contact form submission from {contact_in.full_name}",
-        body=(
-            f"Name: {contact_in.full_name}\n"
-            f"Email: {contact_in.email}\n"
-            f"Subject: {contact_in.subject}\n"
-            f"Message: {contact_in.message}"
+    try:
+        db.add(db_lead)
+        db.commit()
+        db.refresh(db_lead)
+    except SQLAlchemyError:
+        db.rollback()
+        logger.exception("Failed to persist contact form submission")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Unable to save your message right now. Please try again shortly.",
         )
+
+    email_sent = send_notification_email(
+        subject=f"New contact form submission from {db_lead.full_name}",
+        fields={
+            "Name": db_lead.full_name,
+            "Email": db_lead.email,
+            "Subject": contact_in.subject,
+            "Message": db_lead.message,
+            "Submitted At": db_lead.created_at.isoformat() if db_lead.created_at else None,
+        },
     )
-    return {"message": "Thank you for reaching out to Trevia! Our CPO onboarding team will contact you within 24 hours."}
+
+    db_lead.email_notified = email_sent
+    try:
+        db.commit()
+    except SQLAlchemyError:
+        db.rollback()
+        logger.exception("Failed to record email notification status for contact %s", db_lead.id)
+
+    return ContactResponse(
+        message="Thank you for reaching out to Trevia! Our CPO onboarding team will contact you within 24 hours."
+    )
+
 
 @router.get("/dashboard/stats", response_model=DashboardStatsResponse)
 def get_dashboard_stats():

@@ -1,11 +1,19 @@
+import logging
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.core.database import Base, engine
+from app.core.database import Base, engine, run_safe_schema_upgrade
 from app.api.endpoints import router as api_router
 
-# Initialize database tables
+# Without this, app loggers (e.g. "trevia.email") have no attached handler
+# and SMTP failures never reach the console — never log SMTP_PASSWORD here.
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+
+# Initialize database tables, then apply any additive column upgrades
+# (e.g. Lead.email_notified) for pre-existing SQLite databases.
 Base.metadata.create_all(bind=engine)
+run_safe_schema_upgrade()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
