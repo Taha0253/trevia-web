@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import { ShieldCheck, ArrowRight, Check, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
+import { useTheme } from '../hooks/useTheme';
 
 interface DemoPageProps {
   onRequestModal?: () => void;
 }
 
 export const DemoPage: React.FC<DemoPageProps> = () => {
+  const { theme } = useTheme();
+  // Form theme is always the opposite of the website theme
+  const formTheme = theme === 'dark' ? 'light' : 'dark';
+  const isFormLight = formTheme === 'light';
+
   // Demo Form State
   const [formData, setFormData] = useState({
     full_name: '',
@@ -48,7 +54,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base text-ink pt-8 pb-24 relative overflow-hidden">
+    <div className="min-h-screen bg-base text-ink pt-8 pb-24 relative overflow-hidden transition-colors duration-300">
       {/* Volumetric background lights */}
       <div className="absolute top-10 left-1/4 -translate-x-1/2 w-[900px] h-[500px] bg-[#00A09A]/8 rounded-full blur-[200px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#00A09A]/6 rounded-full blur-[220px] pointer-events-none" />
@@ -66,12 +72,24 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
           </p>
         </div>
 
-        {/* DEMO REQUEST FORM */}
-        <div className="max-w-xl mx-auto mb-20">
-          <div className="bg-surface border border-[#0E3460] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+        {/* DEMO REQUEST FORM (Contrasting Opposite Theme to Website) */}
+        <div className="max-w-xl mx-auto mb-20 relative">
+          {/* Soft ambient contrast glow behind the opposite-themed card */}
+          <div className={`absolute -inset-4 sm:-inset-6 rounded-3xl blur-2xl pointer-events-none transition-opacity duration-300 ${
+            isFormLight ? 'bg-[#00A09A]/15 opacity-70' : 'bg-[#00A09A]/10 opacity-50'
+          }`} />
+
+          <div
+            data-theme={formTheme}
+            className={`border rounded-3xl p-6 sm:p-8 relative overflow-hidden transition-all duration-300 ${
+              isFormLight
+                ? 'bg-[#F8FAFC] border-slate-200/90 shadow-[0_25px_60px_rgba(0,0,0,0.45),0_0_35px_rgba(0,160,154,0.12)]'
+                : 'bg-surface border-[#0E3460] shadow-2xl backdrop-blur-xl'
+            }`}
+          >
 
             {/* Edge Accent */}
-            <div className="absolute top-0 inset-x-0 h-1 bg-[#00A09A]" />
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#00A09A] to-[#33C4BF]" />
 
             {!isSuccess ? (
               <div>
@@ -96,7 +114,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       placeholder="e.g. Vikramaditya Rao"
                       value={formData.full_name}
                       onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                      className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                     />
                   </div>
 
@@ -111,7 +129,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="name@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                       />
                     </div>
                     <div>
@@ -123,7 +141,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                       />
                     </div>
                   </div>
@@ -138,7 +156,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                         placeholder="e.g. Nexus Energy Infra"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                       />
                     </div>
                     <div>
@@ -148,13 +166,13 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       <select
                         value={formData.chargers_count}
                         onChange={(e) => setFormData({ ...formData, chargers_count: e.target.value })}
-                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
+                        className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors cursor-pointer"
                       >
-                        <option value="1 - 10 chargers">1 - 10 chargers</option>
-                        <option value="10 - 50 chargers">10 - 50 chargers</option>
-                        <option value="50 - 250 chargers">50 - 250 chargers</option>
-                        <option value="250+ chargers">250+ chargers</option>
-                        <option value="OEM / Roaming Partner">OEM / Roaming Partner</option>
+                        <option value="1 - 10 chargers" className="bg-base text-ink">1 - 10 chargers</option>
+                        <option value="10 - 50 chargers" className="bg-base text-ink">10 - 50 chargers</option>
+                        <option value="50 - 250 chargers" className="bg-base text-ink">50 - 250 chargers</option>
+                        <option value="250+ chargers" className="bg-base text-ink">250+ chargers</option>
+                        <option value="OEM / Roaming Partner" className="bg-base text-ink">OEM / Roaming Partner</option>
                       </select>
                     </div>
                   </div>
@@ -168,7 +186,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       placeholder="Tell us about your charging network, timeline, or specific requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
+                      className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors resize-none"
                     />
                   </div>
 
@@ -176,7 +194,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#00A09A] hover:bg-[#008C86] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors duration-200 disabled:opacity-70 active:scale-[0.99]"
+                      className="w-full bg-[#00A09A] hover:bg-[#008C86] text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors duration-200 disabled:opacity-70 active:scale-[0.99] shadow-md shadow-[#00A09A]/20"
                     >
                       {isSubmitting ? (
                         <>
@@ -192,7 +210,7 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                     </button>
                   </div>
 
-                  <div className="flex items-center justify-center gap-2 text-[11px] text-ink4 pt-1">
+                  <div className="flex items-center justify-center gap-2 text-[11px] text-ink3 pt-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#00A09A]" />
                     <span>Direct founder consultation • Strict NDA protected</span>
                   </div>
@@ -210,7 +228,11 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                 <div className="pt-4">
                   <button
                     onClick={() => setIsSuccess(false)}
-                    className="bg-white text-black font-bold px-6 py-2.5 rounded-full hover:bg-slate-200 transition text-xs uppercase tracking-wider"
+                    className={`font-bold px-6 py-2.5 rounded-full transition text-xs uppercase tracking-wider ${
+                      isFormLight 
+                        ? 'bg-slate-900 text-white hover:bg-slate-800' 
+                        : 'bg-white text-black hover:bg-slate-200'
+                    }`}
                   >
                     Book Another Session
                   </button>
