@@ -226,21 +226,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                     </div>
                   </div>
                 </div>
-
-                {/* <div className="flex items-center justify-between gap-4 px-6 py-4 border-t border-edge/70 bg-surface3">
-                  <div>
-                    <div className="text-sm font-bold text-ink normal-case">One Platform. Two Experiences.</div>
-                    <div className="text-xs text-ink3 normal-case font-normal">Trevia connects the infrastructure operators running charging networks with the drivers using them.</div>
-                  </div>
-                  <Link
-                    to="/platform"
-                    onClick={closeAllMenus}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00A09A] hover:text-ink normal-case transition-colors shrink-0"
-                  >
-                    <span>Explore Trevia Platform</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div> */}
               </div>
             )}
           </div>

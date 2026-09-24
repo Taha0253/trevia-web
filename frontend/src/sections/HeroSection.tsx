@@ -70,41 +70,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }
         </div>
 
         {/* Hero Visual Centered Below */}
-        <div className="mt-12 md:mt-16 w-full max-w-5xl mx-auto relative flex justify-center items-center">
-          {/* Ambient halo behind the car */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-64 bg-[#00A09A]/15 blur-[120px] rounded-full pointer-events-none" />
-
-          {/* Main car visual with smooth feathering */}
-          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-edge/60 bg-gradient-to-b from-surface/40 to-transparent shadow-[0_25px_80px_-15px_rgba(0,160,154,0.2)]">
-            <img
-              src="/hero-ev-dark.png"
-              alt="Electric vehicle charging at a Trevia-connected station"
-              loading="eager"
-              decoding="async"
-              className="hero-dark-only w-full h-auto max-h-[520px] object-cover object-center select-none pointer-events-none"
-              style={{
-                maskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)'
-              }}
-              draggable={false}
-            />
-
-            <div className="hero-light-only h-64 sm:h-80 w-full hero-grid-pattern-center pointer-events-none flex items-center justify-center">
-              <img
-                src="/hero-ev.png"
-                alt="Electric vehicle charging"
-                className="max-h-full object-contain"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              />
-            </div>
-
-            {/* Vignette gradients for seamless edge blends */}
-            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-base/90 to-transparent pointer-events-none" />
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-base/90 to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-base via-base/80 to-transparent pointer-events-none" />
-            <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-base/40 to-transparent pointer-events-none" />
-          </div>
-        </div>
+        
       </div>
     </section>
   );

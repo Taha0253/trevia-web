@@ -5,21 +5,79 @@ const LOGO_SIZE = 'h-14 w-14 object-contain';
 const WORDMARK_SIZE = 'h-[72px] w-auto max-w-[190px] object-contain';
 
 const GoogleForStartupsMark: React.FC = () => (
-  <img src="/google-for-startups-white.png" alt="Google for Startups" loading="lazy" decoding="async" className={WORDMARK_SIZE} />
+  <>
+    <img
+      src="/google-for-startups-white.png"
+      alt="Google for Startups"
+      loading="lazy"
+      decoding="async"
+      className={`${WORDMARK_SIZE} logo-dark-only`}
+    />
+    <img
+      src="/google-for-startups-color.png"
+      alt="Google for Startups"
+      loading="lazy"
+      decoding="async"
+      className={`${WORDMARK_SIZE} logo-light-only`}
+    />
+  </>
 );
 
 const GitHubMark: React.FC = () => (
-  <svg viewBox="0 0 24 24" className={`${LOGO_SIZE} text-ink`} fill="currentColor" aria-hidden="true">
-    <path d="M12 .3C5.37.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.21.7.82.58C20.56 22.1 24 17.6 24 12.3 24 5.67 18.63.3 12 .3Z" />
-  </svg>
+  <>
+    <img
+      src="/github-white.png"
+      alt="GitHub"
+      loading="lazy"
+      decoding="async"
+      className="h-[64px] w-auto max-w-[130px] object-contain logo-dark-only"
+    />
+    <img
+      src="/github-light.png"
+      alt="GitHub"
+      loading="lazy"
+      decoding="async"
+      className="h-[64px] w-auto max-w-[130px] object-contain logo-light-only"
+    />
+  </>
 );
 
 const GcpMark: React.FC = () => (
-  <img src="/gcp-logo.webp" alt="Google Cloud Platform" loading="lazy" decoding="async" className="h-24 w-auto max-w-[280px] object-contain" />
+  <>
+    <img
+      src="/gcp-logo-dark.png"
+      alt="Google Cloud Platform"
+      loading="lazy"
+      decoding="async"
+      className="h-[62px] w-auto max-w-[150px] object-contain logo-dark-only"
+    />
+    <img
+      src="/gcp-logo-light.png"
+      alt="Google Cloud Platform"
+      loading="lazy"
+      decoding="async"
+      className="h-[62px] w-auto max-w-[150px] object-contain logo-light-only"
+    />
+  </>
 );
 
 const AwsMark: React.FC = () => (
-  <img src="/aws-startups-white.png" alt="AWS" loading="lazy" decoding="async" className={WORDMARK_SIZE} />
+  <>
+    <img
+      src="/aws-startups-white.png"
+      alt="AWS"
+      loading="lazy"
+      decoding="async"
+      className={`${WORDMARK_SIZE} logo-dark-only`}
+    />
+    <img
+      src="/aws-startups-dark.png"
+      alt="AWS"
+      loading="lazy"
+      decoding="async"
+      className={`${WORDMARK_SIZE} logo-light-only`}
+    />
+  </>
 );
 
 const ThubMark: React.FC = () => (
