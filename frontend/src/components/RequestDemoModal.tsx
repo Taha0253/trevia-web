@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 import { useTheme } from '../hooks/useTheme';
