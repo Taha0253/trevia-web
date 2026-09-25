@@ -90,10 +90,6 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
               <li>
                 <Link to="/careers" className="hover:text-[#00A09A] transition-colors">Careers</Link>
               </li>
-              <li>
-                {/* PLACEHOLDER — replace admin@trevia.com with the real founder/admin email */}
-                <a href="mailto:admin@trevia.com" className="hover:text-[#00A09A] transition-colors">Contact Founder</a>
-              </li>
             </ul>
           </div>
 

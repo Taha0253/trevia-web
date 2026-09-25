@@ -31,7 +31,7 @@ const TRACTION = [
   { value: '170', label: 'Charging Stations', desc: 'Commercial pilot secured' },
   { value: 'CPOs', label: 'Enterprise Discussions', desc: 'Additional commercial opportunities in progress' },
   { value: 'Ecosystem', label: 'T-Hub • DPIIT • Google for Startups', desc: 'Incubation & program support' },
-  { value: 'MoU', label: 'Pilot Signing', desc: 'Underway' },
+  // { value: 'MoU', label: 'Pilot Signing', desc: 'Underway' },
 ];
 
 const PRINCIPLES = [
@@ -164,9 +164,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {TRACTION.map((t) => (
-            <div key={t.label} className="p-6 rounded-2xl bg-surface2 border border-[#00A09A]/30 text-center space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {TRACTION.map((t, idx) => (
+            <div
+              key={t.label}
+              className={`p-6 rounded-2xl bg-surface2 border border-[#00A09A]/30 text-center space-y-2 ${
+                idx === 2 ? 'sm:col-span-2' : ''
+              }`}
+            >
               <div className="text-3xl font-black text-ink font-mono">{t.value}</div>
               <div className="text-xs font-bold text-ink">{t.label}</div>
               <div className="text-[11px] text-ink3">{t.desc}</div>
@@ -186,16 +191,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {PRINCIPLES.map((p) => (
-            <div key={p.title} className="p-5 rounded-xl bg-surface border border-edge space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+          {PRINCIPLES.map((p, idx) => (
+            <div
+              key={p.title}
+              className={`p-5 rounded-xl bg-surface border border-edge transition-colors hover:border-[#00A09A]/40 ${
+                idx < 3 ? 'md:col-span-2' : 'md:col-span-3'
+              }`}
+            >
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-surface2 border border-edge flex items-center justify-center text-[#00A09A] shrink-0">
                   <p.icon className="w-4 h-4" />
                 </div>
                 <h4 className="text-sm font-bold text-ink">{p.title}</h4>
               </div>
-              <p className="text-xs text-ink3 leading-relaxed">{p.desc}</p>
+              {/* <p className="text-xs text-ink3 leading-relaxed">{p.desc}</p> */}
             </div>
           ))}
         </div>
@@ -206,7 +216,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
         <div className="space-y-6">
           <div>
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00A09A] mb-1">
-              The Founder
+              Founder
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-ink">
               Building Trevia from the ground up.

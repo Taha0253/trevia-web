@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react';
+import { X, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
+import { useTheme } from '../hooks/useTheme';
 
 interface RequestDemoModalProps {
   isOpen: boolean;
@@ -9,6 +10,11 @@ interface RequestDemoModalProps {
 }
 
 export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onClose }) => {
+  const { theme } = useTheme();
+  // Form theme is always the opposite of the website theme
+  const formTheme = theme === 'dark' ? 'light' : 'dark';
+  const isFormLight = formTheme === 'light';
+
   const [formData, setFormData] = useState({
     full_name: '',
     email: '',
@@ -60,18 +66,28 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div 
-        className="relative w-full max-w-lg bg-surface border border-edge rounded-3xl p-6 sm:p-8 text-ink shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden"
+        data-theme={formTheme}
+        className={`relative w-full max-w-lg border rounded-3xl p-6 sm:p-8 text-ink overflow-hidden transition-all duration-300 ${
+          isFormLight
+            ? 'bg-[#F8FAFC] border-slate-200/90 shadow-[0_25px_70px_rgba(0,0,0,0.5),0_0_35px_rgba(0,160,154,0.15)]'
+            : 'bg-surface border-edge shadow-[0_20px_60px_rgba(0,0,0,0.8)]'
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Glow effect */}
         <div className="absolute -top-24 -right-24 w-56 h-56 bg-[#00A09A]/20 rounded-full blur-3xl pointer-events-none" />
 
+        {/* Edge accent */}
+        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#00A09A] to-[#33C4BF]" />
+
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-ink3 hover:text-ink hover:bg-white/10 transition-colors"
+          className={`absolute top-5 right-5 p-2 rounded-full text-ink3 hover:text-ink transition-colors ${
+            isFormLight ? 'hover:bg-slate-200/60' : 'hover:bg-white/10'
+          }`}
         >
           <X className="w-5 h-5" />
         </button>
@@ -99,7 +115,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   placeholder="e.g. Vikramaditya Rao"
                   value={formData.full_name}
                   onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                  className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                  className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                 />
               </div>
 
@@ -114,7 +130,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                     placeholder="name@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                   />
                 </div>
                 <div>
@@ -126,7 +142,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                   />
                 </div>
               </div>
@@ -141,7 +157,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                     placeholder="e.g. Nexus Energy Infra"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors"
+                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                   />
                 </div>
                 <div>
@@ -151,13 +167,13 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   <select
                     value={formData.chargers_count}
                     onChange={(e) => setFormData({ ...formData, chargers_count: e.target.value })}
-                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-[#00A09A] transition-colors cursor-pointer"
+                    className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors cursor-pointer"
                   >
-                    <option value="1 - 10 chargers">1 - 10 chargers</option>
-                    <option value="10 - 50 chargers">10 - 50 chargers</option>
-                    <option value="50 - 250 chargers">50 - 250 chargers</option>
-                    <option value="250+ chargers">250+ chargers</option>
-                    <option value="OEM / Roaming Partner">OEM / Roaming Partner</option>
+                    <option value="1 - 10 chargers" className="bg-base text-ink">1 - 10 chargers</option>
+                    <option value="10 - 50 chargers" className="bg-base text-ink">10 - 50 chargers</option>
+                    <option value="50 - 250 chargers" className="bg-base text-ink">50 - 250 chargers</option>
+                    <option value="250+ chargers" className="bg-base text-ink">250+ chargers</option>
+                    <option value="OEM / Roaming Partner" className="bg-base text-ink">OEM / Roaming Partner</option>
                   </select>
                 </div>
               </div>
@@ -171,7 +187,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                   placeholder="Tell us about your chargers, OCPP version, or roaming partnership..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder-slate-600 focus:outline-none focus:border-[#00A09A] transition-colors resize-none"
+                  className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors resize-none"
                 />
               </div>
 
@@ -199,7 +215,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-2 text-[11px] text-ink4 pt-1">
+              <div className="flex items-center justify-center gap-2 text-[11px] text-ink3 pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#00A09A]" />
                 <span>Enterprise grade protocol security • Rapid 24h setup</span>
               </div>
@@ -217,7 +233,11 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
             <div className="pt-4">
               <button
                 onClick={handleReset}
-                className="bg-white text-black font-bold px-6 py-2.5 rounded-full hover:bg-slate-200 transition text-xs uppercase tracking-wider"
+                className={`font-bold px-6 py-2.5 rounded-full transition text-xs uppercase tracking-wider ${
+                  isFormLight
+                    ? 'bg-slate-900 text-white hover:bg-slate-800'
+                    : 'bg-white text-black hover:bg-slate-200'
+                }`}
               >
                 Close Window
               </button>
