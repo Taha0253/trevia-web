@@ -9,11 +9,26 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onPartner }) => {
   return (
     <section className="relative overflow-hidden min-h-[calc(100vh-5rem)] min-h-[calc(100dvh-5rem)] flex flex-col justify-center py-6 sm:py-8 md:py-10">
+      {/* Background Video with theme-adaptive overlay */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-55 dark:opacity-45 scale-105"
+          src="/IMG_7457.MP4"
+        />
+        {/* Soft gradient to keep text readable while showcasing the vehicle and app in the video */}
+        <div className="absolute inset-0 bg-base/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-base via-transparent to-base/80" />
+      </div>
+
       {/* Soft breathing glow behind the headline */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-[#00A09A]/18 via-[#00A09A]/6 to-transparent rounded-full blur-[200px] pointer-events-none animate-hero-glow" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-[#00A09A]/18 via-[#00A09A]/6 to-transparent rounded-full blur-[200px] pointer-events-none animate-hero-glow z-[1]" />
 
       {/* Centered subtle background grid pattern */}
-      <div className="absolute inset-0 hero-grid-pattern-center pointer-events-none opacity-40" />
+      <div className="absolute inset-0 hero-grid-pattern-center pointer-events-none opacity-30 z-[1]" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 flex flex-col items-center text-center my-auto w-full">
         {/* Headline */}
