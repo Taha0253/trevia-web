@@ -83,7 +83,7 @@ export const DualAudienceSection: React.FC<DualAudienceSectionProps> = ({ onRequ
           </ScrollReveal>
 
           {/* Column 2: Driver layer — positioned second */}
-          <ScrollReveal direction="right" delay={150} as="div" id="drivers" className="lg:col-span-2 bg-surface border border-edge2 hover:border-[#00A09A]/50 rounded-3xl p-8 sm:p-10 transition-all duration-300 relative group flex flex-col justify-between">
+          <ScrollReveal direction="right" delay={150} as="div" id="drivers" className="lg:col-span-2 bg-surface border-2 border-[#00A09A]/40 hover:border-[#00A09A]/70 rounded-3xl p-8 sm:p-10 transition-all duration-300 relative group flex flex-col justify-between shadow-[0_0_40px_rgba(0,160,154,0.1)]">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#00A09A]/10 border border-[#00A09A]/30 text-[#00A09A] flex items-center justify-center mb-6">
                 <User className="w-6 h-6" />

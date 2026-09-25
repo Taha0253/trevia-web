@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                       onClick={closeAllMenus}
                       className="group/header flex items-center gap-2 mb-3 cursor-pointer"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-surface2 border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A] shrink-0 group-hover/header:border-[#00A09A] group-hover:bg-[#00A09A]/10 transition-colors">
+                      <div className="w-8 h-8 rounded-lg bg-surface2 border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A] shrink-0 group-hover/header:border-[#00A09A] group-hover/header:bg-[#00A09A]/10 transition-colors">
                         <LayoutDashboard className="w-4 h-4" />
                       </div>
                       <div>
@@ -202,12 +202,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                       onClick={closeAllMenus}
                       className="group/header flex items-center gap-2 mb-3 cursor-pointer"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-surface2 border border-emerald-400/40 flex items-center justify-center text-emerald-400 shrink-0 group-hover/header:border-emerald-400 group-hover:bg-emerald-400/10 transition-colors">
+                      <div className="w-8 h-8 rounded-lg bg-surface2 border border-[#00A09A]/40 flex items-center justify-center text-[#00A09A] shrink-0 group-hover/header:border-[#00A09A] group-hover/header:bg-[#00A09A]/10 transition-colors">
                         <Smartphone className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold text-ink group-hover/header:text-emerald-400 transition-colors normal-case leading-tight">Trevia EV</div>
-                        <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">For EV Drivers & Fleets</div>
+                        <div className="text-sm font-bold text-ink group-hover/header:text-[#00A09A] transition-colors normal-case leading-tight">Trevia EV</div>
+                        <div className="text-[10px] font-mono text-[#00A09A] uppercase tracking-wider">For EV Drivers & Fleets</div>
                       </div>
                     </Link>
                     <p className="text-xs text-ink3 normal-case font-normal leading-snug mb-4">
@@ -402,38 +402,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       {mobileOpen && (
         <div className="lg:hidden bg-surface border-b border-edge px-6 py-6 space-y-4 text-xs font-semibold uppercase tracking-wider max-h-[85vh] overflow-y-auto">
           {/* Features Mobile Group */}
-          <div className="py-2 border-b border-edge/40 space-y-4">
+          <div className="py-2 border-b border-edge/40 space-y-2">
             <div className="text-[10px] font-mono text-[#00A09A]">Features</div>
-            {FEATURE_PRODUCTS.map((product) => (
-              <div key={product.key} className="pl-3 space-y-2">
-                <Link
-                  to={product.cta.to}
-                  onClick={closeAllMenus}
-                  className="block normal-case group"
-                >
-                  <div className="text-xs font-bold text-ink group-hover:text-[#00A09A] transition-colors">{product.name}</div>
-                  <div className="text-[9px] font-mono text-ink4">{product.icp}</div>
-                </Link>
-                <div className="pl-1 space-y-2 normal-case font-medium">
-                  {product.capabilities.map((cap) => (
-                    <div
-                      key={cap.slug}
-                      className="flex items-center gap-1.5 text-ink2"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-slate-600 shrink-0" />
-                      <span>{cap.title}</span>
-                    </div>
-                  ))}
-                  <Link to={product.cta.to} onClick={closeAllMenus} className="flex items-center gap-1.5 text-[#00A09A] font-bold pt-1">
-                    <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
-                    <span>{product.cta.label}</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-            <Link to="/platform" onClick={closeAllMenus} className="block pl-3 text-ink2 hover:text-ink normal-case font-medium">
-              Explore Trevia Platform &rarr;
-            </Link>
+            <div className="pl-3 space-y-2 normal-case font-medium">
+              <Link to="/features" onClick={closeAllMenus} className="block text-ink2 hover:text-[#00A09A]">
+                Features Overview
+              </Link>
+              <Link to="/cms" onClick={closeAllMenus} className="flex items-center justify-between text-ink2 hover:text-[#00A09A]">
+                <span>Trevia CMS</span>
+                <span className="text-[9px] px-2 py-0.5 rounded bg-[#00A09A]/20 text-[#00A09A]">Core</span>
+              </Link>
+              <Link to="/drive" onClick={closeAllMenus} className="flex items-center justify-between text-ink2 hover:text-[#00A09A]">
+                <span>Trevia EV</span>
+                <span className="text-[9px] px-2 py-0.5 rounded bg-[#00A09A]/20 text-[#00A09A]">Drivers</span>
+              </Link>
+            </div>
           </div>
 
           {/* Platform Mobile Group */}

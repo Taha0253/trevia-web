@@ -165,7 +165,7 @@ const RevealCard: React.FC<{
       onClick={onClick}
       className={`
         relative flex flex-col origin-bottom overflow-hidden rounded-2xl cursor-pointer
-        border !border-black/50 dark:!border-white/60
+        approach-card-border ${featured ? 'approach-card-featured' : ''}
         bg-[linear-gradient(to_bottom_right,rgb(var(--c-bg-surface))_82%,#00A09A)]
         transition-all duration-700 ease-out
         hover:shadow-[0px_0px_54px_0px_rgba(0,160,154,0.4)]

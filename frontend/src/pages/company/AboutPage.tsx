@@ -164,13 +164,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {TRACTION.map((t, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {TRACTION.map((t) => (
             <div
               key={t.label}
-              className={`p-6 rounded-2xl bg-surface2 border border-[#00A09A]/30 text-center space-y-2 ${
-                idx === 2 ? 'sm:col-span-2' : ''
-              }`}
+              className="p-6 rounded-2xl bg-surface2 border border-[#00A09A]/30 text-center space-y-2 flex flex-col justify-center"
             >
               <div className="text-3xl font-black text-ink font-mono">{t.value}</div>
               <div className="text-xs font-bold text-ink">{t.label}</div>
