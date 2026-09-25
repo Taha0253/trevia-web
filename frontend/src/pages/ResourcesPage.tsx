@@ -37,7 +37,7 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onRequestDemo }) =
             Insights for the <span className="font-extrabold text-gradient-teal">EV charging ecosystem.</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-ink2 leading-relaxed">
+          <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
             Practical insights, technical explainers and perspectives on EV charging infrastructure, software and the evolving charging ecosystem.
           </p>
         </div>

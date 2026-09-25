@@ -114,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-edge2/60 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs">
-          <span className="text-ink font-semibold text-sm sm:text-base">
+          <span className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
             The operating system for your charging network.
           </span>
           <button

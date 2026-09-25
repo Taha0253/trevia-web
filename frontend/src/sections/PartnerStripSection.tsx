@@ -110,7 +110,7 @@ export const PartnerStripSection: React.FC = () => {
           <br />
           <span className="font-extrabold text-gradient-teal">building India's EV future.</span>
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-ink3">
+        <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
           Recognised by government bodies, incubators, and the platforms powering our infrastructure.
         </p>
       </ScrollReveal>

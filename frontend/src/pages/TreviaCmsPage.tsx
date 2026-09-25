@@ -35,7 +35,7 @@ export const TreviaCmsPage: React.FC<TreviaCmsPageProps> = ({ onRequestDemo }) =
                 Trevia CMS — <span className="font-extrabold text-gradient-teal">Charging Management Software</span>
               </h1>
 
-              <p className="text-sm sm:text-base text-ink2 leading-relaxed">
+              <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
                 The central nervous system for your EV charging business. Monitor every station in real time, automate driver billing, and resolve faults with a click — across any hardware brand and location.
               </p>
             </div>

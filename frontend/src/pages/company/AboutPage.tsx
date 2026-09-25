@@ -65,7 +65,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
                 Building the <span className="font-extrabold text-gradient-teal">digital infrastructure</span> behind EV charging.
               </h1>
 
-              <p className="text-sm sm:text-base text-ink2 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
                 Trevia is building the operating system for EV charging infrastructure, connecting multi-vendor charging hardware through an interoperable software layer for CPOs, fleets and charging networks.
               </p>
 

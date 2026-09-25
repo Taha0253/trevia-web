@@ -30,7 +30,7 @@ export const CposPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
                 Operate Your Charging Network From One Platform
               </h1>
 
-              <p className="text-sm sm:text-base text-ink2 leading-relaxed">
+              <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
                 Connect and manage multi-vendor charging infrastructure through Trevia CMS, with real-time visibility, remote operations and centralized network management.
               </p>
 

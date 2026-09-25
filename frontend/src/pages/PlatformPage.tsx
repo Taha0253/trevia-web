@@ -31,7 +31,7 @@ export const PlatformPage: React.FC<PlatformPageProps> = ({ onRequestDemo: _onRe
             </h1>
           </div>
 
-          <p className="text-sm sm:text-base text-ink2 leading-relaxed">
+          <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
             Trevia connects charging hardware, network operations and charging experiences through a unified software platform.
           </p>
         </div>

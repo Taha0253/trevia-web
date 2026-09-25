@@ -28,7 +28,7 @@ export const TreviaDrivePage: React.FC<TreviaDrivePageProps> = ({ onRequestDemo 
                 Trevia EV — Effortless EV Charging Discovery
               </h1>
 
-              <p className="text-sm sm:text-base text-ink2 leading-relaxed">
+              <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
                 One friendly app to find, reserve, and pay at any EV charger across India. No more juggling ten different operator apps or showing up to a broken charging plug.
               </p>
 
