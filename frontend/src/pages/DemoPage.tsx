@@ -30,6 +30,12 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
+
+    if (formData.phone && formData.phone.length > 0 && formData.phone.length < 10) {
+      setErrorMessage('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage(null);
     try {
@@ -140,9 +146,19 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
                       </label>
                       <input
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        inputMode="numeric"
+                        maxLength={10}
+                        placeholder="9876543210"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) => {
+                          let digits = e.target.value.replace(/\D/g, '');
+                          if (digits.length > 10 && digits.startsWith('91')) {
+                            digits = digits.slice(2);
+                          } else if (digits.length > 10 && digits.startsWith('0')) {
+                            digits = digits.slice(1);
+                          }
+                          setFormData({ ...formData, phone: digits.slice(0, 10) });
+                        }}
                         className="w-full bg-base border border-edge rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-ink4 focus:outline-none focus:border-[#00A09A] focus:ring-1 focus:ring-[#00A09A]/30 transition-colors"
                       />
                     </div>
