@@ -30,14 +30,12 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onRequestDemo }) =
 
       {/* Hero */}
       <section className="border-b border-edge/80 bg-surface py-8 sm:py-10">
-        <div className="max-w-7xl mx-auto px-6 space-y-3 max-w-3xl">
-
-
+        <div className="max-w-7xl mx-auto px-6 space-y-3">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
             Insights for the <span className="font-extrabold text-gradient-teal">EV charging ecosystem.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-ink2 max-w-2xl font-normal leading-relaxed">
             Practical insights, technical explainers and perspectives on EV charging infrastructure, software and the evolving charging ecosystem.
           </p>
         </div>

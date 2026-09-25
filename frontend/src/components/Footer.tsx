@@ -113,21 +113,24 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-edge2/60 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs">
-          <span className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
-            The operating system for your charging network.
-          </span>
+        <div className="pt-8 border-t border-edge2/60 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="space-y-2 text-left">
+            <p className="text-sm sm:text-[15px] text-ink font-medium leading-relaxed">
+              The operating system for your charging network.
+            </p>
+            <p className="text-ink4 font-mono text-[11px]">
+              © 2026 Trevia EV Technologies. Incorporated Sept 2025. All rights reserved.
+            </p>
+          </div>
+
           <button
             type="button"
             onClick={onRequestDemo}
-            className="inline-flex items-center gap-1.5 shrink-0 px-5 py-2.5 rounded-full border border-[#00A09A] text-ink text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black"
+            className="inline-flex items-center gap-1.5 shrink-0 self-start sm:self-center px-5 py-2.5 rounded-full border border-[#00A09A] text-ink text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black cursor-pointer"
           >
             <span>Explore Trevia</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
-        </div>
-        <div className="pt-6 text-ink4 font-mono text-[11px] text-center sm:text-left">
-          © 2026 Trevia EV Technologies. Incorporated Sept 2025. All rights reserved.
         </div>
 
       </div>

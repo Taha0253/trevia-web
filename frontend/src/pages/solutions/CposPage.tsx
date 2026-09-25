@@ -20,34 +20,24 @@ export const CposPage: React.FC<SolutionPageProps> = ({ onRequestDemo }) => {
     <div className="space-y-16 pb-24">
 
       {/* Header */}
-      <section className="border-b border-edge/80 bg-surface py-10 sm:py-14">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-            <div className="lg:col-span-3 space-y-3">
+      <section className="border-b border-edge/80 bg-surface py-14 sm:py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight leading-tight">
+            Operate Your Charging Network From One Platform
+          </h1>
 
+          <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto font-normal leading-relaxed">
+            Connect and manage multi-vendor charging infrastructure through Trevia CMS, with real-time visibility, remote operations and centralized network management.
+          </p>
 
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
-                Operate Your Charging Network From One Platform
-              </h1>
-
-              <p className="text-base sm:text-lg text-ink2 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
-                Connect and manage multi-vendor charging infrastructure through Trevia CMS, with real-time visibility, remote operations and centralized network management.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <button
-                  onClick={onRequestDemo}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2"
-                >
-                  <span>Request a Demo</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-
-            <div className="lg:col-span-2">
-              <CmsDashboardMock compact />
-            </div>
+          <div className="flex justify-center items-center pt-2">
+            <button
+              onClick={onRequestDemo}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00A09A] to-[#33C4BF] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,160,154,0.3)] flex items-center gap-2 hover:opacity-90 cursor-pointer"
+            >
+              <span>Request a Demo</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
         </div>
       </section>

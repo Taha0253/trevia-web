@@ -259,3 +259,11 @@
   }
 }
 
+/* Prevent Tailwind color utility 'base' from overriding font-size utility 'text-base' */
+.text-base,
+.sm\:text-base,
+.md\:text-base,
+.lg\:text-base {
+  color: inherit;
+}
+
