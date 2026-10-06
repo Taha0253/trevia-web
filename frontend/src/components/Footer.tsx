@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import { SocialLinks, SocialIcon } from './SocialIcons';
+import { SOCIAL_LINKS } from '../data/socials';
 
 interface FooterProps {
   onRequestDemo?: () => void;
@@ -106,14 +108,13 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
               <li>
                 <Link to="/terms" className="hover:text-[#00A09A] transition-colors">Terms of Use</Link>
               </li>
-
             </ul>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-edge2/60 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="pt-8 border-t border-edge2/60 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 text-left">
             <p className="text-sm sm:text-[15px] text-ink font-medium leading-relaxed">
               The operating system for your charging network.
@@ -123,10 +124,16 @@ export const Footer: React.FC<FooterProps> = ({ onRequestDemo }) => {
             </p>
           </div>
 
+          {/* Social Links Row */}
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-mono text-ink4 hidden lg:inline-block">Connect:</span>
+            <SocialLinks variant="icons-only" />
+          </div>
+
           <button
             type="button"
             onClick={onRequestDemo}
-            className="inline-flex items-center gap-1.5 shrink-0 self-start sm:self-center px-5 py-2.5 rounded-full border border-[#00A09A] text-ink text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black cursor-pointer"
+            className="inline-flex items-center gap-1.5 shrink-0 self-start md:self-center px-5 py-2.5 rounded-full border border-[#00A09A] text-ink text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#00A09A] hover:text-black cursor-pointer"
           >
             <span>Explore Trevia</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

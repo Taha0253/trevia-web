@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { CMS_CAPABILITIES, EV_CAPABILITIES } from '../data/features';
 import { ThemeToggle } from './ThemeToggle';
+import { SocialLinks } from './SocialIcons';
 
 interface FeatureProduct {
   key: 'cms' | 'ev';
@@ -466,6 +467,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             >
               Request a Demo
             </button>
+          </div>
+
+          {/* Social Links */}
+          <div className="pt-3 border-t border-edge/40 flex items-center justify-between">
+            <span className="text-[10px] font-mono text-ink4">Follow Trevia</span>
+            <SocialLinks variant="icons-only" />
           </div>
         </div>
       )}

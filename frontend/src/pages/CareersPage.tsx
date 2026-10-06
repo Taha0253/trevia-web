@@ -7,6 +7,7 @@ import {
   Mail,
   ArrowRight,
 } from 'lucide-react';
+import { SocialLinks } from '../components/SocialIcons';
 
 const CULTURE = [
   { icon: Flag, title: 'Founder Mindset', desc: 'Take ownership. Think like a founder, act like an owner, and solve problems beyond your job description.' },
@@ -84,6 +85,10 @@ export const CareersPage: React.FC = () => {
             </a>{' '}
             to join our team.
           </p>
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <span className="text-xs font-mono uppercase tracking-wider text-ink4">Follow our journey:</span>
+            <SocialLinks variant="pills" />
+          </div>
         </div>
       </section>
 
