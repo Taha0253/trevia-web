@@ -3,6 +3,7 @@ import { X, CheckCircle, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-rea
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 import { useTheme } from '../hooks/useTheme';
+import { SocialLinks } from './SocialIcons';
 
 interface RequestDemoModalProps {
   isOpen: boolean;
@@ -257,6 +258,10 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({ isOpen, onCl
               >
                 Close Window
               </button>
+            </div>
+            <div className="pt-4 border-t border-edge/40 flex flex-col items-center gap-2">
+              <span className="text-[11px] font-mono text-ink4">Follow Trevia for real-time updates</span>
+              <SocialLinks variant="compact-pills" />
             </div>
           </div>
         )}

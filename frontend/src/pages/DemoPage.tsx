@@ -3,6 +3,7 @@ import { ShieldCheck, ArrowRight, Check, Loader2, AlertCircle } from 'lucide-rea
 import confetti from 'canvas-confetti';
 import { submitLead } from '../services/api';
 import { useTheme } from '../hooks/useTheme';
+import { SocialLinks } from '../components/SocialIcons';
 
 interface DemoPageProps {
   onRequestModal?: () => void;
@@ -265,6 +266,16 @@ export const DemoPage: React.FC<DemoPageProps> = () => {
               </div>
             )}
 
+          </div>
+        </div>
+
+        {/* Connect Directly Channel Links */}
+        <div className="text-center space-y-3 pb-8">
+          <p className="text-xs font-mono uppercase tracking-wider text-ink4">
+            Connect directly with Trevia
+          </p>
+          <div className="flex justify-center">
+            <SocialLinks variant="pills" />
           </div>
         </div>
 

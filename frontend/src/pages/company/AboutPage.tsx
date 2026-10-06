@@ -16,6 +16,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { CmsDashboardMock } from '../../components/CmsDashboardMock';
+import { SocialLinks } from '../../components/SocialIcons';
 
 interface AboutPageProps {
   onRequestDemo: () => void;
@@ -282,6 +283,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo: _onRequestD
             </a>{' '}
             to join our team.
           </p>
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <span className="text-xs font-mono uppercase tracking-wider text-ink4">Connect with Trevia:</span>
+            <SocialLinks variant="pills" />
+          </div>
         </div>
       </section>
 
